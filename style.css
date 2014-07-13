@@ -1,0 +1,3030 @@
+@charset "UTF-8";
+/*!
+Theme Name: Sandpit
+Version: 4
+Author: Ryan Berry
+*/
+@import url("//hello.myfonts.net/count/2b3b55");
+@font-face {
+  font-family: 'icomoon';
+  src: url("fonts/icons/fonts/icomoon.eot?7kphwg");
+  src: url("fonts/icons/fonts/icomoon.eot?#iefix7kphwg") format("embedded-opentype"), url("fonts/icons/fonts/icomoon.woff?7kphwg") format("woff"), url("fonts/icons/fonts/icomoon.ttf?7kphwg") format("truetype"), url("fonts/icons/fonts/icomoon.svg?7kphwg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/* line 24, scss/_fonts.scss */
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+/* line 38, scss/_fonts.scss */
+.icon-arrow-left:before {
+  content: "\e600"; }
+
+/* line 41, scss/_fonts.scss */
+.icon-arrow-down:before {
+  content: "\e601"; }
+
+/* line 44, scss/_fonts.scss */
+.icon-arrow-up:before {
+  content: "\e602"; }
+
+/* line 47, scss/_fonts.scss */
+.icon-arrow-right:before {
+  content: "\e603"; }
+
+/* line 50, scss/_fonts.scss */
+.icon-arrow-left2:before {
+  content: "\e604"; }
+
+/* line 53, scss/_fonts.scss */
+.icon-arrow-down2:before {
+  content: "\e605"; }
+
+/* line 56, scss/_fonts.scss */
+.icon-arrow-up2:before {
+  content: "\e606"; }
+
+/* line 59, scss/_fonts.scss */
+.icon-arrow-right2:before {
+  content: "\e607"; }
+
+/* line 62, scss/_fonts.scss */
+.icon-phone:before {
+  content: "\e608"; }
+
+/* line 65, scss/_fonts.scss */
+.icon-mail:before {
+  content: "\e609"; }
+
+/* line 68, scss/_fonts.scss */
+.icon-paperclip:before {
+  content: "\e60a"; }
+
+/* line 71, scss/_fonts.scss */
+.icon-user:before {
+  content: "\e60b"; }
+
+/* line 74, scss/_fonts.scss */
+.icon-export:before {
+  content: "\e60c"; }
+
+/* line 77, scss/_fonts.scss */
+.icon-location:before {
+  content: "\e60d"; }
+
+/* line 80, scss/_fonts.scss */
+.icon-heart:before {
+  content: "\e60e"; }
+
+/* line 83, scss/_fonts.scss */
+.icon-heart-open:before {
+  content: "\e60f"; }
+
+/* line 86, scss/_fonts.scss */
+.icon-star:before {
+  content: "\e610"; }
+
+/* line 89, scss/_fonts.scss */
+.icon-star-open:before {
+  content: "\e611"; }
+
+/* line 92, scss/_fonts.scss */
+.icon-quote:before {
+  content: "\e612"; }
+
+/* line 95, scss/_fonts.scss */
+.icon-search:before {
+  content: "\e613"; }
+
+/* line 98, scss/_fonts.scss */
+.icon-cog:before {
+  content: "\e614"; }
+
+/* line 101, scss/_fonts.scss */
+.icon-printer:before {
+  content: "\e615"; }
+
+/* line 104, scss/_fonts.scss */
+.icon-lifebuoy:before {
+  content: "\e616"; }
+
+/* line 107, scss/_fonts.scss */
+.icon-clock:before {
+  content: "\e617"; }
+
+/* line 110, scss/_fonts.scss */
+.icon-cart:before {
+  content: "\e618"; }
+
+/* line 113, scss/_fonts.scss */
+.icon-rss:before {
+  content: "\e619"; }
+
+/* line 116, scss/_fonts.scss */
+.icon-checkmark:before {
+  content: "\e61a"; }
+
+/* line 119, scss/_fonts.scss */
+.icon-cross:before {
+  content: "\e61b"; }
+
+/* line 122, scss/_fonts.scss */
+.icon-minus:before {
+  content: "\e61c"; }
+
+/* line 125, scss/_fonts.scss */
+.icon-plus:before {
+  content: "\e61d"; }
+
+/* line 128, scss/_fonts.scss */
+.icon-cw:before {
+  content: "\e61e"; }
+
+/* line 131, scss/_fonts.scss */
+.icon-blocked:before {
+  content: "\e61f"; }
+
+/* line 134, scss/_fonts.scss */
+.icon-list:before {
+  content: "\e620"; }
+
+/* line 137, scss/_fonts.scss */
+.icon-layout:before {
+  content: "\e621"; }
+
+/* line 140, scss/_fonts.scss */
+.icon-list2:before {
+  content: "\e622"; }
+
+/* line 143, scss/_fonts.scss */
+.icon-archive:before {
+  content: "\e623"; }
+
+/* line 146, scss/_fonts.scss */
+.icon-download:before {
+  content: "\e624"; }
+
+/* line 149, scss/_fonts.scss */
+.icon-cloud:before {
+  content: "\e625"; }
+
+/* line 152, scss/_fonts.scss */
+.icon-play:before {
+  content: "\e626"; }
+
+/* line 155, scss/_fonts.scss */
+.icon-pause:before {
+  content: "\e627"; }
+
+/* line 158, scss/_fonts.scss */
+.icon-calendar:before {
+  content: "\e631"; }
+
+/* line 161, scss/_fonts.scss */
+.icon-facebook:before {
+  content: "\e628"; }
+
+/* line 164, scss/_fonts.scss */
+.icon-twitter:before {
+  content: "\e629"; }
+
+/* line 167, scss/_fonts.scss */
+.icon-feed:before {
+  content: "\e62a"; }
+
+/* line 170, scss/_fonts.scss */
+.icon-vimeo:before {
+  content: "\e62b"; }
+
+/* line 173, scss/_fonts.scss */
+.icon-youtube:before {
+  content: "\e62c"; }
+
+/* line 176, scss/_fonts.scss */
+.icon-flickr:before {
+  content: "\e62d"; }
+
+/* line 179, scss/_fonts.scss */
+.icon-picassa:before {
+  content: "\e62e"; }
+
+/* line 182, scss/_fonts.scss */
+.icon-wordpress:before {
+  content: "\e62f"; }
+
+/* line 185, scss/_fonts.scss */
+.icon-tumblr:before {
+  content: "\e630"; }
+
+/* line 188, scss/_fonts.scss */
+.icon-pinterest:before {
+  content: "\e632"; }
+
+/* line 191, scss/_fonts.scss */
+.icon-paypal:before {
+  content: "\e633"; }
+
+/* line 194, scss/_fonts.scss */
+.icon-linkedin:before {
+  content: "\e634"; }
+
+/* line 197, scss/_fonts.scss */
+.icon-instagram:before {
+  content: "\e635"; }
+
+/* line 200, scss/_fonts.scss */
+.icon-google-plus:before {
+  content: "\e636"; }
+
+/* line 203, scss/_fonts.scss */
+.icon-skype:before {
+  content: "\e637"; }
+
+/* line 206, scss/_fonts.scss */
+.icon-soundcloud:before {
+  content: "\e638"; }
+
+/* line 209, scss/_fonts.scss */
+.icon-envelope:before {
+  content: "\e0a1"; }
+
+/* @import must be at top of file, otherwise CSS will not work */
+@font-face {
+  font-family: 'AvenirLTStd-Medium';
+  src: url("fonts/avenir/fonts/2B3B55_0_0.eot");
+  src: url("fonts/avenir/fonts/2B3B55_0_0.eot?#iefix") format("embedded-opentype"), url("fonts/avenir/fonts/2B3B55_0_0.woff") format("woff"), url("fonts/avenir/fonts/2B3B55_0_0.ttf") format("truetype"); }
+@font-face {
+  font-family: 'AvenirLTStd-BookOblique';
+  src: url("fonts/2B3B55_1_0.eot");
+  src: url("fonts/avenir/fonts/2B3B55_1_0.eot?#iefix") format("embedded-opentype"), url("fonts/avenir/fonts/2B3B55_1_0.woff") format("woff"), url("fonts/avenir/fonts/2B3B55_1_0.ttf") format("truetype"); }
+@font-face {
+  font-family: 'AvenirLTStd-Light';
+  src: url("fonts/avenir/fonts/2B3B55_2_0.eot");
+  src: url("fonts/avenir/fonts/2B3B55_2_0.eot?#iefix") format("embedded-opentype"), url("fonts/avenir/fonts/2B3B55_2_0.woff") format("woff"), url("fonts/avenir/fonts/2B3B55_2_0.ttf") format("truetype"); }
+@font-face {
+  font-family: 'AvenirLTStd-Book';
+  src: url("fonts/avenir/fonts/2B3B55_3_0.eot");
+  src: url("fonts/avenir/fonts/2B3B55_3_0.eot?#iefix") format("embedded-opentype"), url("fonts/avenir/fonts/2B3B55_3_0.woff") format("woff"), url("fonts/avenir/fonts/2B3B55_3_0.ttf") format("truetype"); }
+@font-face {
+  font-family: 'AvenirLTStd-Black';
+  src: url("fonts/avenir/fonts/2B3B55_4_0.eot");
+  src: url("fonts/avenir/fonts/2B3B55_4_0.eot?#iefix") format("embedded-opentype"), url("fonts/avenir/fonts/2B3B55_4_0.woff") format("woff"), url("fonts/avenir/fonts/2B3B55_4_0.ttf") format("truetype"); }
+@-ms-viewport {
+  width: device-width; }
+@viewport {
+  width: device-width; }
+/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+/* line 28, scss/_reset.scss */
+html {
+  font-size: 62.5%;
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+/* line 40, scss/_reset.scss */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+// --------------------------------------------------------------------------
+
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+/* line 51, scss/_reset.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+/* line 71, scss/_reset.scss */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 85, scss/_reset.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+/* line 95, scss/_reset.scss */
+[hidden],
+template {
+  display: none; }
+
+/* Links
+// --------------------------------------------------------------------------
+
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+/* line 107, scss/_reset.scss */
+a {
+  background: transparent; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+/* line 115, scss/_reset.scss */
+a:active,
+a:hover {
+  outline: 0; }
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+/* line 128, scss/_reset.scss */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 136, scss/_reset.scss */
+b,
+strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+/* line 145, scss/_reset.scss */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 154, scss/_reset.scss */
+h1 {
+  font-size: 1em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+/* line 163, scss/_reset.scss */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+/* line 172, scss/_reset.scss */
+small {
+  font-size: 1em; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 180, scss/_reset.scss */
+sub,
+sup {
+  font-size: 1em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+/* line 188, scss/_reset.scss */
+sup {
+  top: -0.5em; }
+
+/* line 192, scss/_reset.scss */
+sub {
+  bottom: -0.25em; }
+
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+/* line 204, scss/_reset.scss */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+/* line 212, scss/_reset.scss */
+svg:not(:root) {
+  overflow: hidden; }
+
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+/* line 224, scss/_reset.scss */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+/* line 232, scss/_reset.scss */
+hr {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Contain overflow in all browsers.
+ */
+/* line 242, scss/_reset.scss */
+pre {
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+/* line 250, scss/_reset.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 274, scss/_reset.scss */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10.
+ */
+/* line 289, scss/_reset.scss */
+button {
+  overflow: visible; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8+, and Opera
+ * Correct `select` style inheritance in Firefox.
+ */
+/* line 300, scss/_reset.scss */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+/* line 313, scss/_reset.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+/* line 325, scss/_reset.scss */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+/* line 334, scss/_reset.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 345, scss/_reset.scss */
+input {
+  line-height: normal; }
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+/* line 357, scss/_reset.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+/* line 369, scss/_reset.scss */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+/* line 380, scss/_reset.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */ }
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+/* line 390, scss/_reset.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+/* line 399, scss/_reset.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+/* line 410, scss/_reset.scss */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Remove default vertical scrollbar in IE 8/9.
+ */
+/* line 419, scss/_reset.scss */
+textarea {
+  overflow: auto; }
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+/* line 428, scss/_reset.scss */
+optgroup {
+  font-weight: bold; }
+
+/* Tables
+// --------------------------------------------------------------------------
+
+/**
+ * Remove most spacing between table cells.
+ */
+/* line 439, scss/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 444, scss/_reset.scss */
+td,
+th {
+  padding: 0; }
+
+/* line 459, scss/_reset.scss */
+.ir,
+.hide-text,
+.text-replace {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  background-repeat: no-repeat; }
+
+/* line 468, scss/_reset.scss */
+.hide,
+.hidden,
+#wpstats,
+.screen-reader-text {
+  display: none;
+  visibility: hidden; }
+
+/* line 489, scss/_reset.scss */
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0; }
+
+/* line 498, scss/_reset.scss */
+html.clearfix {
+  *height: 1%; }
+
+/* line 505, scss/_reset.scss */
+#tinymce {
+  padding: 1em; }
+
+/* $visual-grid: 		true; */
+/* line 2, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_grid.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+/* line 8, scss/_typography.scss */
+body {
+  font-size: 16px;
+  line-height: 1.9;
+  text-align: left;
+  font-family: Verdana, Geneva, sans-serif;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: white;
+  font-size-adjust: auto;
+  word-wrap: break-word;
+  -ms-word-wrap: break-word; }
+
+/* line 24, scss/_typography.scss */
+a {
+  color: white;
+  text-decoration: none; }
+
+/* line 25, scss/_typography.scss */
+a:hover, a:focus {
+  color: white; }
+
+/* line 26, scss/_typography.scss */
+#content a:hover {
+  text-decoration: underline; }
+
+/* line 28, scss/_typography.scss */
+.button, .product a {
+  text-decoration: none !important; }
+
+/* line 30, scss/_typography.scss */
+p {
+  margin-top: 0;
+  margin-bottom: 20px; }
+
+/* Some cheeky stuff to match all Adams crazy type! */
+/* line 40, scss/_typography.scss */
+p.intro {
+  font-family: AvenirLTStd-Light,  Arial, Helvetica, Sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.6em;
+  line-height: 1.2; }
+
+/* line 48, scss/_typography.scss */
+p.sub-intro {
+  font-family: AvenirLTStd-BookOblique,  Arial, Helvetica, Sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.1em;
+  line-height: 1.394; }
+
+/* line 56, scss/_typography.scss */
+p.coming-soon,
+p.phone-number {
+  font-family: AvenirLTStd-Black, Arial, Helvetica, Sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.6em;
+  line-height: 1.394; }
+
+/* line 65, scss/_typography.scss */
+p.coming-soon {
+  color: #00bbb3; }
+
+/* line 70, scss/_typography.scss */
+p.hashtag {
+  font-family: AvenirLTStd-Medium, Arial, Helvetica, Sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.8em;
+  line-height: 1.394;
+  color: #ffcd00; }
+
+/* line 85, scss/_typography.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, Sans-serif;
+  color: white;
+  font-weight: normal;
+  line-height: 1.2; }
+  /* line 91, scss/_typography.scss */
+  h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
+    margin-top: 0; }
+
+/* line 96, scss/_typography.scss */
+h1 {
+  font-size: 4.0em;
+  margin-top: 0; }
+
+/* line 101, scss/_typography.scss */
+h2 {
+  font-size: 2.8em; }
+
+/* line 105, scss/_typography.scss */
+h3 {
+  font-size: 2.0em; }
+
+/* line 109, scss/_typography.scss */
+h4 {
+  font-size: 1.4em; }
+
+/* line 113, scss/_typography.scss */
+h5 {
+  font-size: 0.7em; }
+
+/* line 117, scss/_typography.scss */
+h6 {
+  font-size: 0.5em;
+  text-transform: uppercase; }
+
+/* line 122, scss/_typography.scss */
+h1 + h2, h2 + h3, h3 + h4, h5 + h6 {
+  margin-top: 0; }
+
+/* line 130, scss/_typography.scss */
+img {
+  max-width: 100%; }
+
+/* line 134, scss/_typography.scss */
+.icon {
+  font-family: 'IcoMoon';
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle; }
+
+/* line 138, scss/_typography.scss */
+hr {
+  display: block;
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #ccc;
+  color: #222;
+  background-color: #222; }
+
+/* line 147, scss/_typography.scss */
+article blockquote {
+  margin: 0 0 20px 0;
+  font-family: cambria, georgia, times, serif;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  background: #fafafa;
+  padding: 20px;
+  font-style: italic; }
+  /* line 155, scss/_typography.scss */
+  article blockquote p:last-child {
+    margin-bottom: 0; }
+
+/* line 158, scss/_typography.scss */
+.pull-quote {
+  position: relative;
+  padding: 20px; }
+  /* line 161, scss/_typography.scss */
+  .pull-quote:before, .pull-quote:after {
+    height: 40px;
+    opacity: 0.15;
+    position: absolute;
+    font-size: 1em; }
+  /* line 168, scss/_typography.scss */
+  .pull-quote:before {
+    content: '“';
+    top: 0;
+    left: 0; }
+  /* line 173, scss/_typography.scss */
+  .pull-quote:after {
+    content: '”';
+    bottom: 0;
+    right: 0; }
+
+/* line 180, scss/_typography.scss */
+ins {
+  background: #ff9;
+  color: #000;
+  text-decoration: none; }
+
+/* line 186, scss/_typography.scss */
+mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold; }
+
+/* line 194, scss/_typography.scss */
+.drop-cap:first-letter {
+  float: left;
+  margin: 0;
+  padding: 0.4em;
+  font-size: 2em;
+  font-family: inherit;
+  line-height: 0.1;
+  text-indent: 0;
+  background: transparent;
+  color: inherit; }
+
+/* line 209, scss/_typography.scss */
+.post time:before {
+  font-family: 'IcoMoon';
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+  content: '';
+  margin-right: 5px;
+  vertical-align: middle; }
+
+/* line 222, scss/_typography.scss */
+table {
+  width: 100%; }
+
+/* line 231, scss/_typography.scss */
+#sidebar {
+  font-size: 13px; }
+  /* line 237, scss/_typography.scss */
+  #sidebar h3 {
+    font-size: 1.4em; }
+  /* line 240, scss/_typography.scss */
+  #sidebar h4 {
+    font-size: 1.4em; }
+
+/* line 291, scss/_typography.scss */
+.button {
+  display: inline-block;
+  zoom: 1;
+  outline: 0;
+  line-height: normal;
+  white-space: nowrap;
+  vertical-align: baseline;
+  text-align: center;
+  cursor: pointer;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 100%;
+  padding: 0.5em 1em;
+  border: 1px solid #e6e6e6;
+  background-color: #e6e6e6;
+  text-decoration: none;
+  border-radius: 2px; }
+  /* line 272, scss/_typography.scss */
+  .button:hover {
+    outline: 0;
+    background: #d5d5d5;
+    border-color: #d5d5d5; }
+  /* line 278, scss/_typography.scss */
+  .button:active, .button.active {
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset; }
+  /* line 283, scss/_typography.scss */
+  .button.disabled, .button[disabled] {
+    background-image: none;
+    opacity: 0.4;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    filter: alpha(opacity=40);
+    cursor: not-allowed;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+
+/* line 9, scss/_layout.scss */
+html {
+  background-color: #fefefe;
+  overflow-x: hidden; }
+
+/* line 14, scss/_layout.scss */
+html.no-touch {
+  overflow-y: auto; }
+@-webkit-keyframes fade-in {
+  /* line 19, scss/_layout.scss */
+  from {
+    opacity: 0; }
+
+  /* line 20, scss/_layout.scss */
+  to {
+    opacity: 1; } }
+@-ms-keyframes fade-in {
+  /* line 19, scss/_layout.scss */
+  from {
+    opacity: 0; }
+
+  /* line 20, scss/_layout.scss */
+  to {
+    opacity: 1; } }
+@-khtml-keyframes fade-in {
+  /* line 19, scss/_layout.scss */
+  from {
+    opacity: 0; }
+
+  /* line 20, scss/_layout.scss */
+  to {
+    opacity: 1; } }
+@keyframes fade-in {
+  /* line 19, scss/_layout.scss */
+  from {
+    opacity: 0; }
+
+  /* line 20, scss/_layout.scss */
+  to {
+    opacity: 1; } }
+/* line 23, scss/_layout.scss */
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-animation: fade-in 800ms ease-in-out, ease 1;
+  animation: fade-in 800ms ease-in-out, ease 1; }
+  /* line 15, ../../../../../lib/gems/1.9.1/gems/bourbon-compass-4.0.2/stylesheets/bourbon/addons/_clearfix.scss */
+  body:after {
+    content: "";
+    display: table;
+    clear: both; }
+  /* line 30, scss/_layout.scss */
+  body.admin-bar {
+    padding-top: 32px; }
+    
+/* line 39, scss/_layout.scss */
+#page-wrapper {
+  position: relative;
+  width: 100%; }
+
+/*  mobile-down doesnt override tablet down here :( */
+/* variation on center mixin for fullscreen at desired width  */
+/* line 97, scss/_layout.scss */
+.wrapper {
+  display: block;
+  position: relative;
+  padding: 40px 20px; }
+  /* line 102, scss/_layout.scss */
+  .wrapper .section {
+    *zoom: 1;
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px; }
+    /* line 15, ../../../../../lib/gems/1.9.1/gems/bourbon-compass-4.0.2/stylesheets/bourbon/addons/_clearfix.scss */
+    .wrapper .section:after {
+      content: "";
+      display: table;
+      clear: both; }
+                /* line 105, scss/_layout.scss */
+    .wrapper .section .section-content {
+      display: block; }
+      /* line 15, ../../../../../lib/gems/1.9.1/gems/bourbon-compass-4.0.2/stylesheets/bourbon/addons/_clearfix.scss */
+      .wrapper .section .section-content:after {
+        content: "";
+        display: table;
+        clear: both; }
+
+/* variation on wrapper for fullscreen at desired width  */
+/* line 112, scss/_layout.scss */
+.fullscreen-wrapper {
+  display: block;
+  position: relative;
+  padding: 40px 20px; }
+  /* line 117, scss/_layout.scss */
+  .fullscreen-wrapper .section {
+    *zoom: 1;
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px; }
+    /* line 15, ../../../../../lib/gems/1.9.1/gems/bourbon-compass-4.0.2/stylesheets/bourbon/addons/_clearfix.scss */
+    .fullscreen-wrapper .section:after {
+      content: "";
+      display: table;
+      clear: both; }
+                /* line 120, scss/_layout.scss */
+    .fullscreen-wrapper .section .section-content {
+      display: block; }
+      /* line 15, ../../../../../lib/gems/1.9.1/gems/bourbon-compass-4.0.2/stylesheets/bourbon/addons/_clearfix.scss */
+      .fullscreen-wrapper .section .section-content:after {
+        content: "";
+        display: table;
+        clear: both; }
+  
+/* line 136, scss/_layout.scss */
+#header-wrapper {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  z-index: 99;
+  position: relative;
+  background: #120f27; }
+      /* line 155, scss/_layout.scss */
+  #header-wrapper #header #header-content {
+    position: relative; }
+
+/* line 162, scss/_layout.scss */
+.home #header-wrapper {
+  /* temporary height for now */
+  min-height: 850px; }
+
+/*  setting this as a bg image because it bugs out in ie8 - weird, cause svg swap works fine for the rest  */
+/* line 169, scss/_layout.scss */
+#queens-riverside-header-logo {
+  width: 129px;
+  height: 23px;
+  margin-bottom: 140px;
+  /* 	background: url('images/queens-riverside-logo.svg') no-repeat; */
+  display: inline-block; }
+  
+/*
+.no-svg #queens-riverside-header-logo {
+	background: url('images/queens-riverside-logo.png') no-repeat;
+}
+*/
+/* line 188, scss/_layout.scss */
+#fraser-logo {
+  width: 284px;
+  height: 35px;
+  position: absolute;
+  top: -20px;
+  right: -284px; }
+    
+/* line 204, scss/_layout.scss */
+#logo {
+  width: 194px;
+  margin: -50px 0 30px 0; }
+  /* line 208, scss/_layout.scss */
+  #logo img + h1 {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px); }
+  
+/* line 221, scss/_layout.scss */
+.single-column p.intro,
+.single-column p.sub-intro {
+  padding-right: 130px; }
+  
+/* line 253, scss/_layout.scss */
+#main-wrapper {
+  color: #666; }
+  /* line 256, scss/_layout.scss */
+  #main-wrapper h1, #main-wrapper h2, #main-wrapper h3, #main-wrapper h4, #main-wrapper h5, #main-wrapper h6 {
+    color: #666; }
+  /* line 260, scss/_layout.scss */
+  #main-wrapper #main {
+    padding: 20px 0; }
+
+/* line 274, scss/_layout.scss */
+#action-form {
+  background: #046a6b;
+  background: rgba(0, 187, 189, 0.6);
+  padding: 20px 10px; }
+  /* line 279, scss/_layout.scss */
+  #action-form h2 {
+    text-transform: uppercase;
+    color: #ffcd00;
+    margin-bottom: 0;
+    font-family: AvenirLTStd-Black;
+    font-size: 2em;
+    font-weight: normal;
+    font-style: normal; }
+  /* line 289, scss/_layout.scss */
+  #action-form h3 {
+    font-family: AvenirLTStd-Medium, Arial, Helvetica, Sans-serif;
+    font-size: 1.5em; }
+  /* line 294, scss/_layout.scss */
+  #action-form h2,
+  #action-form h3 {
+    padding-left: 10px; }
+      /* line 303, scss/_layout.scss */
+  #action-form input[type="text"],
+  #action-form input[type="tel"],
+  #action-form input[type="email"] {
+    background: #00bbb3;
+    font-size: 0.8125em;
+    color: white;
+    border: none;
+    -webkit-font-smoothing: antialiased;
+    border: 1px solid transparent; }
+    /* line 313, scss/_layout.scss */
+    #action-form input[type="text"]:focus, #action-form input[type="text"]:active,
+    #action-form input[type="tel"]:focus,
+    #action-form input[type="tel"]:active,
+    #action-form input[type="email"]:focus,
+    #action-form input[type="email"]:active {
+      background: white;
+      color: #00bbb3;
+      border: 1px solid #005551; }
+  /* line 321, scss/_layout.scss */
+  #action-form ::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: white; }
+  /* line 325, scss/_layout.scss */
+  #action-form :-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: white;
+    opacity: 1; }
+  /* line 330, scss/_layout.scss */
+  #action-form ::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: white;
+    opacity: 1; }
+  /* line 335, scss/_layout.scss */
+  #action-form :-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: white; }
+  /* line 346, scss/_layout.scss */
+  #action-form .gfield {
+    margin-bottom: 10px; }
+  /* line 350, scss/_layout.scss */
+  #action-form #field_1_3 label,
+  #action-form #field_1_4 label,
+  #action-form #field_1_5 label,
+  #action-form #field_1_6 label {
+    display: none; }
+  /* line 358, scss/_layout.scss */
+  #action-form .gfield.gfield_error.gfield_contains_required #field_1_3 label,
+  #action-form .gfield.gfield_error.gfield_contains_required #field_1_4 label,
+  #action-form .gfield.gfield_error.gfield_contains_required #field_1_5 label,
+  #action-form .gfield.gfield_error.gfield_contains_required #field_1_6 label {
+    display: block; }
+  /* line 366, scss/_layout.scss */
+  #action-form .gfield_error .gfield_label {
+    display: block !important; }
+  /* line 370, scss/_layout.scss */
+  #action-form #gform_submit_button_1 {
+    float: right;
+    border-radius: 0;
+    background: white;
+    color: #000;
+    clear: both;
+    position: relative;
+    /* 		margin-top: 30px; */ }
+    /* line 379, scss/_layout.scss */
+    #action-form #gform_submit_button_1:hover {
+      color: white;
+      background: #00bbb3;
+      border-color: #00bbb3; }
+    /* line 385, scss/_layout.scss */
+    #action-form #gform_submit_button_1:active {
+      top: 1px; }
+  /* line 390, scss/_layout.scss */
+  #action-form #gforms_confirmation_message {
+    display: none; }
+  /* line 394, scss/_layout.scss */
+  #action-form .mandatory {
+    font-size: 0.8125em;
+    color: white;
+    -webkit-font-smoothing: antialiased; }
+
+/* line 406, scss/_layout.scss */
+#video-wrapper {
+  background: #ffcd00; }
+  /* line 409, scss/_layout.scss */
+  #video-wrapper #video {
+    padding: 20px 0; }
+    /* line 412, scss/_layout.scss */
+    #video-wrapper #video #video-content {
+      text-align: center; }
+    
+/* line 422, scss/_layout.scss */
+.fluid-width-video-wrapper {
+  float: left;
+  width: 100%; }
+
+/* have to declaree a height here because fitvids is pushy */
+/* line 429, scss/_layout.scss */
+#confirmation-message {
+  float: left;
+  width: 100%;
+  display: none;
+  text-align: left;
+  padding-top: 20px;
+  color: #28254e;
+  /*
+  	@include media(max-width: 500) {
+  
+  	}
+  
+  */ }
+  /* line 15, ../../../../../lib/gems/1.9.1/gems/bourbon-compass-4.0.2/stylesheets/bourbon/addons/_clearfix.scss */
+  #confirmation-message:after {
+    content: "";
+    display: table;
+    clear: both; }
+  /* line 438, scss/_layout.scss */
+  #confirmation-message p {
+    margin-bottom: 10px; }
+    
+/* line 457, scss/_layout.scss */
+#confirmation-message-details {
+  float: left;
+  display: block;
+  margin-right: 2.4%;
+  width: 57.4%; }
+  /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+  #confirmation-message-details:last-child {
+    margin-right: 0; }
+  /* line 461, scss/_layout.scss */
+  #confirmation-message-details .phone-number {
+    font-family: AvenirLTStd-Black, Arial, Helvetica, Sans-serif; }
+  /* line 464, scss/_layout.scss */
+  #confirmation-message-details .check-video {
+    font-family: AvenirLTStd-Medium, Arial, Helvetica, Sans-serif;
+    font-size: 1.4em; }
+  
+/* 1.99 wtf! */
+/* line 476, scss/_layout.scss */
+#confirmation-social {
+  margin-left: 17.0%;
+  float: left;
+  display: block;
+  margin-right: 2.4%;
+  width: 23.2%;
+  margin-right: 0;
+  text-align: right; }
+  /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+  #confirmation-social:last-child {
+    margin-right: 0; }
+  /* line 483, scss/_layout.scss */
+  #confirmation-social .hashtag {
+    color: #28254e;
+    margin-bottom: 20px; }
+  
+/* line 496, scss/_layout.scss */
+.confirmation-link {
+  text-align: center;
+  padding: 2px 10px 0;
+  margin: 0 0 10px 5px;
+  font-size: 1.4em;
+  background: #00bbb3;
+  display: inline-block;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0); }
+  /* line 505, scss/_layout.scss */
+  .confirmation-link:hover {
+    background: white;
+    color: #00bbb3; }
+    /* line 509, scss/_layout.scss */
+    .confirmation-link:hover .icon-facebook,
+    .confirmation-link:hover .icon-twitter,
+    .confirmation-link:hover .icon-instagram {
+      -webkit-animation-name: pop;
+      animation-name: pop;
+      -webkit-animation-duration: 0.3s;
+      animation-duration: 0.3s;
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+      -webkit-animation-iteration-count: 1;
+      animation-iteration-count: 1; }
+
+/* line 526, scss/_layout.scss */
+#map-wrapper {
+  padding: 0; }
+
+/* line 530, scss/_layout.scss */
+.acf-map {
+  width: 100%;
+  height: 470px; }
+  
+/* line 543, scss/_layout.scss */
+#community-wrapper {
+  padding: 0;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white; }
+  /* line 548, scss/_layout.scss */
+  #community-wrapper #community {
+    padding: 0;
+    width: 100%; }
+@-webkit-keyframes pop {
+  /* line 559, scss/_layout.scss */
+  50% {
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4); }
+
+  /* line 562, scss/_layout.scss */
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+@-ms-keyframes pop {
+  /* line 559, scss/_layout.scss */
+  50% {
+    -ms-transform: scale(1.4);
+    transform: scale(1.4); }
+
+  /* line 562, scss/_layout.scss */
+  100% {
+    -ms-transform: scale(1);
+    transform: scale(1); } }
+@-khtml-keyframes pop {
+  /* line 559, scss/_layout.scss */
+  50% {
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4); }
+
+  /* line 562, scss/_layout.scss */
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); } }
+@keyframes pop {
+  /* line 559, scss/_layout.scss */
+  50% {
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4); }
+
+  /* line 562, scss/_layout.scss */
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+/* line 568, scss/_layout.scss */
+.community-link {
+  float: left;
+  display: block;
+  width: 34.1%;
+  text-align: center;
+  padding: 10px;
+  font-size: 2.8em;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  background: #00bbb3;
+  display: inline-block;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out; }
+  /* line 30, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+  .community-link:last-child {
+    width: 31.8%; }
+  /* line 581, scss/_layout.scss */
+  .community-link.first {
+    border-right: none; }
+  /* line 585, scss/_layout.scss */
+  .community-link.last {
+    border-left: none; }
+  /* line 594, scss/_layout.scss */
+  .community-link:hover {
+    background: #ffcd00;
+    color: white; }
+    /* line 598, scss/_layout.scss */
+    .community-link:hover .icon-facebook,
+    .community-link:hover .icon-twitter,
+    .community-link:hover .icon-instagram {
+      -webkit-animation-name: pop;
+      animation-name: pop;
+      -webkit-animation-duration: 0.3s;
+      animation-duration: 0.3s;
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+      -webkit-animation-iteration-count: 1;
+      animation-iteration-count: 1; }
+
+/* line 618, scss/_layout.scss */
+#content {
+  float: left;
+  display: block;
+  margin-right: 2.4%;
+  width: 100%; }
+  /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+  #content:last-child {
+    margin-right: 0; }
+  
+/* line 628, scss/_layout.scss */
+#content.full-width {
+  float: left;
+  display: block;
+  margin-right: 2.4%;
+  width: 100%; }
+  /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+  #content.full-width:last-child {
+    margin-right: 0; }
+
+/* line 636, scss/_layout.scss */
+#footer-wrapper {
+  background: #120f27;
+  padding: 120px 0; }
+  /* line 640, scss/_layout.scss */
+  #footer-wrapper a:hover {
+    color: #00bbb3; }
+  /* line 644, scss/_layout.scss */
+  #footer-wrapper #footer {
+    position: relative; }
+    /* line 647, scss/_layout.scss */
+    #footer-wrapper #footer #footer-content {
+      float: left;
+      display: block;
+      margin-right: 2.4%;
+      width: 40.3%;
+      border-right: 1px solid #00bbb3;
+      padding-right: 20px;
+      font-size: 0.7em; }
+      /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+      #footer-wrapper #footer #footer-content:last-child {
+        margin-right: 0; }
+      /* line 653, scss/_layout.scss */
+      #footer-wrapper #footer #footer-content p {
+        margin-bottom: 0; }
+        
+/* line 672, scss/_layout.scss */
+.footer-nav {
+  float: left;
+  display: block;
+  margin-right: 2.4%;
+  width: 23.2%;
+  text-align: justify;
+  padding-top: 15px; }
+  /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+  .footer-nav:last-child {
+    margin-right: 0; }
+  /* line 677, scss/_layout.scss */
+  .footer-nav ul {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    list-style: none; }
+    /* line 683, scss/_layout.scss */
+    .footer-nav ul li {
+      font-size: 0.7em; }
+  
+/* line 694, scss/_layout.scss */
+#queens-riverside-footer-logo {
+  width: 170px;
+  height: 32px;
+  position: absolute;
+  right: 0;
+  top: 25px; }
+  
+/* line 8, scss/_content_blocks.scss */
+.content-blocks {
+  display: block; }
+  /* line 15, ../../../../../lib/gems/1.9.1/gems/bourbon-compass-4.0.2/stylesheets/bourbon/addons/_clearfix.scss */
+  .content-blocks:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+/* line 16, scss/_content_blocks.scss */
+.heading {
+  float: left;
+  display: block;
+  margin-right: 2.4%;
+  width: 100%; }
+  /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+  .heading:last-child {
+    margin-right: 0; }
+
+/* line 20, scss/_content_blocks.scss */
+.standard {
+  float: left;
+  display: block;
+  margin-right: 2.4%;
+  width: 100%; }
+  /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+  .standard:last-child {
+    margin-right: 0; }
+
+/* line 24, scss/_content_blocks.scss */
+.small-padding {
+  padding: 20px 0; }
+
+/* line 28, scss/_content_blocks.scss */
+.vertical-padding, .big-padding {
+  padding: 60px 0; }
+
+/* line 37, scss/_content_blocks.scss */
+.full-width-wrapper {
+  float: left;
+  display: block;
+  margin-right: 2.4%;
+  width: 100%; }
+  /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+  .full-width-wrapper:last-child {
+    margin-right: 0; }
+  /* line 40, scss/_content_blocks.scss */
+  .full-width-wrapper .full-width {
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-left: -2000px;
+    margin-right: -2000px; }
+    /* line 15, ../../../../../lib/gems/1.9.1/gems/bourbon-compass-4.0.2/stylesheets/bourbon/addons/_clearfix.scss */
+    .full-width-wrapper .full-width:after {
+      content: "";
+      display: table;
+      clear: both; }
+    /* line 48, scss/_content_blocks.scss */
+    .full-width-wrapper .full-width .center {
+      max-width: 1320px;
+      margin-left: auto;
+      margin-right: auto; }
+      /* line 15, ../../../../../lib/gems/1.9.1/gems/bourbon-compass-4.0.2/stylesheets/bourbon/addons/_clearfix.scss */
+      .full-width-wrapper .full-width .center:after {
+        content: "";
+        display: table;
+        clear: both; }
+    
+/* line 65, scss/_content_blocks.scss */
+.columns {
+  float: left;
+  width: 100%; }
+
+/* line 70, scss/_content_blocks.scss */
+.columns-1 .single-column {
+  float: left;
+  display: block;
+  margin-right: 2.4%;
+  width: 100%; }
+  /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+  .columns-1 .single-column:last-child {
+    margin-right: 0; }
+
+/* line 71, scss/_content_blocks.scss */
+.columns-2 .single-column {
+  float: left;
+  display: block;
+  margin-right: 2.4%;
+  width: 48.8%; }
+  /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+  .columns-2 .single-column:last-child {
+    margin-right: 0; }
+
+/* line 72, scss/_content_blocks.scss */
+.columns-3 .single-column {
+  float: left;
+  display: block;
+  margin-right: 2.4%;
+  width: 31.8%; }
+  /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+  .columns-3 .single-column:last-child {
+    margin-right: 0; }
+
+/* line 73, scss/_content_blocks.scss */
+.columns-4 .single-column {
+  float: left;
+  display: block;
+  margin-right: 2.4%;
+  width: 23.2%; }
+  /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+  .columns-4 .single-column:last-child {
+    margin-right: 0; }
+
+/* line 74, scss/_content_blocks.scss */
+.columns-5 .single-column {
+  float: left;
+  display: block;
+  margin-right: 2.4%;
+  width: 18.1%; }
+  /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+  .columns-5 .single-column:last-child {
+    margin-right: 0; }
+
+/* line 75, scss/_content_blocks.scss */
+.columns-6 .single-column {
+  float: left;
+  display: block;
+  margin-right: 2.4%;
+  width: 14.7%; }
+  /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+  .columns-6 .single-column:last-child {
+    margin-right: 0; }
+
+/* line 102, scss/_content_blocks.scss */
+.columns .one {
+  float: left;
+  display: block;
+  margin-right: 2.4%;
+  width: 100%; }
+  /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+  .columns .one:last-child {
+    margin-right: 0; }
+/* line 103, scss/_content_blocks.scss */
+.columns .one_quarter {
+  float: left;
+  display: block;
+  margin-right: 2.4%;
+  width: 23.2%; }
+  /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+  .columns .one_quarter:last-child {
+    margin-right: 0; }
+/* line 104, scss/_content_blocks.scss */
+.columns .one_half {
+  float: left;
+  display: block;
+  margin-right: 2.4%;
+  width: 48.8%; }
+  /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+  .columns .one_half:last-child {
+    margin-right: 0; }
+/* line 105, scss/_content_blocks.scss */
+.columns .three_quarters {
+  float: left;
+  display: block;
+  margin-right: 2.4%;
+  width: 74.4%; }
+  /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+  .columns .three_quarters:last-child {
+    margin-right: 0; }
+/* line 106, scss/_content_blocks.scss */
+.columns .one_third {
+  float: left;
+  display: block;
+  margin-right: 2.4%;
+  width: 31.8%; }
+  /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+  .columns .one_third:last-child {
+    margin-right: 0; }
+/* line 107, scss/_content_blocks.scss */
+.columns .two_thirds {
+  float: left;
+  display: block;
+  margin-right: 2.4%;
+  width: 65.9%; }
+  /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+  .columns .two_thirds:last-child {
+    margin-right: 0; }
+/* line 108, scss/_content_blocks.scss */
+.columns .one_fifth {
+  float: left;
+  display: block;
+  margin-right: 2.4%;
+  width: 18.1%; }
+  /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+  .columns .one_fifth:last-child {
+    margin-right: 0; }
+/* line 109, scss/_content_blocks.scss */
+.columns .two_fifths {
+  float: left;
+  display: block;
+  margin-right: 2.4%;
+  width: 38.6%; }
+  /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+  .columns .two_fifths:last-child {
+    margin-right: 0; }
+/* line 110, scss/_content_blocks.scss */
+.columns .three_fifths {
+  float: left;
+  display: block;
+  margin-right: 2.4%;
+  width: 59.1%; }
+  /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+  .columns .three_fifths:last-child {
+    margin-right: 0; }
+/* line 111, scss/_content_blocks.scss */
+.columns .four_fifths {
+  float: left;
+  display: block;
+  margin-right: 2.4%;
+  width: 79.5%; }
+  /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+  .columns .four_fifths:last-child {
+    margin-right: 0; }
+/* line 138, scss/_content_blocks.scss */
+.slideshow {
+  margin: 20px 0; }
+
+/* line 149, scss/_content_blocks.scss */
+.gallery {
+  margin: 20px 0; }
+  /* line 15, ../../../../../lib/gems/1.9.1/gems/bourbon-compass-4.0.2/stylesheets/bourbon/addons/_clearfix.scss */
+  .gallery:after {
+    content: "";
+    display: table;
+    clear: both; }
+  /* line 153, scss/_content_blocks.scss */
+  .gallery figure {
+    padding: 0;
+    margin: 0; }
+  /* line 158, scss/_content_blocks.scss */
+  .gallery .row.one figure {
+    float: left;
+    display: block;
+    margin-right: 2.4%;
+    width: 100%; }
+    /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+    .gallery .row.one figure:last-child {
+      margin-right: 0; }
+  /* line 159, scss/_content_blocks.scss */
+  .gallery .row.two figure {
+    float: left;
+    display: block;
+    margin-right: 2.4%;
+    width: 48.8%; }
+    /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+    .gallery .row.two figure:last-child {
+      margin-right: 0; }
+  /* line 160, scss/_content_blocks.scss */
+  .gallery .row.three figure {
+    float: left;
+    display: block;
+    margin-right: 2.4%;
+    width: 31.8%; }
+    /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+    .gallery .row.three figure:last-child {
+      margin-right: 0; }
+  /* line 161, scss/_content_blocks.scss */
+  .gallery .row.four figure {
+    float: left;
+    display: block;
+    margin-right: 2.4%;
+    width: 23.2%; }
+    /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+    .gallery .row.four figure:last-child {
+      margin-right: 0; }
+  /* line 162, scss/_content_blocks.scss */
+  .gallery .row.five figure {
+    float: left;
+    display: block;
+    margin-right: 2.4%;
+    width: 18.1%; }
+    /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+    .gallery .row.five figure:last-child {
+      margin-right: 0; }
+  /* line 163, scss/_content_blocks.scss */
+  .gallery .row.six figure {
+    float: left;
+    display: block;
+    margin-right: 2.4%;
+    width: 14.7%; }
+    /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+    .gallery .row.six figure:last-child {
+      margin-right: 0; }
+  
+/* line 187, scss/_content_blocks.scss */
+blockquote.quote {
+  position: relative; }
+  /* line 191, scss/_content_blocks.scss */
+  blockquote.quote p {
+    padding: 0 20px;
+    font-size: 2.0em; }
+  /* line 196, scss/_content_blocks.scss */
+  blockquote.quote .author {
+    font-size: 1.4em;
+    font-style: italic;
+    position: absolute;
+    right: 0;
+    bottom: 0; }
+
+/* line 210, scss/_content_blocks.scss */
+.accordion {
+  width: 100%;
+  float: left;
+  border-bottom: 1px solid #dadada;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  position: relative; }
+  /* line 220, scss/_content_blocks.scss */
+  .accordion .header-and-content a {
+    cursor: pointer;
+    color: white;
+    font-weight: bold; }
+    /* line 225, scss/_content_blocks.scss */
+    .accordion .header-and-content a:hover {
+      color: white;
+      text-decoration: none; }
+    /* line 230, scss/_content_blocks.scss */
+    .accordion .header-and-content a:after {
+      font-family: 'IcoMoon';
+      display: inline-block;
+      margin-bottom: 0;
+      vertical-align: middle;
+      content: '';
+      margin-left: 10px;
+      top: -2px;
+      position: relative; }
+    /* line 237, scss/_content_blocks.scss */
+    .accordion .header-and-content a.active:after {
+      content: ''; }
+  /* line 242, scss/_content_blocks.scss */
+  .accordion .header-and-content .content {
+    display: none;
+    padding-top: 10px; }
+
+/* line 253, scss/_content_blocks.scss */
+.accordion-tabs {
+  width: 100%;
+  float: left;
+  border: 1px solid #dadada;
+  margin-bottom: 20px; }
+  /* line 15, ../../../../../lib/gems/1.9.1/gems/bourbon-compass-4.0.2/stylesheets/bourbon/addons/_clearfix.scss */
+  .accordion-tabs:after {
+    content: "";
+    display: table;
+    clear: both; }
+      /* line 281, scss/_content_blocks.scss */
+  .accordion-tabs .header-and-content:first-child a {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-top: 0; }
+  /* line 287, scss/_content_blocks.scss */
+  .accordion-tabs .header-and-content:last-child a {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px; }
+      /* line 298, scss/_content_blocks.scss */
+  .accordion-tabs .header-and-content a {
+    background-color: transparent;
+    border-top: 1px solid #dadada;
+    color: white;
+    display: block;
+    font-weight: bold;
+    padding: 0.8em 1.6em; }
+        /* line 313, scss/_content_blocks.scss */
+    .accordion-tabs .header-and-content a:hover {
+      color: white; }
+    /* line 317, scss/_content_blocks.scss */
+    .accordion-tabs .header-and-content a:focus {
+      outline: none; }
+    /* line 321, scss/_content_blocks.scss */
+    .accordion-tabs .header-and-content a.is-active {
+      background-color: #f7f7f7;
+      border-bottom: 0; }
+        /* line 334, scss/_content_blocks.scss */
+  .accordion-tabs .header-and-content .content {
+    padding: 1.6em;
+    background: #f7f7f7;
+    display: none;
+    overflow: hidden;
+    width: 100%; }
+    /* line 341, scss/_content_blocks.scss */
+    .accordion-tabs .header-and-content .content :last-child {
+      margin-bottom: 0; }
+    
+/* line 24, scss/_forms.scss */
+form ul, form ol, form li {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+/* line 30, scss/_forms.scss */
+form label,
+form .validation_message,
+form .validation_error {
+  font-size: 0.8125em;
+  color: white;
+  border: none;
+  /* padding: $gap/2 0 $gap/3 12px; */
+  -webkit-font-smoothing: antialiased; }
+/* line 40, scss/_forms.scss */
+form .validation_message {
+  font-style: italic; }
+
+/* line 47, scss/_forms.scss */
+.button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  display: inline-block;
+  zoom: 1;
+  outline: 0;
+  line-height: normal;
+  white-space: nowrap;
+  vertical-align: baseline;
+  text-align: center;
+  cursor: pointer;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 100%;
+  padding: 0.5em 1em;
+  border: 1px solid #e6e6e6;
+  background-color: #e6e6e6;
+  text-decoration: none;
+  border-radius: 2px; }
+  /* line 272, scss/_typography.scss */
+  .button:hover,
+  input[type="button"]:hover,
+  input[type="submit"]:hover,
+  input[type="reset"]:hover {
+    outline: 0;
+    background: #d5d5d5;
+    border-color: #d5d5d5; }
+  /* line 278, scss/_typography.scss */
+  .button:active, .button.active,
+  input[type="button"]:active,
+  input[type="button"].active,
+  input[type="submit"]:active,
+  input[type="submit"].active,
+  input[type="reset"]:active,
+  input[type="reset"].active {
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset; }
+  /* line 283, scss/_typography.scss */
+  .button.disabled, .button[disabled],
+  input[type="button"].disabled,
+  input[type="button"][disabled],
+  input[type="submit"].disabled,
+  input[type="submit"][disabled],
+  input[type="reset"].disabled,
+  input[type="reset"][disabled] {
+    background-image: none;
+    opacity: 0.4;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    filter: alpha(opacity=40);
+    cursor: not-allowed;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+
+/*  currenty hacking this to try and keep the validation messages/input styled  */
+/* line 58, scss/_forms.scss */
+select {
+  /* 	-webkit-appearance: none; */
+  font-size: 0.8125em;
+  color: white; }
+
+/* line 64, scss/_forms.scss */
+input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
+textarea,
+select {
+  /*
+  	max-width: 100%;
+  	border: $form-element-border;
+  	padding: 5px 10px;
+  	font-weight: normal;
+  */
+  /*  jesses stuff here */
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 5px 12px;
+  border: none;
+  background-color: #00bbb3;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 24px;
+  font-family: verdana;
+  border-radius: 0; }
+  /* line 89, scss/_forms.scss */
+  input[type="email"].medium, input[type="number"].medium, input[type="password"].medium, input[type="search"].medium, input[type="tel"].medium, input[type="text"].medium, input[type="url"].medium, input[type="color"].medium, input[type="date"].medium, input[type="datetime"].medium, input[type="datetime-local"].medium, input[type="month"].medium, input[type="time"].medium, input[type="week"].medium,
+  textarea.medium,
+  select.medium {
+    width: 100%; }
+  /* line 92, scss/_forms.scss */
+  input[type="email"].large, input[type="number"].large, input[type="password"].large, input[type="search"].large, input[type="tel"].large, input[type="text"].large, input[type="url"].large, input[type="color"].large, input[type="date"].large, input[type="datetime"].large, input[type="datetime-local"].large, input[type="month"].large, input[type="time"].large, input[type="week"].large,
+  textarea.large,
+  select.large {
+    width: 100%; }
+
+/* line 97, scss/_forms.scss */
+input[type="email"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="url"]:hover, input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="month"]:hover, input[type="time"]:hover, input[type="week"]:hover,
+textarea,
+select {
+  /*   background: white; */ }
+
+/* line 103, scss/_forms.scss */
+input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
+textarea,
+select {
+  /*   background: white; */ }
+
+/* line 109, scss/_forms.scss */
+textarea.medium {
+  height: 100px; }
+
+/* line 113, scss/_forms.scss */
+textarea.large {
+  height: 150px; }
+
+/* line 117, scss/_forms.scss */
+input[type="checkbox"], input[type="radio"] {
+  margin-right: 10px; }
+
+/* line 138, scss/_forms.scss */
+.gform_fields {
+  display: block; }
+  /* line 15, ../../../../../lib/gems/1.9.1/gems/bourbon-compass-4.0.2/stylesheets/bourbon/addons/_clearfix.scss */
+  .gform_fields:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+/* line 142, scss/_forms.scss */
+.gfield {
+  margin-bottom: 20px; }
+
+/* line 146, scss/_forms.scss */
+.gfield_required {
+  color: red;
+  margin-left: 0.2em; }
+
+/* line 15, ../../../../../lib/gems/1.9.1/gems/bourbon-compass-4.0.2/stylesheets/bourbon/addons/_clearfix.scss */
+.clear-multi:after {
+  content: "";
+  display: table;
+  clear: both; }
+/* line 157, scss/_forms.scss */
+.clear-multi .ginput_container {
+  float: left; }
+  /* line 160, scss/_forms.scss */
+  .clear-multi .ginput_container input, .clear-multi .ginput_container select {
+    margin-right: 10px; }
+/* line 165, scss/_forms.scss */
+.clear-multi .gfield_time_hour,
+.clear-multi .gfield_time_minute {
+  width: 70px; }
+  /* line 169, scss/_forms.scss */
+  .clear-multi .gfield_time_hour input,
+  .clear-multi .gfield_time_minute input {
+    display: inline-block;
+    max-width: 70%; }
+  /* line 173, scss/_forms.scss */
+  .clear-multi .gfield_time_hour label,
+  .clear-multi .gfield_time_minute label {
+    display: block;
+    line-height: 2;
+    font-size: 0.7em; }
+/* line 177, scss/_forms.scss */
+.clear-multi .gfield_time_hour {
+  margin-right: 10px; }
+/* line 180, scss/_forms.scss */
+.clear-multi .gfield_time_ampm {
+  width: 80px; }
+
+/* line 187, scss/_forms.scss */
+.ginput_full input {
+  width: 100%; }
+/* line 191, scss/_forms.scss */
+.ginput_full label {
+  display: block;
+  line-height: 2;
+  font-size: 0.7em; }
+
+/* line 199, scss/_forms.scss */
+.ginput_left,
+.ginput_right,
+.gf_left_half,
+.gf_right_half {
+  width: 48%;
+  clear: none; }
+  /* line 206, scss/_forms.scss */
+  .ginput_left input,
+  .ginput_right input,
+  .gf_left_half input,
+  .gf_right_half input {
+    margin: 0;
+    width: 100%; }
+  /* line 210, scss/_forms.scss */
+  .ginput_left label,
+  .ginput_right label,
+  .gf_left_half label,
+  .gf_right_half label {
+    display: block;
+    line-height: 2;
+    font-size: 0.7em; }
+
+/* line 215, scss/_forms.scss */
+.ginput_left,
+.gf_left_half {
+  float: left; }
+
+/* line 220, scss/_forms.scss */
+.ginput_right,
+.gf_right_half {
+  float: right; }
+
+/* line 230, scss/_forms.scss */
+.gfield_list input {
+  width: 100%; }
+
+/* line 242, scss/_forms.scss */
+.search-form > label {
+  position: relative;
+  display: inline-block;
+  width: 58%; }
+  /* line 247, scss/_forms.scss */
+  .search-form > label .search-field {
+    padding: 0.5em 1em 0.5em 2em; }
+  /* line 251, scss/_forms.scss */
+  .search-form > label:before {
+    font-family: 'IcoMoon';
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0.3em;
+    left: 8px; }
+/* line 261, scss/_forms.scss */
+.search-form .search-submit {
+  width: 40%;
+  display: inline-block; }
+
+/* line 271, scss/_forms.scss */
+.chosen-container {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 13px;
+  zoom: 1;
+  *display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+/* line 283, scss/_forms.scss */
+.chosen-container .chosen-drop {
+  position: absolute;
+  top: 100%;
+  left: -9999px;
+  z-index: 1010;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  border-top: 0;
+  background: #00bbb3; }
+
+/* line 296, scss/_forms.scss */
+.chosen-container.chosen-with-drop .chosen-drop {
+  left: 0; }
+
+/* line 300, scss/_forms.scss */
+.chosen-container a {
+  cursor: pointer; }
+
+/* @end */
+/* @group Single Chosen */
+/* line 307, scss/_forms.scss */
+.chosen-container-single .chosen-single {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 4px 12px;
+  border: none;
+  background-color: #00bbb3;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 24px;
+  font-family: verdana; }
+
+/* line 322, scss/_forms.scss */
+.chosen-container-single .chosen-default {
+  color: white; }
+
+/* line 326, scss/_forms.scss */
+.chosen-container-single .chosen-single span {
+  display: block;
+  overflow: hidden;
+  margin-right: 26px;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+/* line 334, scss/_forms.scss */
+.chosen-container-single .chosen-single-with-deselect span {
+  margin-right: 38px; }
+
+/* line 338, scss/_forms.scss */
+.chosen-container-single .chosen-single abbr {
+  position: absolute;
+  top: 6px;
+  right: 26px;
+  display: block;
+  width: 12px;
+  height: 12px;
+  font-size: 1px; }
+
+/* line 348, scss/_forms.scss */
+.chosen-container-single .chosen-single abbr:hover {
+  background-position: -42px -10px; }
+
+/* line 352, scss/_forms.scss */
+.chosen-container-single.chosen-disabled .chosen-single abbr:hover {
+  background-position: -42px -10px; }
+
+/* line 356, scss/_forms.scss */
+.chosen-container-single .chosen-single div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 18px;
+  height: 100%; }
+
+/* line 365, scss/_forms.scss */
+.chosen-container-single .chosen-single div b:after {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  font-family: 'icomoon';
+  content: "\e605"; }
+
+/* line 376, scss/_forms.scss */
+.chosen-container-single .chosen-search {
+  position: relative;
+  z-index: 1010;
+  margin: 0;
+  padding: 3px 4px;
+  white-space: nowrap; }
+
+/* line 384, scss/_forms.scss */
+.chosen-container-single .chosen-search input[type="text"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 1px 0;
+  padding: 4px 20px 4px 5px;
+  width: 100%;
+  height: auto;
+  outline: 0;
+  border: 1px solid #aaa;
+  font-size: 1em;
+  font-family: sans-serif;
+  line-height: normal;
+  border-radius: 0; }
+
+/* line 400, scss/_forms.scss */
+.chosen-container-single .chosen-drop {
+  margin-top: -1px;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding-top: 10px; }
+
+/* line 406, scss/_forms.scss */
+.chosen-container-single.chosen-container-single-nosearch .chosen-search {
+  position: absolute;
+  left: -9999px; }
+
+/* @end */
+/* @group Results */
+/* line 414, scss/_forms.scss */
+.chosen-container .chosen-results {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0 4px 4px 0;
+  padding: 0 0 0 4px;
+  max-height: 240px;
+  -webkit-overflow-scrolling: touch; }
+
+/* line 424, scss/_forms.scss */
+.chosen-container .chosen-results li {
+  display: none;
+  margin: 0;
+  padding: 5px 6px;
+  list-style: none;
+  line-height: 15px;
+  -webkit-touch-callout: none; }
+
+/* line 433, scss/_forms.scss */
+.chosen-container .chosen-results li.active-result {
+  display: list-item;
+  cursor: pointer; }
+
+/*
+.chosen-container .chosen-results li.disabled-result {
+  display: list-item;
+  color: #ccc;
+  cursor: default;
+}
+*/
+/* line 446, scss/_forms.scss */
+.chosen-container .chosen-results li.highlighted {
+  background-color: white;
+  color: #00bbb3; }
+
+/*
+.chosen-container .chosen-results li.no-results {
+  display: list-item;
+  background: #f4f4f4;
+}
+*/
+/* line 458, scss/_forms.scss */
+.chosen-container .chosen-results li.group-result {
+  display: list-item;
+  font-weight: bold;
+  cursor: default; }
+
+/*
+.chosen-container .chosen-results li.group-option {
+  padding-left: 15px;
+}
+*/
+/*
+.chosen-container .chosen-results li em {
+  font-style: normal;
+  text-decoration: underline;
+}
+*/
+/* @end */
+/* @end */
+/* @group Retina compatibility */
+/**/
+/* @end */
+/* line 8, scss/_images.scss */
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+  max-width: 100%;
+  height: auto; }
+
+/* line 17, scss/_images.scss */
+.alignleft {
+  float: left;
+  clear: left;
+  margin-right: 20px; }
+
+/* line 23, scss/_images.scss */
+.alignright {
+  float: right;
+  clear: right;
+  margin-left: 20px; }
+
+/* line 29, scss/_images.scss */
+.aligncenter {
+  margin: 0 auto 20px;
+  display: block; }
+
+/* line 34, scss/_images.scss */
+div.wp-caption {
+  text-align: center;
+  background: #11161a;
+  border: 1px solid #1a1f23;
+  outline: 4px solid #0d1015;
+  padding: 0 !important;
+  text-align: center !important;
+  -khtml-border-radius: 3px;
+  border-radius: 3px; }
+  /* line 46, scss/_images.scss */
+  div.wp-caption img {
+    margin: 0;
+    padding: 5px 5px 0;
+    outline: 0;
+    border: 0; }
+  /* line 53, scss/_images.scss */
+  div.wp-caption .wp-caption-text {
+    margin: 0 !important;
+    padding: 0 3px 3px !important;
+    font-weight: bold;
+    clear: both;
+    font-size: 1em;
+    color: #eee; }
+
+/*
+
+<div class="spinner">
+	<div class="rect1"></div>
+	<div class="rect2"></div>
+	<div class="rect3"></div>
+	<div class="rect4"></div>
+	<div class="rect5"></div>
+</div>
+
+*/
+/* line 26, scss/_plugins.scss */
+.spinner {
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  margin: 21% auto;
+  height: 30px;
+  z-index: 1;
+  text-align: center;
+  font-size: 1em; }
+
+/* line 38, scss/_plugins.scss */
+.spinner > div {
+  background-color: #333;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+  -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+  animation: stretchdelay 1.2s infinite ease-in-out; }
+
+/* line 47, scss/_plugins.scss */
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s; }
+
+/* line 51, scss/_plugins.scss */
+.spinner .rect3 {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s; }
+
+/* line 55, scss/_plugins.scss */
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s; }
+
+/* line 59, scss/_plugins.scss */
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s; }
+
+@-webkit-keyframes stretchdelay {
+  /* line 64, scss/_plugins.scss */
+  0%, 40%, 100% {
+    -webkit-transform: scaleY(0.4);
+    -ms-transform: scaleY(0.4);
+    transform: scaleY(0.4); }
+
+  /* line 65, scss/_plugins.scss */
+  20% {
+    -webkit-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    transform: scaleY(1); } }
+@keyframes stretchdelay {
+  /* line 69, scss/_plugins.scss */
+  0%, 40%, 100% {
+    -webkit-transform: scaleY(0.4);
+    -ms-transform: scaleY(0.4);
+    transform: scaleY(0.4); }
+
+  /* line 71, scss/_plugins.scss */
+  20% {
+    -webkit-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    transform: scaleY(1); } }
+/* line 81, scss/_plugins.scss */
+.pace .pace-progress {
+  background: white;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  height: 2px;
+  opacity: 1;
+  -webkit-transition: width 1s, opacity 500ms, height 500ms;
+  transition: width 1s, opacity 500ms, height 500ms; }
+
+/* line 93, scss/_plugins.scss */
+.pace-inactive .pace-progress {
+  opacity: 0;
+  height: 0; }
+
+/* Slider */
+/* line 105, scss/_plugins.scss */
+.slick-slider {
+  position: relative;
+  display: block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: none;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent; }
+
+/* line 120, scss/_plugins.scss */
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0; }
+  /* line 127, scss/_plugins.scss */
+  .slick-list:focus {
+    outline: none; }
+  /* line 131, scss/_plugins.scss */
+  .slick-loading .slick-list {
+    background: white url(./ajax-loader.gif) center center no-repeat; }
+  /* line 135, scss/_plugins.scss */
+  .slick-list.dragging {
+    cursor: pointer;
+    cursor: hand; }
+
+/* line 140, scss/_plugins.scss */
+.slick-slider .slick-list,
+.slick-track,
+.slick-slide,
+.slick-slide img {
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+/* line 150, scss/_plugins.scss */
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  zoom: 1; }
+  /* line 157, scss/_plugins.scss */
+  .slick-track:before, .slick-track:after {
+    content: "";
+    display: table; }
+  /* line 163, scss/_plugins.scss */
+  .slick-track:after {
+    clear: both; }
+  /* line 167, scss/_plugins.scss */
+  .slick-loading .slick-track {
+    visibility: hidden; }
+
+/* line 171, scss/_plugins.scss */
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none; }
+  /* line 175, scss/_plugins.scss */
+  .slick-slide img {
+    display: block; }
+  /* line 181, scss/_plugins.scss */
+  .slick-slide.dragging img {
+    pointer-events: none; }
+  /* line 185, scss/_plugins.scss */
+  .slick-initialized .slick-slide {
+    display: block; }
+  /* line 189, scss/_plugins.scss */
+  .slick-loading .slick-slide {
+    visibility: hidden; }
+  /* line 193, scss/_plugins.scss */
+  .slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent; }
+
+/* Dots */
+/* line 202, scss/_plugins.scss */
+.slick-slider {
+  margin-bottom: 30px; }
+
+/* line 205, scss/_plugins.scss */
+.slick-dots {
+  position: absolute;
+  bottom: -45px;
+  list-style: none;
+  display: block;
+  text-align: center;
+  padding: 0px;
+  width: 100%; }
+  /* line 214, scss/_plugins.scss */
+  .slick-dots li {
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin: 0px 5px;
+    padding: 0px;
+    cursor: pointer; }
+    /* line 223, scss/_plugins.scss */
+    .slick-dots li button {
+      border: 0;
+      background: transparent;
+      display: block;
+      height: 20px;
+      width: 20px;
+      outline: none;
+      line-height: 0;
+      font-size: 0;
+      color: transparent;
+      padding: 5px;
+      cursor: pointer;
+      outline: none; }
+      /* line 236, scss/_plugins.scss */
+      .slick-dots li button:focus {
+        outline: none; }
+      /* line 240, scss/_plugins.scss */
+      .slick-dots li button:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '•';
+        width: 20px;
+        height: 20px;
+        font-size: 2.0em;
+        line-height: 20px;
+        text-align: center;
+        color: black;
+        opacity: 0.25;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale; }
+    /* line 258, scss/_plugins.scss */
+    .slick-dots li.slick-active button:before {
+      opacity: 0.75; }
+
+@media screen and (max-width: 1720px) {
+  /* */ 
+    /* line 188, scss/_layout.scss */
+    #fraser-logo {
+      right: 0; } }
+
+@media screen and (max-width: 1400px) {
+  /* */ 
+      /* line 102, scss/_layout.scss */
+      .wrapper .section {
+        width: 960px; } 
+      /* line 117, scss/_layout.scss */
+      .fullscreen-wrapper .section {
+        width: 960px; } 
+    /* line 136, scss/_layout.scss */
+    #header-wrapper {
+      background: #120f27 url(images/bg-small.jpg) no-repeat top;
+      -webkit-background-size: cover;
+      background-size: cover; } }
+
+@media screen and (max-width: 1120px) {
+  /* */ 
+      /* line 102, scss/_layout.scss */
+      .wrapper .section {
+        width: 680px; } 
+      /* line 117, scss/_layout.scss */
+      .fullscreen-wrapper .section {
+        width: 680px; } 
+    /* line 429, scss/_layout.scss */
+    #confirmation-message {
+      height: 380px; } 
+    /* line 457, scss/_layout.scss */
+    #confirmation-message-details {
+      float: left;
+      display: block;
+      margin-right: 2.4%;
+      width: 100%;
+      text-align: center; }
+      /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+      #confirmation-message-details:last-child {
+        margin-right: 0; } 
+    /* line 476, scss/_layout.scss */
+    #confirmation-social {
+      margin-left: 0%;
+      float: left;
+      display: block;
+      margin-right: 2.4%;
+      width: 100%;
+      text-align: center; }
+      /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+      #confirmation-social:last-child {
+        margin-right: 0; } 
+    /* line 530, scss/_layout.scss */
+    .acf-map {
+      height: 250px; } }
+
+@media screen and (max-width: 740px) {
+  /* */ 
+      /* line 30, scss/_layout.scss */
+      body.admin-bar {
+        padding-top: 46px; } 
+      /* line 102, scss/_layout.scss */
+      .wrapper .section {
+        max-width: 300px;
+        width: auto; } 
+      /* line 117, scss/_layout.scss */
+      .fullscreen-wrapper .section {
+        max-width: 100%;
+        width: auto; } 
+    /* line 112, scss/_layout.scss */
+    .fullscreen-wrapper {
+      padding: 20px; } 
+    /* line 169, scss/_layout.scss */
+    #queens-riverside-header-logo {
+      display: none; } 
+    /* line 188, scss/_layout.scss */
+    #fraser-logo {
+      left: 0; } 
+    /* line 204, scss/_layout.scss */
+    #logo {
+      position: absolute;
+      top: 30px;
+      left: 0;
+      width: 120px;
+      margin-top: 0; } 
+    /* line 221, scss/_layout.scss */
+    .single-column p.intro,
+    .single-column p.sub-intro {
+      padding-right: 0; } 
+  /* line 230, scss/_layout.scss */
+  .single-column p.intro {
+    padding-top: 140px; } 
+  /* line 237, scss/_layout.scss */
+  .single-column p.intro,
+  .single-column p.sub-intro,
+  .single-column p.coming-soon,
+  .single-column p.phone-number,
+  .single-column p.hashtag {
+    text-align: center; } 
+      /* line 294, scss/_layout.scss */
+      #action-form h2,
+      #action-form h3 {
+        text-align: center; } 
+      /* line 409, scss/_layout.scss */
+      #video-wrapper #video {
+        padding: 0; } 
+    /* line 618, scss/_layout.scss */
+    #content {
+      float: left;
+      display: block;
+      margin-right: 7.4%;
+      width: 100%; }
+      /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+      #content:last-child {
+        margin-right: 0; } 
+        /* line 647, scss/_layout.scss */
+        #footer-wrapper #footer #footer-content {
+          float: left;
+          display: block;
+          margin-right: 7.4%;
+          width: 100%;
+          padding: 0 0 20px 0;
+          border-right: none;
+          border-bottom: 1px solid #00bbb3; }
+          /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+          #footer-wrapper #footer #footer-content:last-child {
+            margin-right: 0; } 
+    /* line 636, scss/_layout.scss */
+    #footer-wrapper {
+      padding: 80px 0 120px; } 
+    /* line 672, scss/_layout.scss */
+    .footer-nav {
+      float: left;
+      display: block;
+      margin-right: 7.4%;
+      width: 100%; }
+      /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+      .footer-nav:last-child {
+        margin-right: 0; } 
+    /* line 694, scss/_layout.scss */
+    #queens-riverside-footer-logo {
+      position: relative; } 
+  /* line 87, scss/_content_blocks.scss */
+  .columns-1 .single-column,
+  .columns-2 .single-column,
+  .columns-3 .single-column,
+  .columns-4 .single-column,
+  .columns-5 .single-column,
+  .columns-6 .single-column {
+    float: left;
+    display: block;
+    margin-right: 7.4%;
+    width: 100%; }
+    /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+    .columns-1 .single-column:last-child,
+    .columns-2 .single-column:last-child,
+    .columns-3 .single-column:last-child,
+    .columns-4 .single-column:last-child,
+    .columns-5 .single-column:last-child,
+    .columns-6 .single-column:last-child {
+      margin-right: 0; } 
+  /* line 116, scss/_content_blocks.scss */
+  .columns .one,
+  .columns .one_quarter,
+  .columns .one_half,
+  .columns .three_quarters,
+  .columns .one_third,
+  .columns .two_thirds,
+  .columns .one_fifth,
+  .columns .two_fifths,
+  .columns .three_fifths,
+  .columns .four_fifths {
+    float: left;
+    display: block;
+    margin-right: 7.4%;
+    width: 100%; }
+    /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+    .columns .one:last-child,
+    .columns .one_quarter:last-child,
+    .columns .one_half:last-child,
+    .columns .three_quarters:last-child,
+    .columns .one_third:last-child,
+    .columns .two_thirds:last-child,
+    .columns .one_fifth:last-child,
+    .columns .two_fifths:last-child,
+    .columns .three_fifths:last-child,
+    .columns .four_fifths:last-child {
+      margin-right: 0; } 
+    /* line 174, scss/_content_blocks.scss */
+    .gallery .row.one figure,
+    .gallery .row.two figure,
+    .gallery .row.three
+    .row.four figure,
+    .gallery .row.five figure,
+    .gallery .row.six figure {
+      float: left;
+      display: block;
+      margin-right: 7.4%;
+      width: 153.7%; }
+      /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
+      .gallery .row.one figure:last-child,
+      .gallery .row.two figure:last-child,
+      .gallery .row.three
+      .row.four figure:last-child,
+      .gallery .row.five figure:last-child,
+      .gallery .row.six figure:last-child {
+        margin-right: 0; } }
+
+@media screen and (min-width: 300px) {
+  /* */ }
+
+@media screen and (min-width: 680px) {
+  /* */ }
+
+@media screen and (min-width: 960px) {
+  /* */ 
+    /* line 253, scss/_content_blocks.scss */
+    .accordion-tabs {
+      border: none;
+      position: relative; } 
+    /* line 275, scss/_content_blocks.scss */
+    .accordion-tabs .header-and-content {
+      display: inline; } 
+      /* line 287, scss/_content_blocks.scss */
+      .accordion-tabs .header-and-content:last-child a {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0; } 
+      /* line 298, scss/_content_blocks.scss */
+      .accordion-tabs .header-and-content a {
+        display: inline-block;
+        border-top: 0;
+        border-top-right-radius: 4px;
+        border-top-left-radius: 4px; } 
+        /* line 321, scss/_content_blocks.scss */
+        .accordion-tabs .header-and-content a.is-active {
+          background-color: #f7f7f7;
+          border: 1px solid #dadada;
+          border-bottom: 1px solid #f7f7f7;
+          margin-bottom: -1px; } 
+      /* line 334, scss/_content_blocks.scss */
+      .accordion-tabs .header-and-content .content {
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        border: 1px solid #dadada;
+        float: left;
+        left: 0;
+        padding: 1.6em; }
+        /* line 353, scss/_content_blocks.scss */
+        .accordion-tabs .header-and-content .content p {
+          -webkit-columns: 2;
+          -moz-columns: 2;
+          columns: 2; } }
+
+@media screen and (min-width: 1280px) {
+  /* */ 
+    /* line 136, scss/_layout.scss */
+    #header-wrapper {
+      background: #120f27 url(images/bg-large.jpg) no-repeat top;
+      -webkit-background-size: cover;
+      background-size: cover; } }
+
+@media only screen and (max-width: 480px) {
+    /* line 429, scss/_layout.scss */
+    #confirmation-message {
+      height: 520px; } }
+
+@media screen and (max-width: 1000px) {
+      /* line 40, scss/_content_blocks.scss */
+      .full-width-wrapper .full-width {
+        margin-left: -40px;
+        margin-right: -40px;
+        padding-left: 40px;
+        padding-right: 40px; } }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 144dpi) {
+  .chosen-rtl .chosen-search input[type="text"],
+  .chosen-container-single .chosen-single abbr,
+  .chosen-container-single .chosen-single div b,
+  .chosen-container-single .chosen-search input[type="text"],
+  .chosen-container-multi .chosen-choices .search-choice .search-choice-close,
+  .chosen-container .chosen-results-scroll-down span,
+  .chosen-container .chosen-results-scroll-up span {
+    background-image: url('chosen-sprite@2x.png') !important;
+    -webkit-background-size: 52px 37px !important;
+    background-size: 52px 37px !important;
+    background-repeat: no-repeat !important;
+  }
+
+}
+
+@media print {
+  /* line 10, scss/_print.scss */
+  * {
+    background: transparent !important;
+    color: #444 !important;
+    text-shadow: none; }
+
+  /* line 12, scss/_print.scss */
+  nav,
+  #main-nav,
+  #searchform,
+  #contact-details,
+  #sidebar {
+    display: none !important; }
+
+  /* line 20, scss/_print.scss */
+  #content {
+    width: 100%; }
+
+  /* line 22, scss/_print.scss */
+  a, a:visited {
+    color: #444 !important;
+    text-decoration: underline; }
+
+  /* line 24, scss/_print.scss */
+  a:after {
+    content: " (" attr(href) ")"; }
+
+  /* line 26, scss/_print.scss */
+  abbr:after {
+    content: " (" attr(title) ")"; }
+
+  /* line 28, scss/_print.scss */
+  .ir a:after {
+    content: ""; }
+
+  /* Don't show links for images */
+  /* line 30, scss/_print.scss */
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+
+  /* line 32, scss/_print.scss */
+  img {
+    page-break-inside: avoid; }
+
+  @page {
+    margin: 0.5cm; }
+  /* line 36, scss/_print.scss */
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3; }
+
+  /* line 38, scss/_print.scss */
+  h2, h3 {
+    page-break-after: avoid; } }

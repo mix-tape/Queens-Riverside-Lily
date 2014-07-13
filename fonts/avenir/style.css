@@ -1,0 +1,56 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 2833237, 2014-06-23T06:09:13-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Avenir 65 Medium by Linotype
+ * URL: http://www.myfonts.com/fonts/linotype/avenir/65-medium/
+ * Copyright: Copyright &#x00A9; 1981 - 2006 Linotype GmbH, www.linotype.com. All rights reserved. Copyright &#x00A9; 1989 - 2002 Adobe Systems Incorporated.  All Rights Reserved.
+ * 
+ * Webfont: Avenir 45 Book Oblique by Linotype
+ * URL: http://www.myfonts.com/fonts/linotype/avenir/45-book-oblique/
+ * Copyright: Copyright &#x00A9; 1989, 1995, 2002 Adobe Systems Incorporated.  All Rights Reserved. &#x00A9; 1981, 1995, 2002 Heidelberger Druckmaschinen AG. All rights reserved.
+ * 
+ * Webfont: Avenir 35 Light by Linotype
+ * URL: http://www.myfonts.com/fonts/linotype/avenir/35-light/
+ * Copyright: Copyright &#x00A9; 1989, 1995, 2002 Adobe Systems Incorporated.  All Rights Reserved. &#x00A9; 1981, 1995, 2002 Heidelberger Druckmaschinen AG. All rights reserved.
+ * 
+ * Webfont: Avenir 45 Book by Linotype
+ * URL: http://www.myfonts.com/fonts/linotype/avenir/45-book/
+ * Copyright: Copyright &#x00A9; 1989, 1995, 2002 Adobe Systems Incorporated.  All Rights Reserved. &#x00A9; 1981, 1995, 2002 Heidelberger Druckmaschinen AG. All rights reserved.
+ * 
+ * Webfont: Avenir 95 Black by Linotype
+ * URL: http://www.myfonts.com/fonts/linotype/avenir/95-black/
+ * Copyright: Copyright &#x00A9; 1989, 1995, 2002 Adobe Systems Incorporated.  All Rights Reserved. &#x00A9; 1981, 1995, 2002 Heidelberger Druckmaschinen AG. All rights reserved.
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2833237
+ * Licensed pageviews: 250,000
+ * 
+ * © 2014 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/2b3b55");
+
+  
+@font-face {font-family: 'AvenirLTStd-Medium';src: url('fonts/2B3B55_0_0.eot');src: url('fonts/2B3B55_0_0.eot?#iefix') format('embedded-opentype'),url('fonts/2B3B55_0_0.woff') format('woff'),url('fonts/2B3B55_0_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'AvenirLTStd-BookOblique';src: url('fonts/2B3B55_1_0.eot');src: url('fonts/2B3B55_1_0.eot?#iefix') format('embedded-opentype'),url('fonts/2B3B55_1_0.woff') format('woff'),url('fonts/2B3B55_1_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'AvenirLTStd-Light';src: url('fonts/2B3B55_2_0.eot');src: url('fonts/2B3B55_2_0.eot?#iefix') format('embedded-opentype'),url('fonts/2B3B55_2_0.woff') format('woff'),url('fonts/2B3B55_2_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'AvenirLTStd-Book';src: url('fonts/2B3B55_3_0.eot');src: url('fonts/2B3B55_3_0.eot?#iefix') format('embedded-opentype'),url('fonts/2B3B55_3_0.woff') format('woff'),url('fonts/2B3B55_3_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'AvenirLTStd-Black';src: url('fonts/2B3B55_4_0.eot');src: url('fonts/2B3B55_4_0.eot?#iefix') format('embedded-opentype'),url('fonts/2B3B55_4_0.woff') format('woff'),url('fonts/2B3B55_4_0.ttf') format('truetype');}
+ 

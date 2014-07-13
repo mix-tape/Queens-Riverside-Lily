@@ -1,0 +1,129 @@
+// ==========================================================================
+//
+// Style
+// This file imports libraries, defines variables and sets defaults
+//
+// ==========================================================================
+
+// --------------------------------------------------------------------------
+// Wordpress Theme Header
+// --------------------------------------------------------------------------
+
+/*!
+Theme Name: Sandpit
+Version: 4
+Author: Ryan Berry
+*/
+
+
+// --------------------------------------------------------------------------
+// Libraries
+// --------------------------------------------------------------------------
+
+@import 'bourbon/bourbon';
+@import 'utilities';
+@import 'fonts';
+@import 'reset';
+
+
+// --------------------------------------------------------------------------
+// Configuration
+// --------------------------------------------------------------------------
+
+$sidemenu: false;
+
+// --------------------------------------------------------------------------
+// Variables
+// --------------------------------------------------------------------------
+
+// ----- Colours ----- //
+
+$dark-gray:			#bebebe;
+$medium-gray:	#dadada;
+$light-gray:			#fefefe;
+
+$blue:					#00bbb3;
+$super-dark-purple:		#120f27;
+$super-dark-purple-alt:		#28254e;
+$yellow:				#ffcd00;
+$white:					#fff;
+
+// ----- Typography ----- //
+
+$ms-base:  1em;
+$ms-ratio: 1.414;
+
+$base-body-color: 		$white;
+$base-heading-color:	$white;
+
+$base-link-color: 			$white;
+$link-hover: 					$white;
+
+$base-border-color: 	$medium-gray;
+$base-border-radius:	4px;
+
+
+// --------------------------------------------------------------------------
+// Grid
+// --------------------------------------------------------------------------
+
+@import 'neat/neat-helpers';
+
+// ----- Default grid settings ----- //
+
+$max-width: 		1320px;
+$grid-columns:		12;
+/* $visual-grid: 		true; */
+// $gutter:			20px;
+// $column:			80px;
+
+$gap: 					20px;
+
+// ----- Define your breakpoints ----- //
+
+$large-desktop: 1280px;
+$desktop:				960px;
+$tablet:					680px;
+$mobile:				300px;
+
+
+$large-desktop-down:		new-breakpoint(max-width ($large-desktop + 440px) 12);
+$desktop-down:				new-breakpoint(max-width ($desktop + 440px) 12);
+$tablet-down:					new-breakpoint(max-width ($tablet + 440px) 12);
+$mobile-down:					new-breakpoint(max-width ($mobile + 440px) 4);
+
+$large-desktop-up:			new-breakpoint(min-width $large-desktop 12);
+$desktop-up:					new-breakpoint(min-width $desktop 12);
+$tablet-up:						new-breakpoint(min-width $tablet 12);
+$mobile-up:						new-breakpoint(min-width $mobile 12);
+
+
+@import 'neat/neat';
+
+// --------------------------------------------------------------------------
+// Initialise media query order
+// --------------------------------------------------------------------------
+ 
+@include media($large-desktop-down) { /* */ }
+@include media($desktop-down) { /* */ }
+@include media($tablet-down) { /* */ }
+@include media($mobile-down) { /* */ }
+ 
+@include media($mobile-up) { /* */ }
+@include media($tablet-up) { /* */ }
+@include media($desktop-up) { /* */ }
+@include media($large-desktop-up) { /* */ }
+
+
+// --------------------------------------------------------------------------
+// Custom stylesheets
+// --------------------------------------------------------------------------
+
+@import 'typography';
+@import 'layout';
+@import 'content_blocks';
+@import 'forms';
+@import 'images';
+@import 'plugins';
+@import 'print';
+@import 'shame';

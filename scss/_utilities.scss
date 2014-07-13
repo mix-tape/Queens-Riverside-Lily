@@ -1,0 +1,107 @@
+// ==========================================================================
+//
+//  Utilities
+//    Helper functions and mixins
+//
+// ==========================================================================
+
+// --------------------------------------------------------------------------
+//   Icons
+// --------------------------------------------------------------------------
+
+@mixin icon {
+	font-family: 'IcoMoon';
+	display: inline-block;
+	margin-bottom: 0;
+	vertical-align: middle;
+}
+
+// --------------------------------------------------------------------------
+//   Opacity
+// --------------------------------------------------------------------------
+
+@mixin opacity($value){
+	$IEValue: $value*100;
+	opacity: $value;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
+	filter: alpha(opacity=$IEValue);
+}
+
+// --------------------------------------------------------------------------
+//   CSS Hyphens
+// --------------------------------------------------------------------------
+
+@mixin css-hyphens($val) {
+	// Accepted values: [ none | manual | auto ]
+	-webkit-hyphens: $val;	// Safari 5.1 thru 6, iOS 4.2 thru 6
+	-moz-hyphens: $val;		// Firefox 16 thru 20
+	-ms-hyphens: $val;		// IE10
+	-o-hyphens: $val;		// PRESTO...haha LOL
+	hyphens: $val;			// W3C standard
+}
+
+
+// --------------------------------------------------------------------------
+//   Modular Scale function
+// --------------------------------------------------------------------------
+
+@function ms($n) {
+	@return modular-scale($ms-base, $n, $ms-ratio);
+}
+
+
+// --------------------------------------------------------------------------
+//   Calculate Rem
+// --------------------------------------------------------------------------
+
+@function parseInt($n) { /* 2 */
+  @return $n / ($n * 0 + 1);
+}
+
+@mixin rem($property, $values) {
+  $px : (); /* 3 */
+  $rem: (); /* 3 */
+
+  @each $value in $values { /* 4 */
+
+    @if $value == 0 or $value == auto { /* 5 */
+      $px : append($px , $value);
+      $rem: append($rem, $value);
+    }
+
+    @else {
+      $unit: unit($value);    /* 6 */
+      $val: parseInt($value); /* 6 */
+
+      @if $unit == "px" {  /* 7 */
+        $px : append($px,  $value);
+        $rem: append($rem, ($val / 10 + rem));
+      }
+
+      @if $unit == "rem" { /* 7 */
+        $px : append($px,  ($val * 10 + px));
+        $rem: append($rem, $value);
+      }
+    }
+  }
+
+  @if $px == $rem {     /* 8 */
+    #{$property}: $px;  /* 9 */
+  } @else {
+    #{$property}: $px;  /* 9 */
+    #{$property}: $rem; /* 9 */
+  }
+}
+
+// --------------------------------------------------------------------------
+//   Keyframes
+// --------------------------------------------------------------------------
+
+@mixin keyframes($name) {
+  @-moz-keyframes #{$name}    { @content; }
+  @-webkit-keyframes #{$name} { @content; }
+  @-o-keyframes #{$name}      { @content; }
+  @-ms-keyframes #{$name}     { @content; }
+  @-khtml-keyframes #{$name}  { @content; }
+  @keyframes #{$name}         { @content; }
+}

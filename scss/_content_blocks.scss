@@ -1,0 +1,358 @@
+// ==========================================================================
+//
+//	Content Blocks
+//		Predefined building blocks
+//
+// ==========================================================================
+
+.content-blocks {
+	@include row;
+}
+
+// --------------------------------------------------------------------------
+//	 Standard
+// --------------------------------------------------------------------------
+
+.heading {
+	@include span-columns(12);
+}
+
+.standard {
+	@include span-columns(12);
+}
+
+.small-padding {
+	padding: 1*$gap 0;
+}
+
+.vertical-padding, .big-padding {
+	padding: 3*$gap 0;
+}
+
+
+// --------------------------------------------------------------------------
+//	 Full width text block
+// --------------------------------------------------------------------------
+
+.full-width-wrapper {
+	@include span-columns(12);
+
+	.full-width {
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		margin-left: -2000px;
+		margin-right: -2000px;
+		@include clearfix;
+
+		.center {
+			@include outer-container();
+		}
+
+		@include media(max-width 1000px) {
+			margin-left: -40px;
+			margin-right: -40px;
+			padding-left: 2*$gap;
+			padding-right: 2*$gap;
+		}
+	}
+}
+
+// --------------------------------------------------------------------------
+//	 Columns
+// --------------------------------------------------------------------------
+
+.columns {
+	float: left;
+	width: 100%;
+}
+
+.columns-1 {	.single-column { @include span-columns(12);		} }
+.columns-2 {	.single-column { @include span-columns(6);		} }
+.columns-3 {	.single-column { @include span-columns(4);		} }
+.columns-4 {	.single-column { @include span-columns(3);		} }
+.columns-5 {	.single-column { @include span-columns(2.4);	} }
+.columns-6 {	.single-column { @include span-columns(2);		} }
+
+
+// ----- Tablet & Mobile ----- //
+
+.columns-1,
+.columns-2,
+.columns-3,
+.columns-4,
+.columns-5,
+.columns-6 {
+
+	.single-column {
+
+		@include media($mobile-down) {
+			@include span-columns(4);
+		}
+	}
+}
+
+
+// --------------------------------------------------------------------------
+//	 Odd Columns
+// --------------------------------------------------------------------------
+
+.columns {
+
+	.one						{ @include span-columns(12); }
+	.one_quarter		{ @include span-columns(3); }
+	.one_half				{ @include span-columns(6); }
+	.three_quarters	{ @include span-columns(9); }
+	.one_third			{ @include span-columns(4); }
+	.two_thirds			{ @include span-columns(8); }
+	.one_fifth			{ @include span-columns(2.4); }
+	.two_fifths			{ @include span-columns(4.8); }
+	.three_fifths		{ @include span-columns(7.2); }
+	.four_fifths		{ @include span-columns(9.6); }
+
+
+	// ----- Tablet & Mobile ----- //
+
+	.one,
+	.one_quarter,
+	.one_half,
+	.three_quarters,
+	.one_third,
+	.two_thirds,
+	.one_fifth,
+	.two_fifths,
+	.three_fifths,
+	.four_fifths {
+
+		@include media($mobile-down) {
+			@include span-columns(4);
+		}
+	}
+}
+
+
+// --------------------------------------------------------------------------
+//	 Slideshow
+// --------------------------------------------------------------------------
+
+.slideshow {
+
+	margin: $gap 0;
+
+}
+
+
+// --------------------------------------------------------------------------
+//	 Gallery
+// --------------------------------------------------------------------------
+
+.gallery {
+	@include clearfix;
+	margin: $gap 0;
+
+	figure {
+		padding: 0;
+		margin: 0;
+	}
+
+	.row.one		figure { @include span-columns(12); }
+	.row.two		figure { @include span-columns(6); }
+	.row.three	figure { @include span-columns(4); }
+	.row.four		figure { @include span-columns(3); }
+	.row.five		figure { @include span-columns(2.4); }
+	.row.six		figure { @include span-columns(2); }
+
+	.row.one,
+	.row.two,
+	.row.three
+	.row.four,
+	.row.five,
+	.row.six {
+
+		// ----- Mobile ----- //
+
+		figure {
+			@include media($mobile-down) {
+				@include span-columns(6);
+			}
+		}
+	}
+}
+
+
+// --------------------------------------------------------------------------
+//	 Blockquote
+// --------------------------------------------------------------------------
+
+blockquote.quote {
+
+	position: relative;
+
+	p {
+		padding: 0 $gap;
+		font-size: ms(2);
+	}
+
+	.author {
+		font-size: ms(1);
+		font-style: italic;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
+
+}
+
+// --------------------------------------------------------------------------
+//	 Accordion
+// --------------------------------------------------------------------------
+
+.accordion {
+
+	@include fill-parent;
+	float: left;
+	border-bottom: 1px solid $base-border-color;
+	padding-bottom: $gap / 2;
+	margin-bottom: $gap / 2;
+	position: relative;
+
+
+	.header-and-content a {
+		cursor: pointer;
+		color: $base-body-color;
+		font-weight: bold;
+
+		&:hover {
+			color: lighten($base-body-color, 10);
+			text-decoration: none;
+		}
+
+		&:after {
+			@include icon;
+			content: '';
+			margin-left: $gap / 2;
+			top: -2px;
+			position: relative;
+		}
+		&.active:after {
+			content: '';
+		}
+	}
+
+	.header-and-content .content {
+		display: none;
+		padding-top: $gap / 2;
+	}
+}
+
+
+// --------------------------------------------------------------------------
+//	 Tabs / Accordion
+// --------------------------------------------------------------------------
+
+.accordion-tabs {
+	$tab-border-color: $base-border-color;
+	$tab-border: 1px solid $tab-border-color;
+	$tab-content-background: #f7f7f7;
+	$tab-active-background: $tab-content-background;
+	$tab-inactive-color: transparent;
+	$tab-inactive-hover-color: darken($light-gray, 5);
+	$tab-mode: $desktop-up;
+
+
+	@include clearfix;
+	@include fill-parent;
+	float: left;
+
+	border: $tab-border;
+	margin-bottom: $gap;
+
+	@include media($tab-mode) {
+		border: none;
+		position: relative;
+	}
+
+	.header-and-content {
+
+		@include media($tab-mode) {
+			display: inline;
+		}
+
+		&:first-child a {
+			border-top-left-radius: $base-border-radius;
+			border-top-right-radius: $base-border-radius;
+			border-top: 0;
+		}
+
+		&:last-child a {
+			border-bottom-left-radius: $base-border-radius;
+			border-bottom-right-radius: $base-border-radius;
+
+			@include media($tab-mode) {
+				border-bottom-left-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+		}
+	}
+
+	.header-and-content a {
+		background-color: $tab-inactive-color;
+		border-top: $tab-border;
+		color: $base-body-color;
+		display: block;
+		font-weight: bold;
+		padding: $gutter/2 $gutter;
+
+		@include media($tab-mode) {
+			@include inline-block;
+			border-top: 0;
+			border-top-right-radius: $base-border-radius;
+			border-top-left-radius: $base-border-radius;
+		}
+
+		&:hover {
+			color: $base-link-color;
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		&.is-active {
+			background-color: $tab-active-background;
+			border-bottom: 0;
+
+			@include media($tab-mode) {
+				background-color: $tab-active-background;
+				border: $tab-border;
+				border-bottom: 1px solid $tab-active-background;
+				margin-bottom: -1px;
+			}
+		}
+	}
+
+	.header-and-content .content {
+		padding: $gutter;
+		background: $tab-content-background;
+		display: none;
+		overflow: hidden;
+		width: 100%;
+
+		:last-child {
+			margin-bottom: 0;
+		}
+
+		@include media($tab-mode) {
+			border-bottom-left-radius: $base-border-radius;
+			border-bottom-right-radius: $base-border-radius;
+			border: $tab-border;
+			float: left;
+			left: 0;
+			padding: $gutter;
+
+			p {
+				@include columns(2);
+			}
+		}
+	}
+}

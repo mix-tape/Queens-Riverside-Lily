@@ -1,0 +1,61 @@
+// ==========================================================================
+//
+//  Images
+//    Wordpress specific image styles
+//
+// ==========================================================================
+
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+	max-width: 100%;
+	height: auto;
+}
+
+.alignleft{
+	float: left;
+	clear: left;
+	margin-right: $gap;
+}
+
+.alignright {
+	float: right;
+	clear: right;
+	margin-left: $gap;
+}
+
+.aligncenter {
+	margin: 0 auto $gap;
+	display: block;
+}
+
+div.wp-caption {
+	text-align: center;
+	background: #11161a;
+	border: 1px solid #1a1f23;
+	outline: 4px solid #0d1015;
+	padding: 0 !important;
+	text-align: center !important;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+
+	img {
+		margin: 0;
+		padding: 5px 5px 0;
+		outline: 0;
+		border: 0;
+	}
+
+	.wp-caption-text {
+		margin: 0 !important;
+		padding: 0 3px 3px !important;
+		font-weight: bold;
+		clear: both;
+		font-size: 1em;
+		color: #eee;
+	}
+}

@@ -1,0 +1,293 @@
+// ==========================================================================
+//
+//  Type
+//    Default typographic styles and elements
+//
+// ==========================================================================
+
+body {
+	font-size: 16px;
+	line-height: 1.9;
+	text-align: left;
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	color: $base-body-color;
+	font-size-adjust: auto;
+
+	word-wrap: break-word;
+	-ms-word-wrap: break-word;
+	// @include css-hyphens(auto);
+}
+
+a { color: $base-link-color ; text-decoration: none; }
+a:hover, a:focus { color: $link-hover; }
+#content a:hover { text-decoration: underline; }
+
+.button, .product a { text-decoration: none !important; }
+
+p {
+	margin-top: 0;
+	margin-bottom: 20px;
+	& + p {
+		// text-indent: 1.5em; // For indenting sibling paragraphs in text heavy sites
+	}
+}
+
+/* Some cheeky stuff to match all Adams crazy type! */
+
+p.intro {
+	font-family: AvenirLTStd-Light,  Arial, Helvetica, Sans-serif;;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1.6em;
+	line-height: 1.2;
+}
+
+p.sub-intro {
+	font-family: AvenirLTStd-BookOblique,  Arial, Helvetica, Sans-serif;;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1.1em;
+	line-height: 1.394;
+}
+
+p.coming-soon,
+p.phone-number {
+	font-family: AvenirLTStd-Black, Arial, Helvetica, Sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1.6em;
+	line-height: 1.394;
+}
+
+p.coming-soon {
+	color: $blue;
+}
+
+
+p.hashtag {
+	font-family: AvenirLTStd-Medium, Arial, Helvetica, Sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1.8em;
+	line-height: 1.394;
+	color: $yellow;
+}
+
+
+
+// --------------------------------------------------------------------------
+//   Headings
+// --------------------------------------------------------------------------
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, Sans-serif;
+	color: $base-heading-color;
+	font-weight: normal;
+	line-height: 1.2;
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+h1 {
+	font-size: ms(4);
+	margin-top: 0;
+}
+
+h2 {
+	font-size: ms(3);
+}
+
+h3 {
+	font-size: ms(2);
+}
+
+h4 {
+	font-size: ms(1);
+}
+
+h5 {
+	font-size: ms(-1);
+}
+
+h6 {
+	font-size: ms(-2);
+	text-transform: uppercase;
+}
+
+h1 + h2, h2 + h3, h3 + h4, h5 + h6 {
+	margin-top: 0;
+}
+
+// --------------------------------------------------------------------------
+//   Layout Elements
+// --------------------------------------------------------------------------
+
+img {
+	max-width: 100%;
+}
+
+.icon {
+	@include icon;
+}
+
+hr {
+	display: block;
+	margin: 20px 0;
+	border: none;
+	border-top: 1px solid #ccc;
+	color: #222;
+	background-color: #222;
+}
+
+article blockquote {
+	margin: 0 0 $gap 0;
+	font-family: cambria, georgia, times, serif;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	background: #fafafa;
+	padding: $gap;
+	font-style: italic;
+	p:last-child { margin-bottom: 0; }
+}
+
+.pull-quote {
+	position: relative;
+	padding: $gap;
+	&:before,
+	&:after {
+		height: $gap * 2;
+		opacity: 0.15;
+		position: absolute;
+		font-size: 1em;
+	}
+	&:before {
+		content: '“';
+		top:  0;
+		left: 0;
+	}
+	&:after {
+		content: '”';
+		bottom: 0;
+		right: 0;
+	}
+}
+
+ins {
+	background: #ff9;
+	color: #000;
+	text-decoration: none;
+}
+
+mark {
+	background: #ff0;
+	color: #000;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.drop-cap {
+	&:first-letter {
+		float: left;
+		margin: 0;
+		padding: 0.4em;
+		font-size: 2em;
+		font-family: inherit;
+		line-height: 0.1;
+		text-indent: 0;
+		background: transparent;
+		color: inherit;
+	}
+}
+
+.post time {
+
+	&:before {
+		@include icon;
+		content: '';
+		margin-right: 5px;
+		vertical-align: middle;
+	}
+}
+
+
+// --------------------------------------------------------------------------
+//   Table
+// --------------------------------------------------------------------------
+
+table {
+	width: 100%;
+}
+
+
+// --------------------------------------------------------------------------
+//   Layout based tweaks
+// --------------------------------------------------------------------------
+
+#sidebar {
+
+	// Change sidebar base font size
+
+	font-size: 13px;
+
+	h3 {
+		font-size: ms(1);
+	}
+	h4 {
+		font-size: ms(1);
+	}
+}
+
+
+// --------------------------------------------------------------------------
+//   Buttons
+// --------------------------------------------------------------------------
+
+@mixin main-button ($colour1: #E6E6E6) {
+	display: inline-block;
+	zoom: 1;
+	outline: 0;
+	line-height: normal;
+	white-space: nowrap;
+	vertical-align: baseline;
+	text-align: center;
+	cursor: pointer;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	font-size: 100%;
+	padding: 0.5em 1em;
+	border: 1px solid $colour1;
+	background-color: $colour1;
+	text-decoration: none;
+	border-radius: 2px;
+
+	&:hover {
+		outline: 0;
+		background: $colour1 - #111;
+		border-color: $colour1 - #111;
+	}
+
+	&:active, &.active {
+		outline: 0;
+		box-shadow: 0 0 0 1px rgba(0,0,0,.15) inset,0 0 6px rgba(0,0,0,.2) inset;
+	}
+
+	&.disabled, &[disabled] {
+		background-image: none;
+		@include opacity(0.4);
+		cursor: not-allowed;
+		box-shadow: none;
+	}
+}
+
+.button {
+	@include main-button;
+}

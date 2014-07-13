@@ -1,0 +1,706 @@
+// ==========================================================================
+//
+//  Layout
+//    Primary stylesheet
+//
+// ==========================================================================
+
+
+html {
+	background-color: #fefefe;
+	overflow-x: hidden;
+}
+
+html.no-touch {
+	overflow-y: auto;
+}
+
+@include keyframes(fade-in) {
+  from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	@include clearfix;
+	@include animation(fade-in 800ms ease-in-out, ease 1);
+
+	&.admin-bar {
+		padding-top: 32px;
+
+		@include media($mobile-down) {
+			padding-top: 46px;
+		}
+	}
+}
+
+#page-wrapper {
+	position: relative;
+	width: 100%;
+}
+
+
+/*  mobile-down doesnt override tablet down here :( */
+@mixin center {
+	*zoom: 1;
+	margin-left: auto;
+	margin-right: auto;
+	@include clearfix;
+
+	width: $desktop;
+
+	@include media($desktop-down) {
+		width: $desktop;
+	}
+
+	@include media($tablet-down) {
+		width: $tablet;
+	}
+
+	@include media($mobile-down) {
+		max-width: $mobile;
+		width: auto;
+	}
+
+}
+
+
+/* variation on center mixin for fullscreen at desired width  */
+@mixin center-full {
+	*zoom: 1;
+	margin-left: auto;
+	margin-right: auto;
+	@include clearfix;
+
+	width: $desktop;
+
+	@include media($desktop-down) {
+		width: $desktop;
+	}
+
+	@include media($tablet-down) {
+		width: $tablet;
+	}
+
+	@include media($mobile-down) {
+		max-width: 100%;
+		width: auto;
+	}
+}
+
+// --------------------------------------------------------------------------
+//   Sections
+// --------------------------------------------------------------------------
+
+.wrapper {
+	display: block;
+	position: relative;
+	padding: $gap * 2 $gap;
+
+	.section {
+		@include center;
+
+		.section-content {
+			@include row;
+		}
+	}
+}
+
+/* variation on wrapper for fullscreen at desired width  */
+.fullscreen-wrapper {
+	display: block;
+	position: relative;
+	padding: $gap * 2 $gap;
+
+	.section {
+		@include center-full;
+
+		.section-content {
+			@include row;
+		}
+	}
+
+	@include media($mobile-down) {
+		padding: $gap;
+	}
+
+}
+
+
+// --------------------------------------------------------------------------
+//   Header
+// --------------------------------------------------------------------------
+
+#header-wrapper {
+	padding-top: $gap;
+	padding-bottom: $gap*2;
+	z-index: 99;
+	position: relative;
+	background: $super-dark-purple;
+
+	@include media ($large-desktop-up) {
+		background: $super-dark-purple url(images/bg-large.jpg) no-repeat top;
+		background-size: cover;
+	}
+
+	@include media ($desktop-down) {
+		background: $super-dark-purple url(images/bg-small.jpg) no-repeat top;
+		background-size: cover;
+	}
+
+	#header {
+
+		#header-content {
+			position: relative;
+
+		}
+	}
+}
+
+.home #header-wrapper {
+	/* temporary height for now */
+	min-height: 850px;
+}
+
+/*  setting this as a bg image because it bugs out in ie8 - weird, cause svg swap works fine for the rest  */
+
+#queens-riverside-header-logo {
+	width: 129px;
+	height: 23px;
+	margin-bottom: 140px;
+/* 	background: url('images/queens-riverside-logo.svg') no-repeat; */
+	display: inline-block;
+
+	@include media ($mobile-down) {
+		display: none;
+	}
+
+}
+
+/*
+.no-svg #queens-riverside-header-logo {
+	background: url('images/queens-riverside-logo.png') no-repeat;
+}
+*/
+
+#fraser-logo {
+	width: 284px;
+	height: 35px;
+	position: absolute;
+	top: -$gap;
+	right: -284px;
+
+	@include media ($large-desktop-down) {
+		right: 0;
+	}
+
+	@include media ($mobile-down) {
+		left: 0;
+	}
+}
+
+#logo {
+	width: 194px;
+	margin: -50px 0 30px 0;
+
+	img + h1 {
+		@include visuallyhidden;
+	}
+
+	@include media ($mobile-down) {
+		position: absolute;
+		top: 30px;
+		left: 0;
+		width: 120px;
+		margin-top: 0;
+	}
+}
+
+.single-column p.intro,
+.single-column p.sub-intro {
+	padding-right: 130px;
+
+	@include media ($mobile-down) {
+		padding-right: 0;
+	}
+}
+
+.single-column p.intro {
+	@include media ($mobile-down) {
+		padding-top: 140px;
+	}
+}
+
+.single-column {
+	p.intro,
+	p.sub-intro,
+	p.coming-soon,
+	p.phone-number,
+	p.hashtag {
+
+		@include media ($mobile-down) {
+			text-align: center;
+		}
+	}
+}
+
+// --------------------------------------------------------------------------
+//   Main Content
+// --------------------------------------------------------------------------
+
+#main-wrapper {
+	color: #666;
+
+	h1, h2, h3, h4, h5, h6 {
+		color: #666;
+	}
+
+	#main {
+		padding: $gap 0;
+
+		#main-content {
+
+		}
+	}
+}
+
+
+// --------------------------------------------------------------------------
+//   Action Form
+// --------------------------------------------------------------------------
+
+#action-form {
+	background: #046a6b;
+	background: rgba(0, 187, 189, 0.6);
+	padding: $gap $gap/2;
+
+	h2 {
+		text-transform: uppercase;
+		color: $yellow;
+		margin-bottom: 0;
+		font-family: AvenirLTStd-Black;
+		font-size: 2em;
+		font-weight: normal;
+		font-style: normal;
+	}
+
+	h3 {
+		font-family: AvenirLTStd-Medium, Arial, Helvetica, Sans-serif;
+		font-size: 1.5em;
+	}
+
+	h2,
+	h3 {
+		padding-left: $gap/2;
+
+		@include media ($mobile-down) {
+			text-align: center;
+		}
+	}
+
+	input[type="text"],
+	input[type="tel"],
+	input[type="email"] {
+		background: $blue;
+		font-size: 0.8125em;
+		color: $white;
+		border: none;
+		-webkit-font-smoothing: antialiased;
+		border: 1px solid transparent;
+
+		&:focus, &:active {
+			background: $white;
+			color: $blue;
+			border: 1px solid darken($blue, 20);
+		}
+
+	}
+
+	::-webkit-input-placeholder { /* WebKit browsers */
+	    color:    $white;
+	}
+
+	:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	    color:    $white;
+	    opacity:  1;
+	}
+
+	::-moz-placeholder { /* Mozilla Firefox 19+ */
+	    color:    $white;
+	    opacity:  1;
+	}
+
+	:-ms-input-placeholder { /* Internet Explorer 10+ */
+	    color:    $white;
+	}
+
+	::-webkit-input-placeholder,
+	:-moz-placeholder,
+	::-moz-placeholder,
+	:-ms-input-placeholder {
+
+	}
+
+	.gfield {
+		margin-bottom: $gap/2;
+	}
+
+	#field_1_3 label,
+	#field_1_4 label,
+	#field_1_5 label,
+	#field_1_6 label {
+		display: none;
+	}
+
+	.gfield.gfield_error.gfield_contains_required {
+			#field_1_3 label,
+			#field_1_4 label,
+			#field_1_5 label,
+			#field_1_6 label {
+				display: block;
+		}
+	}
+
+	.gfield_error .gfield_label {
+		display: block !important;
+	}
+
+	#gform_submit_button_1 {
+		float: right;
+		border-radius: 0;
+		background: $white;
+		color: #000;
+		clear: both;
+		position: relative;
+/* 		margin-top: 30px; */
+
+		&:hover {
+			color: $white;
+			background: $blue;
+			border-color: $blue;
+		}
+
+		&:active {
+			top: 1px;
+		}
+	}
+
+	#gforms_confirmation_message {
+		display: none;
+	}
+	
+	.mandatory {
+		font-size: 0.8125em;
+		color: $white;
+		-webkit-font-smoothing: antialiased;
+	}
+}
+
+
+// --------------------------------------------------------------------------
+//   Video
+// --------------------------------------------------------------------------
+
+#video-wrapper {
+	background: $yellow;
+
+	#video {
+		padding: $gap 0;
+
+		#video-content {
+			text-align: center;
+		}
+
+		@include media($mobile-down) {
+			padding: 0;
+		}
+	}
+}
+
+.fluid-width-video-wrapper {
+	float: left;
+	width: 100%;
+}
+
+
+/* have to declaree a height here because fitvids is pushy */
+#confirmation-message {
+	@include clearfix;
+	float: left;
+	width: 100%;
+	display: none;
+	text-align: left;
+	padding-top: $gap;
+	color: $super-dark-purple-alt;
+
+	p {
+		margin-bottom: 10px;
+	}
+
+	@include media($tablet-down) {
+		height: 380px;
+	}
+
+/*
+	@include media(max-width: 500) {
+
+	}
+
+*/
+	@media only screen and (max-width : 480px) {
+		height: 520px;
+	}
+}
+
+#confirmation-message-details {
+	@include span-columns(7 of 12);
+	// display: none;
+
+	.phone-number {
+		font-family: AvenirLTStd-Black, Arial, Helvetica, Sans-serif;
+	}
+	.check-video {
+		font-family: AvenirLTStd-Medium, Arial, Helvetica, Sans-serif;
+		font-size: 1.4em;
+	}
+
+	@include media($tablet-down) {
+		@include span-columns(12 of 12);
+		text-align: center;
+	}
+}
+
+/* 1.99 wtf! */
+#confirmation-social {
+	@include shift(1.99);
+	@include span-columns(3 of 12);
+	@include omega();
+	text-align: right;
+	// display: none;
+
+	.hashtag {
+		color: $super-dark-purple-alt;
+		margin-bottom: $gap;
+	}
+
+	@include media($tablet-down) {
+		@include shift(0);
+		@include span-columns(12 of 12);
+		text-align: center;
+	}
+
+}
+
+.confirmation-link {
+	text-align: center;
+	padding: 2px 10px 0;
+	margin: 0 0 10px 5px;
+	font-size: ms(1);
+	background: $blue;
+	display: inline-block;
+	transform: translateZ(0);
+
+	&:hover {
+		background: $white;
+ 		color: $blue;
+
+			.icon-facebook,
+			.icon-twitter,
+			.icon-instagram {
+			  	animation-name: pop;
+			  	animation-duration: 0.3s;
+			  	animation-timing-function: linear;
+			  	animation-iteration-count: 1;
+
+			}
+		}
+}
+
+
+// --------------------------------------------------------------------------
+//   Map
+// --------------------------------------------------------------------------
+
+#map-wrapper {
+	padding: 0;
+}
+
+.acf-map {
+	width: 100%;
+	height: 470px;
+
+	@include media($tablet-down) {
+		height: 250px;
+	}
+}
+
+// --------------------------------------------------------------------------
+//   Community
+// --------------------------------------------------------------------------
+
+#community-wrapper {
+	padding: 0;
+	border-top: 1px solid $white;
+	border-bottom: 1px solid $white;
+
+	#community {
+		padding: 0;
+		width: 100%;
+
+		#community-content {
+
+		}
+	}
+}
+
+@include keyframes(pop) {
+  50% {
+    transform: scale(1.4);
+  }
+100% {
+    transform: scale(1);
+  }
+}
+
+
+.community-link {
+	@include span-columns(4, block-collapse);
+	text-align: center;
+	padding: $gap/2;
+	font-size: ms(3);
+	border-left: 1px solid #fff;
+	border-right: 1px solid #fff;
+	background: $blue;
+	display: inline-block;
+	transform: translateZ(0);
+	transition: background 0.3s ease-in-out;
+
+
+	&.first {
+		border-right: none;
+	}
+
+	&.last {
+		border-left: none;
+	}
+
+	.icon-facebook,
+	.icon-twitter,
+	.icon-instagram {
+	}
+
+	&:hover {
+		background: $yellow;
+		color: $white;
+
+			.icon-facebook,
+			.icon-twitter,
+			.icon-instagram {
+
+			  	animation-name: pop;
+			  	animation-duration: 0.3s;
+			  	animation-timing-function: linear;
+			  	animation-iteration-count: 1;
+
+			}
+	}
+
+}
+
+
+
+// --------------------------------------------------------------------------
+//   Content
+// --------------------------------------------------------------------------
+
+#content {
+	@include span-columns(12);
+
+	// ----- Mobile ----- //
+
+	@include media($mobile-down) {
+		@include span-columns(4);
+	}
+}
+
+#content.full-width {
+	@include span-columns(12);
+}
+
+// --------------------------------------------------------------------------
+//   Footer
+// --------------------------------------------------------------------------
+
+#footer-wrapper {
+	background: $super-dark-purple;
+	padding: $gap*6 0;
+
+	a:hover {
+		color: $blue;
+	}
+
+	#footer {
+		position: relative;
+
+		#footer-content {
+			@include span-columns(5);
+			border-right: 1px solid $blue;
+			padding-right: $gap;
+			font-size: ms(-1);
+
+			p {
+				margin-bottom: 0;
+			}
+
+			@include media($mobile-down) {
+				@include span-columns(4);
+				padding: 0 0 $gap 0;
+				border-right: none;
+				border-bottom: 1px solid $blue;
+			}
+
+		}
+	}
+
+	@include media($mobile-down) {
+		padding: $gap*4 0 $gap*6;
+	}
+}
+
+.footer-nav {
+	@include span-columns(3);
+	text-align: justify;
+	padding-top: 15px;
+
+	ul {
+		padding: 0;
+		margin: 0;
+		display: inline-block;
+		list-style: none;
+
+		li {
+			font-size: ms(-1);
+		}
+	}
+
+	@include media($mobile-down) {
+		@include span-columns(4);
+	}
+
+}
+
+#queens-riverside-footer-logo {
+	width: 170px;
+	height: 32px;
+	position: absolute;
+	right: 0;
+	top: 25px;
+
+	@include media($mobile-down) {
+		position: relative;
+	}
+
+
+}

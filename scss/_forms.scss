@@ -1,0 +1,496 @@
+// ==========================================================================
+//
+//  Forms
+//		Form elements, plugin styling
+//
+// ==========================================================================
+
+
+// --------------------------------------------------------------------------
+//   Variables
+// --------------------------------------------------------------------------
+
+$form-element-border: 1px solid #e4e4e4;
+
+
+// --------------------------------------------------------------------------
+//   Generic form elements
+// --------------------------------------------------------------------------
+
+form {
+
+	// ----- Remove default styling ----- //
+
+	ul, ol, li {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+
+	label,
+	.validation_message,
+	.validation_error {
+	font-size: 0.8125em;
+	color: white;
+	border: none;
+	/* padding: $gap/2 0 $gap/3 12px; */
+	-webkit-font-smoothing: antialiased;
+	}
+	
+	.validation_message {
+		font-style: italic;
+	}
+}
+
+// ----- Buttons ----- //
+
+.button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+	@include main-button;
+}
+
+// ----- Input types ----- //
+
+/*  currenty hacking this to try and keep the validation messages/input styled  */
+
+select {
+/* 	-webkit-appearance: none; */
+	font-size: 0.8125em;
+	color: white;
+}
+
+#{$all-text-inputs},
+textarea,
+select {
+/*
+	max-width: 100%;
+	border: $form-element-border;
+	padding: 5px 10px;
+	font-weight: normal;
+*/
+
+/*  jesses stuff here */
+	position: relative;
+	display: block;
+	overflow: hidden;
+	padding: 5px 12px;
+	border: none;
+	background-color: $blue;
+	background-clip: padding-box;
+	color: $white;
+	text-decoration: none;
+	white-space: nowrap;
+	line-height: 24px;
+	font-family: verdana;
+	border-radius: 0;
+
+  &.medium {
+	  width: 100%;
+  }
+  &.large {
+	  width: 100%;
+  }
+}
+
+#{$all-text-inputs-hover},
+textarea,
+select {
+/*   background: white; */
+}
+
+#{$all-text-inputs-focus},
+textarea,
+select {
+/*   background: white; */
+}
+
+textarea.medium {
+	height: 100px;
+}
+
+textarea.large {
+	height: 150px;
+}
+
+input[type="checkbox"], input[type="radio"] {
+	margin-right: 10px;
+}
+
+
+// --------------------------------------------------------------------------
+//   GravityForm elements
+// --------------------------------------------------------------------------
+
+
+// ----- Sub element labels ----- //
+
+@mixin small-label {
+	display: block;
+	line-height: 2;
+	font-size: ms(-1);
+}
+
+
+// ----- Field wrappers ----- //
+
+.gform_fields {
+	@include row;
+}
+
+.gfield {
+	margin-bottom: $gap;
+}
+
+.gfield_required {
+	color: red;
+	margin-left: 0.2em;
+}
+
+
+// ----- Date / Time fields ----- //
+
+.clear-multi {
+	@include clearfix;
+
+	.ginput_container {
+		float: left;
+
+		input, select {
+			margin-right: 10px;
+		}
+	}
+
+	.gfield_time_hour,
+	.gfield_time_minute {
+		width: 70px;
+
+		input {
+			display: inline-block;
+			max-width: 70%;
+		}
+		label {
+			@include small-label;
+		}
+	}
+	.gfield_time_hour {
+		margin-right: 10px;
+	}
+	.gfield_time_ampm {
+		width: 80px;
+	}
+}
+
+.ginput_full {
+
+	input {
+		width: 100%;
+	}
+
+	label {
+ 		@include small-label;
+ 	}
+}
+
+
+// ----- 2 Column Fields ----- //
+
+.ginput_left,
+.ginput_right,
+.gf_left_half,
+.gf_right_half {
+ 	width: 48%;
+ 	clear: none;
+
+ 	input {
+ 		margin: 0;
+ 		width: 100%;
+ 	}
+ 	label {
+ 		@include small-label
+ 	}
+}
+
+.ginput_left,
+.gf_left_half {
+	float: left;
+}
+
+.ginput_right,
+.gf_right_half {
+	float: right;
+}
+
+
+// ----- Lists ----- //
+
+.gfield_list {
+
+	input {
+		width: 100%;
+	}
+}
+
+
+// --------------------------------------------------------------------------
+//   Search form
+// --------------------------------------------------------------------------
+
+.search-form {
+
+	> label {
+		position: relative;
+		display: inline-block;
+		width: 58%;
+
+		.search-field {
+			padding: 0.5em 1em 0.5em 2em;
+		}
+
+		&:before {
+			@include icon;
+			content: '';
+			position: absolute;
+			z-index: 1;
+			top: 0.3em;
+			left: 8px;
+		}
+	}
+
+	.search-submit {
+		width: 40%;
+		display: inline-block;
+	}
+}
+
+// --------------------------------------------------------------------------
+//   Select form - no sass here sorry Roy!
+// --------------------------------------------------------------------------
+
+.chosen-container {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 13px;
+  zoom: 1;
+  *display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.chosen-container .chosen-drop {
+  position: absolute;
+  top: 100%;
+  left: -9999px;
+  z-index: 1010;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  border-top: 0;
+  background: $blue;
+}
+
+.chosen-container.chosen-with-drop .chosen-drop {
+  left: 0;
+}
+
+.chosen-container a {
+  cursor: pointer;
+}
+
+/* @end */
+  
+/* @group Single Chosen */
+.chosen-container-single .chosen-single {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 4px 12px;
+  border: none;
+  background-color: $blue;
+  background-clip: padding-box;
+  color: $white;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 24px;
+  font-family: verdana;
+}
+
+.chosen-container-single .chosen-default {
+  color: $white;
+}
+
+.chosen-container-single .chosen-single span {
+  display: block;
+  overflow: hidden;
+  margin-right: 26px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chosen-container-single .chosen-single-with-deselect span {
+  margin-right: 38px;
+}
+
+.chosen-container-single .chosen-single abbr {
+  position: absolute;
+  top: 6px;
+  right: 26px;
+  display: block;
+  width: 12px;
+  height: 12px;
+  font-size: 1px;
+}
+
+.chosen-container-single .chosen-single abbr:hover {
+  background-position: -42px -10px;
+}
+
+.chosen-container-single.chosen-disabled .chosen-single abbr:hover {
+  background-position: -42px -10px;
+}
+
+.chosen-container-single .chosen-single div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 18px;
+  height: 100%;
+}
+
+.chosen-container-single .chosen-single div b:after {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  font-family: 'icomoon';
+  content: "\e605";
+}
+
+.chosen-container-single .chosen-search {
+  position: relative;
+  z-index: 1010;
+  margin: 0;
+  padding: 3px 4px;
+  white-space: nowrap;
+}
+
+.chosen-container-single .chosen-search input[type="text"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 1px 0;
+  padding: 4px 20px 4px 5px;
+  width: 100%;
+  height: auto;
+  outline: 0;
+  border: 1px solid #aaa;
+  font-size: 1em;
+  font-family: sans-serif;
+  line-height: normal;
+  border-radius: 0;
+}
+
+.chosen-container-single .chosen-drop {
+  margin-top: -1px;
+  background-clip: padding-box;
+  padding-top: 10px;
+}
+
+.chosen-container-single.chosen-container-single-nosearch .chosen-search {
+  position: absolute;
+  left: -9999px;
+}
+
+/* @end */
+
+/* @group Results */
+.chosen-container .chosen-results {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0 4px 4px 0;
+  padding: 0 0 0 4px;
+  max-height: 240px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.chosen-container .chosen-results li {
+  display: none;
+  margin: 0;
+  padding: 5px 6px;
+  list-style: none;
+  line-height: 15px;
+  -webkit-touch-callout: none;
+}
+
+.chosen-container .chosen-results li.active-result {
+  display: list-item;
+  cursor: pointer;
+}
+
+/*
+.chosen-container .chosen-results li.disabled-result {
+  display: list-item;
+  color: #ccc;
+  cursor: default;
+}
+*/
+
+.chosen-container .chosen-results li.highlighted {
+  background-color: $white;
+  color: $blue;
+}
+
+/*
+.chosen-container .chosen-results li.no-results {
+  display: list-item;
+  background: #f4f4f4;
+}
+*/
+
+.chosen-container .chosen-results li.group-result {
+  display: list-item;
+  font-weight: bold;
+  cursor: default;
+}
+
+/*
+.chosen-container .chosen-results li.group-option {
+  padding-left: 15px;
+}
+*/
+
+/*
+.chosen-container .chosen-results li em {
+  font-style: normal;
+  text-decoration: underline;
+}
+*/
+
+/* @end */
+
+/* @end */
+/* @group Retina compatibility */
+/*
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 144dpi) {
+  .chosen-rtl .chosen-search input[type="text"],
+  .chosen-container-single .chosen-single abbr,
+  .chosen-container-single .chosen-single div b,
+  .chosen-container-single .chosen-search input[type="text"],
+  .chosen-container-multi .chosen-choices .search-choice .search-choice-close,
+  .chosen-container .chosen-results-scroll-down span,
+  .chosen-container .chosen-results-scroll-up span {
+    background-image: url('chosen-sprite@2x.png') !important;
+    background-size: 52px 37px !important;
+    background-repeat: no-repeat !important;
+  }
+
+}*/
+/* @end */
