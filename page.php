@@ -1,37 +1,35 @@
 <?php get_header(); ?>
 
-	<div class="wrapper" id="main-wrapper">
+<?php get_template_part( 'banner' ); ?>
 
-		<div class="section" id="main">
 
-			<div class="section-content" id="main-content">
+	<section id="content" role="main" class="full-width">
 
-				<section id="content" role="main">
+		<?php if ( have_posts() ) { while ( have_posts() ) { the_post(); ?>
 
-					<?php if ( have_posts() ) { while ( have_posts() ) { the_post(); ?>
 
-					<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
+		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
 
-						<header>
+			<header>
 
-							<h2><?php the_title(); ?></h2>
+				<h2 class="page-title"><?php the_title(); ?></h2>
 
-						</header>
+			</header>
 
-						<?php get_template_part('content', 'blocks'); ?>
 
-					</article>
-					
-					<?php } } ?>
+			<?php get_template_part('content', 'blocks'); ?>
 
-				</section>
 
-				<?php get_sidebar(); ?>
+		</article>
 
-			</div><!-- End #main-content -->
-				
-		</div><!-- End #main -->
-	
-	</div><!-- End #main-wrapper -->
-	
+
+		<?php } } ?>
+
+	</section>
+
+
+<?php get_template_part('section', 'livelily'); ?>
+
+<?php get_template_part('section', 'community'); ?>
+
 <?php get_footer(); ?>

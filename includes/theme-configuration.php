@@ -22,7 +22,7 @@ add_theme_support( 'html5', array('search-form','comment-form','comment-list') )
 add_theme_support( 'infinite-scroll', array( 'container' => 'content', 'footer' => 'footer-wrapper') );
 
 set_post_thumbnail_size( 150, 150, true );
-add_image_size( 'hero', 1920, 900, true );
+add_image_size( 'hero', 2560, 700, true );
 add_image_size( 'banner', 650, 300, true );
 add_image_size( 'large-banner', 960, 400, true );
 add_image_size( 'single-post-thumbnail', 200, 200, true );

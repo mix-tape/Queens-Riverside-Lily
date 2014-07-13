@@ -39,14 +39,11 @@ var config = {
 config.plugins = [
   config.vendor + '/modernizr/modernizr.js',
   config.vendor + '/jquery-easing-original/jquery.easing.1.3.js',
-  // config.vendor + '/slick-carousel/slick/slick.js',
-/*   config.vendor + '/fastclick/lib/fastclick.js', */
-  // config.vendor + '/instantclick/instantclick.js',
+  config.vendor + '/slick-carousel/slick/slick.js',
+  config.vendor + '/matchHeight/jquery.matchHeight.js',
   // config.vendor + '/jquery-hoverIntent/jquery.hoverIntent.js',
   // config.vendor + '/jquery-ias/src/jquery-ias.js',
   config.vendor + '/fitvids/jquery.fitvids.js',
-/*   config.vendor + '/enquire/dist/enquire.js', */
-/*   config.vendor + '/jquery-selectric/js/jquery.selectric.js', */
   config.vendor + '/chosen/chosen.jquery.js'
 
 ]

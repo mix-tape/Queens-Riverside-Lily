@@ -38,28 +38,30 @@ $sidemenu: false;
 
 // ----- Colours ----- //
 
-$dark-gray:			#bebebe;
-$medium-gray:	#dadada;
-$light-gray:			#fefefe;
+$dark-gray:								#bebebe;
+$medium-gray:							#dadada;
+$light-gray:							#fefefe;
 
-$blue:					#00bbb3;
-$super-dark-purple:		#120f27;
+$blue:										#00bbb3;
+$super-dark-purple:				#120f27;
 $super-dark-purple-alt:		#28254e;
-$yellow:				#ffcd00;
-$white:					#fff;
+$cyan:										#32bbb1;
+$darkblue:								#202351;
+$yellow:									#ffcd00;
+$white:										#fff;
 
 // ----- Typography ----- //
 
 $ms-base:  1em;
 $ms-ratio: 1.414;
 
-$base-body-color: 		$white;
-$base-heading-color:	$white;
+$base-body-color: 		$super-dark-purple;
+$base-heading-color:	$super-dark-purple;
 
-$base-link-color: 			$white;
+$base-link-color: 		$white;
 $link-hover: 					$white;
 
-$base-border-color: 	$medium-gray;
+$base-border-color: 	$white;
 $base-border-radius:	4px;
 
 
@@ -83,16 +85,16 @@ $gap: 					20px;
 
 $large-desktop: 1280px;
 $desktop:				960px;
-$tablet:					680px;
+$tablet:				680px;
 $mobile:				300px;
 
 
-$large-desktop-down:		new-breakpoint(max-width ($large-desktop + 440px) 12);
+$large-desktop-down:	new-breakpoint(max-width ($large-desktop + 440px) 12);
 $desktop-down:				new-breakpoint(max-width ($desktop + 440px) 12);
 $tablet-down:					new-breakpoint(max-width ($tablet + 440px) 12);
 $mobile-down:					new-breakpoint(max-width ($mobile + 440px) 4);
 
-$large-desktop-up:			new-breakpoint(min-width $large-desktop 12);
+$large-desktop-up:		new-breakpoint(min-width $large-desktop 12);
 $desktop-up:					new-breakpoint(min-width $desktop 12);
 $tablet-up:						new-breakpoint(min-width $tablet 12);
 $mobile-up:						new-breakpoint(min-width $mobile 12);
@@ -103,12 +105,12 @@ $mobile-up:						new-breakpoint(min-width $mobile 12);
 // --------------------------------------------------------------------------
 // Initialise media query order
 // --------------------------------------------------------------------------
- 
+
 @include media($large-desktop-down) { /* */ }
 @include media($desktop-down) { /* */ }
 @include media($tablet-down) { /* */ }
 @include media($mobile-down) { /* */ }
- 
+
 @include media($mobile-up) { /* */ }
 @include media($tablet-up) { /* */ }
 @include media($desktop-up) { /* */ }
@@ -121,6 +123,7 @@ $mobile-up:						new-breakpoint(min-width $mobile 12);
 
 @import 'typography';
 @import 'layout';
+@import 'navigation';
 @import 'content_blocks';
 @import 'forms';
 @import 'images';

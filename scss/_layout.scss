@@ -7,8 +7,8 @@
 
 
 html {
-	background-color: #fefefe;
 	overflow-x: hidden;
+	background-color: #fefefe;
 }
 
 html.no-touch {
@@ -21,18 +21,18 @@ html.no-touch {
 }
 
 body {
+	@include clearfix;
+	@include animation(fade-in 800ms ease-in-out, ease 1);
 	position: relative;
 	width: 100%;
 	height: 100%;
-	@include clearfix;
-	@include animation(fade-in 800ms ease-in-out, ease 1);
 
 	&.admin-bar {
-		padding-top: 32px;
 
-		@include media($mobile-down) {
+		@include media(max-width 782px) {
 			padding-top: 46px;
 		}
+		padding-top: 32px;
 	}
 }
 
@@ -41,15 +41,8 @@ body {
 	width: 100%;
 }
 
-
-/*  mobile-down doesnt override tablet down here :( */
 @mixin center {
-	*zoom: 1;
-	margin-left: auto;
-	margin-right: auto;
 	@include clearfix;
-
-	width: $desktop;
 
 	@include media($desktop-down) {
 		width: $desktop;
@@ -64,17 +57,19 @@ body {
 		width: auto;
 	}
 
+	margin-right: auto;
+	margin-left: auto;
+
+	width: $desktop;
+	*zoom: 1;
+
 }
 
 
-/* variation on center mixin for fullscreen at desired width  */
-@mixin center-full {
-	*zoom: 1;
-	margin-left: auto;
-	margin-right: auto;
-	@include clearfix;
+// ----- Variation on center mixin for fullscreen at desired width ----- //
 
-	width: $desktop;
+@mixin center-full {
+	@include clearfix;
 
 	@include media($desktop-down) {
 		width: $desktop;
@@ -88,6 +83,12 @@ body {
 		max-width: 100%;
 		width: auto;
 	}
+
+	margin-right: auto;
+	margin-left: auto;
+
+	width: $desktop;
+	*zoom: 1;
 }
 
 // --------------------------------------------------------------------------
@@ -95,8 +96,8 @@ body {
 // --------------------------------------------------------------------------
 
 .wrapper {
-	display: block;
 	position: relative;
+	display: block;
 	padding: $gap * 2 $gap;
 
 	.section {
@@ -110,9 +111,10 @@ body {
 
 /* variation on wrapper for fullscreen at desired width  */
 .fullscreen-wrapper {
-	display: block;
 	position: relative;
-	padding: $gap * 2 $gap;
+	display: block;
+
+	padding: 0;
 
 	.section {
 		@include center-full;
@@ -120,10 +122,6 @@ body {
 		.section-content {
 			@include row;
 		}
-	}
-
-	@include media($mobile-down) {
-		padding: $gap;
 	}
 
 }
@@ -134,63 +132,55 @@ body {
 // --------------------------------------------------------------------------
 
 #header-wrapper {
-	padding-top: $gap;
-	padding-bottom: $gap*2;
-	z-index: 99;
+
+	@include media ($desktop-up) {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		background: rgba($super-dark-purple, 0.9);
+		background-blend-mode: multiply;
+	}
+
 	position: relative;
+	z-index: 99;
+
+	padding-top: $gap;
+	padding-bottom: $gap;
+
 	background: $super-dark-purple;
-
-	@include media ($large-desktop-up) {
-		background: $super-dark-purple url(images/bg-large.jpg) no-repeat top;
-		background-size: cover;
-	}
-
-	@include media ($desktop-down) {
-		background: $super-dark-purple url(images/bg-small.jpg) no-repeat top;
-		background-size: cover;
-	}
 
 	#header {
 
 		#header-content {
-			position: relative;
 
+			@include media($mobile-down) {
+				padding-top: $gap * 2;
+			}
+			position: relative;
 		}
 	}
 }
 
-.home #header-wrapper {
-	/* temporary height for now */
-	min-height: 850px;
-}
 
-/*  setting this as a bg image because it bugs out in ie8 - weird, cause svg swap works fine for the rest  */
+// ----- Queens Riverside Logo ----- //
 
 #queens-riverside-header-logo {
-	width: 129px;
-	height: 23px;
-	margin-bottom: 140px;
-/* 	background: url('images/queens-riverside-logo.svg') no-repeat; */
-	display: inline-block;
 
 	@include media ($mobile-down) {
-		display: none;
+
 	}
 
+	display: inline-block;
+	width: 129px;
+	height: 23px;
+
 }
 
-/*
-.no-svg #queens-riverside-header-logo {
-	background: url('images/queens-riverside-logo.png') no-repeat;
-}
-*/
+
+// ----- Frasers Logo ----- //
 
 #fraser-logo {
-	width: 284px;
-	height: 35px;
-	position: absolute;
-	top: -$gap;
-	right: -284px;
 
 	@include media ($large-desktop-down) {
 		right: 0;
@@ -199,49 +189,69 @@ body {
 	@include media ($mobile-down) {
 		left: 0;
 	}
+
+	position: absolute;
+	top: -$gap;
+	right: -284px;
+	width: 284px;
+	height: 35px;
 }
 
-#logo {
-	width: 194px;
-	margin: -50px 0 30px 0;
 
-	img + h1 {
-		@include visuallyhidden;
-	}
+// ----- Lily Logo ----- //
+
+#logo {
 
 	@include media ($mobile-down) {
 		position: absolute;
 		top: 30px;
 		left: 0;
-		width: 120px;
 		margin-top: 0;
+		width: 120px;
+	}
+
+	margin: 0 0 30px 0;
+	width: 194px;
+
+	img + h1 {
+		@include visuallyhidden;
 	}
 }
 
-.single-column p.intro,
-.single-column p.sub-intro {
-	padding-right: 130px;
 
-	@include media ($mobile-down) {
-		padding-right: 0;
-	}
-}
+// --------------------------------------------------------------------------
+//   Banner
+// --------------------------------------------------------------------------
 
-.single-column p.intro {
-	@include media ($mobile-down) {
-		padding-top: 140px;
-	}
-}
+#banner-wrapper {
+	padding: 0;
 
-.single-column {
-	p.intro,
-	p.sub-intro,
-	p.coming-soon,
-	p.phone-number,
-	p.hashtag {
+	.banner-slide {
+		position: relative;
 
-		@include media ($mobile-down) {
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center bottom;
+
+		min-height: 700px;
+
+		@include media($mobile-down) {
+			min-height: 400px;
+		}
+
+		.caption {
+			position: absolute;
+			bottom: $gap * 4;
+			left: 50%;
+			margin-left: -200px;
+			z-index: 999;
+			width: 400px;
+
 			text-align: center;
+			background: $cyan;
+			color: $white;
+			border: 1px solid $white;
+			padding: 15px;
 		}
 	}
 }
@@ -251,11 +261,6 @@ body {
 // --------------------------------------------------------------------------
 
 #main-wrapper {
-	color: #666;
-
-	h1, h2, h3, h4, h5, h6 {
-		color: #666;
-	}
 
 	#main {
 		padding: $gap 0;
@@ -272,48 +277,48 @@ body {
 // --------------------------------------------------------------------------
 
 #action-form {
+	padding: $gap $gap/2;
 	background: #046a6b;
 	background: rgba(0, 187, 189, 0.6);
-	padding: $gap $gap/2;
 
 	h2 {
-		text-transform: uppercase;
-		color: $yellow;
 		margin-bottom: 0;
-		font-family: AvenirLTStd-Black;
-		font-size: 2em;
+		color: $yellow;
+		text-transform: uppercase;
 		font-weight: normal;
 		font-style: normal;
+		font-size: 2em;
+		font-family: AvenirLTStd-Black;
 	}
 
 	h3 {
-		font-family: AvenirLTStd-Medium, Arial, Helvetica, Sans-serif;
 		font-size: 1.5em;
+		font-family: AvenirLTStd-Medium, Arial, Helvetica, Sans-serif;
 	}
 
 	h2,
 	h3 {
-		padding-left: $gap/2;
 
 		@include media ($mobile-down) {
 			text-align: center;
 		}
+		padding-left: $gap/2;
 	}
 
 	input[type="text"],
 	input[type="tel"],
 	input[type="email"] {
-		background: $blue;
-		font-size: 0.8125em;
-		color: $white;
 		border: none;
-		-webkit-font-smoothing: antialiased;
 		border: 1px solid transparent;
+		background: $blue;
+		color: $white;
+		font-size: 0.8125em;
+		-webkit-font-smoothing: antialiased;
 
 		&:focus, &:active {
+			border: 1px solid darken($blue, 20);
 			background: $white;
 			color: $blue;
-			border: 1px solid darken($blue, 20);
 		}
 
 	}
@@ -368,18 +373,18 @@ body {
 	}
 
 	#gform_submit_button_1 {
+		position: relative;
 		float: right;
+		clear: both;
 		border-radius: 0;
 		background: $white;
 		color: #000;
-		clear: both;
-		position: relative;
 /* 		margin-top: 30px; */
 
 		&:hover {
-			color: $white;
-			background: $blue;
 			border-color: $blue;
+			background: $blue;
+			color: $white;
 		}
 
 		&:active {
@@ -390,10 +395,10 @@ body {
 	#gforms_confirmation_message {
 		display: none;
 	}
-	
+
 	.mandatory {
-		font-size: 0.8125em;
 		color: $white;
+		font-size: 0.8125em;
 		-webkit-font-smoothing: antialiased;
 	}
 }
@@ -407,14 +412,14 @@ body {
 	background: $yellow;
 
 	#video {
+
+		@include media($mobile-down) {
+			padding: 0;
+		}
 		padding: $gap 0;
 
 		#video-content {
 			text-align: center;
-		}
-
-		@include media($mobile-down) {
-			padding: 0;
 		}
 	}
 }
@@ -428,19 +433,19 @@ body {
 /* have to declaree a height here because fitvids is pushy */
 #confirmation-message {
 	@include clearfix;
-	float: left;
-	width: 100%;
-	display: none;
-	text-align: left;
-	padding-top: $gap;
-	color: $super-dark-purple-alt;
-
-	p {
-		margin-bottom: 10px;
-	}
 
 	@include media($tablet-down) {
 		height: 380px;
+	}
+	display: none;
+	float: left;
+	padding-top: $gap;
+	width: 100%;
+	color: $super-dark-purple-alt;
+	text-align: left;
+
+	p {
+		margin-bottom: 10px;
 	}
 
 /*
@@ -456,19 +461,19 @@ body {
 
 #confirmation-message-details {
 	@include span-columns(7 of 12);
+
+	@include media($tablet-down) {
+		@include span-columns(12 of 12);
+		text-align: center;
+	}
 	// display: none;
 
 	.phone-number {
 		font-family: AvenirLTStd-Black, Arial, Helvetica, Sans-serif;
 	}
 	.check-video {
-		font-family: AvenirLTStd-Medium, Arial, Helvetica, Sans-serif;
 		font-size: 1.4em;
-	}
-
-	@include media($tablet-down) {
-		@include span-columns(12 of 12);
-		text-align: center;
+		font-family: AvenirLTStd-Medium, Arial, Helvetica, Sans-serif;
 	}
 }
 
@@ -477,29 +482,29 @@ body {
 	@include shift(1.99);
 	@include span-columns(3 of 12);
 	@include omega();
-	text-align: right;
-	// display: none;
-
-	.hashtag {
-		color: $super-dark-purple-alt;
-		margin-bottom: $gap;
-	}
 
 	@include media($tablet-down) {
 		@include shift(0);
 		@include span-columns(12 of 12);
 		text-align: center;
 	}
+	text-align: right;
+	// display: none;
+
+	.hashtag {
+		margin-bottom: $gap;
+		color: $super-dark-purple-alt;
+	}
 
 }
 
 .confirmation-link {
-	text-align: center;
-	padding: 2px 10px 0;
-	margin: 0 0 10px 5px;
-	font-size: ms(1);
-	background: $blue;
 	display: inline-block;
+	margin: 0 0 10px 5px;
+	padding: 2px 10px 0;
+	background: $blue;
+	text-align: center;
+	font-size: ms(1);
 	transform: translateZ(0);
 
 	&:hover {
@@ -528,12 +533,12 @@ body {
 }
 
 .acf-map {
-	width: 100%;
-	height: 470px;
 
 	@include media($tablet-down) {
 		height: 250px;
 	}
+	width: 100%;
+	height: 470px;
 }
 
 // --------------------------------------------------------------------------
@@ -566,16 +571,16 @@ body {
 
 
 .community-link {
-	@include span-columns(4, block-collapse);
-	text-align: center;
-	padding: $gap/2;
-	font-size: ms(3);
-	border-left: 1px solid #fff;
-	border-right: 1px solid #fff;
-	background: $blue;
+	@include span-columns(3, block-collapse);
 	display: inline-block;
-	transform: translateZ(0);
+	padding: $gap/2;
+	border-right: 1px solid #fff;
+	border-left: 1px solid #fff;
+	background: $blue;
+	text-align: center;
+	font-size: ms(3);
 	transition: background 0.3s ease-in-out;
+	transform: translateZ(0);
 
 
 	&.first {
@@ -586,18 +591,15 @@ body {
 		border-left: none;
 	}
 
-	.icon-facebook,
-	.icon-twitter,
-	.icon-instagram {
+	.icon {
+		vertical-align: initial;
 	}
 
 	&:hover {
 		background: $yellow;
 		color: $white;
 
-			.icon-facebook,
-			.icon-twitter,
-			.icon-instagram {
+			.icon {
 
 			  	animation-name: pop;
 			  	animation-duration: 0.3s;
@@ -616,26 +618,34 @@ body {
 // --------------------------------------------------------------------------
 
 #content {
-	@include span-columns(12);
 
-	// ----- Mobile ----- //
-
-	@include media($mobile-down) {
-		@include span-columns(4);
-	}
 }
 
 #content.full-width {
-	@include span-columns(12);
+
 }
+
+
+// --------------------------------------------------------------------------
+//   Pages
+// --------------------------------------------------------------------------
+
+.page-title {
+	text-align: center;
+}
+
 
 // --------------------------------------------------------------------------
 //   Footer
 // --------------------------------------------------------------------------
 
 #footer-wrapper {
-	background: $super-dark-purple;
+
+	@include media($mobile-down) {
+		padding: $gap*4 0 $gap*6;
+	}
 	padding: $gap*6 0;
+	background: $super-dark-purple;
 
 	a:hover {
 		color: $blue;
@@ -646,13 +656,6 @@ body {
 
 		#footer-content {
 			@include span-columns(5);
-			border-right: 1px solid $blue;
-			padding-right: $gap;
-			font-size: ms(-1);
-
-			p {
-				margin-bottom: 0;
-			}
 
 			@include media($mobile-down) {
 				@include span-columns(4);
@@ -660,24 +663,31 @@ body {
 				border-right: none;
 				border-bottom: 1px solid $blue;
 			}
+			padding-right: $gap;
+			border-right: 1px solid $blue;
+			font-size: ms(-1);
+
+			p {
+				margin-bottom: 0;
+			}
 
 		}
-	}
-
-	@include media($mobile-down) {
-		padding: $gap*4 0 $gap*6;
 	}
 }
 
 .footer-nav {
 	@include span-columns(3);
-	text-align: justify;
+
+	@include media($mobile-down) {
+		@include span-columns(4);
+	}
 	padding-top: 15px;
+	text-align: justify;
 
 	ul {
-		padding: 0;
-		margin: 0;
 		display: inline-block;
+		margin: 0;
+		padding: 0;
 		list-style: none;
 
 		li {
@@ -685,22 +695,18 @@ body {
 		}
 	}
 
-	@include media($mobile-down) {
-		@include span-columns(4);
-	}
-
 }
 
 #queens-riverside-footer-logo {
-	width: 170px;
-	height: 32px;
-	position: absolute;
-	right: 0;
-	top: 25px;
 
 	@include media($mobile-down) {
 		position: relative;
 	}
+	position: absolute;
+	top: 25px;
+	right: 0;
+	width: 170px;
+	height: 32px;
 
 
 }

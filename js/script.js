@@ -39,9 +39,9 @@ $(function() {
 	//   Initialise
 	// --------------------------------------------------------------------------
 
-/* 	FastClick.attach(document.body); */
+	$("#content").fitVids();
 
-	$("#video-content").fitVids();
+	$('.block').matchHeight();
 
 	init_chosen();
 
@@ -49,6 +49,25 @@ $(function() {
 	//   Global
 	// --------------------------------------------------------------------------
 
+
+	// --------------------------------------------------------------------------
+	//   Hero Slider
+	// --------------------------------------------------------------------------
+
+	if ($('#hero').length > 0) {
+
+		// http://kenwheeler.github.io/slick/#settings
+
+		$('#hero').slick({
+			autoplay: true,
+			slidesToShow: 1,
+			lazyLoad: 'progressive',
+			speed: 600,
+			dots: true,
+			fade: true
+		});
+
+	}
 
 
 	// --------------------------------------------------------------------------
@@ -165,7 +184,7 @@ $(function() {
 
 
 // --------------------------------------------------------------------------
-//   Select menu styling - mmmmm
+//   Select menu styling
 // --------------------------------------------------------------------------
 
 var init_chosen = function() {

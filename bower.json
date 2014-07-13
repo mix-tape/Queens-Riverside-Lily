@@ -1,20 +1,17 @@
 {
-  "name": "sandpit",
-  "version": "4.0.0",
-  "private": true,
-  "dependencies": {
-    "modernizr": "",
-    "jquery-easing-original": "",
-    "slick-carousel": "",
-    "jquery-hoverIntent": "",
-/*     "fastclick": "", */
-    "instantclick": "",
-    "jquery-ias": "",
-/*     "enquire": "", */
-    "pace": "",
-    "rem-unit-polyfill": "",
-    "fitvids": "",
-/*     "select": "", */
-	"chosen": "https://github.com/harvesthq/chosen/releases/download/v1.1.0/chosen_v1.1.0.zip"  
+	"name": "sandpit",
+	"version": "4.0.0",
+	"private": true,
+	"dependencies": {
+		"modernizr": "",
+		"jquery-easing-original": "",
+		"slick-carousel": "",
+		"jquery-hoverIntent": "",
+		"instantclick": "",
+		"jquery-ias": "",
+		"matchHeight": "",
+		"rem-unit-polyfill": "",
+		"fitvids": "",
+		"chosen": "https://github.com/harvesthq/chosen/releases/download/v1.1.0/chosen_v1.1.0.zip"
 	}
 }

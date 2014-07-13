@@ -51,59 +51,39 @@
 		<header class="section" id="header" role="banner">
 
 			<div class="section-content" id="header-content">
-			
+
 				<div id="fraser-logo">
-				
+
 					<a href="http://www.frasersproperty.com.au/fpg/frasersInAus.html">
 
 						<img src="<?php bloginfo('template_url'); ?>/images/fraser-logo.svg" alt="Frasers Property logo" title="Frasers Property"/>
-						
+
 					</a>
 
 				</div>
 
-				
-					<div id="queens-riverside-header-logo">
-					
+
+				<div id="queens-riverside-header-logo">
+
 					<a href="http://queensriverside.com.au">
-					
-							<img src="<?php bloginfo('template_url'); ?>/images/queens-riverside-logo.svg" alt="" title="" />
-							
+
+							<img src="<?php bloginfo('template_url'); ?>/images/queens-riverside-logo.svg" alt="Queens Riverside Logo" title="Queens Riverside" />
+
 					</a>
-							
-					</div>
-							
-				<div class="columns columns-2">
-
-					<div class="single-column">
-					
-					<div id="logo">
-	
-						<a href="<?php bloginfo('url'); ?>/">
-	
-							<img src="<?php bloginfo('template_url'); ?>/images/lily-logo.svg" alt="<?php wp_title(); ?> logo" title="<?php wp_title(); ?>"/>
-	
-							<h1><?php echo bloginfo('title'); ?></h1>
-	
-						</a>
-	
-					</div>
-
-						<?php the_field('hero_content'); ?>
-
-					</div>
-
-					<div class="single-column">
-
-						<div id="action-form">
-
-							<?php the_field('form_intro'); ?>
-
-						</div>
-
-					</div>
 
 				</div>
+
+				<div id="header-cta">
+
+					<a href="#" class="bold-gray-link">Register Your Interest</a> or Call 1800 783 367 <span class="hashtag">#LIVELILY</span>
+
+				</div>
+
+				<nav id="main-nav" role="navigation">
+
+					<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary', 'container' => 'false' ) ); ?>
+
+				</nav>
 
 			</div>
 

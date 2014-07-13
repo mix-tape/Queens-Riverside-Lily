@@ -8,6 +8,7 @@
 // ==========================================================================
 
 ?>
+
 						<div class="content-blocks">
 
 
@@ -27,10 +28,8 @@
 
 							<?php endif;
 
-							$numtabs = 0;
-							$numwidths = 0;
 
-							while (the_flexible_field('content')): ?>
+							while (have_rows('content')): the_row(); ?>
 
 
 
@@ -42,172 +41,75 @@
 
 								if (get_row_layout() == 'heading'): ?>
 
-									<h<?php the_sub_field('heading_level'); ?> class="heading <?php if (get_sub_field('padding')) { echo 'vertical-padding'; } ?>">
+									<div class="wrapper heading-wrapper">
 
-										<?php the_sub_field('content'); ?>
+										<section class="section">
 
-									</h<?php the_sub_field('heading_level'); ?>>
+											<div class="section-content">
 
-								<?php /*// Text Block ///////*/ elseif (get_row_layout() == 'text_block'): ?>
+												<h<?php the_sub_field('heading_level'); ?> class="heading">
 
-									<div class="standard <?php if (get_sub_field('padding')) { echo 'vertical-padding'; } ?>">
+													<?php the_sub_field('content'); ?>
 
-										<?php the_sub_field('content'); ?>
-
-									</div>
-
-
-
-								<?php
-
-								// --------------------------------------------------------------------------
-								//   Full Width Text Block
-								// --------------------------------------------------------------------------
-
-								elseif (get_row_layout() == 'full_width'): $numwidths++; ?>
-
-									<div class="full-width-wrapper" id="<?php echo 'full-width-' . $numwidths; ?>">
-
-										<style scoped>
-											<?php echo '#full-width-' . $numwidths; ?> h1,
-											<?php echo '#full-width-' . $numwidths; ?> h2,
-											<?php echo '#full-width-' . $numwidths; ?> h3,
-											<?php echo '#full-width-' . $numwidths; ?> h4,
-											<?php echo '#full-width-' . $numwidths; ?> h5,
-											<?php echo '#full-width-' . $numwidths; ?> h6,
-											<?php echo '#full-width-' . $numwidths; ?> p {
-												color: <?php the_sub_field('text_colour'); ?>;
-											}
-
-										</style>
-
-										<div class="full-width <?php if (get_sub_field('padding')) { echo 'vertical-padding'; } ?>" style="background-color: <?php the_sub_field('background_colour'); ?>; <?php $image = get_sub_field('background_image'); if ($image) { echo "background-image: url(" . $image['url'] . ")"; } ?>">
-
-											<div class="center">
-
-												<div class="standard"><?php the_sub_field('content'); ?></div>
+												</h<?php the_sub_field('heading_level'); ?>>
 
 											</div>
-
-										</div>
-
-									</div>
-
-
-
-								<?php
-
-								// --------------------------------------------------------------------------
-								//   Columns
-								// --------------------------------------------------------------------------
-
-								elseif (get_row_layout() == 'columns'): ?>
-
-									<?php if (get_sub_field('columns')): ?>
-
-									<?php $columns = get_sub_field('columns'); ?>
-
-									<?php $count = count($columns); ?>
-
-									<div class="columns columns-<?php echo $count; ?> <?php if (get_sub_field('padding')) { echo 'vertical-padding'; } ?>">
-
-										<?php foreach ($columns as $column): ?>
-
-											<div class="single-column" >
-
-												<?php echo $column['content']; ?>
-
-											</div>
-
-										<?php endforeach; ?>
-
-									</div>
-
-								<?php endif; ?>
-
-
-
-								<?php
-
-								// --------------------------------------------------------------------------
-								//   Odd Columns
-								// --------------------------------------------------------------------------
-
-								elseif (get_row_layout() == 'odd_columns'): ?>
-
-									<?php if (get_sub_field('columns')): ?>
-
-									<?php $columns = get_sub_field('columns'); ?>
-
-									<?php $count = count($columns); ?>
-
-									<div class="columns columns-<?php echo $count; ?> <?php if (get_sub_field('padding')) { echo 'vertical-padding'; } ?>">
-
-										<?php foreach ($columns as $column): ?>
-
-											<div class="odd-column <?php echo $column['size']; ?>" >
-
-												<?php echo $column['content']; ?>
-
-											</div>
-
-										<?php endforeach; ?>
-
-									</div>
-
-									<?php endif; ?>
-
-
-
-								<?php
-
-								// --------------------------------------------------------------------------
-								//   Tabs
-								// --------------------------------------------------------------------------
-
-								elseif (get_row_layout() == 'tabs'):
-
-									if (have_rows('tabs')) { $firstTab = true; ?>
-
-										<section class="accordion-tabs <?php if (get_sub_field('padding')) echo 'vertical-padding'; ?>">
-
-											<?php while ( have_rows('tabs') ) { the_row(); ?>
-
-											<div class="header-and-content">
-
-												<a href="#" class="<?php if ($firstTab) echo "is-active"; $firstTab = false; ?>"><?php the_sub_field('title'); ?></a>
-
-												<div class="content"><?php the_sub_field('content') ?></div>
-
-											</div>
-
-											<?php } ?>
 
 										</section>
 
-									<?php } ?>
+									</div>
+
+
+
+								<?php /*// Text Block ///////*/ elseif (get_row_layout() == 'text_block'): ?>
+
+									<div class="wrapper text-wrapper">
+
+										<section class="section">
+
+											<div class="section-content">
+
+												<div class="standard <?php if (get_sub_field('split_columns')) echo 'split-columns'; ?>">
+
+													<?php the_sub_field('content'); ?>
+
+												</div>
+
+											</div>
+
+										</section>
+
+									</div>
 
 
 
 								<?php
 
 								// --------------------------------------------------------------------------
-								//   Accordion
+								//   Odd blocks
 								// --------------------------------------------------------------------------
 
-								elseif (get_row_layout() == 'accordion'):?>
+								elseif (get_row_layout() == 'blocks'): ?>
 
-									<section class="accordion">
+										<div class="fullscreen-wrapper blocks-wrapper">
 
-										<div class="header-and-content">
+											<section class="blocks <?php the_sub_field('height'); ?> <?php the_sub_field('class'); ?>">
 
-											<a href="#" class="<?php if ($firstTab) echo "is-active"; $firstTab = false; ?>"><?php the_sub_field('title'); ?></a>
+												<?php while ( have_rows('blocks') ) : the_row(); ?>
 
-											<div class="content"><?php the_sub_field('content') ?></div>
+													<?php $imagedata = get_sub_field('background_image'); ?>
+
+													<div class="block <?php the_sub_field('size'); ?> <?php the_sub_field('class'); ?> <?php the_sub_field('background_color'); ?>" style="background-image: url(<?php echo $imagedata['sizes']['hero']; ?>);">
+
+														<?php the_sub_field('content'); ?>
+
+													</div>
+
+												<?php endwhile; ?>
+
+											</section>
 
 										</div>
-
-									</section>
 
 
 
@@ -219,79 +121,33 @@
 
 								elseif (get_row_layout() == 'slideshow'):?>
 
-									<section class="<?php if (get_sub_field('padding')) echo 'vertical-padding'; ?>">
+									<div class="fullscreen-wrapper slideshow-wrapper">
 
-									<?php if(get_sub_field('slideshow')) { ?>
+										<section class="slideshow-section">
 
-										<div class="slideshow">
+										<?php if(get_sub_field('slideshow')) { ?>
 
-											<?php $images = get_sub_field('slideshow'); foreach($images as $image) { ?>
+											<div class="slideshow">
 
-											<div>
+												<?php $images = get_sub_field('slideshow'); foreach($images as $image) { ?>
 
-													<img src="<?php echo $image['sizes']['hero']; ?>" alt="" />
+												<div>
 
-									 		</div>
+														<img src="<?php echo $image['sizes']['hero']; ?>" alt="" />
 
-											<?php } ?>
+										 		</div>
 
-										</div>
+												<?php } ?>
 
-									<?php } ?>
+											</div>
 
-								</section>
+										<?php } ?>
 
-
-
-							<?php
-
-							// --------------------------------------------------------------------------
-							//   Gallery
-							// --------------------------------------------------------------------------
-
-							elseif (get_row_layout() == 'gallery'):?>
-
-								<?php
-
-								$columns = get_sub_field('columns');
-
-								$numbers = array("zero", "one", "two", "three", "four", "five", "six");
-
-								$sizes = array("full", "large", "large", "large", "medium", "medium" )
-
-								?>
-
-								<section class="gallery <?php if (get_sub_field('padding')) { echo 'vertical-padding'; } ?>">
-
-									<div class="row <?php echo $columnclass = $numbers[$columns]; ?>">
-
-										<?php $i = 1; $images = get_sub_field('gallery'); if ($images) { foreach( $images as $image ): ?>
-
-										<figure>
-
-											<a href="<?php echo $image['url']; ?>">
-
-												<img title="<?php echo $image['title']; ?>" src="<?php echo $image['sizes'][$sizes[$columns]]; ?>" alt="<?php echo $image['alt']; ?>" />
-
-											</a>
-
-											<?php if (get_sub_field('captions') && $image['caption']) { ?><figcaption><?php echo $image['caption']; ?></figcaption><?php } ?>
-
-										</figure>
-
-									<?php if ( $i % $columns == 0 ) { ?>
+										</section>
 
 									</div>
 
-									<div class="row <?php echo $columnclass; ?>">
 
-									<?php } $i++; ?>
-
-										<?php endforeach; } ?>
-
-									</div>
-
-								</section>
 
 								<?php endif; ?>
 
