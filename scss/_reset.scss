@@ -502,4 +502,11 @@ html.clearfix { *height: 1% }
 //   Wordpress Specific
 // --------------------------------------------------------------------------
 
-#tinymce { padding: 1em; }
+#tinymce {
+  padding: 1em;
+  background: #fefefe;
+
+  a {
+    color: #666;
+  }
+}

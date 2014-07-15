@@ -1,32 +1,39 @@
 
+<?php if ( get_field('slideshow') ) { ?>
+
 	<div class="wrapper" id="banner-wrapper">
+
+
+		<div id="hero">
+
+
+			<?php while(has_sub_field('slideshow')) { ?>
+
+
+				<?php $imagedata = get_sub_field('image'); ?>
+
+				<div class="banner-slide" style="background-image: url(<?php echo $imagedata['sizes']['hero']; ?>);">
+
+					<img src="<?php echo $imagedata['sizes']['hero']; ?>" alt="" class="print-only" />
+
+				</div>
+
+
+			<?php }	?>
+
+
+		</div>
+
 
 		<div class="section" id="banner">
 
 			<div class="section-content" id="banner-content">
 
-				<?php if ( get_field('slideshow') ) { ?>
+				<p><span id="clock" data-datetime="<?php echo date('r'); ?>"></span></p>
 
+				<h2>Live life. Live Lily.</h2>
 
-					<div id="hero">
-
-
-						<?php while(has_sub_field('slideshow')) { ?>
-
-
-							<div>
-
-								<img src="<?php $imagedata = get_sub_field('image'); echo $imagedata['sizes']['hero']; ?>" alt="" />
-
-							</div>
-
-
-						<?php }	?>
-
-
-					</div>
-
-				<?php } ?>
+				<h3>Brand new east perth apartments</h3>
 
 				<div id="logo">
 
@@ -40,8 +47,12 @@
 
 				</div>
 
+				<a class="ghost-button">View more</a>
+
 			</div>
 
 		</div>
 
 	</div>
+
+<?php } ?>

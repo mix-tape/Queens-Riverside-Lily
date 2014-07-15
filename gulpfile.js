@@ -41,8 +41,7 @@ config.plugins = [
   config.vendor + '/jquery-easing-original/jquery.easing.1.3.js',
   config.vendor + '/slick-carousel/slick/slick.js',
   config.vendor + '/matchHeight/jquery.matchHeight.js',
-  // config.vendor + '/jquery-hoverIntent/jquery.hoverIntent.js',
-  // config.vendor + '/jquery-ias/src/jquery-ias.js',
+  config.vendor + '/moment/moment.js',
   config.vendor + '/fitvids/jquery.fitvids.js',
   config.vendor + '/chosen/chosen.jquery.js'
 

@@ -65,7 +65,7 @@
 
 				<div id="queens-riverside-header-logo">
 
-					<a href="http://queensriverside.com.au">
+					<a href="<?php bloginfo('url'); ?>">
 
 							<img src="<?php bloginfo('template_url'); ?>/images/queens-riverside-logo.svg" alt="Queens Riverside Logo" title="Queens Riverside" />
 

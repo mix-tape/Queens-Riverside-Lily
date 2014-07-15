@@ -1,30 +1,28 @@
 
+<?php if ( get_field('slideshow') ) { ?>
+
 	<div class="wrapper" id="banner-wrapper">
 
-		<?php if ( get_field('slideshow') ) { ?>
+
+		<div id="hero">
 
 
-			<div id="hero">
+			<?php while(has_sub_field('slideshow')) { ?>
 
 
-				<?php while(has_sub_field('slideshow')) { ?>
+				<?php $imagedata = get_sub_field('image'); ?>
 
+				<div class="banner-slide" style="background-image: url(<?php echo $imagedata['sizes']['hero']; ?>);">
 
-					<?php $imagedata = get_sub_field('image'); ?>
+					<img src="<?php echo $imagedata['sizes']['hero']; ?>" alt="" class="print-only" />
 
-					<div class="banner-slide" style="background-image: url(<?php echo $imagedata['sizes']['hero']; ?>);">
+					<div class="section">
 
-						<img src="<?php echo $imagedata['sizes']['hero']; ?>" alt="" class="print-only" />
+						<div class="section-content">
 
-						<div class="section">
+							<div class="caption">
 
-							<div class="section-content">
-
-								<div class="caption">
-
-									<?php the_sub_field('caption'); ?>
-
-								</div>
+								<?php the_sub_field('caption'); ?>
 
 							</div>
 
@@ -32,12 +30,15 @@
 
 					</div>
 
+				</div>
 
-				<?php }	?>
+
+			<?php }	?>
 
 
-			</div>
+		</div>
 
-		<?php } ?>
 
 	</div>
+
+<?php } ?>

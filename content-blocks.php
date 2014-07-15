@@ -7,150 +7,146 @@
 //
 // ==========================================================================
 
-?>
 
-						<div class="content-blocks">
+						// --------------------------------------------------------------------------
+						//   Standard content / excerpt Block
+						// --------------------------------------------------------------------------
+
+						if (get_the_content()): ?>
+
+						<div class="standard">
+
+							<?php if (is_singular() && !is_front_page()) { the_content(''); } else { the_excerpt();} ?>
+
+						</div>
+
+						<?php endif;
+
+
+						while (have_rows('content')): the_row(); ?>
+
 
 
 							<?php
 
 							// --------------------------------------------------------------------------
-							//   Standard content / excerpt
+							//   Text Block
 							// --------------------------------------------------------------------------
 
-							if (get_the_content()): ?>
-
-							<div class="standard">
-
-								<?php if (is_singular() && !is_front_page()) { the_content(''); } else { the_excerpt();} ?>
-
-							</div>
-
-							<?php endif;
+							if (get_row_layout() == 'heading'): ?>
 
 
-							while (have_rows('content')): the_row(); ?>
+								<section class="blocks section text-block">
 
+									<div class="section-content">
 
+										<h<?php the_sub_field('heading_level'); ?> class="heading">
 
-								<?php
+											<?php the_sub_field('content'); ?>
 
-								// --------------------------------------------------------------------------
-								//   Text Block
-								// --------------------------------------------------------------------------
-
-								if (get_row_layout() == 'heading'): ?>
-
-									<div class="wrapper heading-wrapper">
-
-										<section class="section">
-
-											<div class="section-content">
-
-												<h<?php the_sub_field('heading_level'); ?> class="heading">
-
-													<?php the_sub_field('content'); ?>
-
-												</h<?php the_sub_field('heading_level'); ?>>
-
-											</div>
-
-										</section>
+										</h<?php the_sub_field('heading_level'); ?>>
 
 									</div>
 
-
-
-								<?php /*// Text Block ///////*/ elseif (get_row_layout() == 'text_block'): ?>
-
-									<div class="wrapper text-wrapper">
-
-										<section class="section">
-
-											<div class="section-content">
-
-												<div class="standard <?php if (get_sub_field('split_columns')) echo 'split-columns'; ?>">
-
-													<?php the_sub_field('content'); ?>
-
-												</div>
-
-											</div>
-
-										</section>
-
-									</div>
+								</section>
 
 
 
-								<?php
 
-								// --------------------------------------------------------------------------
-								//   Odd blocks
-								// --------------------------------------------------------------------------
+							<?php /*// Text Block ///////*/ elseif (get_row_layout() == 'text_block'): ?>
 
-								elseif (get_row_layout() == 'blocks'): ?>
 
-										<div class="fullscreen-wrapper blocks-wrapper">
+								<section class="blocks section text-block">
 
-											<section class="blocks <?php the_sub_field('height'); ?> <?php the_sub_field('class'); ?>">
+									<div class="section-content">
 
-												<?php while ( have_rows('blocks') ) : the_row(); ?>
+										<div class="standard <?php if (get_sub_field('split_columns')) echo 'split-columns'; ?>">
 
-													<?php $imagedata = get_sub_field('background_image'); ?>
-
-													<div class="block <?php the_sub_field('size'); ?> <?php the_sub_field('class'); ?> <?php the_sub_field('background_color'); ?>" style="background-image: url(<?php echo $imagedata['sizes']['hero']; ?>);">
-
-														<?php the_sub_field('content'); ?>
-
-													</div>
-
-												<?php endwhile; ?>
-
-											</section>
+											<?php the_sub_field('content'); ?>
 
 										</div>
 
+									</div>
+
+								</section>
 
 
-								<?php
 
-								// --------------------------------------------------------------------------
-								//   Slideshow
-								// --------------------------------------------------------------------------
 
-								elseif (get_row_layout() == 'slideshow'):?>
+							<?php
 
-									<div class="fullscreen-wrapper slideshow-wrapper">
+							// --------------------------------------------------------------------------
+							//   Blocks
+							// --------------------------------------------------------------------------
 
-										<section class="slideshow-section">
+							elseif (get_row_layout() == 'blocks'): ?>
 
-										<?php if(get_sub_field('slideshow')) { ?>
 
-											<div class="slideshow">
+									<section class="blocks <?php echo get_blocks_classes(); ?>">
 
-												<?php $images = get_sub_field('slideshow'); foreach($images as $image) { ?>
+										<?php while ( have_rows('blocks') ) : the_row(); ?>
 
-												<div>
+											<?php $imagedata = get_sub_field('background_image'); ?>
 
-														<img src="<?php echo $image['sizes']['hero']; ?>" alt="" />
+											<div class="block <?php echo get_block_classes(); ?>" style="background-image: url(<?php echo $imagedata['sizes']['extra-large']; ?>);">
 
-										 		</div>
+												<?php if (get_sub_field('link')) { ?><a href="<?php the_sub_field('link'); ?>"><?php } ?>
 
-												<?php } ?>
+													<?php if (get_sub_field('content')) { ?>
+
+														<div class="block-content">
+
+															<?php echo replace_links(get_sub_field('content')); ?>
+
+														</div>
+
+													<?php } ?>
+
+												<?php if (get_sub_field('link')) { ?></a><?php } ?>
 
 											</div>
 
-										<?php } ?>
+										<?php endwhile; ?>
 
-										</section>
+									</section>
+
+
+
+
+							<?php
+
+							// --------------------------------------------------------------------------
+							//   Slideshow
+							// --------------------------------------------------------------------------
+
+							elseif (get_row_layout() == 'slideshow'):?>
+
+
+								<section class="slideshow-section">
+
+								<?php if(get_sub_field('slideshow')) { ?>
+
+									<div class="slideshow">
+
+										<?php $images = get_sub_field('slideshow'); foreach($images as $image) { ?>
+
+										<div>
+
+												<img src="<?php echo $image['sizes']['hero']; ?>" alt="" />
+
+								 		</div>
+
+										<?php } ?>
 
 									</div>
 
+								<?php } ?>
+
+								</section>
 
 
-								<?php endif; ?>
 
-							<?php endwhile; ?>
 
-						</div>
+							<?php endif; ?>
+
+						<?php endwhile; ?>

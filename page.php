@@ -2,6 +2,7 @@
 
 <?php get_template_part( 'banner' ); ?>
 
+<div class="fullscreen-wrapper" id="content-wrapper">
 
 	<section id="content" role="main" class="full-width">
 
@@ -27,6 +28,7 @@
 
 	</section>
 
+</div>
 
 <?php get_template_part('section', 'livelily'); ?>
 

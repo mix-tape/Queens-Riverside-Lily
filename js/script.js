@@ -11,7 +11,7 @@
 
 
 // --------------------------------------------------------------------------
-//   Breakpoints
+//   Responsive
 // --------------------------------------------------------------------------
 
 /*
@@ -27,6 +27,20 @@ enquire.register("screen and (min-width:1024px)", {
 
 });
 */
+
+
+// ----- Rezise Debounce ----- //
+
+
+$(window).resize(function () {
+
+	waitForFinalEvent(function(){
+
+
+
+	}, 500, "DeBounced");
+
+});
 
 
 // --------------------------------------------------------------------------
@@ -49,6 +63,13 @@ $(function() {
 	//   Global
 	// --------------------------------------------------------------------------
 
+	// ----- Make .block-content fill .block ----- //
+
+	$('.link-block .block-content').each(function () {
+
+		$(this).outerHeight( $(this).parent().parent().outerHeight() );
+
+	});
 
 	// --------------------------------------------------------------------------
 	//   Hero Slider
@@ -69,6 +90,21 @@ $(function() {
 
 	}
 
+	// --------------------------------------------------------------------------
+	//  Moment JS Configuration
+	// --------------------------------------------------------------------------
+
+	clock = $('#clock');
+
+	perthTime = moment(new Date(clock.data('datetime')));
+
+	setInterval(function() {
+
+		perthTime = perthTime.add('seconds', 1);
+
+		clock.html(perthTime.format('hh:mm:ssA') + ' <small>AWST</small>');
+
+	}, 1000);
 
 	// --------------------------------------------------------------------------
 	//   Form Confirmation Override
@@ -230,3 +266,16 @@ var hasParent = function(el, id)
 	}
 	return false;
 };
+
+var waitForFinalEvent = (function () {
+	var timers = {};
+	return function (callback, ms, uniqueId) {
+		if (!uniqueId) {
+			uniqueId = "Don't call this twice without a uniqueId";
+		}
+		if (timers[uniqueId]) {
+			clearTimeout (timers[uniqueId]);
+		}
+		timers[uniqueId] = setTimeout(callback, ms);
+	};
+})();

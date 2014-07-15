@@ -5,10 +5,6 @@
 //
 // ==========================================================================
 
-.content-blocks {
-	@include row;
-}
-
 // --------------------------------------------------------------------------
 //	 Standard
 // --------------------------------------------------------------------------
@@ -21,6 +17,12 @@
 	@include span-columns(12);
 }
 
+	.text-block {
+		padding-bottom: $gap * 2;
+	}
+
+	// ----- Variations ----- //
+
 	.split-columns {
 		column-count: 2;
 		column-gap: $gap * 2;
@@ -28,16 +30,71 @@
 
 
 // --------------------------------------------------------------------------
-//	 Odd Columns
+//	 Blocks
 // --------------------------------------------------------------------------
 
+.blocks-wrapper {
+	float: left;
+	width: 100%;
+}
+
 .blocks {
+	@include clearfix;
 
 	.block {
+
+		.block-content {
+			padding: 60px;
+			width: 100%;
+		}
+	}
+
+	// ----- Link Block ----- //
+
+	// The blocks with images can handle
+	// transparency but the solid colour
+	// backgrounds will need a solid "underlay"
+
+	// ----- General link hover ----- //
+
+	.link-block {
+
+		a {
+			display: block;
+		}
+
+		a:hover .block-content {
+			background-color: $yellow;
+
+			h1 h2, h3, h4, h5, h6 {
+				color: $white;
+			}
+
+			// Todo: include button hover styles
+			// Todo: animate hover
+
+			.button {
+				background-color: $yellow;
+			}
+		}
+	}
+
+	// ----- Transparent link hover ----- //
+
+	.link-block.bg-image.no-bg-color {
+
+		a:hover .block-content {
+			background-color: rgba($yellow, 0.7);
+		}
+	}
+
+
+	// ----- Image block ----- //
+
+	.block.bg-image {
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center center;
-		padding: 60px;
 	}
 
 
@@ -56,13 +113,60 @@
 	}
 
 
+	// ----- Border Variations ----- //
+
+	// Ideally the vertical margins will collapse,
+	// giving us a nice 1px gap between block groups
+
+	&.white-border {
+		margin-top: 1px;
+		margin-bottom: 1px;
+		border-left: 1px solid $white;
+
+		.block {
+			border-right: 1px solid $white;
+		}
+
+	}
+
+
+	// ----- Video content ----- //
+
+	.block.video {
+
+		// Video is getting wrapped in a paragraph
+		// tag with a margin, needs an override
+
+		p {
+			margin: 0;
+		}
+	}
+
 	// ----- Size Variations ----- //
 
-	.short 	{ .block { height: 312px; } }
-	.medium { .block { height: 360px; } }
-	.tall 	{ .block { height: 460px; } }
+	&.short 	{ .block { height: 312px; } }
+	&.medium 	{ .block { height: 360px; } }
+	&.tall 		{ .block { height: 460px; } }
 
-	.no-padding { padding: 0; }
+	.no-padding { .block-content { padding: 0; } }
+
+
+	// ----- Alignment variations ----- //
+
+	.block.align-bottom {
+		display: table;
+
+		a {
+			height: 100%;
+			display: table-row;
+		}
+
+		.block-content {
+			display: table-cell;
+			vertical-align: bottom;
+		}
+	}
+
 
 	// ----- Sizes ----- //
 
@@ -80,19 +184,26 @@
 
 	// ----- Tablet & Mobile ----- //
 
-	.one,
-	.one_quarter,
 	.one_half,
-	.three_quarters,
 	.one_third,
-	.two_thirds,
+	.two_thirds
+	{
+
+		@include media($mobile-down) {
+			@include span-columns(4, block-collapse);
+		}
+	}
+
+	.one_quarter,
+	.three_quarters,
 	.one_fifth,
 	.two_fifths,
 	.three_fifths,
-	.four_fifths {
+	.four_fifths
+	{
 
 		@include media($mobile-down) {
-			@include span-columns(4);
+			@include span-columns(2, block-collapse);
 		}
 	}
 }

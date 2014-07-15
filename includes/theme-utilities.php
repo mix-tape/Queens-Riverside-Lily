@@ -7,6 +7,49 @@
 //
 // ==========================================================================
 
+
+// ==========================================================================
+//  Get block classes
+// ==========================================================================
+
+function get_blocks_classes()
+{
+	$classes[] = get_sub_field('height');
+	$classes[] = get_sub_field('class');
+
+	$output = implode(' ', $classes);
+
+	return $output;
+}
+
+function get_block_classes()
+{
+	$classes[] = get_sub_field('size');
+	$classes[] = get_sub_field('class');
+	$classes[] = get_sub_field('background_color');
+
+	if (get_sub_field('link'))
+		$classes[] = 'link-block';
+
+	if (get_sub_field('background_image'))
+		$classes[] = 'bg-image';
+
+	$output = implode(' ', $classes);
+
+	return $output;
+}
+
+
+// ==========================================================================
+//  Links to .buttons
+// ==========================================================================
+
+function replace_links($content)
+{
+	return preg_replace('/<a.*?>(.*?)<\/a>/i', '<span class="button">\1</span>', $content);
+}
+
+
 // --------------------------------------------------------------------------
 //   Set up base theme name
 // --------------------------------------------------------------------------
@@ -26,7 +69,7 @@ define('THEME_PATH', RELATIVE_CONTENT_PATH . '/themes/' . THEME_NAME);
 // --------------------------------------------------------------------------
 
 if (!class_exists('Mobile_Detect')) {
-	include('classes/class-mobile-detect.php');	
+	include('classes/class-mobile-detect.php');
 }
 
 $useragent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : "";
@@ -76,7 +119,7 @@ function is_android() {
 
 /***************************************************************
 * Function is_blackberry
-* Detect a blackberry device 
+* Detect a blackberry device
 ***************************************************************/
 
 function is_blackberry() {
@@ -289,14 +332,14 @@ function is_tablet() {
 // --------------------------------------------------------------------------
 
 function get_shadow_colour($hex) {
-	
+
 	$hex = str_replace('#', '', $hex);
-	
+
 	$r = hexdec(substr($hex,0,2));
 	$g = hexdec(substr($hex,2,2));
 	$b = hexdec(substr($hex,4,2));
-	
-	
+
+
 	if ($hex == "ffffff") {
 		return "#000";
 		exit;

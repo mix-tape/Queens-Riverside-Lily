@@ -23,7 +23,7 @@ body {
 
 a { color: $base-link-color ; text-decoration: none; }
 a:hover, a:focus { color: $link-hover; }
-#content a:hover { text-decoration: underline; }
+
 
 .button, .product a { text-decoration: none !important; }
 
@@ -34,49 +34,6 @@ p {
 		// text-indent: 1.5em; // For indenting sibling paragraphs in text heavy sites
 	}
 }
-
-/* Some cheeky stuff to match all Adams crazy type! */
-
-p.intro {
-	font-family: AvenirLTStd-Light,  Arial, Helvetica, Sans-serif;;
-	font-weight: normal;
-	font-style: normal;
-	font-size: 1.6em;
-	line-height: 1.2;
-}
-
-p.sub-intro {
-	font-family: AvenirLTStd-BookOblique,  Arial, Helvetica, Sans-serif;;
-	font-weight: normal;
-	font-style: normal;
-	font-size: 1.1em;
-	line-height: 1.394;
-}
-
-p.coming-soon,
-p.phone-number {
-	font-family: AvenirLTStd-Black, Arial, Helvetica, Sans-serif;
-	font-weight: normal;
-	font-style: normal;
-	font-size: 1.6em;
-	line-height: 1.394;
-}
-
-p.coming-soon {
-	color: $blue;
-}
-
-
-p.hashtag {
-	font-family: AvenirLTStd-Medium, Arial, Helvetica, Sans-serif;
-	font-weight: normal;
-	font-style: normal;
-	font-size: 1.8em;
-	line-height: 1.394;
-	color: $yellow;
-}
-
-
 
 // --------------------------------------------------------------------------
 //   Headings
@@ -96,26 +53,32 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
 	font-size: ms(4);
 	margin-top: 0;
+	margin-bottom: ms(-1);
 }
 
 h2 {
 	font-size: ms(3);
+	margin-bottom: ms(-1);
 }
 
 h3 {
 	font-size: ms(2);
+	margin-bottom: ms(-1);
 }
 
 h4 {
 	font-size: ms(1);
+	margin-bottom: ms(-1);
 }
 
 h5 {
 	font-size: ms(-1);
+	margin-bottom: ms(-1);
 }
 
 h6 {
 	font-size: ms(-2);
+	margin-bottom: ms(-1);
 	text-transform: uppercase;
 }
 
