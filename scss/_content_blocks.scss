@@ -5,17 +5,39 @@
 //
 // ==========================================================================
 
+
 // --------------------------------------------------------------------------
-//	 Standard
+//	 Heading
 // --------------------------------------------------------------------------
 
 .heading {
 	@include span-columns(12);
 }
 
+
+// --------------------------------------------------------------------------
+//	 Standard
+// --------------------------------------------------------------------------
+
 .standard {
 	@include span-columns(12);
 }
+
+.left-logo {
+
+	.logo {
+		@include span-columns(3);
+		text-align: right;
+		padding-right: $gap;
+	}
+
+	.standard {
+		@include span-columns(9);
+	}
+}
+
+
+
 
 	.text-block {
 		padding-bottom: $gap * 2;
@@ -40,6 +62,34 @@
 
 .blocks {
 	@include clearfix;
+
+	// ----- Border Variations ----- //
+
+	// Ideally the vertical margins will collapse,
+	// giving us a nice 1px gap between block groups
+
+	&.white-border {
+		margin-top: 1px;
+		margin-bottom: 1px;
+		border-left: 1px solid $white;
+
+		.block {
+			border-right: 1px solid $white;
+		}
+
+	}
+}
+
+// ----- Size Variations ----- //
+
+.short 		{ .block { height: 312px; } }
+.medium 	{ .block { height: 360px; } }
+.tall 		{ .block { height: 460px; } }
+
+
+// --------------------------------------------------------------------------
+//	 Block
+// --------------------------------------------------------------------------
 
 	.block {
 
@@ -113,23 +163,6 @@
 	}
 
 
-	// ----- Border Variations ----- //
-
-	// Ideally the vertical margins will collapse,
-	// giving us a nice 1px gap between block groups
-
-	&.white-border {
-		margin-top: 1px;
-		margin-bottom: 1px;
-		border-left: 1px solid $white;
-
-		.block {
-			border-right: 1px solid $white;
-		}
-
-	}
-
-
 	// ----- Video content ----- //
 
 	.block.video {
@@ -141,14 +174,6 @@
 			margin: 0;
 		}
 	}
-
-	// ----- Size Variations ----- //
-
-	&.short 	{ .block { height: 312px; } }
-	&.medium 	{ .block { height: 360px; } }
-	&.tall 		{ .block { height: 460px; } }
-
-	.no-padding { .block-content { padding: 0; } }
 
 
 	// ----- Alignment variations ----- //
@@ -166,6 +191,25 @@
 			vertical-align: bottom;
 		}
 	}
+
+	.block.align-middle {
+		display: table;
+
+		a {
+			height: 100%;
+			display: table-row;
+		}
+
+		.block-content {
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
+
+
+	// ----- No Padding ----- //
+
+	.no-padding { .block-content { padding: 0; } }
 
 
 	// ----- Sizes ----- //
@@ -204,6 +248,21 @@
 
 		@include media($mobile-down) {
 			@include span-columns(2, block-collapse);
+		}
+	}
+
+
+// --------------------------------------------------------------------------
+//	 Slideshow
+// --------------------------------------------------------------------------
+
+
+.slideshow {
+
+	.slide {
+
+		img {
+			display: none;
 		}
 	}
 }

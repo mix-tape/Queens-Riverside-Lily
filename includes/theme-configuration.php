@@ -54,7 +54,7 @@ register_nav_menus( array(
 
 if ( function_exists('register_sidebar') ) {
 	register_sidebar(array(
-			'name' => __( 'Primary Widget Area' ),
+		'name' => __( 'Primary Widget Area' ),
 		'id' => 'primary-widget-area',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget' => '</section>',

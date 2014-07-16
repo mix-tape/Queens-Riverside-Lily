@@ -19,6 +19,9 @@
 
 #main-nav {
 	@include clearfix;
+	float: right;
+	text-transform: uppercase;
+	@include avenair-medium;
 
 	.menu {
 		@include span-columns(12);
@@ -44,10 +47,11 @@
 			a {
 				display: block;
 				padding: 0.2em 0.5em;
+				color: $medium-gray;
 			}
 
 			&.active a, &:hover a {
-
+				@include avenair-black;
 			}
 
 			&.menu-parent > a:after {

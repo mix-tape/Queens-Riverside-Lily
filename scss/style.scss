@@ -39,7 +39,7 @@ $sidemenu: false;
 // ----- Colours ----- //
 
 $dark-gray:								#bebebe;
-$medium-gray:							#dadada;
+$medium-gray:							#b5b9b4;
 $light-gray:							#fefefe;
 
 $blue:										#00bbb3;
@@ -64,6 +64,51 @@ $link-hover: 					$white;
 $base-border-color: 	$white;
 $base-border-radius:	4px;
 
+// ----- Avenair mixins ----- //
+
+@mixin avenair-light {
+	font-family: AvenirLTStd-Light, Arial, Helvetica, Sans-serif;
+	font-weight: normal;
+	font-style: normal;
+}
+
+@mixin avenair-medium {
+	font-family: AvenirLTStd-Medium, Arial, Helvetica, Sans-serif;
+	font-weight: normal;
+	font-style: normal;
+}
+
+@mixin avenair-book-oblique {
+	font-family: AvenirLTStd-BookOblique, Arial, Helvetica, Sans-serif;
+	font-weight: normal;
+	font-style: normal;
+}
+
+@mixin avenair-book {
+	font-family: AvenirLTStd-Book, Arial, Helvetica, Sans-serif;
+	font-weight: normal;
+	font-style: normal;
+}
+
+@mixin avenair-black {
+	font-family: AvenirLTStd-Black, Arial, Helvetica, Sans-serif;
+	font-weight: normal;
+	font-style: normal;
+}
+
+// ----- Salome mixins ----- //
+
+@mixin salome-regular {
+	font-family: salomeregular, Georgia, Times, "Times New Roman", serif;
+	font-weight: normal;
+	font-style: normal;
+}
+
+@mixin salome-italic {
+	font-family: salomeitalic, Georgia, Times, "Times New Roman", serif;
+	font-weight: normal;
+	font-style: normal;
+}
 
 // --------------------------------------------------------------------------
 // Grid

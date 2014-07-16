@@ -84,11 +84,30 @@ $(function() {
 			slidesToShow: 1,
 			lazyLoad: 'progressive',
 			speed: 600,
-			dots: true,
+			dots: false,
 			fade: true
 		});
 
 	}
+
+	// --------------------------------------------------------------------------
+	//   Hero Slider
+	// --------------------------------------------------------------------------
+
+	if ($('.slideshow').length > 0) {
+
+		// http://kenwheeler.github.io/slick/#settings
+
+		$('.slideshow').slick({
+			autoplay: true,
+			slidesToShow: 1,
+			lazyLoad: 'progressive',
+			speed: 600,
+			dots: false,
+		});
+
+	}
+
 
 	// --------------------------------------------------------------------------
 	//  Moment JS Configuration
@@ -216,6 +235,14 @@ $(function() {
 		}).attr('target', '_blank');
 
 
+	// --------------------------------------------------------------------------
+	//   stop the main nav jittering when bold on hover (will do for now)
+	// --------------------------------------------------------------------------
+
+		$('#main-nav li a').each(function(){
+		    $(this).parent().width($(this).width() + 20);
+		});
+		
 });
 
 

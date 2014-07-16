@@ -56,11 +56,26 @@
 							<?php /*// Text Block ///////*/ elseif (get_row_layout() == 'text_block'): ?>
 
 
-								<section class="blocks section text-block">
+								<section class="blocks section text-block <?php echo get_blocks_classes(); ?>">
 
 									<div class="section-content">
 
-										<div class="standard <?php if (get_sub_field('split_columns')) echo 'split-columns'; ?>">
+										<?php if (get_sub_field('logo')) { ?>
+
+											<div class="logo">
+
+												<?php $image = get_sub_field('logo');
+															$url = $image['url'];
+															$alt = $image['alt'];
+												?>
+
+												<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>" />
+
+											</div>
+
+										<?php } ?>
+
+										<div class="standard">
 
 											<?php the_sub_field('content'); ?>
 
@@ -126,13 +141,13 @@
 
 								<?php if(get_sub_field('slideshow')) { ?>
 
-									<div class="slideshow">
+									<div class="slideshow <?php echo get_blocks_classes(); ?>">
 
 										<?php $images = get_sub_field('slideshow'); foreach($images as $image) { ?>
 
-										<div>
+										<div class="slide block bg-image" style="background-image: url(<?php echo $image['sizes']['hero']; ?>);">
 
-												<img src="<?php echo $image['sizes']['hero']; ?>" alt="" />
+												<img src="<?php echo $image['sizes']['banner']; ?>" alt="<?php echo $alt; ?>" />
 
 								 		</div>
 

@@ -33,7 +33,7 @@
 
 				<h2>Live life. Live Lily.</h2>
 
-				<h3>Brand new east perth apartments</h3>
+				<h4>Brand new east perth apartments</h4>
 
 				<div id="logo">
 

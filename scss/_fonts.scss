@@ -251,4 +251,33 @@
 	src: url('fonts/avenir/fonts/2B3B55_4_0.eot');
 	src: url('fonts/avenir/fonts/2B3B55_4_0.eot?#iefix') format('embedded-opentype'),url('fonts/avenir/fonts/2B3B55_4_0.woff') format('woff'),url('fonts/avenir/fonts/2B3B55_4_0.ttf') format('truetype');
 }
- 
+
+
+// --------------------------------------------------------------------------
+//  salome font
+// --------------------------------------------------------------------------
+
+
+@font-face {
+    font-family: 'salomeregular';
+    src: url('fonts/salome/regular/fonts/salome-webfont.eot');
+    src: url('fonts/salome/regular/fonts/salome-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/salome/regular/fonts/salome-webfont.woff') format('woff'),
+         url('fonts/salome/regular/fonts/salome-webfont.ttf') format('truetype'),
+         url('fonts/salome/regular/fonts/salome-webfont.svg#salomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+} 
+
+@font-face {
+    font-family: 'salomeitalic';
+    src: url('fonts/salome/italic/fonts/salome_italic-webfont.eot');
+    src: url('fonts/salome/italic/fonts/salome_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/salome/italic/fonts/salome_italic-webfont.woff') format('woff'),
+         url('fonts/salome/italic/fonts/salome_italic-webfont.ttf') format('truetype'),
+         url('fonts/salome/italic/fonts/salome_italic-webfont.svg#salomeitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

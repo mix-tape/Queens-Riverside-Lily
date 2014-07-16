@@ -16,6 +16,13 @@ function get_blocks_classes()
 {
 	$classes[] = get_sub_field('height');
 	$classes[] = get_sub_field('class');
+	$classes[] = get_sub_field('background_color');
+
+	if (get_sub_field('logo'))
+		$classes[] = 'left-logo';
+
+	if (get_sub_field('split_columns'))
+		$classes[] = 'split-columns';
 
 	$output = implode(' ', $classes);
 

@@ -44,6 +44,10 @@ body {
 @mixin center {
 	@include clearfix;
 
+	@include media($large-desktop-up) {
+		width: $large-desktop;
+	}
+
 	@include media($desktop-down) {
 		width: $desktop;
 	}
@@ -146,35 +150,56 @@ body {
 	position: relative;
 	z-index: 99;
 
-	padding-top: $gap;
-	padding-bottom: $gap;
+	padding-top: $gap*3;
+	padding-bottom: $gap/4;
 
 	background: $super-dark-purple;
 
 	#header {
 
 		#header-content {
-
 			@include media($mobile-down) {
 				padding-top: $gap * 2;
 			}
 			position: relative;
 		}
 	}
+	
+}
+
+// ----- Header cta ----- //
+
+#header-cta {
+	text-align: right;
+	text-transform: uppercase;
+	color: $medium-gray;
+	@include avenair-medium;
+	
+	a {
+		color: $medium-gray;
+		@include avenair-black;
+	}
+	
+	.hashtag {
+		color: $cyan;
+	}
 }
 
 
 // ----- Queens Riverside Logo ----- //
 
+// Absolute positioning for logos is ok ;)
+
 #queens-riverside-header-logo {
 
 	@include media ($mobile-down) {
-
 	}
-
-	display: inline-block;
-	width: 129px;
-	height: 23px;
+	
+	position: absolute;
+	left: 0;
+	bottom: 30px;
+	width: 175px;
+	height: 33px;
 
 }
 
@@ -183,6 +208,10 @@ body {
 
 #fraser-logo {
 
+	@include media($large-desktop-up) {
+		right: 0;
+	}
+	
 	@include media ($large-desktop-down) {
 		right: 0;
 	}
@@ -192,32 +221,12 @@ body {
 	}
 
 	position: absolute;
-	top: -$gap;
-	right: -284px;
+	top: -$gap*3;
+	right: -320px;
 	width: 284px;
 	height: 35px;
 }
 
-
-// ----- Lily Logo ----- //
-
-#logo {
-
-	@include media ($mobile-down) {
-		position: absolute;
-		top: 30px;
-		left: 0;
-		margin-top: 0;
-		width: 120px;
-	}
-
-	margin: 0 0 30px 0;
-	width: 194px;
-
-	img + h1 {
-		@include visuallyhidden;
-	}
-}
 
 
 // --------------------------------------------------------------------------
@@ -258,12 +267,80 @@ body {
 	}
 }
 
-	#banner {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
+#banner {
+
+	// 10% is just temporary positioning
+	// until some perfect middle is introduced
+
+	position: absolute;
+	bottom: 10%;
+	left: 0;
+	right: 0;
+	color: $white;
+	
+	// ----- Home page hero type ----- //
+	
+	// Todo: investigate better spot for this
+	
+	p {
+		margin-bottom: 0;
+		line-height: 1.5;
 	}
+	
+	h2, h4 {
+		@include salome-italic;
+		color: $white;
+	}
+	
+	h2 {
+		@include salome-italic;
+		margin: 0 0 0.3em;
+	}
+	
+	h4 {
+		@include avenair-medium;
+		text-transform: uppercase;
+		margin: 0.3em 0 0.8em;
+	}
+	
+}
+
+// ----- Clock ----- //
+
+// Todo: AWST needs own styling
+
+#clock {
+	font-size: ms(3);
+	@include avenair-black;
+	
+	small {
+		font-size: 1em;
+	}
+}
+
+// ----- Lily Logo ----- //
+
+#logo {
+
+	margin: 0 0 30px 0;
+	width: 130px;
+
+	img + h1 {
+		@include visuallyhidden;
+	}
+}
+
+// ----- Ghost button ----- //
+
+.ghost-button {
+	padding: 0.5em 1em;
+	border: 1px solid $white;
+	text-decoration: none;
+	border-radius: 2px;
+	cursor: pointer;
+	text-transform: uppercase;
+	@include avenair-book;
+}
 
 // --------------------------------------------------------------------------
 //   Main Content
