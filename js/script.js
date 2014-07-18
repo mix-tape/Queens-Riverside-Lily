@@ -14,19 +14,19 @@
 //   Responsive
 // --------------------------------------------------------------------------
 
-/*
-enquire.register("screen and (min-width:1024px)", {
+
+enquire.register("screen and (min-width:700px)", {
 
 	match : function() {
-
+		$('.block').matchHeight();
 	},
 
 	unmatch : function() {
-
+		$('.block').matchHeight('remove');
 	}
 
 });
-*/
+
 
 
 // ----- Rezise Debounce ----- //
@@ -53,11 +53,10 @@ $(function() {
 	//   Initialise
 	// --------------------------------------------------------------------------
 
-	$("#content").fitVids();
-
-	$('.block').matchHeight();
+	$("body").fitVids();
 
 	init_chosen();
+
 
 	// --------------------------------------------------------------------------
 	//   Global
@@ -70,6 +69,7 @@ $(function() {
 		$(this).outerHeight( $(this).parent().parent().outerHeight() );
 
 	});
+
 
 	// --------------------------------------------------------------------------
 	//   Hero Slider
@@ -88,10 +88,22 @@ $(function() {
 			fade: true
 		});
 
+		$('.home #hero').append('<div id="hero-underlay"></div>');
+
+		$('.ghost-button', '#banner-content').hover(
+			function () {
+				$('#hero-underlay').addClass('active');
+			},
+			function () {
+				$('#hero-underlay').removeClass('active');
+			}
+		);
+
 	}
 
+
 	// --------------------------------------------------------------------------
-	//   Hero Slider
+	//   General Slideshows
 	// --------------------------------------------------------------------------
 
 	if ($('.slideshow').length > 0) {
@@ -110,7 +122,7 @@ $(function() {
 
 
 	// --------------------------------------------------------------------------
-	//  Moment JS Configuration
+	//   Hero Clock - Moment JS Configuration
 	// --------------------------------------------------------------------------
 
 	clock = $('#clock');
@@ -125,6 +137,7 @@ $(function() {
 
 	}, 1000);
 
+
 	// --------------------------------------------------------------------------
 	//   Form Confirmation Override
 	// --------------------------------------------------------------------------
@@ -135,9 +148,9 @@ $(function() {
 		console.log(form_id);
 
 		if(form_id == 1) {
-			$('#action-form').fadeOut(500);
-			scrollTo("#video-wrapper");
-			$('#confirmation-message').delay(300).slideDown(1000).fadeIn(1000);
+			$('#gform_wrapper_1').fadeOut(500);
+			// scrollTo("#video-wrapper");
+			// $('#confirmation-message').delay(300).slideDown(1000).fadeIn(1000);
 			// $('#confirmation-message-details').delay(1000).fadeIn(1000);
 			// $('#confirmation-social').delay(1000).fadeIn(1000);
 		}
@@ -162,7 +175,19 @@ $(function() {
 
 	});
 
+	// --------------------------------------------------------------------------
+	//  Placeholders
+	// --------------------------------------------------------------------------
 
+	if(!Modernizr.input.placeholder) {
+
+		$('.gfield_label').show(0);
+
+	}
+
+	gf_placeholder();
+
+	$(document).bind('gform_post_render', gf_placeholder);
 
 	// --------------------------------------------------------------------------
 	//   Stop auto scrolling on user override
@@ -234,15 +259,6 @@ $(function() {
 			 return this.hostname && this.hostname !== location.hostname;
 		}).attr('target', '_blank');
 
-
-	// --------------------------------------------------------------------------
-	//   stop the main nav jittering when bold on hover (will do for now)
-	// --------------------------------------------------------------------------
-
-		$('#main-nav li a').each(function(){
-		    $(this).parent().width($(this).width() + 20);
-		});
-		
 });
 
 
@@ -272,6 +288,52 @@ var init_chosen = function() {
 		width: "100%"
 	});
 
+};
+
+// --------------------------------------------------------------------------
+//  Gravity forms placeholders
+// --------------------------------------------------------------------------
+
+var gf_placeholder = function() {
+
+	$('.gform_wrapper .gfield')
+		.find('input, textarea').filter(function(i){
+			var $field = $(this);
+
+			if (this.nodeName == 'INPUT') {
+				var type = this.type;
+				return !(type == 'hidden' || type == 'file' || type == 'radio' || type == 'checkbox');
+			}
+
+			return true;
+		})
+		.each(function(){
+			var $field = $(this);
+
+			var id = this.id;
+			var $labels = $('label[for=' + id + ']').hide();
+			var label = $labels.last().text();
+
+			if (label.length > 0 && label[ label.length-1 ] == '*') {
+				label = label.substring(0, label.length-1) + ' *';
+			}
+
+			$field[0].setAttribute('placeholder', label);
+		});
+
+	var support = (!('placeholder' in document.createElement('input'))); // borrowed from Modernizr.com
+	if ( support && jquery_placeholder_url )
+		$.ajax({
+			cache: true,
+			dataType: 'script',
+			url: jquery_placeholder_url,
+			success: function() {
+				$('input[placeholder], textarea[placeholder]').placeholder({
+					blankSubmit: true
+				});
+			},
+			type: 'get'
+		});
 };
 
 // --------------------------------------------------------------------------

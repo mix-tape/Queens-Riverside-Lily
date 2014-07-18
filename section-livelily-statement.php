@@ -5,11 +5,11 @@
 
 			<div class="section-content" id="livelily-content">
 
-				Lily is for living life your way.
-				For living closer to everything.
-				And further from ordinary.
+				<p>Lily is for living life your way.<br>
+								For living closer to everything.<br>
+								And further from ordinary.</p>
 
-				Live differently. Live lily.
+				<p><em>Live differently. Live lily.</em></p>
 
 			</div>
 

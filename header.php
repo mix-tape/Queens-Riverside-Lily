@@ -79,9 +79,13 @@
 
 				</div>
 
+			</div>
+
+			<div class="section-content" id="nav-content">
+
 				<nav id="main-nav" role="navigation">
 
-					<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary', 'container' => 'false' ) ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => 'false' ) ); ?>
 
 				</nav>
 

@@ -29,10 +29,20 @@
 		@include span-columns(3);
 		text-align: right;
 		padding-right: $gap;
+
+		@include media($mobile-down) {
+			@include span-columns(4);
+			text-align: center;
+			margin-bottom: $gap;
+		}
 	}
 
 	.standard {
 		@include span-columns(9);
+
+		@include media($mobile-down) {
+			@include span-columns(4);
+		}
 	}
 }
 
@@ -40,12 +50,16 @@
 
 
 	.text-block {
-		padding-bottom: $gap * 2;
+		padding: 60px;
+
+		@include media($mobile-down) {
+			padding: $gap;
+		}
 	}
 
 	// ----- Variations ----- //
 
-	.split-columns {
+	.split-columns .standard {
 		column-count: 2;
 		column-gap: $gap * 2;
 	}
@@ -80,12 +94,22 @@
 	}
 }
 
-// ----- Size Variations ----- //
+// ----- Height Variations ----- //
 
 .short 		{ .block { height: 312px; } }
 .medium 	{ .block { height: 360px; } }
 .tall 		{ .block { height: 460px; } }
 
+
+.auto {
+
+	.block.bg-image {
+
+		@include media($mobile-down) {
+			min-height: 360px;
+		}
+	}
+}
 
 // --------------------------------------------------------------------------
 //	 Block
@@ -96,6 +120,11 @@
 		.block-content {
 			padding: 60px;
 			width: 100%;
+			transition: all 500ms;
+
+			@include media($mobile-down) {
+				padding: $gap;
+			}
 		}
 	}
 
@@ -116,6 +145,7 @@
 		a:hover .block-content {
 			background-color: $yellow;
 
+
 			h1 h2, h3, h4, h5, h6 {
 				color: $white;
 			}
@@ -134,14 +164,14 @@
 	.link-block.bg-image.no-bg-color {
 
 		a:hover .block-content {
-			background-color: rgba($yellow, 0.7);
+			background-color: rgba($yellow, 0.9);
 		}
 	}
 
 
 	// ----- Image block ----- //
 
-	.block.bg-image {
+	.bg-image {
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center center;
@@ -159,6 +189,14 @@
 
 		h1, h2, h3, h4, h5, h6 {
 			color: $cyan;
+		}
+	}
+
+
+	.white-text {
+
+		h1, h2, h3, h4, h5, h6, p, li {
+			color: $white;
 		}
 	}
 
@@ -209,7 +247,16 @@
 
 	// ----- No Padding ----- //
 
-	.no-padding { .block-content { padding: 0; } }
+	.no-padding {
+
+		.block-content {
+			padding: 0;
+
+			@include media($mobile-down) {
+				padding: 0;
+			}
+		}
+	}
 
 
 	// ----- Sizes ----- //
@@ -234,7 +281,11 @@
 	{
 
 		@include media($mobile-down) {
-			@include span-columns(4, block-collapse);
+			@include span-columns(4);
+
+			&:last-child {
+				@include span-columns(4);
+			}
 		}
 	}
 

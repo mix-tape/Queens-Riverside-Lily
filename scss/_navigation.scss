@@ -19,16 +19,16 @@
 
 #main-nav {
 	@include clearfix;
+	@include avenair-medium;
 	float: right;
 	text-transform: uppercase;
-	@include avenair-medium;
 
 	.menu {
 		@include span-columns(12);
+		margin: 0;
 		padding: 0;
 
 		li {
-			position: relative;
 			float: left;
 			margin-left: 1em;
 			list-style: none;
@@ -50,47 +50,57 @@
 				color: $medium-gray;
 			}
 
-			&.active a, &:hover a {
-				@include avenair-black;
+			&.active > a, a:hover {
+				font-weight: bold;
 			}
 
 			&.menu-parent > a:after {
 				@include icon;
-				content: '';
-				color: $base-link-color;
-				font-size: 1em;
-				margin-left: 5px;
 				position: relative;
 				top: -1px;
+				margin-left: 5px;
+				color: $base-link-color;
+				content: '';
+				font-size: 1em;
+			}
+
+			&:hover > .sub-menu, &.active > .sub-menu {
+				max-height: 60px;
 			}
 
 			.sub-menu {
-				display: none;
-				padding: 0;
 				position: absolute;
-				background: #fafafa;
+				left: 0;
 				z-index: 1000;
+				overflow: hidden;
+				padding: 0;
+				max-height: 0;
+				width: 100%;
+				background: $white;
+				text-align: center;
+				transition: all 500ms;
 
 				li {
-					float: none;
 					position: relative;
+					display: inline-block;
+					float: none;
 					margin-right: 0;
 
 					&.menu-parent > a:after {
 						position: absolute;
-						right: 9px;
 						top: 3px;
+						right: 9px;
 					}
 
 					a {
-						width: 9em;
+						width: auto;
 					}
 				}
 				.sub-menu {
-					display: none;
-					left: 100%;
 					position: absolute;
 					top: 0;
+					left: 100%;
+					display: none;
 				}
 			}
 		}
@@ -109,17 +119,17 @@
 	}
 
 	#main-nav {
-		z-index: 98;
+		@include transition(all 600ms ease-in-out);
+		@include backface-visibility(hidden);
 		position: absolute;
 		top: 0;
-		left: 0;
 		right: 0;
-		padding: 0;
-		@include transition(all 600ms ease-in-out);
-		max-height: 0;
-		max-width: none;
+		left: 0;
+		z-index: 98;
 		overflow: hidden;
-		@include backface-visibility(hidden);
+		padding: 0;
+		max-width: none;
+		max-height: 0;
 	}
 
 	.js-nav #main-nav {
@@ -129,17 +139,17 @@
 	#main-nav .menu {
 		display: inline;
 		float: left;
-		width: 100%;
-		margin: 0;
 		float: left;
+		margin: 0;
 		padding: 0;
+		width: 100%;
 		text-align: center;
 
 		li {
-			float: none;
 			display: block;
-			text-align: left;
+			float: none;
 			margin-left: 0;
+			text-align: left;
 
 			&:hover, &.current-menu-item, &.current-menu-parent {
 
@@ -155,8 +165,8 @@
 
 			&.menu-parent > a:after {
 				position: absolute;
-				right: 1em;
 				top: 0.5em;
+				right: 1em;
 				color: white;
 			}
 
@@ -172,26 +182,26 @@
 				position: relative;
 				display: none;
 				max-width: 100%;
-				zoom:1;
 				background: rgba(255, 255, 255, 0.1);
+				zoom:1;
 
 				li {
-					float: none;
 					position: relative;
 					display: block !important;
+					float: none;
 					opacity: 1 !important;
 					zoom:1;
 
 					a {
-						width: 100%;
-						padding-left: 3em;
 						padding-right: 3em;
+						padding-left: 3em;
+						width: 100%;
 					}
 
 					&.menu-parent > a:after {
 						position: absolute;
-						right: 1em;
 						top: 0.5em;
+						right: 1em;
 						color: white;
 					}
 					.sub-menu {

@@ -164,22 +164,22 @@ body {
 			position: relative;
 		}
 	}
-	
+
 }
 
 // ----- Header cta ----- //
 
 #header-cta {
+	@include avenair-medium;
+	color: $medium-gray;
 	text-align: right;
 	text-transform: uppercase;
-	color: $medium-gray;
-	@include avenair-medium;
-	
+
 	a {
-		color: $medium-gray;
 		@include avenair-black;
+		color: $medium-gray;
 	}
-	
+
 	.hashtag {
 		color: $cyan;
 	}
@@ -194,10 +194,10 @@ body {
 
 	@include media ($mobile-down) {
 	}
-	
+
 	position: absolute;
-	left: 0;
 	bottom: 30px;
+	left: 0;
 	width: 175px;
 	height: 33px;
 
@@ -211,7 +211,7 @@ body {
 	@include media($large-desktop-up) {
 		right: 0;
 	}
-	
+
 	@include media ($large-desktop-down) {
 		right: 0;
 	}
@@ -234,75 +234,76 @@ body {
 // --------------------------------------------------------------------------
 
 #banner-wrapper {
-	padding: 0;
 	margin-top: -170px;
+	padding: 0;
 
 	.banner-slide {
-		position: relative;
-
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center bottom;
-
-		min-height: 700px;
 
 		@include media($mobile-down) {
 			min-height: 400px;
 		}
+		position: relative;
+
+		min-height: 700px;
+		background-position: center bottom;
+
+		background-size: cover;
+		background-repeat: no-repeat;
 
 		.caption {
 			position: absolute;
 			bottom: $gap * 4;
 			left: 50%;
-			margin-left: -200px;
 			z-index: 999;
+			margin-left: -200px;
+			padding: 15px;
 			width: 400px;
-
-			text-align: center;
+			border: 1px solid $white;
 			background: $cyan;
 			color: $white;
-			border: 1px solid $white;
-			padding: 15px;
+
+			text-align: center;
 		}
 	}
 }
 
 #banner {
+	right: 0;
+	bottom: 10%;
+	left: 0;
+	color: $white;
 
 	// 10% is just temporary positioning
 	// until some perfect middle is introduced
 
 	position: absolute;
-	bottom: 10%;
-	left: 0;
-	right: 0;
-	color: $white;
-	
+
 	// ----- Home page hero type ----- //
-	
+
 	// Todo: investigate better spot for this
-	
+
 	p {
 		margin-bottom: 0;
 		line-height: 1.5;
 	}
-	
+
 	h2, h4 {
 		@include salome-italic;
 		color: $white;
 	}
-	
+
 	h2 {
 		@include salome-italic;
 		margin: 0 0 0.3em;
+		text-transform: none;
 	}
-	
+
 	h4 {
 		@include avenair-medium;
-		text-transform: uppercase;
 		margin: 0.3em 0 0.8em;
+		text-transform: uppercase;
 	}
-	
+
 }
 
 // ----- Clock ----- //
@@ -310,9 +311,9 @@ body {
 // Todo: AWST needs own styling
 
 #clock {
-	font-size: ms(3);
 	@include avenair-black;
-	
+	font-size: ms(3);
+
 	small {
 		font-size: 1em;
 	}
@@ -333,14 +334,32 @@ body {
 // ----- Ghost button ----- //
 
 .ghost-button {
+	@include avenair-book;
 	padding: 0.5em 1em;
 	border: 1px solid $white;
-	text-decoration: none;
 	border-radius: 2px;
-	cursor: pointer;
+	text-decoration: none;
 	text-transform: uppercase;
-	@include avenair-book;
+	cursor: pointer;
 }
+
+// ----- Hero underlay ----- //
+
+#hero-underlay {
+	position: absolute;
+	top: 170px;
+	left: 0;
+	width: 100%;
+	background: rgba($yellow, 0);
+	transition: all 500ms; // Header wrapper height
+	bottom: 0;
+
+	&.active {
+		background: rgba($yellow, 0.9);
+	}
+}
+
+
 
 // --------------------------------------------------------------------------
 //   Main Content
@@ -359,36 +378,47 @@ body {
 
 
 // --------------------------------------------------------------------------
-//   Action Form
+//   Registration Form
 // --------------------------------------------------------------------------
 
-#action-form {
-	padding: $gap $gap/2;
-	background: #046a6b;
-	background: rgba(0, 187, 189, 0.6);
+#register-wrapper {
+	padding: $gap*3 $gap;
+	background: url(images/bg-registration-form.jpg) no-repeat center;
+	background-size: cover;
+}
 
-	h2 {
-		margin-bottom: 0;
+#register-content {
+	color: $white;
+
+	h3 {
+		margin-bottom: $gap/2;
 		color: $yellow;
-		text-transform: uppercase;
 		font-weight: normal;
 		font-style: normal;
-		font-size: 2em;
-		font-family: AvenirLTStd-Black;
+		font-size: 3em;
 	}
 
-	h3 {
-		font-size: 1.5em;
-		font-family: AvenirLTStd-Medium, Arial, Helvetica, Sans-serif;
+	.gform_wrapper {
+		padding: $gap;
+		background: $cyan;
+		background: rgba($cyan, 0.3);
+		margin-top: $gap*2;
 	}
 
-	h2,
-	h3 {
+	.gform_body {
+		@include clearfix;
+	}
 
-		@include media ($mobile-down) {
-			text-align: center;
+	.gform_fields {
+		@include span-columns(6);
+
+		@include media($mobile-down) {
+			@include span-columns(4);
 		}
-		padding-left: $gap/2;
+	}
+
+	.gfield_label {
+		display: none;
 	}
 
 	input[type="text"],
@@ -458,18 +488,24 @@ body {
 		display: block !important;
 	}
 
+	.gform_footer {
+		text-align: center;
+		position: relative;
+	}
+
 	#gform_submit_button_1 {
 		position: relative;
-		float: right;
+		display: inline-block;
 		clear: both;
 		border-radius: 0;
-		background: $white;
+		background: $yellow;
 		color: #000;
-/* 		margin-top: 30px; */
+		text-transform: uppercase;
+ 		margin-top: $gap;
+ 		border-color: transparent;
 
 		&:hover {
-			border-color: $blue;
-			background: $blue;
+			background: $yellow;
 			color: $white;
 		}
 
@@ -483,6 +519,9 @@ body {
 	}
 
 	.mandatory {
+		position: absolute;
+		right: 0;
+		bottom: 0;
 		color: $white;
 		font-size: 0.8125em;
 		-webkit-font-smoothing: antialiased;
@@ -496,16 +535,14 @@ body {
 
 #video-wrapper {
 	background: $yellow;
+	@include clearfix;
 
-	#video {
+	@include media(min-width 2000px) {
+		padding: $gap * 2;
 
-		@include media($mobile-down) {
-			padding: 0;
-		}
-		padding: $gap 0;
-
-		#video-content {
-			text-align: center;
+		#video {
+			max-width: 2000px;
+			margin: 0 auto;
 		}
 	}
 }
@@ -515,99 +552,52 @@ body {
 	width: 100%;
 }
 
+// --------------------------------------------------------------------------
+//  Live Lily Statement Section
+// --------------------------------------------------------------------------
 
-/* have to declaree a height here because fitvids is pushy */
-#confirmation-message {
-	@include clearfix;
-
-	@include media($tablet-down) {
-		height: 380px;
-	}
-	display: none;
-	float: left;
-	padding-top: $gap;
-	width: 100%;
-	color: $super-dark-purple-alt;
-	text-align: left;
-
-	p {
-		margin-bottom: 10px;
-	}
-
-/*
-	@include media(max-width: 500) {
-
-	}
-
-*/
-	@media only screen and (max-width : 480px) {
-		height: 520px;
-	}
+#livelily-wrapper {
+	background: $cyan;
 }
 
-#confirmation-message-details {
-	@include span-columns(7 of 12);
+	#livelily {
+		width: 700px;
+		padding: 80px 0;
 
-	@include media($tablet-down) {
-		@include span-columns(12 of 12);
-		text-align: center;
-	}
-	// display: none;
+		@include media(max-width 700px) {
+			width: 440px;
+			padding: 60px 0;
 
-	.phone-number {
-		font-family: AvenirLTStd-Black, Arial, Helvetica, Sans-serif;
-	}
-	.check-video {
-		font-size: 1.4em;
-		font-family: AvenirLTStd-Medium, Arial, Helvetica, Sans-serif;
-	}
-}
-
-/* 1.99 wtf! */
-#confirmation-social {
-	@include shift(1.99);
-	@include span-columns(3 of 12);
-	@include omega();
-
-	@include media($tablet-down) {
-		@include shift(0);
-		@include span-columns(12 of 12);
-		text-align: center;
-	}
-	text-align: right;
-	// display: none;
-
-	.hashtag {
-		margin-bottom: $gap;
-		color: $super-dark-purple-alt;
-	}
-
-}
-
-.confirmation-link {
-	display: inline-block;
-	margin: 0 0 10px 5px;
-	padding: 2px 10px 0;
-	background: $blue;
-	text-align: center;
-	font-size: ms(1);
-	transform: translateZ(0);
-
-	&:hover {
-		background: $white;
- 		color: $blue;
-
-			.icon-facebook,
-			.icon-twitter,
-			.icon-instagram {
-			  	animation-name: pop;
-			  	animation-duration: 0.3s;
-			  	animation-timing-function: linear;
-			  	animation-iteration-count: 1;
-
+			#livelily-content {
+				font-size: 1.6em;
 			}
 		}
-}
+
+		@include media(max-width 460px) {
+			width: 320px;
+			padding: 40px 0;
+
+			#livelily-content {
+				font-size: 1.2em;
+			}
+		}
+	}
+
+	#livelily-content {
+		font-size: 2.6em;
+		line-height: 1.3;
+		color: $white;
+		font-family: salomeitalic, Georgia, Times, "Times New Roman", serif;
+		font-weight: normal;
+		font-style: normal;
+
+		em {
+			color: $darkblue;
+			text-decoration: none;
+			font-style: normal;
+		}
+
+	}
 
 
 // --------------------------------------------------------------------------
@@ -632,8 +622,8 @@ body {
 // --------------------------------------------------------------------------
 
 #community-wrapper {
-	padding: 0;
 	margin-bottom: 1px;
+	padding: 0;
 
 	#community {
 		padding: 0;
@@ -713,12 +703,31 @@ body {
 article.page {
 
 	header {
-		@include center;
+
 	}
+
+	header.bg-image {
+		display: table;
+		width: 100%;
+		height: 300px;
+
+		@include media($mobile-down) {
+			height: 100px;
+		}
+
+		.page-title {
+			display: table-cell;
+			vertical-align: bottom;
+			padding-bottom: 30px;
+			color: $white;
+		}
+	}
+
 }
 
 .page-title {
 	text-align: center;
+	padding: $gap * 3 $gap 0;
 }
 
 

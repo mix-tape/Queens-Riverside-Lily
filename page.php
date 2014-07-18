@@ -11,7 +11,14 @@
 
 		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
 
-			<header>
+			<?php
+
+				$image = get_field('title_background');
+				$url = $image['url'];
+				$alt = $image['alt'];
+				$imageSize = $image['sizes']['hero']; ?>
+
+			<header class="page-header <?php if ($image) echo 'bg-image'; ?>" style="background-image: url(<?php echo $imageSize; ?>)">
 
 				<h2 class="page-title"><?php the_title(); ?></h2>
 
@@ -30,8 +37,6 @@
 
 </div>
 
-<?php get_template_part('section', 'livelily'); ?>
-
-<?php get_template_part('section', 'community'); ?>
+<?php get_template_part('section', 'master'); ?>
 
 <?php get_footer(); ?>

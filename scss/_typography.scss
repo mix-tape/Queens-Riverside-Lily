@@ -40,7 +40,7 @@ p {
 // --------------------------------------------------------------------------
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, Sans-serif;
+	font-family: AvenirLTStd-Light, Arial, Helvetica, Sans-serif;
 	color: $base-heading-color;
 	font-weight: normal;
 	line-height: 1.2;
@@ -50,20 +50,34 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
+h1, h2, h3 {
+	text-transform: uppercase;
+}
+
 h1 {
 	font-size: ms(4);
 	margin-top: 0;
 	margin-bottom: ms(-1);
+
+	@include media($mobile-down) {
+		font-size: ms(2);
+	}
 }
 
 h2 {
 	font-size: ms(3);
 	margin-bottom: ms(-1);
+	@include media($mobile-down) {
+		font-size: ms(2);
+	}
 }
 
 h3 {
 	font-size: ms(2);
 	margin-bottom: ms(-1);
+	@include media($mobile-down) {
+		font-size: ms(1);
+	}
 }
 
 h4 {

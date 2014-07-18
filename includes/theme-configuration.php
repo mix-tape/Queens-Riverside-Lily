@@ -72,12 +72,23 @@ add_filter( 'gform_field_content', 'lily_form_choices', 1, 5 );
 
 function lily_form_choices( $content, $field, $value, $lead_id, $form_id ) {
 
-
 	/*
 	 * Check to make sure we're on the right form
 	 */
 
 	if ( 1 !== (int) $form_id ) return $content;
+
+
+	// ----- Add a wrapper around the select boxes ----- //
+
+	// we'll need to retrieve the form's properties for consistency
+
+	$form = RGFormsModel::get_form_meta($form_id, true);
+	$form = RGFormsModel::add_default_properties($form);
+	$description_class = rgar($form, 'descriptionPlacement') == 'above' ? 'description_above' : 'description_below';
+
+	if ( 10 == $field['id'])
+		$content = '</li></ul><ul class="gform_fields '.$form['labelPlacement'].' '.$description_class.' '.$field['cssClass'].'">';
 
 
 	/*
@@ -86,7 +97,7 @@ function lily_form_choices( $content, $field, $value, $lead_id, $form_id ) {
 
 	$fields = array(3, 4, 5, 6);
 
-	if ( in_array($fields, (int) $field['id']) ) return $content;
+	if ( !in_array((int) $field['id'], $fields) ) return $content;
 
 
 	/*

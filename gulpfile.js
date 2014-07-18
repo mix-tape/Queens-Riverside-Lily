@@ -43,7 +43,8 @@ config.plugins = [
   config.vendor + '/matchHeight/jquery.matchHeight.js',
   config.vendor + '/moment/moment.js',
   config.vendor + '/fitvids/jquery.fitvids.js',
-  config.vendor + '/chosen/chosen.jquery.js'
+  config.vendor + '/chosen/chosen.jquery.js',
+  config.vendor + '/enquire/dist/enquire.js'
 
 ]
 

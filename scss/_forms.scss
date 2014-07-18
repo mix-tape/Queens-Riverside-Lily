@@ -36,7 +36,7 @@ form {
 	/* padding: $gap/2 0 $gap/3 12px; */
 	-webkit-font-smoothing: antialiased;
 	}
-	
+
 	.validation_message {
 		font-style: italic;
 	}
@@ -141,6 +141,7 @@ input[type="checkbox"], input[type="radio"] {
 
 .gfield {
 	margin-bottom: $gap;
+  @include clearfix;
 }
 
 .gfield_required {
@@ -197,9 +198,8 @@ input[type="checkbox"], input[type="radio"] {
 // ----- 2 Column Fields ----- //
 
 .ginput_left,
-.ginput_right,
-.gf_left_half,
-.gf_right_half {
+.ginput_right
+{
  	width: 48%;
  	clear: none;
 
@@ -212,13 +212,11 @@ input[type="checkbox"], input[type="radio"] {
  	}
 }
 
-.ginput_left,
-.gf_left_half {
+.ginput_left {
 	float: left;
 }
 
-.ginput_right,
-.gf_right_half {
+.ginput_right {
 	float: right;
 }
 
@@ -302,14 +300,14 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 /* @end */
-  
+
 /* @group Single Chosen */
 .chosen-container-single .chosen-single {
   position: relative;
   display: block;
   overflow: hidden;
-  padding: 4px 12px;
-  border: none;
+  padding: 5px 12px;
+  border: 1px solid transparent;
   background-color: $blue;
   background-clip: padding-box;
   color: $white;

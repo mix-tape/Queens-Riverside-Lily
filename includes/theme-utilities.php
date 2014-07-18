@@ -31,15 +31,9 @@ function get_blocks_classes()
 
 function get_block_classes()
 {
+	$classes = get_sub_field('block_features');
 	$classes[] = get_sub_field('size');
 	$classes[] = get_sub_field('class');
-	$classes[] = get_sub_field('background_color');
-
-	if (get_sub_field('link'))
-		$classes[] = 'link-block';
-
-	if (get_sub_field('background_image'))
-		$classes[] = 'bg-image';
 
 	$output = implode(' ', $classes);
 

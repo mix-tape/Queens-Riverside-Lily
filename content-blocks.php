@@ -26,7 +26,6 @@
 						while (have_rows('content')): the_row(); ?>
 
 
-
 							<?php
 
 							// --------------------------------------------------------------------------
@@ -36,9 +35,9 @@
 							if (get_row_layout() == 'heading'): ?>
 
 
-								<section class="blocks section text-block">
+								<section class="blocks text-block">
 
-									<div class="section-content">
+									<div class="section">
 
 										<h<?php the_sub_field('heading_level'); ?> class="heading">
 
@@ -56,9 +55,9 @@
 							<?php /*// Text Block ///////*/ elseif (get_row_layout() == 'text_block'): ?>
 
 
-								<section class="blocks section text-block <?php echo get_blocks_classes(); ?>">
+								<section class="blocks text-block <?php echo get_blocks_classes(); ?>">
 
-									<div class="section-content">
+									<div class="section">
 
 										<?php if (get_sub_field('logo')) { ?>
 

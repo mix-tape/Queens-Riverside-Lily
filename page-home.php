@@ -24,8 +24,6 @@
 
 </div>
 
-<?php get_template_part( 'section', 'google-map' ); ?>
-
-<?php get_template_part( 'section', 'community' ); ?>
+<?php get_template_part('section', 'master'); ?>
 
 <?php get_footer(); ?>
