@@ -224,7 +224,11 @@ table {
 //   Buttons
 // --------------------------------------------------------------------------
 
-@mixin main-button ($colour1: #E6E6E6) {
+//Todo: a bit too much duplicated rules here over both buttons
+
+// ----- Main button ----- //
+
+@mixin main-button ($colour1: $cyan-opaque) {
 	display: inline-block;
 	zoom: 1;
 	outline: 0;
@@ -239,22 +243,23 @@ table {
 	-ms-user-select: none;
 	user-select: none;
 
+	@include avenair-book;
 	font-size: 100%;
-	padding: 0.5em 1em;
-	border: 1px solid $colour1;
+	text-transform: uppercase;
+	
+	padding: 0.5em 1.4em;
+	border: 1px solid $white;
 	background-color: $colour1;
 	text-decoration: none;
 	border-radius: 2px;
 
 	&:hover {
 		outline: 0;
-		background: $colour1 - #111;
-		border-color: $colour1 - #111;
+		background: $cyan;
 	}
 
 	&:active, &.active {
 		outline: 0;
-		box-shadow: 0 0 0 1px rgba(0,0,0,.15) inset,0 0 6px rgba(0,0,0,.2) inset;
 	}
 
 	&.disabled, &[disabled] {
@@ -267,4 +272,32 @@ table {
 
 .button {
 	@include main-button;
+}
+
+// ----- Ghost button ----- //
+
+
+@mixin alt-button {
+	@include avenair-book;
+	padding: 0.5em 1.4em;
+	border: 1px solid $white;
+	border-radius: 2px;
+	text-decoration: none;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: all 300ms ease-in-out;
+	
+		&:hover {
+			outline: 0;
+			background-color: $yellow
+		}
+		
+		&:active, &.active {
+			outline: 0;
+			box-shadow: 0 0 0 1px rgba(0,0,0,.15) inset,0 0 6px rgba(0,0,0,.2) inset;
+		}
+}
+
+.ghost-button {
+	@include alt-button;
 }

@@ -46,6 +46,7 @@ $blue:										#00bbb3;
 $super-dark-purple:				#120f27;
 $super-dark-purple-alt:		#28254e;
 $cyan:										#32bbb1;
+$cyan-opaque:							rgba(50, 176, 164, 0.8);
 $darkblue:								#202351;
 $yellow:									#ffcd00;
 $white:										#fff;
@@ -63,6 +64,13 @@ $link-hover: 					$white;
 
 $base-border-color: 	$white;
 $base-border-radius:	4px;
+
+
+// ----- Generic type mixins ----- //
+
+@mixin bold-it {
+	font-weight: bold;
+}
 
 // ----- Avenair mixins ----- //
 
