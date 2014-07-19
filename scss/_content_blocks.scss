@@ -104,8 +104,8 @@
 
 // ----- Height Variations ----- //
 
-.short 		{ .block { height: 312px; } }
-.medium 	{ .block { height: 360px; } }
+.short 		{ .block { height: 350px; } }
+.medium 	{ .block { height: 425px; } }
 .tall 		{ .block { height: 500px; } }
 
 
@@ -178,11 +178,24 @@
 
 	.link-block.bg-image.no-bg-color {
 
+		.block-content {
+			background-color: rgba(black, 0.2);
+		}
+
 		a:hover .block-content {
 			background-color: rgba($yellow, 0.9);
 		}
 	}
 
+	// ----- Home Page CTA ----- //
+
+	.block.cta {
+
+		.button {
+			position: absolute;
+			bottom: $gap * 3;
+		}
+	}
 
 	// ----- Image block ----- //
 
@@ -239,7 +252,7 @@
 	.block.align-bottom {
 		display: table;
 
-		a {
+		&.link-block a {
 			height: 100%;
 			display: table-row;
 		}
@@ -253,7 +266,7 @@
 	.block.align-middle {
 		display: table;
 
-		a {
+		&.link-block a {
 			height: 100%;
 			display: table-row;
 		}

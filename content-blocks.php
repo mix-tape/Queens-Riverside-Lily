@@ -142,7 +142,7 @@
 
 														<div class="block-content">
 
-															<?php echo replace_links(get_sub_field('content')); ?>
+															<?php if (get_sub_field('link')) { echo replace_links(get_sub_field('content')); } else { echo get_sub_field('content'); } ?>
 
 														</div>
 

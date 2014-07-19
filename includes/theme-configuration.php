@@ -519,49 +519,21 @@ add_filter( 'tiny_mce_before_init', 'my_mce_before_init' );
 function my_mce_before_init( $settings ) {
 
 	$style_formats = array(
-		array(
-			'title'	=>	'Intro',
-			'block' => 'p',
-			'classes' => 'intro',
-			'wrapper' => false
-		),
-		array(
-			'title'	=>	'Drop cap',
-			'block' => 'p',
-			'classes' => 'drop-cap',
-			'wrapper' => false
-		),
-		array(
-			'title'	=>	'Small Padding',
-			'block' => 'div',
-			'classes' => 'small-padding',
-			'wrapper' => true
-		),
-		array(
-			'title'	=>	'Big Padding',
-			'block' => 'div',
-			'classes' => 'big-padding',
-			'wrapper' => true
-		),
+
 		array(
 			'title' => 'Button',
-			'block' => 'a',
-			'classes' => 'button'
+			'selector' => 'a',
+			'classes' => 'button',
+			'attributes' => array( 'href' => '#')
 		),
+
 		array(
-			'title' => 'Callout Box',
-			'block' => 'div',
-			'classes' => 'callout',
-			'wrapper' => true
-		),
-		array(
-			'title' => 'Bold Red Text',
-			'inline' => 'span',
-			'styles' => array(
-				'color' => '#f00',
-				'fontWeight' => 'bold'
-			)
+			'title' => 'Ghost Button',
+			'selector' => 'a',
+			'classes' => 'ghost-button',
+			'attributes' => array( 'href' => '#')
 		)
+
 	);
 
 	$settings['style_formats'] = json_encode( $style_formats );

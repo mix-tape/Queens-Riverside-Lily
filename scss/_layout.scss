@@ -267,12 +267,6 @@ body {
 	}
 }
 
-#instagram-hash:before {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-}
 
 #banner {
 	right: 0;
@@ -601,33 +595,22 @@ body {
 
 	#instagram-hash {
 		text-align: center;
-
-		.fat-hash {
-			font-family: Verdana, Geneva, sans-serif;
-		}
-
-		h3.hashtag {
-			color: $super-dark-purple;
-			@include salome-regular;
-			text-transform: uppercase;
-			display: inline-block;
-			vertical-align: middle;
-			margin-bottom: 0;
-			font-size: 3.0em;
-		}
-
 	}
+}
 
-	// Helper for vertical middle of object with unknown height
 
-	#instagram-hash:before {
-	    content: '';
-	    display: inline-block;
-	    height: 100%;
-	    vertical-align: middle;
+.large-hashtag {
+	color: $super-dark-purple;
+	@include salome-regular;
+	text-transform: uppercase;
+	display: inline-block;
+	vertical-align: middle;
+	margin-bottom: 0;
+	font-size: 3.0em;
+
+	.fat-hash {
+		font-family: Verdana, Geneva, sans-serif;
 	}
-
-
 }
 
 #instagram-images {
@@ -779,6 +762,7 @@ header.bg-image {
 .page-title {
 	text-align: center;
 	padding: $gap * 3 $gap 0;
+	margin-bottom: 0;
 }
 
 
