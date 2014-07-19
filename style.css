@@ -1549,8 +1549,9 @@ body {
 header.bg-image {
   display: table;
   width: 100%;
-  height: 300px; }
-    /* line 768, scss/_layout.scss */
+  height: 500px;
+  margin-top: -170px; }
+    /* line 769, scss/_layout.scss */
   header.bg-image .page-title {
     display: table-cell;
     vertical-align: bottom;
@@ -1559,23 +1560,23 @@ header.bg-image {
     color: white;
     background: rgba(0, 0, 0, 0.4); }
 
-/* line 778, scss/_layout.scss */
+/* line 779, scss/_layout.scss */
 .page-title {
   text-align: center;
   padding: 60px 20px 0; }
 
-/* line 788, scss/_layout.scss */
+/* line 789, scss/_layout.scss */
 #footer-wrapper {
   color: white;
   padding: 120px 0;
   background: #120f27; }
-    /* line 797, scss/_layout.scss */
+    /* line 798, scss/_layout.scss */
   #footer-wrapper a:hover {
     color: #00bbb3; }
-  /* line 801, scss/_layout.scss */
+  /* line 802, scss/_layout.scss */
   #footer-wrapper #footer {
     position: relative; }
-    /* line 804, scss/_layout.scss */
+    /* line 805, scss/_layout.scss */
     #footer-wrapper #footer #footer-content {
       float: left;
       display: block;
@@ -1587,11 +1588,11 @@ header.bg-image {
       /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
       #footer-wrapper #footer #footer-content:last-child {
         margin-right: 0; }
-            /* line 817, scss/_layout.scss */
+            /* line 818, scss/_layout.scss */
       #footer-wrapper #footer #footer-content p {
         margin-bottom: 0; }
 
-/* line 825, scss/_layout.scss */
+/* line 826, scss/_layout.scss */
 .footer-nav {
   float: left;
   display: block;
@@ -1602,17 +1603,17 @@ header.bg-image {
   /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
   .footer-nav:last-child {
     margin-right: 0; }
-    /* line 834, scss/_layout.scss */
+    /* line 835, scss/_layout.scss */
   .footer-nav ul {
     display: inline-block;
     margin: 0;
     padding: 0;
     list-style: none; }
-    /* line 840, scss/_layout.scss */
+    /* line 841, scss/_layout.scss */
     .footer-nav ul li {
       font-size: 0.7em; }
 
-/* line 847, scss/_layout.scss */
+/* line 848, scss/_layout.scss */
 #queens-riverside-footer-logo {
   position: absolute;
   top: 25px;
@@ -2886,10 +2887,10 @@ div.wp-caption {
     /* line 759, scss/_layout.scss */
     header.bg-image {
       height: 100px; } 
-    /* line 788, scss/_layout.scss */
+    /* line 789, scss/_layout.scss */
     #footer-wrapper {
       padding: 80px 0 120px; } 
-        /* line 804, scss/_layout.scss */
+        /* line 805, scss/_layout.scss */
         #footer-wrapper #footer #footer-content {
           float: left;
           display: block;
@@ -2901,7 +2902,7 @@ div.wp-caption {
           /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
           #footer-wrapper #footer #footer-content:last-child {
             margin-right: 0; } 
-    /* line 825, scss/_layout.scss */
+    /* line 826, scss/_layout.scss */
     .footer-nav {
       float: left;
       display: block;
@@ -2910,7 +2911,7 @@ div.wp-caption {
       /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
       .footer-nav:last-child {
         margin-right: 0; } 
-    /* line 847, scss/_layout.scss */
+    /* line 848, scss/_layout.scss */
     #queens-riverside-footer-logo {
       position: relative; } 
   /* line 121, scss/_navigation.scss */
