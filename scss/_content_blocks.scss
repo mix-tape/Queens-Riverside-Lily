@@ -10,18 +10,37 @@
 //	 Heading
 // --------------------------------------------------------------------------
 
-.heading {
-	@include span-columns(12);
+.heading-block {
+	padding: 60px 0 0;
 }
+
+	.heading {
+		@include span-columns(12);
+		text-align: center;
+		margin-bottom: 0;
+	}
 
 
 // --------------------------------------------------------------------------
 //	 Standard
 // --------------------------------------------------------------------------
 
-.standard {
-	@include span-columns(12);
+.text-block {
+	padding: 60px;
+
+	@include media($mobile-down) {
+		padding: $gap;
+	}
 }
+
+	.standard {
+		@include span-columns(12);
+	}
+
+
+// --------------------------------------------------------------------------
+//  Left aligned logo (News)
+// --------------------------------------------------------------------------
 
 .left-logo {
 
@@ -46,23 +65,9 @@
 	}
 }
 
+// ----- Width variations ----- //
 
-
-
-	.text-block {
-		padding: 60px;
-
-		@include media($mobile-down) {
-			padding: $gap;
-		}
-	}
-
-	// ----- Variations ----- //
-
-	.split-columns .standard {
-		column-count: 2;
-		column-gap: $gap * 2;
-	}
+// .wide stuff
 
 
 // --------------------------------------------------------------------------
@@ -160,8 +165,6 @@
 				transform: translate3d(0,0,0);
 			}
 
-			// Todo: animate hover
-
 			.button {
 				background-color: $cyan;
 			}
@@ -191,6 +194,10 @@
 
 	.cyan {
 		background-color: $cyan;
+
+		h3 {
+			color: $darkblue;
+		}
 	}
 
 	.darkblue {
@@ -203,8 +210,9 @@
 
 
 	.white-text {
+		color: $white;
 
-		h1, h2, h3, h4, h5, h6, p, li {
+		h1, h2, p, li {
 			color: $white;
 		}
 	}

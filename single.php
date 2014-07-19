@@ -30,6 +30,12 @@
 
 			<?php get_template_part('content', 'blocks'); ?>
 
+			<footer>
+
+				<a href="<?php echo get_permalink(get_option( 'page_for_posts' )); ?>" class="button">Back to news</a>
+
+			</footer>
+
 		</article>
 
 

@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-h1, h2, h3 {
+h1, h2 {
 	text-transform: uppercase;
 }
 
@@ -73,8 +73,11 @@ h2 {
 }
 
 h3 {
-	font-size: ms(2);
+	font-size: ms(1);
 	margin-bottom: ms(-1);
+	font-weight: 900;
+	color: $cyan;
+
 	@include media($mobile-down) {
 		font-size: ms(1);
 	}
@@ -246,7 +249,7 @@ table {
 	@include avenair-book;
 	font-size: 100%;
 	text-transform: uppercase;
-	
+
 	padding: 0.5em 1.4em;
 	border: 1px solid $white;
 	background-color: $colour1;
@@ -286,12 +289,12 @@ table {
 	text-transform: uppercase;
 	cursor: pointer;
 	transition: all 300ms ease-in-out;
-	
+
 		&:hover {
 			outline: 0;
 			background-color: $yellow
 		}
-		
+
 		&:active, &.active {
 			outline: 0;
 			box-shadow: 0 0 0 1px rgba(0,0,0,.15) inset,0 0 6px rgba(0,0,0,.2) inset;

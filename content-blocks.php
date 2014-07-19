@@ -43,7 +43,7 @@
 							if (get_row_layout() == 'heading'): ?>
 
 
-								<section class="blocks text-block">
+								<section class="blocks heading-block <?php echo get_blocks_classes(); ?>">
 
 									<div class="section">
 
