@@ -138,12 +138,12 @@ function form_submit_button($button, $form)
 // --------------------------------------------------------------------------
 
 function new_excerpt_more($text) {
-	return ' <a href="'. get_permalink( get_the_ID() ) . '" class="more">' . '...read more&nbsp;&raquo;' . '</a>';
+	return '...';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
 function new_excerpt_length($length) {
-return 25;
+return 50;
 }
 add_filter('excerpt_length', 'new_excerpt_length');
 

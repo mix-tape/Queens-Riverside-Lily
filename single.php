@@ -1,55 +1,44 @@
 <?php get_header(); ?>
 
-	<div class="wrapper" id="main-wrapper">
+<div class="fullscreen-wrapper" id="content-wrapper">
 
-		<div class="section" id="main">
+	<section id="content" role="main" class="full-width">
 
-			<div class="section-content" id="main-content">
-
-				<section id="content" role="main">
-
-					<?php if ( have_posts() ) { while ( have_posts() ) { the_post(); ?>
-
-					<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
-
-						<header>
-
-							<h2><?php the_title(); ?></h2>
-
-							<p class="meta">
-
-								<time datetime="<?php the_time('Y-m-d')?>">Posted <?php the_time('F jS, Y') ?></time>
-
-								<span class="author">by <?php the_author() ?></span>.
-
-								<span class="category">Posted in <?php the_category( ', ', 'multiple' ); ?></span>
-
-							</p>
-
-						</header>
-
-						<?php get_template_part('content', 'blocks'); ?>
-
-						<footer>
+		<?php if ( have_posts() ) { while ( have_posts() ) { the_post(); ?>
 
 
+		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
 
-						</footer>
+			<?php
 
-					</article>
+				$image = get_field('title_background');
+				$url = $image['url'];
+				$alt = $image['alt'];
+				$imageSize = $image['sizes']['hero']; ?>
 
-					<?php comments_template(); ?>
+			<header class="page-header <?php echo get_field('title_background_colour'); if ($image) echo ' bg-image'; ?>" style="background-image: url(<?php echo $imageSize; ?>)">
 
-					<?php } } ?>
+				<h2 class="page-title"><?php the_title(); ?></h2>
 
-				</section>
+			</header>
 
-				<?php get_sidebar(); ?>
+			<p class="meta">
 
-			</div><!-- End #main-content -->
-				
-		</div><!-- End #main -->
-	
-	</div><!-- End #main-wrapper -->
-	
+				<time datetime="<?php the_time('Y-m-d')?>"><?php the_time('F jS, Y') ?></time>
+
+			</p>
+
+			<?php get_template_part('content', 'blocks'); ?>
+
+		</article>
+
+
+		<?php } } ?>
+
+	</section>
+
+</div>
+
+<?php get_template_part('section', 'master'); ?>
+
 <?php get_footer(); ?>

@@ -4,7 +4,7 @@
 
 			<div class="section-content" id="footer-content">
 
-				<?php the_field('footer_content', 4); ?>
+				<?php the_field('footer_content', 'options'); ?>
 
 			</div>
 

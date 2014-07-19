@@ -256,10 +256,10 @@ body {
 			left: 50%;
 			z-index: 999;
 			margin-left: -200px;
-			padding: 15px;
+			padding: 10px;
 			width: 400px;
 			border: 1px solid $white;
-			background: $cyan;
+			background: $cyan-opaque;
 			color: $white;
 
 			text-align: center;
@@ -588,48 +588,63 @@ body {
 		}
 
 	}
-	
+
 // --------------------------------------------------------------------------
 //  Instagram
-// --------------------------------------------------------------------------	
+// --------------------------------------------------------------------------
 
 #instagram-wrapper {
 	background: $white;
 }
 
-	#instagram {
-		
-		#instagram-hash {
-			text-align: center;
-		
-			.fat-hash {
-				font-family: Verdana, Geneva, sans-serif;
-			}
-			
-			h3.hashtag {
-				color: $super-dark-purple;
-				@include salome-regular;
-				text-transform: uppercase;
-				display: inline-block;
-				vertical-align: middle;
-				margin-bottom: 0;
-				font-size: 3.0em;
-			}
-		
+#instagram {
+
+	#instagram-hash {
+		text-align: center;
+
+		.fat-hash {
+			font-family: Verdana, Geneva, sans-serif;
 		}
-		
-		// Helper for vertical middle of object with unknown height
-		
-		#instagram-hash:before {
-		    content: '';
-		    display: inline-block;
-		    height: 100%;
-		    vertical-align: middle;
+
+		h3.hashtag {
+			color: $super-dark-purple;
+			@include salome-regular;
+			text-transform: uppercase;
+			display: inline-block;
+			vertical-align: middle;
+			margin-bottom: 0;
+			font-size: 3.0em;
 		}
-		
-					
+
 	}
-	
+
+	// Helper for vertical middle of object with unknown height
+
+	#instagram-hash:before {
+	    content: '';
+	    display: inline-block;
+	    height: 100%;
+	    vertical-align: middle;
+	}
+
+
+}
+
+#instagram-images {
+	  font-size:0;
+
+	ul, li, a {margin: 0; padding: 0;}
+
+	 li {
+	  list-style:none;
+	  float:left;
+	  margin:0;
+	  width: 33.33333333%;
+/* 	  max-height: 380px */
+	}
+
+}
+
 
 
 // --------------------------------------------------------------------------
@@ -662,6 +677,7 @@ body {
 		width: 100%;
 
 		#community-content {
+			border-top: 1px solid $white;
 			border-left: 1px solid $white;
 		}
 	}
@@ -738,23 +754,25 @@ article.page {
 
 	}
 
-	header.bg-image {
-		display: table;
-		width: 100%;
-		height: 300px;
+}
 
-		@include media($mobile-down) {
-			height: 100px;
-		}
+header.bg-image {
+	display: table;
+	width: 100%;
+	height: 300px;
 
-		.page-title {
-			display: table-cell;
-			vertical-align: bottom;
-			padding-bottom: 30px;
-			color: $white;
-		}
+	@include media($mobile-down) {
+		height: 100px;
 	}
 
+	.page-title {
+		display: table-cell;
+		vertical-align: bottom;
+		padding-bottom: 30px;
+		margin-bottom: 0;
+		color: $white;
+		background: rgba(black, 0.4);
+	}
 }
 
 .page-title {
@@ -768,6 +786,7 @@ article.page {
 // --------------------------------------------------------------------------
 
 #footer-wrapper {
+	color: $white;
 
 	@include media($mobile-down) {
 		padding: $gap*4 0 $gap*6;

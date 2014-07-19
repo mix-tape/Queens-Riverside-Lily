@@ -1,23 +1,28 @@
 <?php get_header(); ?>
 
-	<div class="wrapper" id="main-wrapper">
+<div class="fullscreen-wrapper" id="content-wrapper">
 
-		<div class="section" id="main">
+	<section id="content" role="main" class="full-width">
 
-			<div class="section-content" id="main-content">
+		<?php
 
-				<section id="content" role="main">
+			$image = get_field('title_background', get_option( 'page_for_posts' ));
+			$url = $image['url'];
+			$alt = $image['alt'];
+			$imageSize = $image['sizes']['hero'];
 
-					<?php get_template_part('loop'); ?>
+		?>
 
-				</section>
+		<header class="page-header bg-image white-text" style="background-image: url(<?php echo $imageSize; ?>)">
 
-				<?php get_sidebar(); ?>
+			<h2 class="page-title"><?php echo get_the_title(get_option( 'page_for_posts' )); ?></h2>
 
-			</div><!-- End #main-content -->
-				
-		</div><!-- End #main -->
-	
-	</div><!-- End #main-wrapper -->
-	
+		</header>
+
+	</section>
+
+</div>
+
+<?php get_template_part('loop'); ?>
+
 <?php get_footer(); ?>

@@ -14,11 +14,19 @@
 
 						if (get_the_content()): ?>
 
-						<div class="standard">
+						<section class="blocks text-block">
 
-							<?php if (is_singular() && !is_front_page()) { the_content(''); } else { the_excerpt();} ?>
+							<div class="section">
 
-						</div>
+								<div class="standard">
+
+									<?php if (is_singular() && !is_front_page()) { the_content(''); } else { the_excerpt();} ?>
+
+								</div>
+
+							</div>
+
+						</section>
 
 						<?php endif;
 
@@ -84,6 +92,30 @@
 
 								</section>
 
+
+
+							<?php /*// Text Block ///////*/ elseif (get_row_layout() == 'text_columns'): ?>
+
+
+								<section class="blocks text-columns <?php echo get_blocks_classes(); ?>">
+
+									<div class="section">
+
+										<div class="column-1">
+
+											<?php the_sub_field('column_1'); ?>
+
+										</div>
+
+										<div class="column-2">
+
+											<?php the_sub_field('column_2'); ?>
+
+										</div>
+
+									</div>
+
+								</section>
 
 
 

@@ -18,7 +18,7 @@
 				$alt = $image['alt'];
 				$imageSize = $image['sizes']['hero']; ?>
 
-			<header class="page-header <?php if ($image) echo 'bg-image'; ?>" style="background-image: url(<?php echo $imageSize; ?>)">
+			<header class="page-header <?php echo get_field('title_background_colour'); if ($image) echo ' bg-image'; ?>" style="background-image: url(<?php echo $imageSize; ?>)">
 
 				<h2 class="page-title"><?php the_title(); ?></h2>
 

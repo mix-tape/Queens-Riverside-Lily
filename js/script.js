@@ -258,6 +258,18 @@ $(function() {
 		$("a[href^='http://']").filter(function() {
 			 return this.hostname && this.hostname !== location.hostname;
 		}).attr('target', '_blank');
+		
+		
+	// --------------------------------------------------------------------------
+	//   Instagram
+	// --------------------------------------------------------------------------
+		
+		$("#instagram-images").jqinstapics({
+		  	"user_id": "1373128803",
+		  	"access_token": "1373128803.674061d.8803abd653da4c6b919afc64d71d2f19",
+		  	"count": 3,
+		  	"size" : "standard_resolution"
+		});
 
 });
 

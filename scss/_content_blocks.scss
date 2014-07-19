@@ -125,31 +125,9 @@
 			@include media($mobile-down) {
 				padding: $gap;
 			}
-			
-			// Hide the heading util block is hovered
-			//todo: check in ie8 cause it might be hidden always
-			
-			h3 {
-				text-transform: uppercase;
-				color: $white;
-				opacity: 0;
-				transition: opacity 300ms, transform 300ms, ease-in-out;
-				transform: translate3d(-15px,0,0);
-			}
-			
-			p {
-				position: absolute;
-				bottom: $gap*2;
-			}
-			
-			// Slide in the heading when block is hovered
-			
-			&:hover h3 {
-					opacity: 1;
-					transform: translate3d(0,0,0);
-			}
 		}
 	}
+
 
 	// ----- Link Block ----- //
 
@@ -165,12 +143,21 @@
 			display: block;
 		}
 
+		h3 {
+			text-transform: uppercase;
+			color: $white;
+			transition: opacity 300ms, transform 300ms, ease-in-out;
+			transform: translate3d(0, 5px, 0);
+		}
+
 		a:hover .block-content {
 			background-color: $yellow;
 
+			// Slide in the heading when block is hovered
 
 			h1 h2, h3, h4, h5, h6 {
 				color: $white;
+				transform: translate3d(0,0,0);
 			}
 
 			// Todo: animate hover
@@ -248,8 +235,7 @@
 
 		.block-content {
 			display: table-cell;
-			/* vertical-align: bottom; */
-			vertical-align: top;
+			vertical-align: bottom;
 		}
 	}
 

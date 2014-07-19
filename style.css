@@ -1151,10 +1151,10 @@ body {
       left: 50%;
       z-index: 999;
       margin-left: -200px;
-      padding: 15px;
+      padding: 10px;
       width: 400px;
       border: 1px solid white;
-      background: #32bbb1;
+      background: rgba(50, 176, 164, 0.8);
       color: white;
       text-align: center; }
 
@@ -1429,69 +1429,85 @@ body {
   height: 100%;
   vertical-align: middle; }
 
-/* line 639, scss/_layout.scss */
+/* line 633, scss/_layout.scss */
+#instagram-images {
+  font-size: 0; }
+  /* line 636, scss/_layout.scss */
+  #instagram-images ul, #instagram-images li, #instagram-images a {
+    margin: 0;
+    padding: 0; }
+  /* line 638, scss/_layout.scss */
+  #instagram-images li {
+    list-style: none;
+    float: left;
+    margin: 0;
+    width: 33.33333333%;
+    /* 	  max-height: 380px */ }
+
+/* line 654, scss/_layout.scss */
 #map-wrapper {
   padding: 0; }
 
-/* line 643, scss/_layout.scss */
+/* line 658, scss/_layout.scss */
 .acf-map {
   width: 100%;
   height: 470px; }
   
-/* line 656, scss/_layout.scss */
+/* line 671, scss/_layout.scss */
 #community-wrapper {
   margin-bottom: 1px;
   padding: 0; }
-  /* line 660, scss/_layout.scss */
+  /* line 675, scss/_layout.scss */
   #community-wrapper #community {
     padding: 0;
     width: 100%; }
-    /* line 664, scss/_layout.scss */
+    /* line 679, scss/_layout.scss */
     #community-wrapper #community #community-content {
+      border-top: 1px solid white;
       border-left: 1px solid white; }
 @-webkit-keyframes pop {
-  /* line 671, scss/_layout.scss */
+  /* line 687, scss/_layout.scss */
   50% {
     -webkit-transform: scale(1.4);
     transform: scale(1.4); }
 
-  /* line 674, scss/_layout.scss */
+  /* line 690, scss/_layout.scss */
   100% {
     -webkit-transform: scale(1);
     transform: scale(1); } }
 @-ms-keyframes pop {
-  /* line 671, scss/_layout.scss */
+  /* line 687, scss/_layout.scss */
   50% {
     -ms-transform: scale(1.4);
     transform: scale(1.4); }
 
-  /* line 674, scss/_layout.scss */
+  /* line 690, scss/_layout.scss */
   100% {
     -ms-transform: scale(1);
     transform: scale(1); } }
 @-khtml-keyframes pop {
-  /* line 671, scss/_layout.scss */
+  /* line 687, scss/_layout.scss */
   50% {
     -webkit-transform: scale(1.4);
     -ms-transform: scale(1.4);
     transform: scale(1.4); }
 
-  /* line 674, scss/_layout.scss */
+  /* line 690, scss/_layout.scss */
   100% {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1); } }
 @keyframes pop {
-  /* line 671, scss/_layout.scss */
+  /* line 687, scss/_layout.scss */
   50% {
     -webkit-transform: scale(1.4);
     transform: scale(1.4); }
 
-  /* line 674, scss/_layout.scss */
+  /* line 690, scss/_layout.scss */
   100% {
     -webkit-transform: scale(1);
     transform: scale(1); } }
-/* line 680, scss/_layout.scss */
+/* line 696, scss/_layout.scss */
 .community-link {
   float: left;
   display: block;
@@ -1509,14 +1525,14 @@ body {
   /* line 30, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
   .community-link:last-child {
     width: 23.2%; }
-  /* line 696, scss/_layout.scss */
+  /* line 712, scss/_layout.scss */
   .community-link .icon {
     vertical-align: initial; }
-  /* line 700, scss/_layout.scss */
+  /* line 716, scss/_layout.scss */
   .community-link:hover {
     background: #ffcd00;
     color: white; }
-    /* line 704, scss/_layout.scss */
+    /* line 720, scss/_layout.scss */
     .community-link:hover .icon {
       -webkit-animation-name: pop;
       animation-name: pop;
@@ -1527,34 +1543,37 @@ body {
       -webkit-animation-iteration-count: 1;
       animation-iteration-count: 1; }
 
-/* line 741, scss/_layout.scss */
-article.page header.bg-image {
+/* line 759, scss/_layout.scss */
+header.bg-image {
   display: table;
   width: 100%;
   height: 300px; }
-    /* line 750, scss/_layout.scss */
-  article.page header.bg-image .page-title {
+    /* line 768, scss/_layout.scss */
+  header.bg-image .page-title {
     display: table-cell;
     vertical-align: bottom;
     padding-bottom: 30px;
-    color: white; }
+    margin-bottom: 0;
+    color: white;
+    background: rgba(0, 0, 0, 0.4); }
 
-/* line 760, scss/_layout.scss */
+/* line 778, scss/_layout.scss */
 .page-title {
   text-align: center;
   padding: 60px 20px 0; }
 
-/* line 770, scss/_layout.scss */
+/* line 788, scss/_layout.scss */
 #footer-wrapper {
+  color: white;
   padding: 120px 0;
   background: #120f27; }
-    /* line 778, scss/_layout.scss */
+    /* line 797, scss/_layout.scss */
   #footer-wrapper a:hover {
     color: #00bbb3; }
-  /* line 782, scss/_layout.scss */
+  /* line 801, scss/_layout.scss */
   #footer-wrapper #footer {
     position: relative; }
-    /* line 785, scss/_layout.scss */
+    /* line 804, scss/_layout.scss */
     #footer-wrapper #footer #footer-content {
       float: left;
       display: block;
@@ -1566,11 +1585,11 @@ article.page header.bg-image {
       /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
       #footer-wrapper #footer #footer-content:last-child {
         margin-right: 0; }
-            /* line 798, scss/_layout.scss */
+            /* line 817, scss/_layout.scss */
       #footer-wrapper #footer #footer-content p {
         margin-bottom: 0; }
 
-/* line 806, scss/_layout.scss */
+/* line 825, scss/_layout.scss */
 .footer-nav {
   float: left;
   display: block;
@@ -1581,17 +1600,17 @@ article.page header.bg-image {
   /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
   .footer-nav:last-child {
     margin-right: 0; }
-    /* line 815, scss/_layout.scss */
+    /* line 834, scss/_layout.scss */
   .footer-nav ul {
     display: inline-block;
     margin: 0;
     padding: 0;
     list-style: none; }
-    /* line 821, scss/_layout.scss */
+    /* line 840, scss/_layout.scss */
     .footer-nav ul li {
       font-size: 0.7em; }
 
-/* line 828, scss/_layout.scss */
+/* line 847, scss/_layout.scss */
 #queens-riverside-footer-logo {
   position: absolute;
   top: 25px;
@@ -1785,94 +1804,87 @@ article.page header.bg-image {
   .block .block-content h3 {
     text-transform: uppercase;
     color: white;
-    opacity: 0;
     -webkit-transition: opacity 300ms, -webkit-transform 300ms, ease-in-out;
     transition: opacity 300ms, transform 300ms, ease-in-out;
-    -webkit-transform: translate3d(-15px, 0, 0);
-    transform: translate3d(-15px, 0, 0); }
-  /* line 140, scss/_content_blocks.scss */
-  .block .block-content p {
-    position: absolute;
-    bottom: 40px; }
-  /* line 147, scss/_content_blocks.scss */
+    -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0); }
+  /* line 141, scss/_content_blocks.scss */
   .block .block-content:hover h3 {
-    opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0); }
 
-/* line 164, scss/_content_blocks.scss */
+/* line 172, scss/_content_blocks.scss */
 .link-block a {
   display: block; }
-/* line 168, scss/_content_blocks.scss */
+/* line 176, scss/_content_blocks.scss */
 .link-block a:hover .block-content {
   background-color: #ffcd00; }
-  /* line 172, scss/_content_blocks.scss */
+  /* line 180, scss/_content_blocks.scss */
   .link-block a:hover .block-content h1 h2, .link-block a:hover .block-content h3, .link-block a:hover .block-content h4, .link-block a:hover .block-content h5, .link-block a:hover .block-content h6 {
     color: white; }
-  /* line 178, scss/_content_blocks.scss */
+  /* line 186, scss/_content_blocks.scss */
   .link-block a:hover .block-content .button {
     background-color: #32bbb1; }
 
-/* line 188, scss/_content_blocks.scss */
+/* line 196, scss/_content_blocks.scss */
 .link-block.bg-image.no-bg-color a:hover .block-content {
   background-color: rgba(255, 205, 0, 0.9); }
 
-/* line 196, scss/_content_blocks.scss */
+/* line 204, scss/_content_blocks.scss */
 .bg-image {
   -webkit-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center; }
 
-/* line 205, scss/_content_blocks.scss */
+/* line 213, scss/_content_blocks.scss */
 .cyan {
   background-color: #32bbb1; }
 
-/* line 209, scss/_content_blocks.scss */
+/* line 217, scss/_content_blocks.scss */
 .darkblue {
   background-color: #202351; }
-  /* line 212, scss/_content_blocks.scss */
+  /* line 220, scss/_content_blocks.scss */
   .darkblue h1, .darkblue h2, .darkblue h3, .darkblue h4, .darkblue h5, .darkblue h6 {
     color: #32bbb1; }
 
-/* line 220, scss/_content_blocks.scss */
+/* line 228, scss/_content_blocks.scss */
 .white-text h1, .white-text h2, .white-text h3, .white-text h4, .white-text h5, .white-text h6, .white-text p, .white-text li {
   color: white; }
 
-/* line 233, scss/_content_blocks.scss */
+/* line 241, scss/_content_blocks.scss */
 .block.video p {
   margin: 0; }
 
-/* line 241, scss/_content_blocks.scss */
+/* line 249, scss/_content_blocks.scss */
 .block.align-bottom {
   display: table; }
-  /* line 244, scss/_content_blocks.scss */
+  /* line 252, scss/_content_blocks.scss */
   .block.align-bottom a {
     height: 100%;
     display: table-row; }
-  /* line 249, scss/_content_blocks.scss */
+  /* line 257, scss/_content_blocks.scss */
   .block.align-bottom .block-content {
     display: table-cell;
-    /* vertical-align: bottom; */
-    vertical-align: top; }
+    vertical-align: bottom; }
 
-/* line 256, scss/_content_blocks.scss */
+/* line 263, scss/_content_blocks.scss */
 .block.align-middle {
   display: table; }
-  /* line 259, scss/_content_blocks.scss */
+  /* line 266, scss/_content_blocks.scss */
   .block.align-middle a {
     height: 100%;
     display: table-row; }
-  /* line 264, scss/_content_blocks.scss */
+  /* line 271, scss/_content_blocks.scss */
   .block.align-middle .block-content {
     display: table-cell;
     vertical-align: middle; }
 
-/* line 275, scss/_content_blocks.scss */
+/* line 282, scss/_content_blocks.scss */
 .no-padding .block-content {
   padding: 0; }
   
-/* line 287, scss/_content_blocks.scss */
+/* line 294, scss/_content_blocks.scss */
 .one {
   float: left;
   display: block;
@@ -1881,7 +1893,7 @@ article.page header.bg-image {
   .one:last-child {
     width: 100%; }
 
-/* line 288, scss/_content_blocks.scss */
+/* line 295, scss/_content_blocks.scss */
 .one_quarter {
   float: left;
   display: block;
@@ -1890,7 +1902,7 @@ article.page header.bg-image {
   .one_quarter:last-child {
     width: 23.2%; }
 
-/* line 289, scss/_content_blocks.scss */
+/* line 296, scss/_content_blocks.scss */
 .one_half {
   float: left;
   display: block;
@@ -1899,7 +1911,7 @@ article.page header.bg-image {
   .one_half:last-child {
     width: 48.8%; }
 
-/* line 290, scss/_content_blocks.scss */
+/* line 297, scss/_content_blocks.scss */
 .three_quarters {
   float: left;
   display: block;
@@ -1908,7 +1920,7 @@ article.page header.bg-image {
   .three_quarters:last-child {
     width: 74.4%; }
 
-/* line 291, scss/_content_blocks.scss */
+/* line 298, scss/_content_blocks.scss */
 .one_third {
   float: left;
   display: block;
@@ -1917,7 +1929,7 @@ article.page header.bg-image {
   .one_third:last-child {
     width: 31.8%; }
 
-/* line 292, scss/_content_blocks.scss */
+/* line 299, scss/_content_blocks.scss */
 .two_thirds {
   float: left;
   display: block;
@@ -1926,7 +1938,7 @@ article.page header.bg-image {
   .two_thirds:last-child {
     width: 65.9%; }
 
-/* line 293, scss/_content_blocks.scss */
+/* line 300, scss/_content_blocks.scss */
 .one_fifth {
   float: left;
   display: block;
@@ -1935,7 +1947,7 @@ article.page header.bg-image {
   .one_fifth:last-child {
     width: 18.1%; }
 
-/* line 294, scss/_content_blocks.scss */
+/* line 301, scss/_content_blocks.scss */
 .two_fifths {
   float: left;
   display: block;
@@ -1944,7 +1956,7 @@ article.page header.bg-image {
   .two_fifths:last-child {
     width: 38.6%; }
 
-/* line 295, scss/_content_blocks.scss */
+/* line 302, scss/_content_blocks.scss */
 .three_fifths {
   float: left;
   display: block;
@@ -1953,7 +1965,7 @@ article.page header.bg-image {
   .three_fifths:last-child {
     width: 59.1%; }
 
-/* line 296, scss/_content_blocks.scss */
+/* line 303, scss/_content_blocks.scss */
 .four_fifths {
   float: left;
   display: block;
@@ -1962,7 +1974,7 @@ article.page header.bg-image {
   .four_fifths:last-child {
     width: 79.5%; }
 
-/* line 338, scss/_content_blocks.scss */
+/* line 345, scss/_content_blocks.scss */
 .slideshow .slide img {
   display: none; }
 
@@ -2668,8 +2680,83 @@ div.wp-caption {
     height: auto;
     border: 1px solid transparent; }
 
-/* Dots */
+/* Arrows */
 /* line 202, scss/_plugins.scss */
+.slick-prev,
+.slick-next {
+  position: absolute;
+  display: block;
+  height: 20px;
+  width: 20px;
+  line-height: 0;
+  font-size: 0;
+  cursor: pointer;
+  background: transparent;
+  color: transparent;
+  top: 60%;
+  margin-top: -10px;
+  padding: 0;
+  border: none;
+  outline: none;
+  -webkit-transition: -webkit-transform 300ms, ease-in-out;
+  transition: transform 300ms, ease-in-out; }
+
+/* line 222, scss/_plugins.scss */
+.slideshow-section .slick-prev,
+.slideshow-section .slick-next {
+  top: 50%; }
+
+/* line 227, scss/_plugins.scss */
+.slick-prev:focus,
+.slick-next:focus {
+  outline: none; }
+
+/* line 232, scss/_plugins.scss */
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+  opacity: 0.25; }
+
+/* line 237, scss/_plugins.scss */
+.slick-prev:before,
+.slick-next:before {
+  font-family: "icomoon";
+  font-size: 60px;
+  line-height: 1;
+  color: white;
+  opacity: 0.85;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+/* line 248, scss/_plugins.scss */
+.slick-prev {
+  left: 25px;
+  -webkit-transform: translate3d(10px, 0, 0);
+  transform: translate3d(10px, 0, 0); }
+  /* line 252, scss/_plugins.scss */
+  .slick-prev:hover {
+    -webkit-transform: translate3d(5px, 0, 0);
+    transform: translate3d(5px, 0, 0); }
+
+/* line 257, scss/_plugins.scss */
+.slick-prev:before {
+  content: "\e604"; }
+
+/* line 261, scss/_plugins.scss */
+.slick-next {
+  right: 25px;
+  -webkit-transform: translate3d(-50px, 0, 0);
+  transform: translate3d(-50px, 0, 0); }
+  /* line 265, scss/_plugins.scss */
+  .slick-next:hover {
+    -webkit-transform: translate3d(-45px, 0, 0);
+    transform: translate3d(-45px, 0, 0); }
+
+/* line 270, scss/_plugins.scss */
+.slick-next:before {
+  content: "\e607"; }
+
+/* Dots */
+/* line 276, scss/_plugins.scss */
 .slick-dots {
   position: absolute;
   bottom: -45px;
@@ -2678,7 +2765,7 @@ div.wp-caption {
   text-align: center;
   padding: 0px;
   width: 100%; }
-  /* line 211, scss/_plugins.scss */
+  /* line 285, scss/_plugins.scss */
   .slick-dots li {
     position: relative;
     display: inline-block;
@@ -2687,7 +2774,7 @@ div.wp-caption {
     margin: 0px 5px;
     padding: 0px;
     cursor: pointer; }
-    /* line 220, scss/_plugins.scss */
+    /* line 294, scss/_plugins.scss */
     .slick-dots li button {
       border: 0;
       background: transparent;
@@ -2701,10 +2788,10 @@ div.wp-caption {
       padding: 5px;
       cursor: pointer;
       outline: none; }
-      /* line 233, scss/_plugins.scss */
+      /* line 307, scss/_plugins.scss */
       .slick-dots li button:focus {
         outline: none; }
-      /* line 237, scss/_plugins.scss */
+      /* line 311, scss/_plugins.scss */
       .slick-dots li button:before {
         position: absolute;
         top: 0;
@@ -2719,7 +2806,7 @@ div.wp-caption {
         opacity: 0.25;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale; }
-    /* line 255, scss/_plugins.scss */
+    /* line 329, scss/_plugins.scss */
     .slick-dots li.slick-active button:before {
       opacity: 0.75; }
 
@@ -2750,7 +2837,7 @@ div.wp-caption {
       /* line 124, scss/_layout.scss */
       .fullscreen-wrapper .section {
         width: 680px; } 
-    /* line 643, scss/_layout.scss */
+    /* line 658, scss/_layout.scss */
     .acf-map {
       height: 250px; } }
 
@@ -2791,13 +2878,13 @@ div.wp-caption {
         /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
         #register-content .gform_fields:last-child {
           margin-right: 0; } 
-    /* line 741, scss/_layout.scss */
-    article.page header.bg-image {
+    /* line 759, scss/_layout.scss */
+    header.bg-image {
       height: 100px; } 
-    /* line 770, scss/_layout.scss */
+    /* line 788, scss/_layout.scss */
     #footer-wrapper {
       padding: 80px 0 120px; } 
-        /* line 785, scss/_layout.scss */
+        /* line 804, scss/_layout.scss */
         #footer-wrapper #footer #footer-content {
           float: left;
           display: block;
@@ -2809,7 +2896,7 @@ div.wp-caption {
           /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
           #footer-wrapper #footer #footer-content:last-child {
             margin-right: 0; } 
-    /* line 806, scss/_layout.scss */
+    /* line 825, scss/_layout.scss */
     .footer-nav {
       float: left;
       display: block;
@@ -2818,7 +2905,7 @@ div.wp-caption {
       /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
       .footer-nav:last-child {
         margin-right: 0; } 
-    /* line 828, scss/_layout.scss */
+    /* line 847, scss/_layout.scss */
     #queens-riverside-footer-logo {
       position: relative; } 
   /* line 121, scss/_navigation.scss */
@@ -2937,10 +3024,10 @@ div.wp-caption {
     /* line 120, scss/_content_blocks.scss */
     .block .block-content {
       padding: 20px; } 
-    /* line 275, scss/_content_blocks.scss */
+    /* line 282, scss/_content_blocks.scss */
     .no-padding .block-content {
       padding: 0; } 
-  /* line 301, scss/_content_blocks.scss */
+  /* line 308, scss/_content_blocks.scss */
   .one_half,
   .one_third,
   .two_thirds {
@@ -2953,7 +3040,7 @@ div.wp-caption {
     .one_third:last-child,
     .two_thirds:last-child {
       margin-right: 0; }
-    /* line 309, scss/_content_blocks.scss */
+    /* line 316, scss/_content_blocks.scss */
     .one_half:last-child,
     .one_third:last-child,
     .two_thirds:last-child {
@@ -2966,7 +3053,7 @@ div.wp-caption {
       .one_third:last-child:last-child,
       .two_thirds:last-child:last-child {
         margin-right: 0; } 
-  /* line 315, scss/_content_blocks.scss */
+  /* line 322, scss/_content_blocks.scss */
   .one_quarter,
   .three_quarters,
   .one_fifth,

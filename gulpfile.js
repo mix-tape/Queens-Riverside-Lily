@@ -44,7 +44,8 @@ config.plugins = [
   config.vendor + '/moment/moment.js',
   config.vendor + '/fitvids/jquery.fitvids.js',
   config.vendor + '/chosen/chosen.jquery.js',
-  config.vendor + '/enquire/dist/enquire.js'
+  config.vendor + '/enquire/dist/enquire.js',
+  config.vendor + '/jQInstaPics/js/jqinstapics.js'
 
 ]
 
