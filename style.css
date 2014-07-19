@@ -1775,35 +1775,37 @@ header.bg-image {
 /* line 90, scss/_content_blocks.scss */
 .blocks.white-border {
   margin-top: 1px;
-  margin-bottom: 1px;
-  border-left: 1px solid white; }
-  /* line 95, scss/_content_blocks.scss */
+  margin-bottom: 1px; }
+  /* line 94, scss/_content_blocks.scss */
   .blocks.white-border .block {
     border-right: 1px solid white; }
+    /* line 97, scss/_content_blocks.scss */
+    .blocks.white-border .block:last-child {
+      border-right: none; }
 
-/* line 104, scss/_content_blocks.scss */
+/* line 107, scss/_content_blocks.scss */
 .short .block {
   height: 312px; }
 
-/* line 105, scss/_content_blocks.scss */
+/* line 108, scss/_content_blocks.scss */
 .medium .block {
   height: 360px; }
 
-/* line 106, scss/_content_blocks.scss */
+/* line 109, scss/_content_blocks.scss */
 .tall .block {
-  height: 460px; }
+  height: 500px; }
 
-/* line 125, scss/_content_blocks.scss */
+/* line 128, scss/_content_blocks.scss */
 .block .block-content {
   padding: 60px;
   width: 100%;
   -webkit-transition: all 500ms;
   transition: all 500ms; }
   
-/* line 147, scss/_content_blocks.scss */
+/* line 150, scss/_content_blocks.scss */
 .link-block a {
   display: block; }
-/* line 151, scss/_content_blocks.scss */
+/* line 154, scss/_content_blocks.scss */
 .link-block h3 {
   text-transform: uppercase;
   color: white;
@@ -1811,83 +1813,83 @@ header.bg-image {
   transition: opacity 300ms, transform 300ms, ease-in-out;
   -webkit-transform: translate3d(0, 5px, 0);
   transform: translate3d(0, 5px, 0); }
-/* line 158, scss/_content_blocks.scss */
+/* line 161, scss/_content_blocks.scss */
 .link-block a:hover .block-content {
   background-color: #ffcd00; }
-  /* line 163, scss/_content_blocks.scss */
+  /* line 166, scss/_content_blocks.scss */
   .link-block a:hover .block-content h1 h2, .link-block a:hover .block-content h3, .link-block a:hover .block-content h4, .link-block a:hover .block-content h5, .link-block a:hover .block-content h6 {
     color: white;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0); }
-  /* line 168, scss/_content_blocks.scss */
+  /* line 171, scss/_content_blocks.scss */
   .link-block a:hover .block-content .button {
     background-color: #32bbb1; }
 
-/* line 178, scss/_content_blocks.scss */
+/* line 181, scss/_content_blocks.scss */
 .link-block.bg-image.no-bg-color a:hover .block-content {
   background-color: rgba(255, 205, 0, 0.9); }
 
-/* line 186, scss/_content_blocks.scss */
+/* line 189, scss/_content_blocks.scss */
 .bg-image {
   -webkit-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center; }
 
-/* line 195, scss/_content_blocks.scss */
+/* line 198, scss/_content_blocks.scss */
 .cyan {
   background-color: #32bbb1; }
-  /* line 198, scss/_content_blocks.scss */
+  /* line 201, scss/_content_blocks.scss */
   .cyan h3 {
     color: #202351; }
 
-/* line 203, scss/_content_blocks.scss */
+/* line 206, scss/_content_blocks.scss */
 .darkblue {
   background-color: #202351; }
-  /* line 206, scss/_content_blocks.scss */
+  /* line 209, scss/_content_blocks.scss */
   .darkblue h1, .darkblue h2, .darkblue h3, .darkblue h4, .darkblue h5, .darkblue h6 {
     color: #32bbb1; }
 
-/* line 212, scss/_content_blocks.scss */
+/* line 215, scss/_content_blocks.scss */
 .white-text {
   color: white; }
-  /* line 215, scss/_content_blocks.scss */
+  /* line 218, scss/_content_blocks.scss */
   .white-text h1, .white-text h2, .white-text p, .white-text li {
     color: white; }
 
-/* line 228, scss/_content_blocks.scss */
+/* line 231, scss/_content_blocks.scss */
 .block.video p {
   margin: 0; }
 
-/* line 236, scss/_content_blocks.scss */
+/* line 239, scss/_content_blocks.scss */
 .block.align-bottom {
   display: table; }
-  /* line 239, scss/_content_blocks.scss */
+  /* line 242, scss/_content_blocks.scss */
   .block.align-bottom a {
     height: 100%;
     display: table-row; }
-  /* line 244, scss/_content_blocks.scss */
+  /* line 247, scss/_content_blocks.scss */
   .block.align-bottom .block-content {
     display: table-cell;
     vertical-align: bottom; }
 
-/* line 250, scss/_content_blocks.scss */
+/* line 253, scss/_content_blocks.scss */
 .block.align-middle {
   display: table; }
-  /* line 253, scss/_content_blocks.scss */
+  /* line 256, scss/_content_blocks.scss */
   .block.align-middle a {
     height: 100%;
     display: table-row; }
-  /* line 258, scss/_content_blocks.scss */
+  /* line 261, scss/_content_blocks.scss */
   .block.align-middle .block-content {
     display: table-cell;
     vertical-align: middle; }
 
-/* line 269, scss/_content_blocks.scss */
+/* line 272, scss/_content_blocks.scss */
 .no-padding .block-content {
   padding: 0; }
   
-/* line 281, scss/_content_blocks.scss */
+/* line 284, scss/_content_blocks.scss */
 .one {
   float: left;
   display: block;
@@ -1896,7 +1898,7 @@ header.bg-image {
   .one:last-child {
     width: 100%; }
 
-/* line 282, scss/_content_blocks.scss */
+/* line 285, scss/_content_blocks.scss */
 .one_quarter {
   float: left;
   display: block;
@@ -1905,7 +1907,7 @@ header.bg-image {
   .one_quarter:last-child {
     width: 23.2%; }
 
-/* line 283, scss/_content_blocks.scss */
+/* line 286, scss/_content_blocks.scss */
 .one_half {
   float: left;
   display: block;
@@ -1914,7 +1916,7 @@ header.bg-image {
   .one_half:last-child {
     width: 48.8%; }
 
-/* line 284, scss/_content_blocks.scss */
+/* line 287, scss/_content_blocks.scss */
 .three_quarters {
   float: left;
   display: block;
@@ -1923,7 +1925,7 @@ header.bg-image {
   .three_quarters:last-child {
     width: 74.4%; }
 
-/* line 285, scss/_content_blocks.scss */
+/* line 288, scss/_content_blocks.scss */
 .one_third {
   float: left;
   display: block;
@@ -1932,7 +1934,7 @@ header.bg-image {
   .one_third:last-child {
     width: 31.8%; }
 
-/* line 286, scss/_content_blocks.scss */
+/* line 289, scss/_content_blocks.scss */
 .two_thirds {
   float: left;
   display: block;
@@ -1941,7 +1943,7 @@ header.bg-image {
   .two_thirds:last-child {
     width: 65.9%; }
 
-/* line 287, scss/_content_blocks.scss */
+/* line 290, scss/_content_blocks.scss */
 .one_fifth {
   float: left;
   display: block;
@@ -1950,7 +1952,7 @@ header.bg-image {
   .one_fifth:last-child {
     width: 18.1%; }
 
-/* line 288, scss/_content_blocks.scss */
+/* line 291, scss/_content_blocks.scss */
 .two_fifths {
   float: left;
   display: block;
@@ -1959,7 +1961,7 @@ header.bg-image {
   .two_fifths:last-child {
     width: 38.6%; }
 
-/* line 289, scss/_content_blocks.scss */
+/* line 292, scss/_content_blocks.scss */
 .three_fifths {
   float: left;
   display: block;
@@ -1968,7 +1970,7 @@ header.bg-image {
   .three_fifths:last-child {
     width: 59.1%; }
 
-/* line 290, scss/_content_blocks.scss */
+/* line 293, scss/_content_blocks.scss */
 .four_fifths {
   float: left;
   display: block;
@@ -1977,7 +1979,7 @@ header.bg-image {
   .four_fifths:last-child {
     width: 79.5%; }
 
-/* line 332, scss/_content_blocks.scss */
+/* line 335, scss/_content_blocks.scss */
 .slideshow .slide img {
   display: none; }
 
@@ -3021,16 +3023,16 @@ div.wp-caption {
       /* line 38, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
       .left-logo .standard:last-child {
         margin-right: 0; } 
-  /* line 111, scss/_content_blocks.scss */
+  /* line 114, scss/_content_blocks.scss */
   .auto .block.bg-image {
     min-height: 360px; } 
-    /* line 125, scss/_content_blocks.scss */
+    /* line 128, scss/_content_blocks.scss */
     .block .block-content {
       padding: 20px; } 
-    /* line 269, scss/_content_blocks.scss */
+    /* line 272, scss/_content_blocks.scss */
     .no-padding .block-content {
       padding: 0; } 
-  /* line 295, scss/_content_blocks.scss */
+  /* line 298, scss/_content_blocks.scss */
   .one_half,
   .one_third,
   .two_thirds {
@@ -3043,7 +3045,7 @@ div.wp-caption {
     .one_third:last-child,
     .two_thirds:last-child {
       margin-right: 0; }
-    /* line 303, scss/_content_blocks.scss */
+    /* line 306, scss/_content_blocks.scss */
     .one_half:last-child,
     .one_third:last-child,
     .two_thirds:last-child {
@@ -3056,7 +3058,7 @@ div.wp-caption {
       .one_third:last-child:last-child,
       .two_thirds:last-child:last-child {
         margin-right: 0; } 
-  /* line 309, scss/_content_blocks.scss */
+  /* line 312, scss/_content_blocks.scss */
   .one_quarter,
   .three_quarters,
   .one_fifth,

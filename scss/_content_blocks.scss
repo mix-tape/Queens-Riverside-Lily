@@ -90,10 +90,13 @@
 	&.white-border {
 		margin-top: 1px;
 		margin-bottom: 1px;
-		border-left: 1px solid $white;
 
 		.block {
 			border-right: 1px solid $white;
+
+			&:last-child {
+				border-right: none;
+			}
 		}
 
 	}
@@ -103,7 +106,7 @@
 
 .short 		{ .block { height: 312px; } }
 .medium 	{ .block { height: 360px; } }
-.tall 		{ .block { height: 460px; } }
+.tall 		{ .block { height: 500px; } }
 
 
 .auto {
