@@ -21,18 +21,32 @@
 				<h2 class="page-title"><?php the_title(); ?></h2>
 
 			</header>
-
-			<p class="meta">
-
-				<time datetime="<?php the_time('Y-m-d')?>"><?php the_time('F jS, Y') ?></time>
-
-			</p>
+			
+			<section class="blocks news-title">
+				<div class="section">
+						<div class="standard">
+						
+								<p class="meta">
+									<time datetime="<?php the_time('Y-m-d')?>"><?php the_time('j\<\s\u\b\>S\<\/\s\u\b\> F Y') ?></time>
+								</p>
+								
+						</div>
+				</div>
+			</section>
 
 			<?php get_template_part('content', 'blocks'); ?>
 
 			<footer>
+			
+			<section class="blocks back-to-news">
+				<div class="section">
+						<div class="standard">
 
-				<a href="<?php echo get_permalink(get_option( 'page_for_posts' )); ?>" class="button">Back to news</a>
+							<a href="<?php echo get_permalink(get_option( 'page_for_posts' )); ?>" class="button">Back to news</a>
+							
+						</div>
+				</div>
+			</section>
 
 			</footer>
 

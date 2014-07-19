@@ -27,7 +27,21 @@ enquire.register("screen and (min-width:700px)", {
 
 });
 
+// Add/remove scroll-down arrow 
 
+enquire.register("screen and (min-width:960px)", {
+
+	match : function() {
+		if ($("#scroll-down").length < 1) {
+			$( "<a href='#content' id='scroll-down'></div>" ).appendTo( '#banner-wrapper' );
+  		}
+	},
+
+	unmatch : function() {
+		//do nothing!
+	}
+
+});
 
 // ----- Rezise Debounce ----- //
 
@@ -270,6 +284,11 @@ $(function() {
 		  	"count": 3,
 		  	"size" : "standard_resolution"
 		});
+		
+	// --------------------------------------------------------------------------
+	//   Append scroll-down prompt in banner
+	// --------------------------------------------------------------------------
+		
 
 });
 

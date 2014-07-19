@@ -97,20 +97,24 @@
 							<?php /*// Text Block ///////*/ elseif (get_row_layout() == 'text_columns'): ?>
 
 
-								<section class="blocks text-columns <?php echo get_blocks_classes(); ?>">
+								<section class="blocks text-columns">
 
 									<div class="section">
+									
+										<div class="standard <?php echo get_blocks_classes(); ?>">
 
-										<div class="column-1">
-
-											<?php the_sub_field('column_1'); ?>
-
-										</div>
-
-										<div class="column-2">
-
-											<?php the_sub_field('column_2'); ?>
-
+											<div class="column-1">
+	
+												<?php the_sub_field('column_1'); ?>
+	
+											</div>
+	
+											<div class="column-2">
+	
+												<?php the_sub_field('column_2'); ?>
+	
+											</div>
+										
 										</div>
 
 									</div>

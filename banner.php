@@ -16,6 +16,8 @@
 
 					<img src="<?php echo $imagedata['sizes']['hero']; ?>" alt="" class="print-only" />
 
+					<?php if (get_sub_field('caption')) { ?>
+
 					<div class="section">
 
 						<div class="section-content">
@@ -29,6 +31,8 @@
 						</div>
 
 					</div>
+
+					<?php } ?>
 
 				</div>
 

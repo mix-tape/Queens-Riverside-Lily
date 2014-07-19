@@ -188,7 +188,6 @@ mark {
 
 	&:before {
 		@include icon;
-		content: '';
 		margin-right: 5px;
 		vertical-align: middle;
 	}
@@ -252,6 +251,8 @@ table {
 
 	padding: 0.5em 1.4em;
 	border: 1px solid $white;
+	//fallback to solid colour for oldIE
+	background: #32bbb1;
 	background-color: $colour1;
 	text-decoration: none;
 	border-radius: 2px;

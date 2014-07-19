@@ -65,6 +65,31 @@
 	}
 }
 
+// --------------------------------------------------------------------------
+//	 Text columns
+// --------------------------------------------------------------------------
+
+.text-columns  {
+	
+	.standard {
+		padding: 60px 0;
+	}
+	
+	.column-1,
+	.column-2 {
+		 @include span-columns(6);
+		 
+		@include media($mobile-down) {
+			@include span-columns(4);
+		}
+	}
+
+	@include media($mobile-down) {
+		padding: $gap;
+	}
+	
+}
+
 // ----- Width variations ----- //
 
 // .wide stuff
@@ -99,6 +124,17 @@
 			}
 		}
 
+	}
+	
+	&.border-top-cyan {
+		border-top: 2px solid lighten($cyan, 30);
+	}
+}
+
+.standard {
+
+	&.border-top-cyan {
+		border-top: 2px solid lighten($cyan, 30);
 	}
 }
 

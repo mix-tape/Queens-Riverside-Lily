@@ -174,6 +174,10 @@ body {
 	color: $medium-gray;
 	text-align: right;
 	text-transform: uppercase;
+	
+	@include media ($mobile-down) {
+		text-align: center;
+	}
 
 	a {
 		@include avenair-black;
@@ -186,6 +190,8 @@ body {
 }
 
 
+
+
 // ----- Queens Riverside Logo ----- //
 
 // Absolute positioning for logos is ok ;)
@@ -193,6 +199,10 @@ body {
 #queens-riverside-header-logo {
 
 	@include media ($mobile-down) {
+		top: -5px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
 	}
 
 	position: absolute;
@@ -259,22 +269,49 @@ body {
 			padding: 10px;
 			width: 400px;
 			border: 1px solid $white;
+			//fallback to solid colour for oldIE
+			background: #32bbb1;
 			background: $cyan-opaque;
 			color: $white;
 
 			text-align: center;
 		}
 	}
+	
+	#scroll-down {
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		bottom: 75px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		cursor: pointer;
+		transition: transform 300ms, ease-in-out;
+				
+		&:hover {
+			transform: translate3d(0,5px,0);
+		}
+		
+	}
+	
+	#scroll-down:before {
+		font-family: "icomoon"; 
+		content: "\e605"; 
+		font-size: 60px;
+		color: $white;
+	}
+	
+	
 }
-
 
 #banner {
 	right: 0;
-	bottom: 10%;
+	bottom: 15%;
 	left: 0;
 	color: $white;
 
-	// 10% is just temporary positioning
+	// 15% is just temporary positioning
 	// until some perfect middle is introduced
 
 	position: absolute;
@@ -595,9 +632,19 @@ body {
 
 	#instagram-hash {
 		text-align: center;
+		
+		@include media ($tablet-down) {
+			@include span-columns(12);
+		}
+		
+		.block-content {
+			@include media ($tablet-down) {
+				display: inline-block;
+			}
+		}
 	}
-}
 
+}
 
 .large-hashtag {
 	color: $super-dark-purple;
@@ -614,17 +661,20 @@ body {
 }
 
 #instagram-images {
-	  font-size:0;
+	  	font-size:0;
+	  	
+	  @include media ($tablet-down) {
+			@include span-columns(12);
+		}
 
-	ul, li, a {margin: 0; padding: 0;}
+	  	ul, li, a {margin: 0; padding: 0;}
 
-	 li {
-	  list-style:none;
-	  float:left;
-	  margin:0;
-	  width: 33.33333333%;
-/* 	  max-height: 380px */
-	}
+		 li {
+		  list-style:none;
+		  float:left;
+		  margin:0;
+		  width: 33.33333333%;
+		}
 
 }
 
@@ -765,6 +815,126 @@ header.bg-image {
 	margin-bottom: 0;
 }
 
+// --------------------------------------------------------------------------
+//   News
+// --------------------------------------------------------------------------
+
+
+// -----Latest news block on home page  ----- //
+
+.latest-news {
+	color: $white;
+	
+	h3 {
+		color: $darkblue;
+	}
+	
+	//Todo: this button has more top/bottom padding that the others - weird
+	
+	.ghost-button {
+		position: absolute;
+		bottom: 60px;
+	}
+}
+
+
+// ----- Top level news page  ----- //
+
+.post {
+	
+		h3 {
+			text-transform: uppercase;
+		}
+
+		.ghost-button {
+			float: right;
+			margin-top: $gap;
+		}
+		
+		//Places meta in a container
+		//on individual news pages
+		
+		.meta {
+			@include row;
+		}
+		
+}
+
+// Common stuff to style the date element
+// .latest-news is on the home page
+
+.post, 
+.latest-news {
+
+		h3,
+		time {
+			text-transform: uppercase;
+		}
+				
+		time {
+			@include avenair-medium;
+		}
+		
+		sub {
+			font-size: 10px;
+			bottom: 0;
+			text-transform: none;			
+		}
+}
+
+// swap colours on tiger stripped news items
+
+.cyan .post .ghost-button {
+	border-color: $darkblue;
+	color: $darkblue;
+	
+	&:hover {
+		background: $darkblue;
+		color: $cyan;
+	}
+
+}
+
+.darkblue .post .ghost-button {
+		border-color: $cyan;
+		color: $cyan;
+		
+			&:hover {
+				background: $cyan;
+				color: $darkblue;
+			}
+
+}
+
+
+// ----- Individual news item page  ----- //
+
+// The news item title needed wrapper
+
+section.news-title {
+	padding: $gap*3 0 $gap;
+}
+
+// Override default text-block rules for this page
+
+.post section.text-block {
+	padding: 0 0 $gap*2;
+}
+
+// The 'back to news' button title needed wrapper
+
+section.back-to-news {
+	padding: 0 0 $gap*6;
+}
+
+// Todo: get this type aligned with other styles for consistency
+
+.single-post .meta {
+	color: $cyan;
+	font-size: 2em;
+	text-transform: uppercase;
+	@include avenair-medium;
+}
 
 // --------------------------------------------------------------------------
 //   Footer

@@ -219,6 +219,11 @@
 	
 }
 
+.home .slick-prev, 
+.home .slick-next {
+	z-index: 1;
+}
+
 .slideshow-section .slick-prev, 
 .slideshow-section .slick-next {
 	top: 50%;

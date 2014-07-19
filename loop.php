@@ -48,7 +48,7 @@
 
 								<footer>
 
-									<time datetime="<?php the_time('Y-m-d')?>"><?php the_time('F jS, Y') ?></time>
+									<time datetime="<?php the_time('Y-m-d')?>"><?php the_time('j\<\s\u\b\>S\<\/\s\u\b\> F Y') ?></time>
 
 									<a href="<?php the_permalink(); ?>" class="ghost-button">Read more</a>
 

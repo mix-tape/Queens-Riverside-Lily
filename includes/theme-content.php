@@ -24,7 +24,7 @@ function get_latest_post( $atts ) {
 
 								<a href="' . get_permalink($post["ID"]) . '" title="' . $post["post_title"] .'" >
 
-									<h2>' . $post["post_title"].'</h2>
+									<h3>' . $post["post_title"].'</h3>
 
 								</a>' .
 
@@ -32,7 +32,7 @@ function get_latest_post( $atts ) {
 
 								'<footer>
 
-									<p><time datetime="' . get_the_time('Y-m-d', $post["ID"]) . '">' . get_the_time('F jS, Y', $post["ID"]) . '</time></p>
+									<p><time datetime="' . get_the_time('Y-m-d', $post["ID"]) . '">' . get_the_time('j\<\s\u\b\>S\<\/\s\u\b\> F Y', $post["ID"]) . '</time></p>
 
 									<p><a href="' . get_permalink($post["ID"]) . '" class="ghost-button">Read more</a></p>
 
