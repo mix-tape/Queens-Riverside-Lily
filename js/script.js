@@ -27,7 +27,7 @@ enquire.register("screen and (min-width:700px)", {
 
 });
 
-// Add/remove scroll-down arrow 
+// Add-remove scroll-down arrow  on banner
 
 enquire.register("screen and (min-width:960px)", {
 
@@ -38,7 +38,6 @@ enquire.register("screen and (min-width:960px)", {
 	},
 
 	unmatch : function() {
-		//do nothing!
 	}
 
 });
@@ -83,6 +82,40 @@ $(function() {
 		$(this).outerHeight( $(this).parent().parent().outerHeight() );
 
 	});
+	
+	// --------------------------------------------------------------------------
+	//   Responsive nav
+	// --------------------------------------------------------------------------
+	
+		var menuToggle = '<div id="menu-toggle" class="icon"></div>';
+	
+		if (!$('#menu-toggle').length) $('#nav-content').prepend(menuToggle);
+		
+		$('#menu-toggle').click(function() {
+			$('html').toggleClass('js-nav');
+		});
+	
+		$('#main-nav li .sub-menu').parent('li').addClass('menu-parent');
+	
+		//  Allows ULs that open on li:hover to open on tap/click on mobile 
+		$('#main-nav').touchMenuHover();
+	
+	
+	// --------------------------------------------------------------------------
+	//   Sticky header v1
+	// --------------------------------------------------------------------------
+	
+	/*
+		$(window).scroll(function() {
+			if ($(this).scrollTop() > 1) {  
+			    	$('#header-wrapper').addClass("header-sticky");
+			  }
+			  else{
+			    	$('#header-wrapper').removeClass("header-sticky");
+			  }
+		});
+	*/
+	
 
 
 	// --------------------------------------------------------------------------
@@ -285,12 +318,54 @@ $(function() {
 		  	"size" : "standard_resolution"
 		});
 		
-	// --------------------------------------------------------------------------
-	//   Append scroll-down prompt in banner
-	// --------------------------------------------------------------------------
 		
 
 });
+
+// --------------------------------------------------------------------------
+//   Hide menu on scroll down - show on scroll up.
+// --------------------------------------------------------------------------
+
+// Hide Header on on scroll down
+
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('#header-wrapper').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 50);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('#header-wrapper').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('#header-wrapper').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
 
 
 // --------------------------------------------------------------------------

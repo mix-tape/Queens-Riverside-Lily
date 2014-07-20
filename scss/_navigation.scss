@@ -9,6 +9,10 @@
 //	 Full width
 // --------------------------------------------------------------------------
 
+#menu-toggle {
+	display: none;
+}
+
 @include media($mobile-up) {
 
 	#main-nav {
@@ -53,16 +57,6 @@
 			&.active > a, a:hover {
 				@include bold-it;
 				color: $white;
-			}
-
-			&.menu-parent > a:after {
-				@include icon;
-				position: relative;
-				top: -1px;
-				margin-left: 5px;
-				color: $base-link-color;
-				content: '';
-				font-size: 1em;
 			}
 
 			&:hover > .sub-menu, &.active > .sub-menu {
@@ -116,107 +110,127 @@
 //	 Collapsed
 // --------------------------------------------------------------------------
 
-@include media($mobile-down) {
+@include media($tablet-down) {
 
-	#menu-toggle {
+	.js-nav #main-nav {
 		display: block;
 	}
 
-	#main-nav {
-		@include transition(all 600ms ease-in-out);
-		@include backface-visibility(hidden);
+	#nav-content {
+		position: relative;
+	}
+
+	#menu-toggle {
+		display: block;
+		width: 40px;
+		height: 40px;
 		position: absolute;
-		top: 0;
 		right: 0;
-		left: 0;
-		z-index: 98;
-		overflow: hidden;
-		padding: 0;
-		max-width: none;
-		max-height: 0;
+		font-size: 40px;
+		color: $white;
+		line-height: 1;
+		
+		@include media($tablet-down) {
+			top: -70px;
+		}
+		
+		@include media($mobile-down) {
+			top: -100px;
+		}
 	}
-
-	.js-nav #main-nav {
-		 max-height: 400px;
+	
+	#menu-toggle:before {
+		font-family: 'icomoon';
+		content: "\e622";
 	}
+	
+	#main-nav {
+	float: none;
+	display: none;
+	
+		.menu {
+			@include span-columns(12);
+			margin: $gap 0;
+			padding: 0;
+	
+			li {
+				float: left;
+				margin-left: 0;
+				list-style: none;
 
-	#main-nav .menu {
-		display: inline;
-		float: left;
-		float: left;
-		margin: 0;
-		padding: 0;
-		width: 100%;
-		text-align: center;
-
-		li {
-			display: block;
-			float: none;
-			margin-left: 0;
-			text-align: left;
-
-			&:hover, &.current-menu-item, &.current-menu-parent {
-
-				a {
-					
+				width: 100%;
+	
+				&:first-child {
+					margin-left: 0;
 				}
-			}
-
-			a {
-				padding: 0.5em 0.5em 0.5em 1.5em;
-				color: white;
-			}
-
-			&.menu-parent > a:after {
-				position: absolute;
-				top: 0.5em;
-				right: 1em;
-				color: white;
-			}
-
-			&:hover a {
-
-			}
-
-			&.active a {
-				@include bold-it;
-			}
-
-			.sub-menu {
-				position: relative;
-				display: none;
-				max-width: 100%;
-				background: rgba(255, 255, 255, 0.1);
-				zoom:1;
-
-				li {
-					position: relative;
-					display: block !important;
-					float: none;
-					opacity: 1 !important;
-					zoom:1;
-
+	
+				&.current-menu-item, &.current-menu-ancestor, &.current-menu-parent {
+	
 					a {
-						padding-right: 3em;
-						padding-left: 3em;
-						width: 100%;
-					}
-
-					&.menu-parent > a:after {
-						position: absolute;
-						top: 0.5em;
-						right: 1em;
-						color: white;
-					}
-					.sub-menu {
+						}
+				}
+	
+				a {
+					display: block;
+					padding: 0.2em 0.5em;
+					color: $medium-gray;
+					border-bottom: 1px solid $cyan;
+				}
+	
+				&.active > a, a:hover {
+					color: $white;
+					font-weight: normal;
+				}
+	
+				&.menu-parent > a:after {
+					@include icon;
+					position: relative;
+					top: -1px;
+					float: right;
+					content: "\e605"; 
+					font-size: 1em;
+					color: $cyan;
+				}
+	
+				&:hover > .sub-menu, &.active > .sub-menu {
+					max-height: none;
+				}
+	
+				.sub-menu {
+					position: relative;
+					display: block;
+					max-width: 100%;
+					zoom:1;
+					text-align: left;
+					margin-top: 0;
+					background: none;
+	
+					li {
+						float: left;
 						position: relative;
-						left: 0;
-
-						li {
-							padding-left: 0;
-
-							a {
-								padding-left: 4.5em;
+						display: block;
+						zoom:1;
+	
+						&.menu-parent > a:after {
+							position: absolute;
+							right: 17px;
+							top: 0.5em;
+						}
+						a {
+							width: 100%;
+							padding: 0.2em 0.5em 0.2em 1.8em;
+							color: lighten($medium-gray, 10);
+							border-bottom: 1px solid rgba($cyan, 0.2)
+						}
+						
+						.sub-menu {
+							position: relative;
+							left: 0;
+							li {
+								padding-left: 0;
+								a {
+									padding-left: 2.4em;
+								}
 							}
 						}
 					}

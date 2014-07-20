@@ -33,10 +33,13 @@
 	}
 }
 
-	.standard {
-		@include span-columns(12);
-	}
+// Generic text blocks thin by defualt
+// for an optimised line length;
 
+.standard {
+	@include shift(1.5);
+	@include span-columns(9);	
+}
 
 // --------------------------------------------------------------------------
 //  Left aligned logo (News)
@@ -57,6 +60,7 @@
 	}
 
 	.standard {
+		@include shift(0);
 		@include span-columns(9);
 
 		@include media($mobile-down) {
@@ -130,6 +134,8 @@
 		border-top: 2px solid lighten($cyan, 30);
 	}
 }
+
+// Just for the QIII page
 
 .standard {
 

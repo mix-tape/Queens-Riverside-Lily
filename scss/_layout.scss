@@ -136,6 +136,9 @@ body {
 //   Header
 // --------------------------------------------------------------------------
 
+// original  styles with a sticky mini header
+
+/*
 #header-wrapper {
 
 	@include media ($desktop-up) {
@@ -167,6 +170,71 @@ body {
 
 }
 
+// ----- Sticky header styles ----- //
+
+#header-wrapper.header-sticky {
+	position: fixed;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	top: 0;
+	padding-top: $gap;
+	transition: all 500ms ease;
+	background: rgba($super-dark-purple, 1);
+	background-blend-mode: none;
+	
+		#fraser-logo {
+			display: none;
+		}
+	
+}
+*/
+
+// variation styles that show header on scroll up
+
+#header-wrapper {
+	position: fixed;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	top: 0;
+	transition: opacity 300ms ease;
+
+	@include media ($desktop-up) {
+		background: rgba($super-dark-purple, 0.9);
+		background-blend-mode: multiply;
+	}
+
+	z-index: 99;
+	padding-top: $gap*3;
+	padding-bottom: $gap;
+	background: $super-dark-purple;
+
+	#header {
+
+		#header-content {
+			@include media($mobile-down) {
+				padding-top: $gap * 2;
+			}
+			position: relative;
+		}
+	}
+	
+	// Reduce top padding beacuse the 
+	// Fraser logo is hidden on mobile
+	
+	@include media ($mobile-down) {
+		padding-top: $gap;
+	}
+
+}
+
+// ----- Hidden header-wrapper helper ----- //
+
+#header-wrapper.nav-up {
+    opacity: 0;
+}
+
 // ----- Header cta ----- //
 
 #header-cta {
@@ -174,9 +242,13 @@ body {
 	color: $medium-gray;
 	text-align: right;
 	text-transform: uppercase;
+	line-height: 1.5;
+	
+	@include media($tablet-down) {
+		text-align: left
+	}
 	
 	@include media ($mobile-down) {
-		text-align: center;
 	}
 
 	a {
@@ -198,11 +270,15 @@ body {
 
 #queens-riverside-header-logo {
 
+	@include media($tablet-down) {
+		top: -40px;
+	}
+	
 	@include media ($mobile-down) {
 		top: -5px;
 		left: 0;
-		right: 0;
-		margin: 0 auto;
+/* 		right: 0; */
+/* 		margin: 0 auto; */
 	}
 
 	position: absolute;
@@ -226,8 +302,8 @@ body {
 		right: 0;
 	}
 
-	@include media ($mobile-down) {
-		left: 0;
+	@include media ($tablet-down) {
+		display: none;
 	}
 
 	position: absolute;
@@ -244,7 +320,11 @@ body {
 // --------------------------------------------------------------------------
 
 #banner-wrapper {
-	margin-top: -170px;
+	margin-top: -15px;
+	
+//adjusted for new header behavour
+/* 	margin-top: -170px; */
+
 	padding: 0;
 
 	.banner-slide {
@@ -282,7 +362,7 @@ body {
 		width: 20px;
 		height: 20px;
 		position: absolute;
-		bottom: 75px;
+		bottom: 50px;
 		left: 0;
 		right: 0;
 		margin: 0 auto;
@@ -298,7 +378,7 @@ body {
 	#scroll-down:before {
 		font-family: "icomoon"; 
 		content: "\e605"; 
-		font-size: 60px;
+		font-size: 40px;
 		color: $white;
 	}
 	
@@ -371,7 +451,8 @@ body {
 
 #hero-underlay {
 	position: absolute;
-	top: 170px;
+	/* top: 170px; */
+	top: 160px;
 	left: 0;
 	width: 100%;
 	background: rgba($yellow, 0);
@@ -768,8 +849,15 @@ body {
 //   Content
 // --------------------------------------------------------------------------
 
-#content {
+// Todo: Is there a more elegant way to not hide 
+// #content under the fixed header
 
+#content {
+	padding-top: 147px;
+}
+
+.home #content {
+	padding-top: 0;
 }
 
 #content.full-width {
@@ -935,6 +1023,7 @@ section.back-to-news {
 	text-transform: uppercase;
 	@include avenair-medium;
 }
+
 
 // --------------------------------------------------------------------------
 //   Footer
