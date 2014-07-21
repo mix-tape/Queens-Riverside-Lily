@@ -32,6 +32,7 @@ enquire.register("screen and (min-width:700px)", {
 enquire.register("screen and (min-width:960px)", {
 
 	match : function() {
+	
 		if ($("#scroll-down").length < 1) {
 			$( "<a href='#content' id='scroll-down'></div>" ).appendTo( '#banner-wrapper' );
   		}

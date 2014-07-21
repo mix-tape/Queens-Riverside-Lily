@@ -75,6 +75,10 @@ body {
 @mixin center-full {
 	@include clearfix;
 
+	@include media($large-desktop-up) {
+		width: $large-desktop;
+	}
+	
 	@include media($desktop-down) {
 		width: $desktop;
 	}
@@ -103,7 +107,6 @@ body {
 	position: relative;
 	display: block;
 	padding: $gap * 2 $gap;
-}
 
 	.section {
 		@include center;
@@ -112,7 +115,7 @@ body {
 		.section-content {
 			@include row;
 		}
-
+}
 
 /* variation on wrapper for fullscreen at desired width  */
 .fullscreen-wrapper {
@@ -206,8 +209,7 @@ body {
 	}
 
 	z-index: 99;
-	padding-top: $gap*3;
-	padding-bottom: $gap;
+	padding: $gap*3 $gap $gap;
 	background: $super-dark-purple;
 
 	#header {
@@ -275,10 +277,8 @@ body {
 	}
 
 	@include media ($mobile-down) {
-		top: -5px;
+		top: 0;
 		left: 0;
-/* 		right: 0; */
-/* 		margin: 0 auto; */
 	}
 
 	position: absolute;
@@ -294,11 +294,11 @@ body {
 
 #fraser-logo {
 
-	@include media($large-desktop-up) {
+	@include media($large-desktop) {
 		right: 0;
 	}
 
-	@include media ($large-desktop-down) {
+	@include media ($desktop-down) {
 		right: 0;
 	}
 
@@ -308,7 +308,7 @@ body {
 
 	position: absolute;
 	top: -$gap*3;
-	right: -320px;
+	right: 0;
 	width: 284px;
 	height: 35px;
 }
@@ -322,8 +322,9 @@ body {
 #banner-wrapper {
 	margin-top: -15px;
 
-//adjusted for new header behavour
-/* 	margin-top: -170px; */
+		@include media($mobile-down) {
+			margin-top: 100px;
+		}
 
 	padding: 0;
 
@@ -362,7 +363,7 @@ body {
 		width: 20px;
 		height: 20px;
 		position: absolute;
-		bottom: 50px;
+		bottom: 60px;
 		left: 0;
 		right: 0;
 		margin: 0 auto;
@@ -378,7 +379,7 @@ body {
 	#scroll-down:before {
 		font-family: "icomoon";
 		content: "\e605";
-		font-size: 40px;
+		font-size: 45px;
 		color: $white;
 	}
 
@@ -431,7 +432,8 @@ body {
 	font-size: ms(3);
 
 	small {
-		font-size: 1em;
+		@include avenair-light;
+		font-size: 0.4em !important;
 	}
 }
 
@@ -451,8 +453,7 @@ body {
 
 #hero-underlay {
 	position: absolute;
-	/* top: 170px; */
-	top: 160px;
+	top: 155px;
 	left: 0;
 	width: 100%;
 	background: rgba($yellow, 0);
@@ -461,6 +462,10 @@ body {
 
 	&.active {
 		background: rgba($yellow, 0.9);
+	}
+	
+	@include media($mobile-down) {
+		top: 0;
 	}
 }
 
@@ -623,8 +628,8 @@ body {
 		display: inline-block;
 		clear: both;
 		border-radius: 0;
-		background: $yellow;
-		color: #000;
+		background: $white;
+		color: $super-dark-purple;
 		text-transform: uppercase;
  		margin-top: $gap;
  		border-color: transparent;
@@ -755,6 +760,10 @@ body {
 	vertical-align: middle;
 	margin-bottom: 0;
 	font-size: 3.0em;
+	
+	@include media($mobile-down) {
+		font-size: 2.0em;
+	}
 
 	.fat-hash {
 		font-family: Verdana, Geneva, sans-serif;
@@ -775,6 +784,11 @@ body {
 		  float:left;
 		  margin:0;
 		  width: 33.33333333%;
+		  
+		  	@include media($thin-mobile-down) {
+			  	width: 100%;
+			 }
+		  
 		}
 
 }
@@ -873,7 +887,6 @@ body {
 // #content under the fixed header
 
 #content {
-	padding-top: 147px;
 }
 
 .home #content {
@@ -901,7 +914,7 @@ header.bg-image {
 	display: table;
 	width: 100%;
 	height: 500px;
-	margin-top: -170px;
+/* 	margin-top: -170px; */
 
 	@include media($mobile-down) {
 		height: 100px;
@@ -948,6 +961,19 @@ header.bg-image {
 
 // ----- Top level news page  ----- //
 
+.blog,
+.single {
+	
+		header.bg-image {
+	
+			@include media($mobile-down) {
+				margin-top: 100px;
+			}
+		
+		}
+	
+}
+
 .post {
 
 		h3 {
@@ -956,7 +982,6 @@ header.bg-image {
 
 		.ghost-button {
 			float: right;
-			margin-top: $gap;
 		}
 
 		//Places meta in a container
@@ -1053,9 +1078,9 @@ section.back-to-news {
 	color: $white;
 
 	@include media($mobile-down) {
-		padding: $gap*4 0 $gap*6;
+		padding: $gap*4 $gap $gap*6;
 	}
-	padding: $gap*6 0;
+	padding: $gap*6 $gap;
 	background: $super-dark-purple;
 
 	a:hover {

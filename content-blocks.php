@@ -100,21 +100,21 @@
 								<section class="blocks text-columns">
 
 									<div class="section">
-									
+
 										<div class="standard <?php echo get_blocks_classes(); ?>">
 
 											<div class="column-1">
-	
+
 												<?php the_sub_field('column_1'); ?>
-	
+
 											</div>
-	
+
 											<div class="column-2">
-	
+
 												<?php the_sub_field('column_2'); ?>
-	
+
 											</div>
-										
+
 										</div>
 
 									</div>
@@ -138,7 +138,7 @@
 
 											<?php $imagedata = get_sub_field('background_image'); ?>
 
-											<div class="block <?php echo get_block_classes(); ?>" style="background-image: url(<?php echo $imagedata['sizes']['extra-large']; ?>);">
+											<div class="block <?php echo get_block_classes(); ?>" style="background-image: url(<?php echo $imagedata['url']; ?>);">
 
 												<?php if (get_sub_field('link')) { ?><a href="<?php the_sub_field('link'); ?>"><?php } ?>
 

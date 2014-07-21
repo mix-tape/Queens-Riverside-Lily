@@ -210,12 +210,16 @@
 	cursor: pointer; 
 	background: transparent; 
 	color: transparent; 
-	top: 60%; 
+	top: 58%; 
 	margin-top: -10px; 
 	padding: 0; 
 	border: none; 
 	outline: none;
 	transition: transform 300ms, ease-in-out;
+	
+	@include media($mobile-down) {
+		top: 45%;
+	}
 	
 }
 
@@ -242,7 +246,7 @@
 .slick-prev:before, 
 .slick-next:before { 
 	font-family: "icomoon"; 
-	font-size: 60px; 
+	font-size: 45px; 
 	line-height: 1; 
 	color: white; 
 	opacity: 0.85; 

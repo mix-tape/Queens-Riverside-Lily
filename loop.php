@@ -19,6 +19,8 @@
 				?>
 
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				
+				<div class="fullscreen-wrapper" id="news-wrapper">
 
 					<section class="blocks text-block left-logo white-text <?= ($cyan_row) ? 'cyan' : 'darkblue'; $cyan_row = !$cyan_row; ?>">
 
@@ -59,6 +61,8 @@
 						</div>
 
 					</section>
+					
+				</div>	
 
 				<?php endwhile; else: ?>
 					<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>

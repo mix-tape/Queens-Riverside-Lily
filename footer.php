@@ -1,4 +1,4 @@
-	<div class="wrapper" id="footer-wrapper">
+	<div class="fullscreen-wrapper" id="footer-wrapper">
 
 		<footer class="section" id="footer" role="contentinfo">
 

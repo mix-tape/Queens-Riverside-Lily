@@ -136,18 +136,19 @@ $gap: 					20px;
 
 // ----- Define your breakpoints ----- //
 
-$large-desktop: 1280px;
+$large-desktop: 	1280px;
 $desktop:				960px;
-$tablet:					680px;
-$mobile:				400px;
+$tablet:					800px;
+$mobile:				650px;
+$thin-mobile:		400px;
 
+$large-desktop-down:		new-breakpoint(max-width ($large-desktop) 12);
+$desktop-down:				new-breakpoint(max-width ($desktop + 200) 12);
+$tablet-down:					new-breakpoint(max-width ($tablet + 200) 12);
+$mobile-down:					new-breakpoint(max-width ($mobile + 200) 4);
+$thin-mobile-down:			new-breakpoint(max-width ($thin-mobile + 200) 4);
 
-$large-desktop-down:	new-breakpoint(max-width ($large-desktop + 440px) 12);
-$desktop-down:				new-breakpoint(max-width ($desktop + 440px) 12);
-$tablet-down:					new-breakpoint(max-width ($tablet + 440px) 12);
-$mobile-down:					new-breakpoint(max-width ($mobile + 440px) 4);
-
-$large-desktop-up:		new-breakpoint(min-width $large-desktop 12);
+$large-desktop-up:			new-breakpoint(min-width $large-desktop + 100 12);
 $desktop-up:					new-breakpoint(min-width $desktop 12);
 $tablet-up:						new-breakpoint(min-width $tablet 12);
 $mobile-up:						new-breakpoint(min-width $mobile 12);

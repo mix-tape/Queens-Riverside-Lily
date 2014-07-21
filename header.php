@@ -46,7 +46,7 @@
 
 <div id="page-wrapper">
 
-	<div class="wrapper" id="header-wrapper">
+	<div class="fullscreen-wrapper" id="header-wrapper">
 
 		<header class="section" id="header" role="banner">
 

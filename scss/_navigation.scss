@@ -59,7 +59,8 @@
 				color: $white;
 			}
 
-			&:hover > .sub-menu, &.active > .sub-menu {
+			&:hover > .sub-menu, 
+			&.active > .sub-menu {
 				max-height: 60px;
 			}
 
@@ -124,19 +125,17 @@
 		display: block;
 		width: 40px;
 		height: 40px;
-		position: absolute;
+		position: fixed;
 		right: 0;
 		font-size: 40px;
 		color: $white;
 		line-height: 1;
 		
 		@include media($tablet-down) {
-			top: -70px;
+			top: $gap - 5px;
+			right: $gap;
 		}
 		
-		@include media($mobile-down) {
-			top: -100px;
-		}
 	}
 	
 	#menu-toggle:before {
@@ -192,7 +191,11 @@
 					color: $cyan;
 				}
 	
-				&:hover > .sub-menu, &.active > .sub-menu {
+				&:hover > .sub-menu {
+					max-height: none;
+				}
+				
+				&.active > .sub-menu {
 					max-height: none;
 				}
 	
