@@ -73,21 +73,21 @@
 				// var
 				var latlng = new google.maps.LatLng( $marker.attr('data-lat'), $marker.attr('data-lng') );
 
-				
+
 				// Define custom market stuff
-				var image = new google.maps.MarkerImage('images/marker.png',
+				var image = new google.maps.MarkerImage('/images/marker.png',
 					new google.maps.Size(122, 120),
 					new google.maps.Point(0,0),
 					new google.maps.Point(65, 95)
 				);
-				
+
 				// create marker
 				var marker = new google.maps.Marker({
 					position	: latlng,
 					map			: map,
 					icon			: image
 				});
-				
+
 				google.maps.event.addListener(marker, 'click', function () {
 				  window.open('http://goo.gl/y1o0Tf');
 				});
@@ -182,15 +182,8 @@
 
 		</script>
 
-		<?php
-
-		$location = get_field('location');
-
-		if( !empty($location) ):
-		?>
 		<div class="acf-map">
-			<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
+			<div class="marker" data-lat="-31.96152799999999" data-lng="115.87476700000002"></div>
 		</div>
-		<?php endif; ?>
 
 	</div>

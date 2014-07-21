@@ -182,11 +182,11 @@ body {
 	transition: all 500ms ease;
 	background: rgba($super-dark-purple, 1);
 	background-blend-mode: none;
-	
+
 		#fraser-logo {
 			display: none;
 		}
-	
+
 }
 */
 
@@ -219,10 +219,10 @@ body {
 			position: relative;
 		}
 	}
-	
-	// Reduce top padding beacuse the 
+
+	// Reduce top padding beacuse the
 	// Fraser logo is hidden on mobile
-	
+
 	@include media ($mobile-down) {
 		padding-top: $gap;
 	}
@@ -243,11 +243,11 @@ body {
 	text-align: right;
 	text-transform: uppercase;
 	line-height: 1.5;
-	
+
 	@include media($tablet-down) {
 		text-align: left
 	}
-	
+
 	@include media ($mobile-down) {
 	}
 
@@ -273,7 +273,7 @@ body {
 	@include media($tablet-down) {
 		top: -40px;
 	}
-	
+
 	@include media ($mobile-down) {
 		top: -5px;
 		left: 0;
@@ -321,7 +321,7 @@ body {
 
 #banner-wrapper {
 	margin-top: -15px;
-	
+
 //adjusted for new header behavour
 /* 	margin-top: -170px; */
 
@@ -357,7 +357,7 @@ body {
 			text-align: center;
 		}
 	}
-	
+
 	#scroll-down {
 		width: 20px;
 		height: 20px;
@@ -368,21 +368,21 @@ body {
 		margin: 0 auto;
 		cursor: pointer;
 		transition: transform 300ms, ease-in-out;
-				
+
 		&:hover {
 			transform: translate3d(0,5px,0);
 		}
-		
+
 	}
-	
+
 	#scroll-down:before {
-		font-family: "icomoon"; 
-		content: "\e605"; 
+		font-family: "icomoon";
+		content: "\e605";
 		font-size: 40px;
 		color: $white;
 	}
-	
-	
+
+
 }
 
 #banner {
@@ -485,6 +485,26 @@ body {
 // --------------------------------------------------------------------------
 //   Registration Form
 // --------------------------------------------------------------------------
+
+
+// ----- Contact Page Only ----- //
+
+.page-contact {
+
+	#register-wrapper {
+		padding-top: 170px;
+	}
+
+	#register-content {
+
+		h2 {
+			color: $white;
+		}
+	}
+}
+
+
+// ----- Global ----- //
 
 #register-wrapper {
 	padding: $gap*3 $gap;
@@ -713,11 +733,11 @@ body {
 
 	#instagram-hash {
 		text-align: center;
-		
+
 		@include media ($tablet-down) {
 			@include span-columns(12);
 		}
-		
+
 		.block-content {
 			@include media ($tablet-down) {
 				display: inline-block;
@@ -743,7 +763,7 @@ body {
 
 #instagram-images {
 	  	font-size:0;
-	  	
+
 	  @include media ($tablet-down) {
 			@include span-columns(12);
 		}
@@ -849,7 +869,7 @@ body {
 //   Content
 // --------------------------------------------------------------------------
 
-// Todo: Is there a more elegant way to not hide 
+// Todo: Is there a more elegant way to not hide
 // #content under the fixed header
 
 #content {
@@ -912,13 +932,13 @@ header.bg-image {
 
 .latest-news {
 	color: $white;
-	
+
 	h3 {
 		color: $darkblue;
 	}
-	
+
 	//Todo: this button has more top/bottom padding that the others - weird
-	
+
 	.ghost-button {
 		position: absolute;
 		bottom: 60px;
@@ -929,7 +949,7 @@ header.bg-image {
 // ----- Top level news page  ----- //
 
 .post {
-	
+
 		h3 {
 			text-transform: uppercase;
 		}
@@ -938,35 +958,35 @@ header.bg-image {
 			float: right;
 			margin-top: $gap;
 		}
-		
+
 		//Places meta in a container
 		//on individual news pages
-		
+
 		.meta {
 			@include row;
 		}
-		
+
 }
 
 // Common stuff to style the date element
 // .latest-news is on the home page
 
-.post, 
+.post,
 .latest-news {
 
 		h3,
 		time {
 			text-transform: uppercase;
 		}
-				
+
 		time {
 			@include avenair-medium;
 		}
-		
+
 		sub {
 			font-size: 10px;
 			bottom: 0;
-			text-transform: none;			
+			text-transform: none;
 		}
 }
 
@@ -975,7 +995,7 @@ header.bg-image {
 .cyan .post .ghost-button {
 	border-color: $darkblue;
 	color: $darkblue;
-	
+
 	&:hover {
 		background: $darkblue;
 		color: $cyan;
@@ -986,7 +1006,7 @@ header.bg-image {
 .darkblue .post .ghost-button {
 		border-color: $cyan;
 		color: $cyan;
-		
+
 			&:hover {
 				background: $cyan;
 				color: $darkblue;

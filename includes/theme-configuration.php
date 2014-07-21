@@ -132,6 +132,22 @@ function form_submit_button($button, $form)
 }
 
 
+// --------------------------------------------------------------------------
+//  Page body class
+// --------------------------------------------------------------------------
+
+add_filter('body_class', 'page_body_class');
+
+function page_body_class($classes) {
+
+	global $post;
+
+	$classes[] = 'page-' . $post->post_name;
+
+	return $classes;
+
+}
+
 
 // --------------------------------------------------------------------------
 // Customize Excerpt
