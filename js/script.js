@@ -14,11 +14,55 @@
 //   Responsive
 // --------------------------------------------------------------------------
 
+//mobile test
 
-enquire.register("screen and (min-width:700px)", {
+enquire.register("screen and (min-width:800px)", {
 
 	match : function() {
+	
+		//block magic
 		$('.block').matchHeight();
+		
+		// Hide Header on on scroll down
+		var didScroll;
+		var lastScrollTop = 0;
+		var delta = 5;
+		var navbarHeight = $('#header-wrapper').outerHeight();
+		
+		$(window).scroll(function(event){
+		    didScroll = true;
+		});
+		
+		setInterval(function() {
+		    if (didScroll) {
+		        hasScrolled();
+		        didScroll = false;
+		    }
+		}, 50);
+		
+		function hasScrolled() {
+		    var st = $(this).scrollTop();
+		    
+		    // Make sure they scroll more than delta
+		    if(Math.abs(lastScrollTop - st) <= delta)
+		        return;
+		    
+		    // If they scrolled down and are past the navbar, add class .nav-up.
+		    // This is necessary so you never see what is "behind" the navbar.
+		    
+		    if (st > lastScrollTop && st > navbarHeight){
+		        // Scroll Down
+		        $('#header-wrapper').removeClass('nav-down').addClass('nav-up');
+		    } else {
+		        // Scroll Up
+		        if(st + $(window).height() < $(document).height()) {
+		            $('#header-wrapper').removeClass('nav-up').addClass('nav-down');
+		        }
+		    }
+		    
+		    lastScrollTop = st;
+		}
+		
 	},
 
 	unmatch : function() {
@@ -27,15 +71,23 @@ enquire.register("screen and (min-width:700px)", {
 
 });
 
-// Add-remove scroll-down arrow  on banner
 
-enquire.register("screen and (min-width:960px)", {
+//tablet test 
+
+enquire.register("screen and (min-width:1000px)", {
 
 	match : function() {
 	
+		// Add scroll-down arrow  on banner
 		if ($("#scroll-down").length < 1) {
 			$( "<a href='#content' id='scroll-down'></div>" ).appendTo( '#banner-wrapper' );
   		}
+  		
+  		//Stop jitter on hover when bold - not stoked about this yet....
+  		//$('#main-nav li a').each(function(){
+	  		//	$(this).parent().width($(this).width() + 35);
+		//});	
+		
 	},
 
 	unmatch : function() {
@@ -49,8 +101,6 @@ enquire.register("screen and (min-width:960px)", {
 $(window).resize(function () {
 
 	waitForFinalEvent(function(){
-
-
 
 	}, 500, "DeBounced");
 
@@ -90,7 +140,7 @@ $(function() {
 	
 		var menuToggle = '<div id="menu-toggle" class="icon"></div>';
 	
-		if (!$('#menu-toggle').length) $('#nav-content').prepend(menuToggle);
+		if (!$('#menu-toggle').length) $('#header-wrapper').prepend(menuToggle);
 		
 		$('#menu-toggle').click(function() {
 			$('html').toggleClass('js-nav');
@@ -173,7 +223,7 @@ $(function() {
 	//   Hero Clock - Moment JS Configuration
 	// --------------------------------------------------------------------------
 
-	clock = $('#clock');
+	var clock = $('#clock');
 
 	perthTime = moment(new Date(clock.data('datetime')));
 

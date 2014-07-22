@@ -34,8 +34,8 @@
 
 		li {
 			float: left;
-			margin-left: 1em;
 			list-style: none;
+			margin-left: 1em;
 
 			&:first-child {
 				margin-left: 0;
@@ -59,36 +59,32 @@
 				color: $white;
 			}
 
-			&:hover > .sub-menu, 
-			&.active > .sub-menu {
-				max-height: 60px;
-			}
-
 			.sub-menu {
 				position: absolute;
 				left: 0;
 				z-index: 1000;
 				overflow: hidden;
 				padding: 0;
-				max-height: 0;
+				/* max-height: 0; */
 				width: 100%;
 				background: $white;
 				text-align: center;
 				transition: all 500ms;
-				margin-top: $gap;
+				margin-top: 10px;
+				display: none;
 
 				li {
 					position: relative;
 					display: inline-block;
 					float: none;
-					margin-right: 0;
+					margin: 0;
 
 					&.menu-parent > a:after {
 						position: absolute;
 						top: 3px;
 						right: 9px;
 					}
-
+					
 					a {
 						width: auto;
 						padding: 0.5em;
@@ -102,7 +98,23 @@
 					display: none;
 				}
 			}
+			
+			&:hover > .sub-menu {
+				display: block;
+			}
+			
+			&.active > .sub-menu {
+				display: block;
+			}
 		}
+		
+		li:after {
+		    content:'';
+		    display:block;
+		    height:15px;
+		    margin-bottom:-15px;
+		}
+		
 	}
 }
 
@@ -125,11 +137,12 @@
 		display: block;
 		width: 40px;
 		height: 40px;
-		position: fixed;
+		position: absolute;
 		right: 0;
 		font-size: 40px;
 		color: $white;
 		line-height: 1;
+		z-index: 1;
 		
 		@include media($tablet-down) {
 			top: $gap - 5px;
@@ -191,17 +204,9 @@
 					color: $cyan;
 				}
 	
-				&:hover > .sub-menu {
-					max-height: none;
-				}
-				
-				&.active > .sub-menu {
-					max-height: none;
-				}
-	
 				.sub-menu {
 					position: relative;
-					display: block;
+					display: none;
 					max-width: 100%;
 					zoom:1;
 					text-align: left;
@@ -238,6 +243,16 @@
 						}
 					}
 				}
+				
+				&.active > .sub-menu {
+					display: none;
+				}
+				
+				&:hover > .sub-menu {
+					display: block;
+				}
+				
+				
 			}
 		}
 	}

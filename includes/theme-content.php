@@ -24,7 +24,7 @@ function get_latest_post( $atts ) {
 
 								<a href="' . get_permalink($post["ID"]) . '" title="' . $post["post_title"] .'" >
 
-									<h3>' . $post["post_title"].'</h3>
+									<h2>' . $post["post_title"].'</h2>
 
 								</a>' .
 

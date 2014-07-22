@@ -150,9 +150,9 @@
 
 // ----- Height Variations ----- //
 
-.short 		{ .block { height: 350px; } }
-.medium 	{ .block { height: 425px; } }
-.tall 		{ .block { height: 500px; } }
+.short 		{ .block { min-height: 350px; } }
+.medium 	{ .block { min-height: 425px; } }
+.tall 		{ .block { min-height: 500px; } }
 
 
 .auto {
@@ -174,14 +174,35 @@
 		.block-content {
 			padding: 60px;
 			width: 100%;
+			height: 100%;
 			transition: all 500ms;
 			position: relative;
 			
-			@include media($mobile-down) {
-/* 				padding: $gap; */
+			@include media($desktop-down) {
+				padding: 20px;
 			}
+			
+			@include media($tablet-down) {
+				/* padding: 25px; */
+			}
+			
+				.button,
+				.ghost-button {
+					position: absolute;
+					bottom: $gap * 3;
+
+				}
+				
+				.ghost-button {					
+					@include media($tablet-down) {
+						position: inherit;
+					}
+
+				}
+			
+			}
+			
 		}
-	}
 
 
 	// ----- Link Block ----- //
@@ -241,11 +262,10 @@
 		.button {
 			position: absolute;
 			bottom: $gap * 3;
-			
 		}
 		
-		
 	}
+	
 
 	// ----- Image block ----- //
 
@@ -371,6 +391,14 @@
 			}
 		}
 	}
+	
+	// jesse mucking around here
+	
+	.one_quarter {
+		@include media($desktop-down) {
+			@include span-columns(6, block-collapse);
+		}
+	}
 
 	.one_quarter,
 	.three_quarters,
@@ -383,7 +411,14 @@
 		@include media($mobile-down) {
 			@include span-columns(2, block-collapse);
 		}
+		
+		// jesse mucking around here
+		
+		@include media($thin-mobile-down) {
+			@include span-columns(4, block-collapse);
+		}
 	}
+
 
 
 // --------------------------------------------------------------------------

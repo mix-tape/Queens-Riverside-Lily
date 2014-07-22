@@ -227,6 +227,7 @@ body {
 
 	@include media ($mobile-down) {
 		padding-top: $gap;
+		position: relative;
 	}
 
 }
@@ -320,11 +321,6 @@ body {
 // --------------------------------------------------------------------------
 
 #banner-wrapper {
-	margin-top: -15px;
-
-		@include media($mobile-down) {
-			margin-top: 100px;
-		}
 
 	padding: 0;
 
@@ -360,10 +356,10 @@ body {
 	}
 
 	#scroll-down {
-		width: 20px;
-		height: 20px;
+		width: 45px;
+		height: 45px;
 		position: absolute;
-		bottom: 60px;
+		bottom: 30px;
 		left: 0;
 		right: 0;
 		margin: 0 auto;
@@ -388,7 +384,7 @@ body {
 
 #banner {
 	right: 0;
-	bottom: 15%;
+	bottom: 18%;
 	left: 0;
 	color: $white;
 
@@ -396,6 +392,16 @@ body {
 	// until some perfect middle is introduced
 
 	position: absolute;
+	
+	@include media($large-desktop-down) {
+		padding-left: 20px;
+	} 
+	
+	@include media($mobile-down) {
+		text-align: center;
+		font-size: 90%;
+		padding-left: 0;
+	} 
 
 	// ----- Home page hero type ----- //
 
@@ -419,6 +425,11 @@ body {
 		@include avenair-medium;
 		margin: 0.3em 0 0.8em;
 		text-transform: uppercase;
+		
+		@include media($mobile-down) {
+			width: 75%;
+			margin: 0 auto;
+		}
 	}
 
 }
@@ -435,6 +446,10 @@ body {
 		@include avenair-light;
 		font-size: 0.4em !important;
 	}
+	
+	@include media($thin-mobile-down) {
+		font-size: ms(2);
+	}
 }
 
 // ----- Lily Logo ----- //
@@ -447,13 +462,17 @@ body {
 	img + h1 {
 		@include visuallyhidden;
 	}
+	
+	@include media($mobile-down) {
+		margin: 10px auto $gap;
+	} 
 }
 
 // ----- Hero underlay ----- //
 
 #hero-underlay {
 	position: absolute;
-	top: 155px;
+	top: 0;
 	left: 0;
 	width: 100%;
 	background: rgba($yellow, 0);
@@ -498,6 +517,10 @@ body {
 
 	#register-wrapper {
 		padding-top: 170px;
+		
+		@include media($mobile-down) {
+			padding-top: 70px;
+		}
 	}
 
 	#register-content {
@@ -530,7 +553,7 @@ body {
 
 	.gform_wrapper {
 		padding: $gap;
-		background: $cyan;
+		background: #046a6b;
 		background: rgba($cyan, 0.3);
 		margin-top: $gap*2;
 	}
@@ -967,7 +990,7 @@ header.bg-image {
 		header.bg-image {
 	
 			@include media($mobile-down) {
-				margin-top: 100px;
+				
 			}
 		
 		}

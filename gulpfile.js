@@ -44,9 +44,11 @@ config.plugins = [
   config.vendor + '/moment/moment.js',
   config.vendor + '/fitvids/jquery.fitvids.js',
   config.vendor + '/chosen/chosen.jquery.js',
+  config.vendor + '/matchMedia/matchMedia.js',
+  config.vendor + '/matchMedia/matchMedia.addListener.js',
   config.vendor + '/enquire/dist/enquire.js',
   config.vendor + '/jQInstaPics/js/jqinstapics.js',
-   config.vendor + '/jQuery-touchMenuHover/jquery.izilla.touchMenuHover.js'
+  config.vendor + '/jQuery-touchMenuHover/jquery.izilla.touchMenuHover.js'
 
 
 ]
