@@ -368,8 +368,6 @@ $(function() {
 		  	"count": 3,
 		  	"size" : "standard_resolution"
 		});
-		
-		
 
 });
 
@@ -478,6 +476,7 @@ var gf_placeholder = function() {
 			$field[0].setAttribute('placeholder', label);
 		});
 
+/*
 	var support = (!('placeholder' in document.createElement('input'))); // borrowed from Modernizr.com
 	if ( support && jquery_placeholder_url )
 		$.ajax({
@@ -491,6 +490,7 @@ var gf_placeholder = function() {
 			},
 			type: 'get'
 		});
+*/
 };
 
 // --------------------------------------------------------------------------

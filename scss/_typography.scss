@@ -69,8 +69,13 @@ h2 {
 	margin-bottom: ms(-1);
 	
 	//just a test for homepage weirdness
-	@include media($tablet-down) {
+	@include media($desktop-down) {
 		font-size: ms(2);
+	}
+
+	//just a test for homepage weirdness
+	@include media($tablet-down) {
+		/* font-size: ms(2); */
 	}
 	
 	@include media($mobile-down) {

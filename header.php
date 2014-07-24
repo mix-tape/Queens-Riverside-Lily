@@ -41,6 +41,7 @@
 </head>
 
 <!--[if IE 8 ]><body class="ie8 <?php echo join( ' ', get_body_class() ); ?>"><![endif]-->
+<!--[if IE 9 ]><body class="ie9 <?php echo join( ' ', get_body_class() ); ?>"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
 <body class="<?php echo join( ' ', get_body_class() ); ?>"><!--<![endif]-->
 

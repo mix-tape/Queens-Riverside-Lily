@@ -6,3 +6,88 @@
 //
 // ==========================================================================
 
+// ----- Hero banner ----- //
+
+
+// the banner z index is all messed up in ie8, ie9
+
+.ie8 #header-wrapper,
+.ie9 #header-wrapper  {
+	z-index: 9999;
+}
+
+.ie8 #banner ,
+.ie9 #banner  {
+	z-index: 9999;
+}
+
+.ie8 .home .slick-prev, 
+.ie9 .home .slick-next {
+	z-index: 9999;
+}
+
+.ie8 .slick-prev,
+.ie9 .slick-prev {
+	margin-left: 20px;
+}
+
+.ie8 .slick-next,
+.ie9 .slick-next {
+	margin-right: 20px;
+}
+
+.ie8 .slick-list,
+.ie9 .slick-list {
+	z-index: 0;
+}
+
+.ie8 #hero-underlay {
+	z-index: 9999;
+}
+
+// ----- contact form ----- //
+
+
+// form labels in right columm form were visbale - not now though!
+
+.ie8 .gfield_label,
+.ie9 .gfield_label {
+	display: none !important;
+}
+
+.ie8 .ginput_container input,
+.ie9 .ginput_container input {
+	padding-bottom: 11px;
+}
+
+.ie9 .gfield .ginput_container input {
+	margin-bottom: 2px;
+} 
+
+// forces instagram images in ie8 to maintain aspect ratio
+
+.ie8 #instagram {
+	
+	img {
+	    display: block;
+	    max-height:600px;
+	    width: auto;
+	    height: auto;
+	}
+	
+}
+
+// ----- Image block ----- //
+
+.ie8 .bg-image {
+	
+	// polyfill for ie8 to allow background-szie: cover;
+	-ms-behavior: url(/backgroundsize.min.htc);
+}
+
+// ----- News page ----- //
+
+.ie8 .post section.text-block {
+	padding-top: 60px;
+	padding-bottom: 60px;
+}

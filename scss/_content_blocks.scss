@@ -27,7 +27,7 @@
 
 .text-block {
 	padding: 60px;
-	
+
 	@include media($mobile-down) {
 		padding: $gap;
 	}
@@ -38,7 +38,13 @@
 
 .standard {
 	@include shift(1.5);
-	@include span-columns(9);	
+	@include span-columns(9);
+	
+	@include media($mobile-down) {
+		@include shift(0);
+		@include span-columns(4);
+	}
+
 }
 
 // --------------------------------------------------------------------------
@@ -55,7 +61,7 @@
 		@include media($tablet-down) {
 			padding-right: 0;
 		}
-		
+
 		@include media($mobile-down) {
 			@include span-columns(4);
 			text-align: center;
@@ -78,15 +84,15 @@
 // --------------------------------------------------------------------------
 
 .text-columns  {
-	
+
 	.standard {
 		padding: 60px 0;
 	}
-	
+
 	.column-1,
 	.column-2 {
 		 @include span-columns(6);
-		 
+
 		@include media($mobile-down) {
 			@include span-columns(4);
 		}
@@ -95,7 +101,7 @@
 	@include media($mobile-down) {
 		padding: $gap;
 	}
-	
+
 }
 
 // ----- Width variations ----- //
@@ -133,7 +139,7 @@
 		}
 
 	}
-	
+
 	&.border-top-cyan {
 		border-top: 2px solid lighten($cyan, 30);
 	}
@@ -150,9 +156,36 @@
 
 // ----- Height Variations ----- //
 
-.short 		{ .block { min-height: 350px; } }
-.medium 	{ .block { min-height: 425px; } }
-.tall 		{ .block { min-height: 500px; } }
+.short {
+	.block {
+		min-height: 350px;
+
+		@include media($mobile-down) {
+			min-height: none;
+		}
+	}
+}
+
+.medium {
+	.block {
+		min-height: 425px;
+
+		@include media($mobile-down) {
+			/* min-height: none; */
+			min-height: 0;
+		}
+	}
+}
+
+.tall {
+	.block {
+		min-height: 500px;
+
+		@include media($mobile-down) {
+			min-height: none;
+		}
+	}
+}
 
 
 .auto {
@@ -177,32 +210,43 @@
 			height: 100%;
 			transition: all 500ms;
 			position: relative;
+
+			h2 {
+				margin-bottom: 0.4em;
+				/*
+transition: transform 300ms, ease-in-out;
+				transform: translate3d(0, -5px, 0);
+*/
+			}
 			
+			.button,
+			.ghost-button {
+				position: absolute;
+				bottom: $gap * 3;
+				
+				@include media($tablet-down) {
+					position: relative;
+					bottom: auto;
+					top: 60px;
+				}
+			}
+			
+			@include media($large-desktop-down) {
+				padding: 30px;
+			}
+
 			@include media($desktop-down) {
 				padding: 20px;
 			}
 			
-			@include media($tablet-down) {
-				/* padding: 25px; */
-			}
-			
-				.button,
-				.ghost-button {
-					position: absolute;
-					bottom: $gap * 3;
-
-				}
+			&:hover h2 {
+				/* transform: translate3d(0,-10px,0); */
+			}	
 				
-				.ghost-button {					
-					@include media($tablet-down) {
-						position: inherit;
-					}
-
-				}
-			
-			}
-			
 		}
+
+}
+
 
 
 	// ----- Link Block ----- //
@@ -263,9 +307,9 @@
 			position: absolute;
 			bottom: $gap * 3;
 		}
-		
+
 	}
-	
+
 
 	// ----- Image block ----- //
 
@@ -345,6 +389,13 @@
 			display: table-cell;
 			vertical-align: middle;
 		}
+				
+/*
+		@include media($large-desktop-down) {
+				display: inline-block;
+		}
+*/
+		
 	}
 
 
@@ -375,7 +426,18 @@
 	.three_fifths		{ @include span-columns(7.2,	block-collapse); }
 	.four_fifths		{ @include span-columns(9.6,	block-collapse); }
 
-
+	
+	.one_quarter {
+		
+		@include media($large-desktop-down) {
+		
+			.large-hashtag {
+				font-size: 2em;
+			}
+		
+		}
+	}
+	
 	// ----- Tablet & Mobile ----- //
 
 	.one_half,
@@ -384,19 +446,11 @@
 	{
 
 		@include media($mobile-down) {
-			@include span-columns(4);
+			width: 100%;
 
 			&:last-child {
-				@include span-columns(4);
+				width: 100%;
 			}
-		}
-	}
-	
-	// jesse mucking around here
-	
-	.one_quarter {
-		@include media($desktop-down) {
-			@include span-columns(6, block-collapse);
 		}
 	}
 
@@ -405,17 +459,32 @@
 	.one_fifth,
 	.two_fifths,
 	.three_fifths,
-	.four_fifths
-	{
+	.four_fifths {
 
 		@include media($mobile-down) {
-			@include span-columns(2, block-collapse);
+			width: 50%;
+
+			&:last-child {
+				width: 50%;
+			}
 		}
-		
-		// jesse mucking around here
-		
+
 		@include media($thin-mobile-down) {
-			@include span-columns(4, block-collapse);
+			width: 100%;
+
+			&:last-child {
+				width: 100%;
+			}
+		}
+	}
+	
+	.one_quarter {
+		@include media($tablet-down) {
+			width: 50%;
+
+			&:last-child {
+				width: 50%;
+			}
 		}
 	}
 

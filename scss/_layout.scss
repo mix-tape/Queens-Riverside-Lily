@@ -434,6 +434,7 @@ body {
 
 }
 
+
 // ----- Clock ----- //
 
 // Todo: AWST needs own styling
@@ -782,15 +783,23 @@ body {
 	display: inline-block;
 	vertical-align: middle;
 	margin-bottom: 0;
-	font-size: 3.0em;
+	font-size: 2.6em;
+	
+	@include media($desktop-down) {
+		font-size: 2em;
+	}
 	
 	@include media($mobile-down) {
-		font-size: 2.0em;
+		font-size: 2.6em;
 	}
 
 	.fat-hash {
 		font-family: Verdana, Geneva, sans-serif;
 	}
+}
+
+.home .large-hashtag {
+	font-size: 3em;
 }
 
 #instagram-images {
@@ -966,18 +975,22 @@ header.bg-image {
 
 // -----Latest news block on home page  ----- //
 
-.latest-news {
-	color: $white;
+.block {
 
-	h3 {
-		color: $darkblue;
-	}
+	.block-content {
 
-	//Todo: this button has more top/bottom padding that the others - weird
-
-	.ghost-button {
-		position: absolute;
-		bottom: 60px;
+		.latest-news {
+			color: $white;
+		
+			h3 {
+				color: $darkblue;
+			}
+		
+				.ghost-button {
+					position: relative;
+					bottom: auto;
+				}
+		}	
 	}
 }
 
