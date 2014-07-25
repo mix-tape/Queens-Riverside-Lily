@@ -76,7 +76,7 @@
 
 				<div id="header-cta">
 
-					<a href="#" class="bold-gray-link">Register Your Interest</a> or Call 1800 783 367 <span class="hashtag">#LIVELILY</span>
+					<a href="#register-wrapper" class="bold-gray-link">Register Your Interest</a> or Call 1800 783 367 <span class="hashtag">#LIVELILY</span>
 
 				</div>
 

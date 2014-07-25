@@ -52,17 +52,17 @@
 				display: block;
 				padding: 0.2em 0.5em;
 				color: $medium-gray;
+				transition: color 300ms, ease-in-out;
 			}
 
 			&.active > a, a:hover {
-				@include bold-it;
 				color: $white;
 			}
 
 			.sub-menu {
 				position: absolute;
 				left: 0;
-				z-index: 1000;
+
 				overflow: hidden;
 				padding: 0;
 				/* max-height: 0; */
@@ -70,7 +70,7 @@
 				background: $white;
 				text-align: center;
 				transition: all 500ms;
-				margin-top: 10px;
+				margin-top: 15px;
 				display: none;
 
 				li {
@@ -88,9 +88,21 @@
 					a {
 						width: auto;
 						padding: 0.5em;
+						color: $super-dark-gray;
+						
+						&:hover {
+							color: $super-dark-purple;
+						}
+					}
+					
+					&.active a {
 						color: $super-dark-purple;
 					}
+					
 				}
+				
+				
+				
 				.sub-menu {
 					position: absolute;
 					top: 0;
@@ -101,6 +113,7 @@
 			
 			&:hover > .sub-menu {
 				display: block;
+				z-index: 1000;
 			}
 			
 			&.active > .sub-menu {
@@ -228,7 +241,11 @@
 							width: 100%;
 							padding: 0.2em 0.5em 0.2em 1.8em;
 							color: lighten($medium-gray, 10);
-							border-bottom: 1px solid rgba($cyan, 0.2)
+							border-bottom: 1px solid rgba($cyan, 0.2);
+							
+							&:hover {
+								color: $white;
+							}
 						}
 						
 						.sub-menu {

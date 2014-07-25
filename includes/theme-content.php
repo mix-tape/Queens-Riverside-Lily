@@ -28,7 +28,7 @@ function get_latest_post( $atts ) {
 
 								</a>' .
 
-								wp_trim_words($post['post_content'], 18) .
+								/* wp_trim_words($post['post_content'], 18) . */
 
 								'<footer>
 

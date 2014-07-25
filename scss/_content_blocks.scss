@@ -31,6 +31,16 @@
 	@include media($mobile-down) {
 		padding: $gap;
 	}
+	
+	a {
+		color: $super-dark-purple;
+		border-bottom: 1px solid $super-dark-purple;
+		padding-bottom: 1px;
+		
+		&:hover {
+			color: $cyan;
+		}
+	}
 }
 
 // Generic text blocks thin by defualt
@@ -247,7 +257,35 @@ transition: transform 300ms, ease-in-out;
 
 }
 
-
+	// ----- Hashtag ----- //
+	
+	// reduces the padding on this block to allow for 
+	// bigger text and not break layout
+	
+	.block.hashtag {
+	
+			.block-content {
+				padding: 0;
+			}
+			
+			@include media($desktop-down) {
+				padding: 0;
+			}
+	
+	}
+	
+	// ----- Extra padding ----- //
+	
+	// for big bloxks of text that 
+	// need that little bit more L/R padding
+	
+	.block.extra-padding {
+	
+			.block-content {
+				padding: 60px 80px;
+			}
+	
+	}
 
 	// ----- Link Block ----- //
 
@@ -425,25 +463,11 @@ transition: transform 300ms, ease-in-out;
 	.two_fifths			{ @include span-columns(4.8,	block-collapse); }
 	.three_fifths		{ @include span-columns(7.2,	block-collapse); }
 	.four_fifths		{ @include span-columns(9.6,	block-collapse); }
-
-	
-	.one_quarter {
-		
-		@include media($large-desktop-down) {
-		
-			.large-hashtag {
-				font-size: 2em;
-			}
-		
-		}
-	}
 	
 	// ----- Tablet & Mobile ----- //
 
-	.one_half,
 	.one_third,
-	.two_thirds
-	{
+	.two_thirds {
 
 		@include media($mobile-down) {
 			width: 100%;
@@ -451,6 +475,17 @@ transition: transform 300ms, ease-in-out;
 			&:last-child {
 				width: 100%;
 			}
+		}
+	}
+	
+	.one_half {
+		@include media($tablet-down) {
+			width: 100%;
+			
+			&:last-child {
+				width: 100%;
+			}
+			
 		}
 	}
 

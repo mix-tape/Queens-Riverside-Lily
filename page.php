@@ -28,6 +28,23 @@
 			<?php get_template_part('content', 'blocks'); ?>
 
 
+			<?php if (get_field('gallery')) { ?>
+
+			<section id="gallery" style="display: none;">
+
+				<?php $images = get_field('gallery'); foreach($images as $image) { ?>
+
+					<?php $alt = $image['alt']; ?>
+
+					<img src="<?php echo $image['url']; ?>" alt="<?php echo $alt; ?>" />
+
+				<?php } ?>
+
+			</section>
+
+			<?php } ?>
+
+
 		</article>
 
 
