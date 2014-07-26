@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-h1, h2 {
+h1, h2, h3 {
 	text-transform: uppercase;
 }
 
@@ -81,10 +81,11 @@ h2 {
 	@include media($mobile-down) {
 		font-size: ms(2);
 	}
+	
 }
 
 h3 {
-	font-size: ms(1);
+	font-size: ms(2);
 	margin-bottom: ms(-1);
 	font-weight: 900;
 	color: $cyan;

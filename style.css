@@ -766,7 +766,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0; }
 
 /* line 53, scss/_typography.scss */
-h1, h2 {
+h1, h2, h3 {
   text-transform: uppercase; }
 
 /* line 57, scss/_typography.scss */
@@ -780,45 +780,45 @@ h2 {
   font-size: 2.8em;
   margin-bottom: 0.7em; }
       
-/* line 86, scss/_typography.scss */
+/* line 87, scss/_typography.scss */
 h3 {
-  font-size: 1.4em;
+  font-size: 2.0em;
   margin-bottom: 0.7em;
   font-weight: 900;
   color: #32bbb1; }
   
-/* line 97, scss/_typography.scss */
+/* line 98, scss/_typography.scss */
 h4 {
   font-size: 1.4em;
   margin-bottom: 0.7em; }
 
-/* line 102, scss/_typography.scss */
+/* line 103, scss/_typography.scss */
 h5 {
   font-size: 0.7em;
   margin-bottom: 0.7em; }
 
-/* line 107, scss/_typography.scss */
+/* line 108, scss/_typography.scss */
 h6 {
   font-size: 0.5em;
   margin-bottom: 0.7em;
   text-transform: uppercase; }
 
-/* line 113, scss/_typography.scss */
+/* line 114, scss/_typography.scss */
 h1 + h2, h2 + h3, h3 + h4, h5 + h6 {
   margin-top: 0; }
 
-/* line 121, scss/_typography.scss */
+/* line 122, scss/_typography.scss */
 img {
   max-width: 100%; }
 
-/* line 125, scss/_typography.scss */
+/* line 126, scss/_typography.scss */
 .icon {
   font-family: 'IcoMoon';
   display: inline-block;
   margin-bottom: 0;
   vertical-align: middle; }
 
-/* line 129, scss/_typography.scss */
+/* line 130, scss/_typography.scss */
 hr {
   display: block;
   margin: 20px 0;
@@ -827,7 +827,7 @@ hr {
   color: #222;
   background-color: #222; }
 
-/* line 138, scss/_typography.scss */
+/* line 139, scss/_typography.scss */
 article blockquote {
   margin: 0 0 20px 0;
   font-family: cambria, georgia, times, serif;
@@ -836,45 +836,45 @@ article blockquote {
   background: #fafafa;
   padding: 20px;
   font-style: italic; }
-  /* line 146, scss/_typography.scss */
+  /* line 147, scss/_typography.scss */
   article blockquote p:last-child {
     margin-bottom: 0; }
 
-/* line 149, scss/_typography.scss */
+/* line 150, scss/_typography.scss */
 .pull-quote {
   position: relative;
   padding: 20px; }
-  /* line 152, scss/_typography.scss */
+  /* line 153, scss/_typography.scss */
   .pull-quote:before, .pull-quote:after {
     height: 40px;
     opacity: 0.15;
     position: absolute;
     font-size: 1em; }
-  /* line 159, scss/_typography.scss */
+  /* line 160, scss/_typography.scss */
   .pull-quote:before {
     content: '“';
     top: 0;
     left: 0; }
-  /* line 164, scss/_typography.scss */
+  /* line 165, scss/_typography.scss */
   .pull-quote:after {
     content: '”';
     bottom: 0;
     right: 0; }
 
-/* line 171, scss/_typography.scss */
+/* line 172, scss/_typography.scss */
 ins {
   background: #ff9;
   color: #000;
   text-decoration: none; }
 
-/* line 177, scss/_typography.scss */
+/* line 178, scss/_typography.scss */
 mark {
   background: #ff0;
   color: #000;
   font-style: italic;
   font-weight: bold; }
 
-/* line 185, scss/_typography.scss */
+/* line 186, scss/_typography.scss */
 .drop-cap:first-letter {
   float: left;
   margin: 0;
@@ -886,7 +886,7 @@ mark {
   background: transparent;
   color: inherit; }
 
-/* line 200, scss/_typography.scss */
+/* line 201, scss/_typography.scss */
 .post time:before {
   font-family: 'IcoMoon';
   display: inline-block;
@@ -895,21 +895,21 @@ mark {
   margin-right: 5px;
   vertical-align: middle; }
 
-/* line 212, scss/_typography.scss */
+/* line 213, scss/_typography.scss */
 table {
   width: 100%; }
 
-/* line 221, scss/_typography.scss */
+/* line 222, scss/_typography.scss */
 #sidebar {
   font-size: 13px; }
-  /* line 227, scss/_typography.scss */
+  /* line 228, scss/_typography.scss */
   #sidebar h3 {
     font-size: 1.4em; }
-  /* line 230, scss/_typography.scss */
+  /* line 231, scss/_typography.scss */
   #sidebar h4 {
     font-size: 1.4em; }
 
-/* line 288, scss/_typography.scss */
+/* line 289, scss/_typography.scss */
 .button {
   display: inline-block;
   zoom: 1;
@@ -935,14 +935,14 @@ table {
   background-color: rgba(50, 176, 164, 0.8);
   text-decoration: none;
   border-radius: 2px; }
-  /* line 271, scss/_typography.scss */
+  /* line 272, scss/_typography.scss */
   .button:hover {
     outline: 0;
     background: #32bbb1; }
-  /* line 276, scss/_typography.scss */
+  /* line 277, scss/_typography.scss */
   .button:active, .button.active {
     outline: 0; }
-  /* line 280, scss/_typography.scss */
+  /* line 281, scss/_typography.scss */
   .button.disabled, .button[disabled] {
     background-image: none;
     opacity: 0.4;
@@ -952,7 +952,7 @@ table {
     -webkit-box-shadow: none;
     box-shadow: none; }
 
-/* line 316, scss/_typography.scss */
+/* line 317, scss/_typography.scss */
 .ghost-button {
   font-family: AvenirLTStd-Book, Arial, Helvetica, Sans-serif;
   font-weight: normal;
@@ -966,11 +966,11 @@ table {
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
   line-height: normal; }
-  /* line 306, scss/_typography.scss */
+  /* line 307, scss/_typography.scss */
   .ghost-button:hover {
     outline: 0;
     background-color: #ffcd00; }
-  /* line 311, scss/_typography.scss */
+  /* line 312, scss/_typography.scss */
   .ghost-button:active, .ghost-button.active {
     outline: 0; }
 
@@ -1867,7 +1867,7 @@ section.back-to-news {
           position: relative;
           display: inline-block;
           float: none;
-          margin: 0; }
+          margin: 0 0 0 1em; }
           /* line 82, scss/_navigation.scss */
           #main-nav .menu li .sub-menu li.menu-parent > a:after {
             position: absolute;
@@ -2239,8 +2239,12 @@ section.back-to-news {
   /* line 30, ../../../../../lib/gems/1.9.1/gems/neat-compass-1.6.0/stylesheets/neat/grid/_span-columns.scss */
   .four_fifths:last-child {
     width: 79.5%; }
+/* line 525, scss/_content_blocks.scss */
+.one_quarter h2 {
+  font-size: 2.0em;
+  line-height: 1.4; }
 
-/* line 537, scss/_content_blocks.scss */
+/* line 542, scss/_content_blocks.scss */
 .slideshow .slide img {
   display: none; }
 
@@ -2291,14 +2295,14 @@ input[type="reset"] {
   background-color: rgba(50, 176, 164, 0.8);
   text-decoration: none;
   border-radius: 2px; }
-  /* line 271, scss/_typography.scss */
+  /* line 272, scss/_typography.scss */
   .button:hover,
   input[type="button"]:hover,
   input[type="submit"]:hover,
   input[type="reset"]:hover {
     outline: 0;
     background: #32bbb1; }
-  /* line 276, scss/_typography.scss */
+  /* line 277, scss/_typography.scss */
   .button:active, .button.active,
   input[type="button"]:active,
   input[type="button"].active,
@@ -2307,7 +2311,7 @@ input[type="reset"] {
   input[type="reset"]:active,
   input[type="reset"].active {
     outline: 0; }
-  /* line 280, scss/_typography.scss */
+  /* line 281, scss/_typography.scss */
   .button.disabled, .button[disabled],
   input[type="button"].disabled,
   input[type="button"][disabled],
@@ -3321,35 +3325,36 @@ div.wp-caption {
             float: left;
             position: relative;
             display: block;
-            zoom: 1; }
-            /* line 235, scss/_navigation.scss */
+            zoom: 1;
+            margin: 0; }
+            /* line 236, scss/_navigation.scss */
             #main-nav .menu li .sub-menu li.menu-parent > a:after {
               position: absolute;
               right: 17px;
               top: 0.5em; }
-            /* line 240, scss/_navigation.scss */
+            /* line 241, scss/_navigation.scss */
             #main-nav .menu li .sub-menu li a {
               width: 100%;
               padding: 0.2em 0.5em 0.2em 1.8em;
               color: #cfd2ce;
               border-bottom: 1px solid rgba(50, 187, 177, 0.2); }
-              /* line 246, scss/_navigation.scss */
+              /* line 247, scss/_navigation.scss */
               #main-nav .menu li .sub-menu li a:hover {
                 color: white; }
-            /* line 251, scss/_navigation.scss */
+            /* line 252, scss/_navigation.scss */
             #main-nav .menu li .sub-menu li .sub-menu {
               position: relative;
               left: 0; }
-              /* line 254, scss/_navigation.scss */
+              /* line 255, scss/_navigation.scss */
               #main-nav .menu li .sub-menu li .sub-menu li {
                 padding-left: 0; }
-                /* line 256, scss/_navigation.scss */
+                /* line 257, scss/_navigation.scss */
                 #main-nav .menu li .sub-menu li .sub-menu li a {
                   padding-left: 2.4em; }
-        /* line 264, scss/_navigation.scss */
+        /* line 265, scss/_navigation.scss */
         #main-nav .menu li.active > .sub-menu {
           display: none; }
-        /* line 268, scss/_navigation.scss */
+        /* line 269, scss/_navigation.scss */
         #main-nav .menu li:hover > .sub-menu {
           display: block; } 
     /* line 66, scss/_content_blocks.scss */
@@ -3382,7 +3387,7 @@ div.wp-caption {
     /* line 67, scss/_typography.scss */
     h2 {
       font-size: 2.0em; } 
-    /* line 86, scss/_typography.scss */
+    /* line 87, scss/_typography.scss */
     h3 {
       font-size: 1.4em; } 
       /* line 111, scss/_layout.scss */

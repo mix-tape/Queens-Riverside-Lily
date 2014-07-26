@@ -77,7 +77,7 @@
 					position: relative;
 					display: inline-block;
 					float: none;
-					margin: 0;
+					margin: 0 0 0 1em;
 
 					&.menu-parent > a:after {
 						position: absolute;
@@ -231,6 +231,7 @@
 						position: relative;
 						display: block;
 						zoom:1;
+						margin: 0;
 	
 						&.menu-parent > a:after {
 							position: absolute;

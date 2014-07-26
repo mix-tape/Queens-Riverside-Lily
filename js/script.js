@@ -67,6 +67,11 @@ enquire.register("screen and (min-width:800px)", {
 
 	unmatch : function() {
 		$('.block').matchHeight('remove');
+		
+		// adds a <br>
+		if ($("#header-cta br").length == 0) {
+		  $("<br>").insertAfter("#header-cta a");
+		}
 	}
 
 });
@@ -91,6 +96,7 @@ enquire.register("screen and (min-width:1000px)", {
 	},
 
 	unmatch : function() {
+
 	}
 
 });
@@ -152,22 +158,6 @@ $(function() {
 		$('#main-nav').touchMenuHover();
 	
 	
-	// --------------------------------------------------------------------------
-	//   Sticky header v1
-	// --------------------------------------------------------------------------
-	
-	/*
-		$(window).scroll(function() {
-			if ($(this).scrollTop() > 1) {  
-			    	$('#header-wrapper').addClass("header-sticky");
-			  }
-			  else{
-			    	$('#header-wrapper').removeClass("header-sticky");
-			  }
-		});
-	*/
-	
-
 
 	// --------------------------------------------------------------------------
 	//   Hero Slider
