@@ -305,7 +305,7 @@ transition: transform 300ms, ease-in-out;
 			text-transform: uppercase;
 			color: $white;
 			transition: opacity 300ms, transform 300ms, ease-in-out;
-			transform: translate3d(0, 5px, 0);
+			transform: translate3d(0, 0, 0);
 		}
 
 		a:hover .block-content {
@@ -315,7 +315,7 @@ transition: transform 300ms, ease-in-out;
 
 			h1, h2, h3, h4, h5, h6 {
 				color: $white;
-				transform: translate3d(0,0,0);
+				transform: translate3d(0,-5px,0);
 			}
 
 			.button {

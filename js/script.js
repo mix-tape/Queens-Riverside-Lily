@@ -293,34 +293,53 @@ $(function() {
 	//   ScrollTo
 	// --------------------------------------------------------------------------
 
-	function scrollTo(anchor) {
-
-		$('html, body').stop().animate({
-
-			scrollTop: $(anchor).offset().top
-
-		}, 1200,'easeInOutExpo');
-
-	}
-
+	/*
+		function scrollTo(anchor) {
+	
+			$('html, body').stop().animate({
+	
+				scrollTop: $(anchor).offset().top
+	
+			}, 1200,'easeInOutExpo');
+	
+		}
+	*/
 
 	// --------------------------------------------------------------------------
 	//   Hash Scroll
 	// --------------------------------------------------------------------------
 
-	if (window.location.hash && $(window.location.hash).length) {
-		setTimeout(function() {
-			if (location.hash) {
-				window.scrollTo(0, 0);
-			}
-		}, 1);
-
-		setTimeout(
-			function(){
-				scrollTo(window.location.hash);
-			}, 400);
-	}
-
+	/*
+		if (window.location.hash && $(window.location.hash).length) {
+			setTimeout(function() {
+				if (location.hash) {
+					window.scrollTo(0, 0);
+				}
+			}, 1);
+	
+			setTimeout(
+				function(){
+					scrollTo(window.location.hash);
+				}, 400);
+		}
+	*/
+	
+	// --------------------------------------------------------------------------
+	//   Alternate smooth scroll to anchor
+	// --------------------------------------------------------------------------
+	
+	$('a[href*=#]:not([href=#])').click(function() {
+	     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+	       var target = $(this.hash);
+	       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	       if (target.length) {
+	         $('html,body').animate({
+	           scrollTop: target.offset().top
+	         }, 1200, 'easeInOutExpo');
+	         return false;
+	       }
+	     }
+	   });
 
 	// --------------------------------------------------------------------------
 	//   Replace inline svg images with pngs

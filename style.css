@@ -2059,16 +2059,16 @@ section.back-to-news {
   color: white;
   -webkit-transition: opacity 300ms, -webkit-transform 300ms, ease-in-out;
   transition: opacity 300ms, transform 300ms, ease-in-out;
-  -webkit-transform: translate3d(0, 5px, 0);
-  transform: translate3d(0, 5px, 0); }
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
 /* line 311, scss/_content_blocks.scss */
 .link-block a:hover .block-content {
   background-color: #ffcd00; }
   /* line 316, scss/_content_blocks.scss */
   .link-block a:hover .block-content h1, .link-block a:hover .block-content h2, .link-block a:hover .block-content h3, .link-block a:hover .block-content h4, .link-block a:hover .block-content h5, .link-block a:hover .block-content h6 {
     color: white;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0); }
+    -webkit-transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0); }
   /* line 321, scss/_content_blocks.scss */
   .link-block a:hover .block-content .button {
     background-color: #32bbb1; }
