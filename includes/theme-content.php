@@ -60,3 +60,53 @@ function get_hashtag( $atts ) {
 }
 
 add_shortcode( 'hashtag', 'get_hashtag' );
+
+
+// --------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------
+
+
+function get_gallery_javascript()
+{
+
+ob_start()
+
+?>
+
+<a href="#" class="button" id="launch-gallery">Gallery</a>
+
+<script type="text/javascript">
+
+	$( '#launch-gallery' ).click( function( e ) {
+		e.preventDefault();
+
+			<?php if (get_field('gallery')) { ?>
+
+				$.swipebox( [
+
+				<?php $images = get_field('gallery'); foreach($images as $image) { ?>
+
+					<?php $alt = $image['alt']; ?>
+
+					{ href:'<?php echo $image["url"]; ?>', title:'<?php echo $alt; ?>' },
+
+				<?php } ?>
+
+				] );
+
+			<?php } ?>
+
+	} );
+
+</script>
+
+<?php
+
+$output = ob_get_clean();
+
+return $output;
+
+}
+
+add_shortcode( 'gallery', 'get_gallery_javascript' );

@@ -31,16 +31,22 @@
 	@include media($mobile-down) {
 		padding: $gap;
 	}
-	
+
 	a {
 		color: $super-dark-purple;
 		border-bottom: 1px solid $super-dark-purple;
 		padding-bottom: 1px;
-		
+
 		&:hover {
 			color: $cyan;
 		}
 	}
+	
+	// stop the a overididing button style
+	.ghost-button {
+		padding: 0.5em 1.4em;
+	}
+	
 }
 
 // Generic text blocks thin by defualt
@@ -49,7 +55,7 @@
 .standard {
 	@include shift(1.5);
 	@include span-columns(9);
-	
+
 	@include media($mobile-down) {
 		@include shift(0);
 		@include span-columns(4);
@@ -223,24 +229,20 @@
 
 			h2 {
 				margin-bottom: 0.4em;
-				/*
-transition: transform 300ms, ease-in-out;
-				transform: translate3d(0, -5px, 0);
-*/
 			}
-			
+
 			.button,
 			.ghost-button {
 				position: absolute;
 				bottom: $gap * 3;
-				
+
 				@include media($tablet-down) {
 					position: relative;
 					bottom: auto;
 					top: 60px;
 				}
 			}
-			
+
 			@include media($large-desktop-down) {
 				padding: 30px;
 			}
@@ -248,43 +250,39 @@ transition: transform 300ms, ease-in-out;
 			@include media($desktop-down) {
 				padding: 20px;
 			}
-			
-			&:hover h2 {
-				/* transform: translate3d(0,-10px,0); */
-			}	
-				
+
 		}
 
 }
 
 	// ----- Hashtag ----- //
-	
-	// reduces the padding on this block to allow for 
+
+	// reduces the padding on this block to allow for
 	// bigger text and not break layout
-	
+
 	.block.hashtag {
-	
+
 			.block-content {
 				padding: 0;
 			}
-			
+
 			@include media($desktop-down) {
 				padding: 0;
 			}
-	
+
 	}
-	
+
 	// ----- Extra padding ----- //
-	
-	// for big bloxks of text that 
+
+	// for big bloxks of text that
 	// need that little bit more L/R padding
-	
+
 	.block.extra-padding {
-	
+
 			.block-content {
 				padding: 60px 80px;
 			}
-	
+
 	}
 
 	// ----- Link Block ----- //
@@ -427,13 +425,13 @@ transition: transform 300ms, ease-in-out;
 			display: table-cell;
 			vertical-align: middle;
 		}
-				
+
 /*
 		@include media($large-desktop-down) {
 				display: inline-block;
 		}
 */
-		
+
 	}
 
 
@@ -443,6 +441,14 @@ transition: transform 300ms, ease-in-out;
 
 		.block-content {
 			padding: 0;
+
+			@include media($large-desktop-down) {
+				padding: 0;
+			}
+
+			@include media($desktop-down) {
+				padding: 0;
+			}
 
 			@include media($mobile-down) {
 				padding: 0;
@@ -463,7 +469,7 @@ transition: transform 300ms, ease-in-out;
 	.two_fifths			{ @include span-columns(4.8,	block-collapse); }
 	.three_fifths		{ @include span-columns(7.2,	block-collapse); }
 	.four_fifths		{ @include span-columns(9.6,	block-collapse); }
-	
+
 	// ----- Tablet & Mobile ----- //
 
 	.one_third,
@@ -477,15 +483,15 @@ transition: transform 300ms, ease-in-out;
 			}
 		}
 	}
-	
+
 	.one_half {
 		@include media($tablet-down) {
 			width: 100%;
-			
+
 			&:last-child {
 				width: 100%;
 			}
-			
+
 		}
 	}
 
@@ -512,7 +518,7 @@ transition: transform 300ms, ease-in-out;
 			}
 		}
 	}
-	
+
 	.one_quarter {
 		@include media($tablet-down) {
 			width: 50%;
@@ -521,7 +527,7 @@ transition: transform 300ms, ease-in-out;
 				width: 50%;
 			}
 		}
-		
+
 		h2 {
 			font-size: ms(2);
 			line-height: 1.4;

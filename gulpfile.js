@@ -48,8 +48,9 @@ config.plugins = [
   config.vendor + '/matchMedia/matchMedia.addListener.js',
   config.vendor + '/enquire/dist/enquire.js',
   config.vendor + '/jQInstaPics/js/jqinstapics.js',
-  config.vendor + '/jQuery-touchMenuHover/jquery.izilla.touchMenuHover.js'
-
+  config.vendor + '/jQuery-touchMenuHover/jquery.izilla.touchMenuHover.js',
+  config.vendor + '/swipebox/src/js/jquery.swipebox.js',
+  config.vendor + '/jquery-hoverIntent/jquery.hoverIntent.js'
 
 ]
 

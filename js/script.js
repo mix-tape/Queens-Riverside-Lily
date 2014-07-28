@@ -88,11 +88,6 @@ enquire.register("screen and (min-width:1000px)", {
 			$( "<a href='#content' id='scroll-down'></div>" ).appendTo( '#banner-wrapper' );
   		}
   		
-  		//Stop jitter on hover when bold - not stoked about this yet....
-  		//$('#main-nav li a').each(function(){
-	  		//	$(this).parent().width($(this).width() + 35);
-		//});	
-		
 	},
 
 	unmatch : function() {
@@ -118,7 +113,7 @@ $(window).resize(function () {
 // --------------------------------------------------------------------------
 
 $(function() {
-
+	
 	// --------------------------------------------------------------------------
 	//   Initialise
 	// --------------------------------------------------------------------------
@@ -139,6 +134,35 @@ $(function() {
 		$(this).outerHeight( $(this).parent().parent().outerHeight() );
 
 	});
+	
+	// --------------------------------------------------------------------------
+	//   Hover intent
+	// --------------------------------------------------------------------------	
+	
+/*
+	$('#main-nav li').hoverIntent( {
+
+	over: function() {
+
+		$(this).children('.sub-menu').show(0, function() {
+			$(this).css("overflow","visible");
+		});
+		
+		if ($(this).children('.sub-menu').length) {
+			$(this).addClass('active');
+		}
+	}, timeout: 200,
+
+
+	out: function() {
+
+		$(this).children('.sub-menu').delay(200).hide(0, function() {
+			$(this).parent().removeClass('active');
+		}).css("overflow","visible");
+
+
+	} });
+*/
 	
 	// --------------------------------------------------------------------------
 	//   Responsive nav
@@ -345,6 +369,8 @@ $(function() {
 	//   Replace inline svg images with pngs
 	// --------------------------------------------------------------------------
 
+	// line 374 bugging out in ie8
+	
 	if (!Modernizr.svg) {
 			var imgs = document.getElementsByTagName('img');
 			var svgExtension = /.*\.svg$/
@@ -352,7 +378,7 @@ $(function() {
 			for(var i = 0; i < l; i++) {
 					if(imgs[i].src.match(svgExtension)) {
 							imgs[i].src = imgs[i].src.slice(0, -3) + 'png';
-							console.log(imgs[i].src);
+							/* console.log(imgs[i].src); */
 					}
 			}
 	}

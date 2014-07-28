@@ -15,8 +15,8 @@
 		if ($rp->have_posts())
 				while ( $rp->have_posts() ) {
 						$rp->the_post();
-						wp_redirect(get_permalink(get_the_id()));
+						wp_redirect(get_permalink(get_the_id()), 301);
 						exit;
 				}
-		wp_redirect(dirname(home_url($wp->request)));
+		wp_redirect(dirname(home_url($wp->request)), 301);
 		exit;

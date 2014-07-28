@@ -45,6 +45,13 @@
 	z-index: 9999;
 }
 
+
+// ----- blocks ----- //
+
+.ie8 .block-content {
+		padding-bottom: 120px;
+}
+
 // ----- contact form ----- //
 
 
@@ -80,9 +87,15 @@
 // ----- Image block ----- //
 
 .ie8 .bg-image {
-	
 	// polyfill for ie8 to allow background-szie: cover;
 	-ms-behavior: url(/backgroundsize.min.htc);
+}
+
+// it seems these blocks need a min-height or they collapse
+.ie8 .auto {
+	.block {
+		min-height: 700px;
+	}
 }
 
 // ----- News page ----- //

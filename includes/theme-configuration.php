@@ -150,6 +150,29 @@ function page_body_class($classes) {
 
 
 // --------------------------------------------------------------------------
+//  SEO Page title
+// --------------------------------------------------------------------------
+
+function lily_wp_title( $title, $sep ) {
+	global $paged, $page;
+
+	if ( is_feed() )
+		return $title;
+
+	// Add a page number if necessary.
+	if ( $paged >= 2 || $page >= 2 )
+		$title = "$title $sep " . sprintf( 'Page %s', max( $paged, $page ) );
+
+	if (get_field('page_title'))
+		$title = get_field('page_title') . " $sep ";
+
+	return $title;
+}
+
+add_filter( 'wp_title', 'lily_wp_title', 10, 2 );
+
+
+// --------------------------------------------------------------------------
 // Customize Excerpt
 // --------------------------------------------------------------------------
 

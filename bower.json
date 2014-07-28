@@ -17,6 +17,7 @@
     "bigtext": "",
     "chosen": "https://github.com/harvesthq/chosen/releases/download/v1.1.0/chosen_v1.1.0.zip",
     "jQInstaPics": "Kaceykaso/jQInstaPics",
-    "jQuery-touchMenuHover": "izilla/jQuery-touchMenuHover"
+    "jQuery-touchMenuHover": "izilla/jQuery-touchMenuHover",
+    "swipebox": ""
   }
 }

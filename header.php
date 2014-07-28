@@ -11,6 +11,7 @@
 <!--[if IE]><![endif]-->
 
 <title><?php wp_title( '|', true, 'right' ); ?> <?php bloginfo('name'); ?></title>
+<meta name="description" content="<?php the_field('page_description'); ?>" />
 
 <!-- Mobile specific -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0<?php if (is_mobile()) echo ", minimal-ui"; ?>">
