@@ -482,6 +482,7 @@ body {
 	bottom: 0;
 
 	&.active {
+		background: $yellow;
 		background: rgba($yellow, 0.9);
 	}
 	
