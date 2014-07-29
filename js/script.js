@@ -180,7 +180,9 @@ $(function() {
 		$('#main-nav li .sub-menu').parent('li').addClass('menu-parent');
 	
 		//  Allows ULs that open on li:hover to open on tap/click on mobile 
-		$('#main-nav').touchMenuHover();
+		$('#main-nav').touchMenuHover({
+		    'forceiOS': true
+		});
 	
 	
 
