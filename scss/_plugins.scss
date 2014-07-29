@@ -475,30 +475,50 @@ html.swipebox-html.swipebox-touch {
 	#swipebox-prev,
 	#swipebox-next,
 	#swipebox-close {
-		background-image: url(images/icons.png);
-		background-repeat: no-repeat;
+		@include icon;
+		font-size: 30px;
 		border: none!important;
 		text-decoration: none!important;
 		cursor: pointer;
 		position: absolute;
-		width: 50px;
-		height: 50px;
-		top: 0;
+		width: 45px;
+		height: 45px;
+		color: $white;
+		top: -5px;
+		transition: transform 300ms, ease-in-out;
 	}
 
-	#swipebox-prev{
-		background-position: -32px 13px;
+	#swipebox-prev:before {
+		content: "\e604";
+	}
+
+	#swipebox-prev {
 		right: 100px;
+		
+		&:active {
+			transform: translateX(-3px);
+		}		
+	}
+	
+	#swipebox-next:before {
+		content: "\e607";
 	}
 
 	#swipebox-next{
-		background-position: -78px 13px;
 		right: 40px;
+		
+		&:active {
+			transform: translateX(3px);
+		}
 	}
 
+	#swipebox-close:before {
+		content: "\e61b";
+	}
+	
 	#swipebox-close{
-		background-position: 15px 12px;
 		left: 40px;
+		
 	}
 
 	#swipebox-prev,

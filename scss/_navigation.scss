@@ -21,6 +21,12 @@
 
 }
 
+// animates main nav on hover
+@include keyframes(sinkFromTop) {
+  from { transform: translateY(-15px); opacity: 0 }
+    to { transform: translateY(0); opacity: 1 }
+}
+
 #main-nav {
 	@include clearfix;
 	@include avenair-medium;
@@ -65,12 +71,12 @@
 				left: 0;
 				overflow: hidden;
 				padding: 0;
-				/* max-height: 0; */
 				width: 100%;
 				background: $white;
 				text-align: center;
 				margin-top: 15px;
 				display: none;
+				opacity: 0;
 
 				li {
 					position: relative;
@@ -111,15 +117,23 @@
 			
 			&:hover > .sub-menu {
 				display: block;
-				z-index: 1000;
+				z-index: 1;
+				animation: sinkFromTop 600ms ease;
+				animation-fill-mode:forwards;
+				animation-iteration-count: 1;
 			}
 			
-			&.active-x > .sub-menu {
+			// opens sub menu on hover but then closes again
+			&.show-menu > .sub-menu {
 				display: block;
+				z-index: 1;
 			}
 			
+			// keps active menu open
 			&.active > .sub-menu {
 				display: block;
+				animation: none;
+				opacity: 1;
 			}
 
 		}
@@ -226,9 +240,9 @@
 					max-width: 100%;
 					zoom:1;
 					text-align: left;
-					margin-top: 0;
+					margin: 10px 0;
 					background: none;
-					transition: opacity 400ms linear;
+					opacity: 1;
 	
 					li {
 						float: left;
@@ -272,10 +286,12 @@
 				
 				&.active > .sub-menu {
 					display: none;
+					animation: none;
 				}
 				
 				&:hover > .sub-menu {
 					display: block;
+					animation: none;
 				}
 				
 				

@@ -88,6 +88,35 @@ enquire.register("screen and (min-width:1000px)", {
 			$( "<a href='#content' id='scroll-down'></div>" ).appendTo( '#banner-wrapper' );
   		}
   		
+	  	//hover intent for main nav
+	  	$('#main-nav li').hoverIntent( {
+	
+		over: function() {
+	
+			$(this).children('.sub-menu').show(0, function() {
+				$(this).css("overflow","visible");
+			});
+			
+			// only add 'show-menu' to items without active class
+			if (($(this).children('.sub-menu').length) && (!$(this).hasClass('active'))) { 
+				$(this).addClass('show-menu');
+			}
+		}, timeout: 300,
+	
+	
+		out: function() {
+	
+			// if active class does not exist, remove 'show menu'
+			if (!$(this).hasClass('active')) {
+			
+				$(this).children('.sub-menu').delay(300).hide(0, function() {
+					$(this).parent().removeClass('show-menu');
+				})
+			
+			}
+	
+		} });
+  		
 	},
 
 	unmatch : function() {
@@ -134,35 +163,7 @@ $(function() {
 		$(this).outerHeight( $(this).parent().parent().outerHeight() );
 
 	});
-	
-	// --------------------------------------------------------------------------
-	//   Hover intent - not workig proper yet
-	// --------------------------------------------------------------------------	
-	
-/*
-	$('#main-nav li').hoverIntent( {
 
-	over: function() {
-
-		$(this).children('.sub-menu').show(0, function() {
-			$(this).css("overflow","visible");
-		});
-		
-		if ($(this).children('.sub-menu').length) {
-			$(this).addClass('active');
-		}
-	}, timeout: 200,
-
-
-	out: function() {
-
-		$(this).children('.sub-menu').delay(200).hide(0, function() {
-			$(this).parent().removeClass('active');
-		}).css("overflow","visible");
-
-
-	} });
-*/
 	
 	// --------------------------------------------------------------------------
 	//   Responsive nav

@@ -6,6 +6,60 @@
 //
 // ==========================================================================
 
+// ----- Menu hacks ----- //
+
+.ie8 #main-nav {
+
+.menu {
+
+			li {
+				.sub-nav {
+					display: none !important;
+				}
+				
+				&:hover > .sub-menu {
+					display: block;
+					opacity: 1;
+				}
+				
+				// opens sub menu on hover but then closes again
+				&.show-menu > .sub-menu {
+					display: block;
+					z-index: 1;
+					opacity: 1;
+				}
+			}
+	}
+	
+}
+
+
+.ie9 #main-nav {
+
+.menu {
+
+			li {
+				.sub-nav {
+					
+				}
+				
+				&:hover > .sub-menu {
+					display: block;
+					opacity: 1;
+				}
+				
+				// opens sub menu on hover but then closes again
+				&.show-menu > .sub-menu {
+					display: block;
+					z-index: 1;
+					opacity: 1;
+				}
+			}
+	}
+	
+}
+
+
 // ----- Hero banner ----- //
 
 
@@ -22,7 +76,11 @@
 
 .ie8 #banner ,
 .ie9 #banner  {
-	z-index: 9999;
+	z-index: 9998;
+}
+
+.ie9 #banner {
+	bottom: 12%;
 }
 
 .ie8 .home .slick-prev, 
@@ -46,9 +104,8 @@
 }
 
 .ie8 #hero-underlay {
-	/* z-index: 9999; */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
 }
-
 
 // ----- blocks ----- //
 
@@ -57,7 +114,6 @@
 }
 
 // ----- contact form ----- //
-
 
 // form labels in right columm form were visbale - not now though!
 

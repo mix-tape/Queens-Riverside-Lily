@@ -322,21 +322,19 @@ body {
 // --------------------------------------------------------------------------
 
 #banner-wrapper {
-
 	padding: 0;
 
 	.banner-slide {
-
+		
+		position: relative;
+		min-height: 700px;
+		background-position: center bottom;
+		background-size: cover;
+		background-repeat: no-repeat;
+		
 		@include media($mobile-down) {
 			min-height: 400px;
 		}
-		position: relative;
-
-		min-height: 700px;
-		background-position: center bottom;
-
-		background-size: cover;
-		background-repeat: no-repeat;
 
 		.caption {
 			position: absolute;
@@ -385,13 +383,11 @@ body {
 
 #banner {
 	right: 0;
+	// 18% is just temporary positioning
+	// until some perfect middle is introduced
 	bottom: 18%;
 	left: 0;
 	color: $white;
-
-	// 15% is just temporary positioning
-	// until some perfect middle is introduced
-
 	position: absolute;
 	
 	@include media($large-desktop-down) {
@@ -1188,7 +1184,7 @@ section.back-to-news {
 	@include media($mobile-down) {
 		@include span-columns(4);
 	}
-	padding-top: 15px;
+	padding-top: 10px;
 	text-align: justify;
 
 	ul {
