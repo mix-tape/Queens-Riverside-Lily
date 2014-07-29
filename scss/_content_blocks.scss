@@ -187,8 +187,7 @@
 		min-height: 425px;
 
 		@include media($mobile-down) {
-			/* min-height: none; */
-			min-height: 0;
+			min-height: none;
 		}
 	}
 }
