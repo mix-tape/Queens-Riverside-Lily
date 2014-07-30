@@ -441,7 +441,7 @@ body {
 	font-size: ms(3);
 
 	small {
-		@include avenair-light;
+		@include avenair-medium;
 		font-size: 0.4em !important;
 	}
 	
@@ -456,6 +456,7 @@ body {
 
 	margin: 0 0 30px 0;
 	width: 130px;
+	height: 82px;
 
 	img + h1 {
 		@include visuallyhidden;

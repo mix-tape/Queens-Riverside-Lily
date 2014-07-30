@@ -16,24 +16,13 @@
 				.sub-nav {
 					display: none !important;
 				}
-				
-				&:hover > .sub-menu {
-					display: block;
-					opacity: 1;
-				}
-				
-				// opens sub menu on hover but then closes again
-				&.show-menu > .sub-menu {
-					display: block;
-					z-index: 1;
-					opacity: 1;
-				}
 			}
 	}
 	
 }
 
 
+.ie8 #main-nav
 .ie9 #main-nav {
 
 .menu {
@@ -74,13 +63,9 @@
 	z-index: 9999;
 }
 
-.ie8 #banner ,
+.ie8 #banner,
 .ie9 #banner  {
 	z-index: 9998;
-}
-
-.ie9 #banner {
-	bottom: 12%;
 }
 
 .ie8 .home .slick-prev, 

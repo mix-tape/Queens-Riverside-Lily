@@ -99,6 +99,12 @@ $base-border-radius:	4px;
 	font-style: normal;
 }
 
+@mixin avenair-medium {
+	font-family: AvenirLTStd-Medium, Arial, Helvetica, Sans-serif;
+	font-weight: normal;
+	font-style: normal;
+}
+
 @mixin avenair-black {
 	font-family: AvenirLTStd-Black, Arial, Helvetica, Sans-serif;
 	font-weight: normal;

@@ -348,270 +348,677 @@
 
 
 // --------------------------------------------------------------------------
-//  Swipebox
+//  Magnific Popup
 // --------------------------------------------------------------------------
 
+////////////////////////
+//      Settings      //
+////////////////////////
 
-/*! Swipebox v1.2.8 | Constantin Saguin csag.co | MIT License | github.com/brutaldesign/swipebox */
+// overlay
+$overlay-color:                   #0b0b0b;                    // Color of overlay screen
+$overlay-opacity:                 0.8;                        // Opacity of overlay screen
+$shadow:                          0 0 8px rgba(0, 0, 0, 0.6); // Shadow on image or iframe
 
-// Gradient mixin
-@mixin css-gradient($from: #dfdfdf, $to: #f8f8f8) {
-	background-color: $from;
-	background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
-	background-image: -webkit-linear-gradient(top, $from, $to);
-	background-image: -moz-linear-gradient(top, $from, $to);
-	background-image: -o-linear-gradient(top, $from, $to);
-	background-image: linear-gradient(to bottom, $from, $to);
+// spacing
+$popup-padding-left:              8px;                        // Padding from left and from right side
+$popup-padding-left-mobile:       6px;                        // Same as above, but is applied when width of window is less than 800px
+
+$z-index-base:                    1040;                        // Base z-index of popup
+
+// controls
+$include-arrows:                  true;                       // Include styles for nav arrows
+$controls-opacity:                0.65;                       // Opacity of controls
+$controls-color:                  #FFF;                       // Color of controls
+$inner-close-icon-color:          #333;                       // Color of close button when inside
+$controls-text-color:             #CCC;                       // Color of preloader and "1 of X" indicator
+$controls-text-color-hover:       #FFF;                       // Hover color of preloader and "1 of X" indicator
+$IE7support:                      true;                       // Very basic IE7 support
+
+// Iframe-type options
+$include-iframe-type:             true;                       // Enable Iframe-type popups
+$iframe-padding-top:              40px;                       // Iframe padding top
+$iframe-background:               #000;                       // Background color of iframes
+$iframe-max-width:                900px;                      // Maximum width of iframes
+$iframe-ratio:                    9/16;                       // Ratio of iframe (9/16 = widescreen, 3/4 = standard, etc.)
+
+// Image-type options
+$include-image-type:              true;                       // Enable Image-type popups
+$image-background:                #444 !default;
+$image-padding-top:               40px;                       // Image padding top
+$image-padding-bottom:            40px;                       // Image padding bottom
+$include-mobile-layout-for-image: true;                       // Removes paddings from top and bottom
+
+// Image caption options
+$caption-title-color:             #F3F3F3;                    // Caption title color
+$caption-subtitle-color:          #BDBDBD;                    // Caption subtitle color
+
+// A11y
+$use-visuallyhidden:              false;
+
+
+////////////////////////
+//
+// Contents:
+//
+// 1. Default Settings
+// 2. General styles
+//    - Transluscent overlay
+//    - Containers, wrappers
+//    - Cursors
+//    - Helper classes
+// 3. Appearance
+//    - Preloader & text that displays error messages
+//    - CSS reset for buttons
+//    - Close icon
+//    - "1 of X" counter
+//    - Navigation (left/right) arrows
+//    - Iframe content type styles
+//    - Image content type styles
+//    - Media query where size of arrows is reduced
+//    - IE7 support
+//
+////////////////////////
+
+figure {
+	margin: 0;
 }
 
-// Bar mixin
-@mixin bar($color) {
-	background-color:$color;
-	@include css-gradient( $color, darken($color, 20%) );
+////////////////////////
+// 1. Default Settings
+////////////////////////
+
+$overlay-color:                   #0b0b0b !default;
+$overlay-opacity:                 0.8 !default;
+$shadow:                          0 0 8px rgba(0, 0, 0, 0.6) !default; // shadow on image or iframe
+$popup-padding-left:              8px !default; // Padding from left and from right side
+$popup-padding-left-mobile:       6px !default; // Same as above, but is applied when width of window is less than 800px
+
+$z-index-base:                    1040 !default; // Base z-index of popup
+$include-arrows:                  true !default; // include styles for nav arrows
+$controls-opacity:                0.65 !default;
+$controls-color:                  #FFF !default;
+$inner-close-icon-color:          #333 !default;
+$controls-text-color:             #CCC !default; // Color of preloader and "1 of X" indicator
+$controls-text-color-hover:       #FFF !default;
+$IE7support:                      true !default; // Very basic IE7 support
+
+// Iframe-type options
+$include-iframe-type:             true !default;
+$iframe-padding-top:              40px !default;
+$iframe-background:               #000 !default;
+$iframe-max-width:                900px !default;
+$iframe-ratio:                    9/16 !default;
+
+// Image-type options
+$include-image-type:              true !default;
+$image-background:                transparent !default;
+$image-padding-top:               40px !default;
+$image-padding-bottom:            40px !default;
+$include-mobile-layout-for-image: true !default; // Removes paddings from top and bottom
+
+// Image caption options
+$caption-title-color:             #F3F3F3 !default;
+$caption-subtitle-color:          #BDBDBD !default;
+
+// A11y
+$use-visuallyhidden:              false !default; // Hide content from browsers, but make it available for screen readers
+
+
+////////////////////////
+// 2. General styles
+////////////////////////
+
+// Transluscent overlay
+.mfp-bg {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $z-index-base + 2;
+  overflow: hidden;
+  position: fixed;
+
+  background: $overlay-color;
+  opacity: $overlay-opacity;
+  @if $IE7support {
+    filter: unquote("alpha(opacity=#{$overlay-opacity*100})");
+  }
 }
 
-html.swipebox-html.swipebox-touch {
-	overflow: hidden!important;
+// Wrapper for popup
+.mfp-wrap {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $z-index-base + 3;
+  position: fixed;
+  outline: none !important;
+  -webkit-backface-visibility: hidden; // fixes webkit bug that can cause "false" scrollbar
 }
 
-#swipebox-overlay img {
-	border: none!important;
+// Root container
+.mfp-container {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  padding: 0 $popup-padding-left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-#swipebox-overlay {
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 99999!important;
-	overflow: hidden;
-	user-select: none;
+// Vertical centerer helper
+.mfp-container {
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
 }
 
-#swipebox-slider {
-	height: 100%;
-	left: 0;
-	top: 0;
-	width: 100%;
-	white-space: nowrap;
-	position: absolute;
-	display: none;
-
-	.slide {
-		background: url(images/loader.gif) no-repeat center center;
-		height: 100%;
-		width: 100%;
-		line-height: 1px;
-		text-align: center;
-		display: inline-block;
-
-		&:before {
-			content: "";
-			display: inline-block;
-			height: 50%;
-			width: 1px;
-			margin-right: -1px;
-		}
-
-		img, .swipebox-video-container {
-			display: inline-block;
-			max-height: 100%;
-			max-width: 100%;
-			margin: 0;
-			padding: 0;
-			width: auto;
-			height: auto;
-			vertical-align: middle;
-		}
-
-		.swipebox-video-container {
-			background:none;
-			max-width: 1140px;
-			max-height: 100%;
-			width: 100%;
-			padding:5%;
-			box-sizing: border-box;
-			-webkit-box-sizing: border-box;
-			-moz-box-sizing: border-box;
-
-			.swipebox-video{
-				width: 100%;
-				height: 0;
-				padding-bottom: 56.25%;
-				overflow: hidden;
-				position: relative;
-				iframe{
-					width: 100%!important;
-					height: 100%!important;
-					position: absolute;
-					top: 0; left: 0;
-				}
-			}
-		}
-	}
-
+// Remove vertical centering when popup has class `mfp-align-top`
+.mfp-align-top {
+  .mfp-container {
+    &:before {
+      display: none;
+    }
+  }
 }
 
-#swipebox-action,
-#swipebox-caption{
-	position: absolute;
-	left: 0;
-	z-index: 999;
-	height: 50px;
-	width: 100%;
+// Popup content holder
+.mfp-content {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 auto;
+  text-align: left;
+  z-index: $z-index-base + 5;
+}
+.mfp-inline-holder,
+.mfp-ajax-holder {
+  .mfp-content {
+    width: 100%;
+    cursor: auto;
+  }
 }
 
-#swipebox-action {
-	bottom: -50px;
-
-	&.visible-bars {
-		-moz-transform: translateY(-50px);
-		-ms-transform: translateY(-50px);
-		-webkit-transform: translateY(-50px);
-		transform: translateY(-50px);
-	}
-
-	#swipebox-prev,
-	#swipebox-next,
-	#swipebox-close {
-		@include icon;
-		font-size: 30px;
-		border: none!important;
-		text-decoration: none!important;
-		cursor: pointer;
-		position: absolute;
-		width: 45px;
-		height: 45px;
-		color: $white;
-		top: -5px;
-		transition: transform 300ms, ease-in-out;
-	}
-
-	#swipebox-prev:before {
-		content: "\e604";
-	}
-
-	#swipebox-prev {
-		right: 100px;
-		
-		&:active {
-			transform: translateX(-3px);
-		}		
-	}
-	
-	#swipebox-next:before {
-		content: "\e607";
-	}
-
-	#swipebox-next{
-		right: 40px;
-		
-		&:active {
-			transform: translateX(3px);
-		}
-	}
-
-	#swipebox-close:before {
-		content: "\e61b";
-	}
-	
-	#swipebox-close{
-		left: 40px;
-		
-	}
-
-	#swipebox-prev,
-	#swipebox-next{
-		&.disabled{
-			opacity: 0.3;
-		}
-	}
+// Cursors
+.mfp-ajax-cur {
+  cursor: progress;
+}
+.mfp-zoom-out-cur {
+  &, .mfp-image-holder .mfp-close {
+    cursor: -moz-zoom-out;
+    cursor: -webkit-zoom-out;
+    cursor: zoom-out;
+  }
+}
+.mfp-zoom {
+  cursor: pointer;
+  cursor: -webkit-zoom-in;
+  cursor: -moz-zoom-in;
+  cursor: zoom-in;
+}
+.mfp-auto-cursor {
+  .mfp-content {
+    cursor: auto;
+  }
 }
 
-#swipebox-caption {
-	top: -50px;
-	text-align: center;
-
-	&.visible-bars {
-		-moz-transform: translateY(50px);
-		-ms-transform: translateY(50px);
-		-webkit-transform: translateY(50px);
-		transform: translateY(50px);
-	}
+.mfp-close,
+.mfp-arrow,
+.mfp-preloader,
+.mfp-counter {
+  -webkit-user-select:none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
-#swipebox-slider.rightSpring {
-	animation : rightSpring 0.3s;
+// Hide the image during the loading
+.mfp-loading {
+  &.mfp-figure {
+    display: none;
+  }
 }
 
-#swipebox-slider.leftSpring {
-	animation : leftSpring 0.3s;
+// Helper class that hides stuff
+@if $use-visuallyhidden {
+  // From HTML5 Boilerplate https://github.com/h5bp/html5-boilerplate/blob/v4.2.0/doc/css.md#visuallyhidden
+  .mfp-hide {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+  }
+} @else {
+  .mfp-hide {
+    display: none !important;
+  }
 }
 
-@keyframes rightSpring {
-	0% {
-		margin-left: 0px;
-	}
 
-	50% {
-		margin-left: -30px;
-	}
+////////////////////////
+// 3. Appearance
+////////////////////////
 
-	100% {
-		margin-left: 0px;
-	}
+// Preloader and text that displays error messages
+.mfp-preloader {
+  color: $controls-text-color;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  text-align: center;
+  margin-top: -0.8em;
+  left: 8px;
+  right: 8px;
+  z-index: $z-index-base + 4;
+  a {
+    color: $controls-text-color;
+    &:hover {
+      color: $controls-text-color-hover;
+    }
+  }
 }
 
-@keyframes leftSpring {
-	0% {
-		margin-left: 0px;
-	}
-
-	50% {
-		margin-left: 30px;
-	}
-
-	100% {
-		margin-left: 0px;
-	}
+// Hide preloader when content successfully loaded
+.mfp-s-ready {
+  .mfp-preloader {
+    display: none;
+  }
 }
 
-@media screen and (max-width: 800px) {
-	#swipebox-action #swipebox-close {
-		left: 0;
-	}
-
-	#swipebox-action #swipebox-prev {
-		right: 60px;
-	}
-
-	#swipebox-action #swipebox-next {
-		right: 0;
-	}
+// Hide content when it was not loaded
+.mfp-s-error {
+  .mfp-content {
+    display: none;
+  }
 }
 
-/* Skin
---------------------------*/
-#swipebox-overlay {
-	background: #0d0d0d;
+// CSS-reset for buttons
+button {
+  &.mfp-close,
+  &.mfp-arrow {
+    overflow: visible;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+    display: block;
+    outline: none;
+    padding: 0;
+    z-index: $z-index-base + 6;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  &::-moz-focus-inner {
+      padding: 0;
+      border: 0
+  }
 }
 
-#swipebox-action,
-#swipebox-caption {
-	text-shadow: 1px 1px 1px black;
-	@include bar(#0d0d0d);
-	opacity: 0.95;
+
+// Close icon
+.mfp-close {
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-decoration: none;
+  text-align: center;
+  opacity: $controls-opacity;
+  padding: 0 0 18px 10px;
+  color: $controls-color;
+
+  font-style: normal;
+  font-size: 28px;
+  font-family: Arial, Baskerville, monospace;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+
+  &:active {
+    top: 1px;
+  }
+}
+.mfp-close-btn-in {
+  .mfp-close {
+    color: $inner-close-icon-color;
+  }
+}
+.mfp-image-holder,
+.mfp-iframe-holder {
+  .mfp-close {
+    color: $controls-color;
+    right: -6px;
+    text-align: right;
+    padding-right: 6px;
+    width: 100%;
+  }
 }
 
-#swipebox-action {
-	border-top: 1px solid rgba(255, 255, 255, 0.2);
+// "1 of X" counter
+.mfp-counter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: $controls-text-color;
+  font-size: 12px;
+  line-height: 18px;
 }
 
-#swipebox-caption {
-	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-	color: white!important;
-	font-size: 15px;
-	line-height: 43px;
-	font-family: Helvetica, Arial, sans-serif;
+// Navigation arrows
+@if $include-arrows {
+  .mfp-arrow {
+    position: absolute;
+    opacity: $controls-opacity;
+    margin: 0;
+    top: 50%;
+    margin-top: -55px;
+    padding: 0;
+    width: 90px;
+    height: 110px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    &:active {
+      margin-top: -54px;
+    }
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+    &:before,
+    &:after,
+    .mfp-b,
+    .mfp-a {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      margin-top: 35px;
+      margin-left: 35px;
+      border: medium inset transparent;
+    }
+
+    &:after,
+    .mfp-a {
+
+      border-top-width: 13px;
+      border-bottom-width: 13px;
+      top:8px;
+    }
+
+    &:before,
+    .mfp-b {
+      border-top-width: 21px;
+      border-bottom-width: 21px;
+    }
+
+  }
+
+  .mfp-arrow-left {
+    left: 0;
+
+    &:after,
+    .mfp-a {
+      border-right: 17px solid #FFF;
+      margin-left: 31px;
+    }
+    &:before,
+    .mfp-b {
+      margin-left: 25px;
+      border-right: 27px solid #3f3f3f;
+    }
+  }
+
+  .mfp-arrow-right {
+    right: 0;
+    &:after,
+    .mfp-a {
+      border-left: 17px solid #FFF;
+      margin-left: 39px
+    }
+    &:before,
+    .mfp-b {
+      border-left: 27px solid #3f3f3f;
+    }
+  }
+}
+
+
+
+// Iframe content type
+@if $include-iframe-type {
+  .mfp-iframe-holder {
+    padding-top: $iframe-padding-top;
+    padding-bottom: $iframe-padding-top;
+    .mfp-content {
+      line-height: 0;
+      width: 100%;
+      max-width: $iframe-max-width;
+    }
+    .mfp-close {
+      top: -40px;
+    }
+  }
+  .mfp-iframe-scaler {
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    padding-top: $iframe-ratio * 100%;
+    iframe {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      box-shadow: $shadow;
+      background: $iframe-background;
+    }
+  }
+}
+
+
+
+// Image content type
+@if $include-image-type {
+
+  /* Main image in popup */
+  img {
+    &.mfp-img {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      line-height: 0;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: $image-padding-top 0 $image-padding-bottom;
+      margin: 0 auto;
+    }
+  }
+
+  /* The shadow behind the image */
+  .mfp-figure {
+    line-height: 0;
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: $image-padding-top;
+      bottom: $image-padding-bottom;
+      display: block;
+      right: 0;
+      width: auto;
+      height: auto;
+      z-index: -1;
+      box-shadow: $shadow;
+      background: $image-background;
+    }
+    small {
+      color: $caption-subtitle-color;
+      display: block;
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+  .mfp-bottom-bar {
+    margin-top: -$image-padding-bottom + 4;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    cursor: auto;
+  }
+  .mfp-title {
+    text-align: left;
+    line-height: 18px;
+    color: $caption-title-color;
+    word-wrap: break-word;
+    padding-right: 36px; // leave some space for counter at right side
+  }
+
+  .mfp-image-holder {
+    .mfp-content {
+      max-width: 100%;
+    }
+  }
+
+  .mfp-gallery {
+    .mfp-image-holder {
+      .mfp-figure {
+        cursor: pointer;
+      }
+    }
+  }
+
+
+  @if $include-mobile-layout-for-image {
+    @media screen and (max-width: 800px) and (orientation:landscape), screen and (max-height: 300px) {
+      /**
+       * Remove all paddings around the image on small screen
+       */
+      .mfp-img-mobile {
+        .mfp-image-holder {
+          padding-left: 0;
+          padding-right: 0;
+        }
+        img {
+          &.mfp-img {
+            padding: 0;
+          }
+        }
+        .mfp-figure {
+          /* The shadow behind the image */
+          &:after {
+            top: 0;
+            bottom: 0;
+          }
+          small {
+            display: inline;
+            margin-left: 5px;
+          }
+        }
+        .mfp-bottom-bar {
+          background: rgba(0,0,0,0.6);
+          bottom: 0;
+          margin: 0;
+          top: auto;
+          padding: 3px 5px;
+          position: fixed;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          &:empty {
+            padding: 0;
+          }
+        }
+        .mfp-counter {
+          right: 5px;
+          top: 3px;
+        }
+        .mfp-close {
+          top: 0;
+          right: 0;
+          width: 35px;
+          height: 35px;
+          line-height: 35px;
+          background: rgba(0, 0, 0, 0.6);
+          position: fixed;
+          text-align: center;
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+
+
+// Scale navigation arrows and reduce padding from sides
+@media all and (max-width: 900px) {
+  .mfp-arrow {
+    -webkit-transform: scale(0.75);
+    transform: scale(0.75);
+  }
+  .mfp-arrow-left {
+    -webkit-transform-origin: 0;
+    transform-origin: 0;
+  }
+  .mfp-arrow-right {
+    -webkit-transform-origin: 100%;
+    transform-origin: 100%;
+  }
+  .mfp-container {
+    padding-left: $popup-padding-left-mobile;
+    padding-right: $popup-padding-left-mobile;
+  }
+}
+
+
+
+// IE7 support
+// Styles that make popup look nicier in old IE
+@if $IE7support {
+  .mfp-ie7 {
+    .mfp-img {
+      padding: 0;
+    }
+    .mfp-bottom-bar {
+      width: 600px;
+      left: 50%;
+      margin-left: -300px;
+      margin-top: 5px;
+      padding-bottom: 5px;
+    }
+    .mfp-container {
+      padding: 0;
+    }
+    .mfp-content {
+      padding-top: 44px;
+    }
+    .mfp-close {
+      top: 0;
+      right: 0;
+      padding-top: 0;
+    }
+  }
 }

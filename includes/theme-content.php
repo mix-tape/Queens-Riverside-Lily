@@ -78,26 +78,27 @@ ob_start()
 
 <script type="text/javascript">
 
-	$( '#launch-gallery' ).click( function( e ) {
-		e.preventDefault();
+	<?php if (get_field('gallery')) { ?>
 
-			<?php if (get_field('gallery')) { ?>
+		$( '#launch-gallery' ).magnificPopup({
+			items: [
 
-				$.swipebox( [
+			<?php $images = get_field('gallery'); foreach($images as $image) { ?>
 
-				<?php $images = get_field('gallery'); foreach($images as $image) { ?>
-
-					<?php $alt = $image['alt']; ?>
-
-					{ href:'<?php echo $image["url"]; ?>', title:'<?php echo $alt; ?>' },
-
-				<?php } ?>
-
-				] );
+				{
+					src: '<?php echo $image["url"]; ?>'
+				},
 
 			<?php } ?>
 
-	} );
+			],
+			gallery: {
+				enabled: true
+			},
+			type: 'image'
+		});
+
+	<?php } ?>
 
 </script>
 

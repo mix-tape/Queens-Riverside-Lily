@@ -89,6 +89,7 @@ enquire.register("screen and (min-width:1000px)", {
   		}
   		
 	  	//hover intent for main nav
+/*
 	  	$('#main-nav li').hoverIntent( {
 	
 		over: function() {
@@ -116,6 +117,8 @@ enquire.register("screen and (min-width:1000px)", {
 			}
 	
 		} });
+*/
+
   		
 	},
 
