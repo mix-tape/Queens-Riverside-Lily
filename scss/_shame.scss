@@ -22,7 +22,7 @@
 }
 
 
-.ie8 #main-nav
+.ie8 #main-nav,
 .ie9 #main-nav {
 
 .menu {
@@ -53,10 +53,12 @@
 
 
 // the banner z index is all messed up in ie8, ie9
+// these dont need to be set as high as 9999 
+// but who has the time to mess aroud with it?
 
 .ie8 #header-wrapper,
 .ie9 #header-wrapper  {
-	z-index: 9999;
+	z-index: 100;
 }
 
 .ie8 #main-nav .menu .li .sub-menu {
@@ -65,7 +67,7 @@
 
 .ie8 #banner,
 .ie9 #banner  {
-	z-index: 9998;
+	z-index: 9997;
 }
 
 .ie8 .home .slick-prev, 
@@ -148,4 +150,13 @@
 .ie8 .post section.text-block {
 	padding-top: 60px;
 	padding-bottom: 60px;
+}
+
+// ----- Gallery ----- //
+
+.ie8 .mfp-container,
+.ie8 button.mfp-close,
+.ie9 .mfp-container,
+.ie9 button.mfp-close {
+	z-index: 9999;
 }
