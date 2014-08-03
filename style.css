@@ -3772,7 +3772,18 @@ img.mfp-img {
         float: left;
         margin-left: 0;
         list-style: none;
-        width: 100%; }
+        width: 100%;
+        				/*
+        &.menu-parent > a:after {
+        					@include icon;
+        					position: relative;
+        					top: -1px;
+        					float: right;
+        					content: "\e605"; 
+        					font-size: 1em;
+        					color: $cyan;
+        				}
+        */ }
         /* line 205, scss/_navigation.scss */
         #main-nav .menu li:first-child {
           margin-left: 0; }
@@ -3786,19 +3797,27 @@ img.mfp-img {
         #main-nav .menu li.active > a, #main-nav .menu li a:hover {
           color: white;
           font-weight: normal; }
-        /* line 227, scss/_navigation.scss */
-        #main-nav .menu li.menu-parent > a:after {
+        /* line 239, scss/_navigation.scss */
+        #main-nav .menu li.menu-parent::before {
           font-family: 'IcoMoon';
           display: inline-block;
           margin-bottom: 0;
           vertical-align: middle;
           position: relative;
-          top: -1px;
           float: right;
           content: "\e605";
           font-size: 1em;
-          color: #32bbb1; }
-        /* line 237, scss/_navigation.scss */
+          color: #32bbb1;
+          border-bottom: 1px solid #32bbb1;
+          border-left: 1px solid #32bbb1;
+          width: 50px;
+          padding-top: 6px;
+          text-align: center;
+          /* cursor: pointer; */ }
+        /* line 254, scss/_navigation.scss */
+        #main-nav .menu li.menu-parent a {
+          margin-right: 50px; }
+        /* line 258, scss/_navigation.scss */
         #main-nav .menu li .sub-menu {
           position: relative;
           display: none;
@@ -3808,50 +3827,56 @@ img.mfp-img {
           margin: 10px 0;
           background: none;
           opacity: 1; }
-          /* line 247, scss/_navigation.scss */
+          /* line 268, scss/_navigation.scss */
           #main-nav .menu li .sub-menu li {
             float: left;
             position: relative;
             display: block;
             zoom: 1;
             margin: 0; }
-            /* line 254, scss/_navigation.scss */
+            /* line 275, scss/_navigation.scss */
             #main-nav .menu li .sub-menu li.menu-parent > a:after {
               position: absolute;
               right: 17px;
               top: 0.5em; }
-            /* line 259, scss/_navigation.scss */
+            /* line 280, scss/_navigation.scss */
             #main-nav .menu li .sub-menu li a {
               width: 100%;
               padding: 0.2em 0.5em 0.2em 1.8em;
               color: #cfd2ce;
               border-bottom: 1px solid rgba(50, 187, 177, 0.2); }
-              /* line 265, scss/_navigation.scss */
+              /* line 286, scss/_navigation.scss */
               #main-nav .menu li .sub-menu li a:hover {
                 color: white; }
-            /* line 270, scss/_navigation.scss */
+            /* line 291, scss/_navigation.scss */
             #main-nav .menu li .sub-menu li.active a {
               color: white; }
-            /* line 274, scss/_navigation.scss */
+            /* line 295, scss/_navigation.scss */
             #main-nav .menu li .sub-menu li .sub-menu {
               position: relative;
               left: 0; }
-              /* line 277, scss/_navigation.scss */
+              /* line 298, scss/_navigation.scss */
               #main-nav .menu li .sub-menu li .sub-menu li {
                 padding-left: 0; }
-                /* line 279, scss/_navigation.scss */
+                /* line 300, scss/_navigation.scss */
                 #main-nav .menu li .sub-menu li .sub-menu li a {
                   padding-left: 2.4em; }
-        /* line 287, scss/_navigation.scss */
+        /* line 308, scss/_navigation.scss */
         #main-nav .menu li.active > .sub-menu {
           display: none;
           -webkit-animation: none;
           animation: none; }
-        /* line 292, scss/_navigation.scss */
+        /* line 313, scss/_navigation.scss */
         #main-nav .menu li:hover > .sub-menu {
           display: block;
           -webkit-animation: none;
-          animation: none; } 
+          animation: none; }
+    /* line 322, scss/_navigation.scss */
+    #main-nav li:after {
+      content: '';
+      display: block;
+      height: 0;
+      margin-bottom: 0; } 
     /* line 67, scss/_content_blocks.scss */
     .left-logo .logo {
       padding-right: 0; } 

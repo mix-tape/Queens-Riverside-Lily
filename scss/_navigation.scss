@@ -224,7 +224,8 @@
 					font-weight: normal;
 				}
 	
-				&.menu-parent > a:after {
+				/*
+&.menu-parent > a:after {
 					@include icon;
 					position: relative;
 					top: -1px;
@@ -232,6 +233,26 @@
 					content: "\e605"; 
 					font-size: 1em;
 					color: $cyan;
+				}
+*/
+
+				&.menu-parent::before {
+					@include icon;
+					position: relative;
+					float: right;
+					content: "\e605"; 
+					font-size: 1em;
+					color: $cyan;
+					border-bottom: 1px solid $cyan;
+					border-left: 1px solid $cyan;
+					width: 50px;
+					padding-top: 6px;
+					text-align: center;
+					/* cursor: pointer; */
+				}
+				
+				&.menu-parent a {
+					margin-right: 50px;
 				}
 	
 				.sub-menu {
@@ -297,5 +318,13 @@
 				
 			}
 		}
+		
+		li:after {
+		    content:'';
+		    display:block;
+		    height: 0;
+		    margin-bottom: 0;
+		}
+		
 	}
 }
