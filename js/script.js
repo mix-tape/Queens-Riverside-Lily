@@ -67,7 +67,7 @@ enquire.register("screen and (min-width:800px)", {
 
 	unmatch : function() {
 		$('.block').matchHeight('remove');
-		
+				
 		// adds a <br>
 		if ($("#header-cta br").length == 0) {
 		  $("<br>").insertAfter("#header-cta a");
@@ -87,38 +87,6 @@ enquire.register("screen and (min-width:1000px)", {
 		if ($("#scroll-down").length < 1) {
 			$( "<a href='#content' id='scroll-down'></div>" ).appendTo( '#banner-wrapper' );
   		}
-  		
-	  	//hover intent for main nav
-/*
-	  	$('#main-nav li').hoverIntent( {
-	
-		over: function() {
-	
-			$(this).children('.sub-menu').show(0, function() {
-				$(this).css("overflow","visible");
-			});
-			
-			// only add 'show-menu' to items without active class
-			if (($(this).children('.sub-menu').length) && (!$(this).hasClass('active'))) { 
-				$(this).addClass('show-menu');
-			}
-		}, timeout: 300,
-	
-	
-		out: function() {
-	
-			// if active class does not exist, remove 'show menu'
-			if (!$(this).hasClass('active')) {
-			
-				$(this).children('.sub-menu').delay(300).hide(0, function() {
-					$(this).parent().removeClass('show-menu');
-				})
-			
-			}
-	
-		} });
-*/
-
   		
 	},
 
@@ -172,23 +140,30 @@ $(function() {
 	//   Responsive nav
 	// --------------------------------------------------------------------------
 	
-		var menuToggle = '<div id="menu-toggle" class="icon"></div>';
-	
-		if (!$('#menu-toggle').length) $('#header-wrapper').prepend(menuToggle);
-		
-		$('#menu-toggle').click(function() {
-			$('html').toggleClass('js-nav');
-		});
 	
 		$('#main-nav li .sub-menu').parent('li').addClass('menu-parent');
-	
-		//  Allows ULs that open on li:hover to open on tap/click on mobile 
-/*
-		$('#main-nav').touchMenuHover({
-		    'forceiOS': true
+		
+		//slicknav is go-now!
+		//http://slicknav.com/#usage
+		
+		$('#main-nav').slicknav({
+			prependTo:'#nav-content',
+			allowParentLinks: 'true',
+			label: '',
+		    'open': function(trigger){
+		        var that = trigger.parent().children('ul');
+		        $('.slicknav_menu ul li.slicknav_open ul').each(function(){
+		            if($(this).get( 0 ) != that.get( 0 )){
+		                $(this).slideUp().addClass('slicknav_hidden');
+		                $(this).parent().removeClass('slicknav_open').addClass('slicknav_collapsed');
+		            }
+		        })
+		    }, 
 		});
-*/
-	
+		
+		//put the slicknav button in a better spot for styling
+		$(".slicknav_btn").prependTo("#header-wrapper");
+
 	
 
 	// --------------------------------------------------------------------------
@@ -413,51 +388,6 @@ $(function() {
 		});
 
 });
-
-// --------------------------------------------------------------------------
-//   Hide menu on scroll down - show on scroll up.
-// --------------------------------------------------------------------------
-
-// Hide Header on on scroll down
-
-var didScroll;
-var lastScrollTop = 0;
-var delta = 5;
-var navbarHeight = $('#header-wrapper').outerHeight();
-
-$(window).scroll(function(event){
-    didScroll = true;
-});
-
-setInterval(function() {
-    if (didScroll) {
-        hasScrolled();
-        didScroll = false;
-    }
-}, 50);
-
-function hasScrolled() {
-    var st = $(this).scrollTop();
-    
-    // Make sure they scroll more than delta
-    if(Math.abs(lastScrollTop - st) <= delta)
-        return;
-    
-    // If they scrolled down and are past the navbar, add class .nav-up.
-    // This is necessary so you never see what is "behind" the navbar.
-    
-    if (st > lastScrollTop && st > navbarHeight){
-        // Scroll Down
-        $('#header-wrapper').removeClass('nav-down').addClass('nav-up');
-    } else {
-        // Scroll Up
-        if(st + $(window).height() < $(document).height()) {
-            $('#header-wrapper').removeClass('nav-up').addClass('nav-down');
-        }
-    }
-    
-    lastScrollTop = st;
-}
 
 
 // --------------------------------------------------------------------------

@@ -249,7 +249,8 @@ body {
 	margin-bottom: 10px;
 
 	@include media($tablet-down) {
-		text-align: left
+		text-align: left;
+		margin-bottom: 0;
 	}
 
 	@include media ($mobile-down) {

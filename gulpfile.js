@@ -50,7 +50,8 @@ config.plugins = [
   config.vendor + '/jQInstaPics/js/jqinstapics.js',
   config.vendor + '/jQuery-touchMenuHover/jquery.izilla.touchMenuHover.js',
   config.vendor + '/magnific-popup/dist/jquery.magnific-popup.js',
-  config.vendor + '/jquery-hoverIntent/jquery.hoverIntent.js'
+  config.vendor + '/jquery-hoverIntent/jquery.hoverIntent.js',
+  config.vendor + '/slicknav/jquery.slicknav.js'
 
 ]
 
