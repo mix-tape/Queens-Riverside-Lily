@@ -44,6 +44,13 @@
 					opacity: 1;
 				}
 			}
+			
+			li:after {
+			    content:'';
+			    display:block;
+			    height:15px;
+			    margin-bottom: -15px;
+			}
 	}
 	
 }
@@ -129,6 +136,16 @@
 	    height: auto;
 	}
 	
+}
+
+// targets ie10 + 11
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	#register-content input[type="text"], 
+	#register-content input[type="tel"], 
+	#register-content input[type="email"] {
+		padding-bottom: 12px;
+	}
 }
 
 // ----- Image block ----- //

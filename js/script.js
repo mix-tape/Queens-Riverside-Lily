@@ -244,10 +244,7 @@ $(function() {
 
 		if(form_id == 1) {
 			$('#gform_wrapper_1').fadeOut(500);
-			// scrollTo("#video-wrapper");
-			// $('#confirmation-message').delay(300).slideDown(1000).fadeIn(1000);
-			// $('#confirmation-message-details').delay(1000).fadeIn(1000);
-			// $('#confirmation-social').delay(1000).fadeIn(1000);
+			$('#gforms_confirmation_message').delay(300).slideDown(1000).fadeIn(1000);
 		}
 
 	});

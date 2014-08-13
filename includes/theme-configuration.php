@@ -87,7 +87,7 @@ function lily_form_choices( $content, $field, $value, $lead_id, $form_id ) {
 	$form = RGFormsModel::add_default_properties($form);
 	$description_class = rgar($form, 'descriptionPlacement') == 'above' ? 'description_above' : 'description_below';
 
-	if ( 10 == $field['id'])
+	if ( 9 == $field['id'])
 		$content = '</li></ul><ul class="gform_fields '.$form['labelPlacement'].' '.$description_class.' '.$field['cssClass'].'">';
 
 

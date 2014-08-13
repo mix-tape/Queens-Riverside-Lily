@@ -550,6 +550,7 @@ body {
 		font-weight: normal;
 		font-style: normal;
 		font-size: 3em;
+		text-transform: uppercase;
 	}
 
 	.gform_wrapper {
@@ -668,6 +669,20 @@ body {
 		}
 	}
 
+	#gform_confirmation_wrapper_1 {
+		padding: 150px 60px;
+		background: #046a6b;
+		background: rgba($cyan, 0.3);
+		margin-top: $gap*2;
+		text-align: center;
+		font-size: 1.2em;
+		
+		@include media($tablet-down) {
+			padding: $gap*2;
+		}
+		
+	}
+	
 	#gforms_confirmation_message {
 		display: none;
 	}
