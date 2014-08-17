@@ -17,7 +17,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0<?php if (is_mobile()) echo ", minimal-ui"; ?>">
 
 <!-- Stylesheets and Icons -->
-<link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/favicon.ico">
+<link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/favicon.ico" />
 <link rel="apple-touch-icon" href="<?php bloginfo('template_url'); ?>/apple-touch-icon.png">
 
 <!-- Compiled SCSS -->
