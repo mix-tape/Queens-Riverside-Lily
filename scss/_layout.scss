@@ -78,7 +78,7 @@ body {
 	@include media($large-desktop-up) {
 		width: $large-desktop;
 	}
-	
+
 	@include media($desktop-down) {
 		width: $desktop;
 	}
@@ -314,6 +314,10 @@ body {
 	right: 0;
 	width: 284px;
 	height: 35px;
+	img {
+		border: 1px solid #939597;
+		border-top: none;
+	}
 }
 
 
@@ -326,13 +330,13 @@ body {
 	padding: 0;
 
 	.banner-slide {
-		
+
 		position: relative;
 		min-height: 700px;
 		background-position: center bottom;
 		background-size: cover;
 		background-repeat: no-repeat;
-		
+
 		@include media($mobile-down) {
 			min-height: 400px;
 		}
@@ -390,16 +394,16 @@ body {
 	left: 0;
 	color: $white;
 	position: absolute;
-	
+
 	@include media($large-desktop-down) {
 		padding-left: 20px;
-	} 
-	
+	}
+
 	@include media($mobile-down) {
 		text-align: center;
 		font-size: 90%;
 		padding-left: 0;
-	} 
+	}
 
 	// ----- Home page hero type ----- //
 
@@ -423,7 +427,7 @@ body {
 		@include avenair-medium;
 		margin: 0.3em 0 0.8em;
 		text-transform: uppercase;
-		
+
 		@include media($mobile-down) {
 			width: 75%;
 			margin: 0 auto;
@@ -445,7 +449,7 @@ body {
 		@include avenair-medium;
 		font-size: 0.4em !important;
 	}
-	
+
 	@include media($thin-mobile-down) {
 		font-size: ms(2);
 	}
@@ -462,10 +466,10 @@ body {
 	img + h1 {
 		@include visuallyhidden;
 	}
-	
+
 	@include media($mobile-down) {
 		margin: 10px auto $gap;
-	} 
+	}
 }
 
 // ----- Hero underlay ----- //
@@ -483,7 +487,7 @@ body {
 		background: $yellow;
 		background: rgba($yellow, 0.9);
 	}
-	
+
 	@include media($mobile-down) {
 		top: 0;
 	}
@@ -518,7 +522,7 @@ body {
 
 	#register-wrapper {
 		padding-top: 170px;
-		
+
 		@include media($mobile-down) {
 			padding-top: 70px;
 		}
@@ -676,13 +680,13 @@ body {
 		margin-top: $gap*2;
 		text-align: center;
 		font-size: 1.2em;
-		
+
 		@include media($tablet-down) {
 			padding: $gap*2;
 		}
-		
+
 	}
-	
+
 	#gforms_confirmation_message {
 		display: none;
 	}
@@ -799,7 +803,7 @@ body {
 	vertical-align: middle;
 	margin-bottom: 0;
 	font-size: 3em;
-	
+
 	@include media($thin-mobile-down) {
 		font-size: 2em;
 	}
@@ -815,27 +819,27 @@ body {
 
 #instagram .large-hashtag {
 	font-size: 3.8em;
-	
+
 	@include media($tablet-down) {
 		font-size: 3em;
 	}
-	
+
 }
 
 .one_half .large-hashtag {
 	font-size: 3.8em;
-	
+
 	@include media($thin-mobile-down) {
 		font-size: 2.8em;
 	}
 }
 
 .one_quarter .large-hashtag {
-		
+
 	@include media($large-desktop-down) {
 		font-size: 2em;
 	}
-	
+
 	@include media($tablet-down) {
 		font-size: 2.6em;
 	}
@@ -861,11 +865,11 @@ body {
 		  float:left;
 		  margin:0;
 		  width: 33.33333333%;
-		  
+
 		  	@include media($thin-mobile-down) {
 			  	width: 100%;
 			 }
-		  
+
 		}
 
 }
@@ -1026,19 +1030,19 @@ header.bg-image {
 
 		.latest-news {
 			color: $white;
-		
+
 			h2 {
 				color: $darkblue;
 				margin-bottom: 5px;
 			}
-		
+
 /*
 				.ghost-button {
 					position: relative;
 					bottom: auto;
 				}
 */
-		}	
+		}
 	}
 }
 
@@ -1047,15 +1051,15 @@ header.bg-image {
 
 .blog,
 .single {
-	
+
 		header.bg-image {
-	
+
 			@include media($mobile-down) {
-				
+
 			}
-		
+
 		}
-	
+
 }
 
 .post {
