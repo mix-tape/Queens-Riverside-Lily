@@ -131,6 +131,7 @@ function form_submit_button($button, $form)
 	return $mandatory . $button;
 }
 
+add_filter("gform_confirmation_anchor", create_function("","return true;"));
 
 // --------------------------------------------------------------------------
 //  Page body class

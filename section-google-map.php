@@ -89,7 +89,7 @@
 				});
 
 				google.maps.event.addListener(marker, 'click', function () {
-				  window.open('http://goo.gl/y1o0Tf');
+				  window.open('https://goo.gl/maps/NvMIV');
 				});
 
 				// add to array
@@ -183,7 +183,7 @@
 		</script>
 
 		<div class="acf-map">
-			<div class="marker" data-lat="-31.96152799999999" data-lng="115.87476700000002"></div>
+			<div class="marker" data-lat="-31.961276" data-lng="115.877323"></div>
 		</div>
 
 	</div>
