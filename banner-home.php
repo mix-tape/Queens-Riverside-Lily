@@ -47,12 +47,12 @@
 
 				</div>
 
-				<a class="ghost-button">View more</a>
+				<a class="ghost-button" href="<?php echo get_permalink( 29 ); ?>">View more</a>
 
 			</div>
 
 		</div>
-		
+
 
 	</div>
 
