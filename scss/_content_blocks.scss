@@ -41,12 +41,12 @@
 			color: $cyan;
 		}
 	}
-	
+
 	// stop the a overididing button style
 	.ghost-button {
 		padding: 0.5em 1.4em;
 	}
-	
+
 }
 
 // Generic text blocks thin by defualt
@@ -366,6 +366,10 @@
 		h1, h2, h3, h4, h5, h6 {
 			color: $cyan;
 		}
+	}
+
+	.grey-background {
+		background-color: #e2e2e0;
 	}
 
 
